@@ -17,7 +17,7 @@ class Config {
 		ob_start();
 
 		//site address
-		define('DIR', 'http://example.com/');
+		define('DIR', '');
 
 		//set default controller and method for legacy calls
 		define('DEFAULT_CONTROLLER', 'welcome');
@@ -29,23 +29,23 @@ class Config {
 		//database details ONLY NEEDED IF USING A DATABASE
 		define('DB_TYPE', 'mysql');
 		define('DB_HOST', 'localhost');
-		define('DB_NAME', 'dbname');
+		define('DB_NAME', 'schotchbox');
 		define('DB_USER', 'root');
-		define('DB_PASS', 'password');
-		define('PREFIX', 'smvc_');
+		define('DB_PASS', 'root');
+		define('PREFIX', 'ttc_');
 
 		//set prefix for sessions
-		define('SESSION_PREFIX', 'smvc_');
+		define('SESSION_PREFIX', 'ttc');
 
 		//optionall create a constant for the name of the site
-		define('SITETITLE', 'V2.1');
+		define('SITETITLE', '');
 
 		//turn on custom error handling
 		set_exception_handler('core\logger::exception_handler');
 		set_error_handler('core\logger::error_handler');
 
 		//set timezone
-		date_default_timezone_set('Europe/London');
+		date_default_timezone_set('America/New York');
 
 		//start sessions
 		\helpers\session::init();
