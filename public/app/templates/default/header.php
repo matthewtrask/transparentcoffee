@@ -4,12 +4,13 @@
 
 	<!-- Site meta -->
 	<meta charset="utf-8">
-	<title><?php echo $data['title'].' - '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
+	<title><?php echo $data['title'].' | '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
+	<link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css"
 
 	<!-- CSS -->
 	<?php
 		helpers\assets::css(array(
-			'//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
+			//'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
 			helpers\url::template_path() . 'css/style.css',
 		))
 	?>
