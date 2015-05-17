@@ -5,7 +5,7 @@
 	<!-- Site meta -->
 	<meta charset="utf-8">
 	<title><?php echo $data['title'].' | '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
-	<link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css"
+	<link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
 
 	<!-- CSS -->
 	<?php
@@ -14,6 +14,12 @@
 			helpers\url::template_path() . 'css/main.css',
 		))
 	?>
+
+	<!-- JS -->
+	<?php 
+		helpers\assets::js(array(
+			helpers\url::template_path() . 'jquery.js',
+		))
 
 </head>
 <body>
