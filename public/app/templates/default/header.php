@@ -11,7 +11,7 @@
 	<?php
 		helpers\assets::css(array(
 			//'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
-			helpers\url::template_path() . 'css/style.css',
+			helpers\url::template_path() . 'css/main.css',
 		))
 	?>
 
