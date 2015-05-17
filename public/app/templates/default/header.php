@@ -20,8 +20,11 @@
 		helpers\assets::js(array(
 			helpers\url::template_path() . 'jquery.js',
 		))
+	?>
 
 </head>
 <body>
+<nav>
+</nav>
 
 <div class="container">
