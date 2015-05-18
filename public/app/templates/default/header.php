@@ -24,7 +24,7 @@
 
 </head>
 <body>
-<nav>
+<nav class="top-bar" data-top role="navigation" id="nav">
 </nav>
 
 <div class="container">
