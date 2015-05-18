@@ -51,6 +51,6 @@ class ttc extends \core\controller{
 	}
 
 	public function contact() {
-		$data['title'] = 'Contact'
+		$data['title'] = 'Contact';
 	}
 }
