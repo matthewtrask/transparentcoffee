@@ -38,7 +38,7 @@ class Config {
 		define('SESSION_PREFIX', 'ttc');
 
 		//optionall create a constant for the name of the site
-		define('SITETITLE', '');
+		define('SITETITLE', 'Transparent Trade Coffee');
 
 		//turn on custom error handling
 		set_exception_handler('core\logger::exception_handler');
