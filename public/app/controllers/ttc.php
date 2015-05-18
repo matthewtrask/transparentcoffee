@@ -25,7 +25,7 @@ class ttc extends \core\controller{
 		$data['title'] = 'Transparency';
 	}
 
-	public function SEG() {
+	public function seg() {
 		$data['title'] = 'SEG';
 
 	}
