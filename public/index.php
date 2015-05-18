@@ -65,6 +65,15 @@ use \core\router,
 
 //define routes
 Router::any('', '\controllers\ttc@index');
+Router::any('about', '\controllers\ttc@about');
+Router::any('transparency', '\controllers\ttc@transparency');
+Router::any('seg', 'controllers\ttc@seg');
+Router::any('transparentcoffees', '\controllers\ttc@ttcoffees');
+Router::any('register', '\controllers\ttc@register');
+Router::any('insights','\controllers\ttc@insights');
+Router::any('scrpi', '\controllers\ttc@scrpi');
+Router::any('roasters', '\controllers\ttc@roasters');
+Router::any('contact', '\controllers\ttc@contact');
 
 
 //if no route found
