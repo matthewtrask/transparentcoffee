@@ -1,3 +1,13 @@
+$topbar-bg-color: white;
+$topbar-bg: $topbar-bg-color;
+$topbar-link-color: #020202;
+$topbar-link-color-hover: #D8A560;
+$topbar-link-bg-hover: white;
+$topbar-height: 63px;
+
 #nav {
-	background: #fff;
+    text-align: center;
+}
+section.top-bar-section {
+  display: inline-block;
 }

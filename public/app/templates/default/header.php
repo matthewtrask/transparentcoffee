@@ -24,7 +24,30 @@
 
 </head>
 <body>
-<nav class="top-bar" data-top role="navigation" id="nav">
+<nav class="top-bar" data-topbar role="navigation" id="nav">
+    <section class="top-bar-section">
+        <ul class="center">
+            <li class="has-dropdown">
+                <a href="#">ABOUT</a>
+                <ul class="dropdown">
+                    <li><a href="#">Transparency</a></li>
+                    <li><a href="#">SE@G</a></li>
+                </ul>
+            </li>
+            <li><a href="#">TT COFFEES</a></li>
+            <li><a href="#">REGISTER</a></li>
+            <!-- icon -->
+            <li><a href="#">INSIGHTS</a></li>
+            <li class="has-dropdown">
+                <a href="#">SCRPI</a>
+                <ul class="dropdown">
+                    <li><a href="#">SCRPI</a></li>
+                    <li><a href="#">Roasters</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </section>
 </nav>
 
 <div class="container">
