@@ -25,6 +25,9 @@
 </head>
 <body>
 <nav class="top-bar" data-topbar role="navigation" id="nav">
+    <ul class="title-area">
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
     <section class="top-bar-section">
         <ul class="center">
             <li class="has-dropdown">
