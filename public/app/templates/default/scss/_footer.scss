@@ -1,0 +1,22 @@
+$primary-color: #000;
+$footerHeight: 150px;
+$aColor: #fff;
+$aHover: #808080;
+
+.ttcFooter {
+  background-color: $primary-color;
+  height: $footerHeight;
+}
+
+.ttcFooter {
+  ul li {
+    list-style: none;
+  }
+  li a {
+    color: $aColor;
+  }
+  li a:hover {
+    color: $aHover;
+  }
+}
+
