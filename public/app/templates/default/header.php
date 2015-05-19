@@ -25,39 +25,35 @@
 </head>
 <body>
 <div class="fixed">
-    <div class="row">
-        <div class = "large-12 columns">
-            <nav class="top-bar" data-topbar role="navigation" id="nav">
-                <ul class="title-area">
-                    <li class="name"><!-- Leave this empty --></li>
-                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                </ul>
-                <section class="top-bar-section">
-                    <ul class="center">
-                        <li class="has-dropdown">
-                            <a href="#">ABOUT</a>
-                            <ul id="nav-dropdown" class="dropdown">
-                                <li><a href="#">Transparency</a></li>
-                                <li><a href="#">SE@G</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">TT COFFEES</a></li>
-                        <li><a href="#">REGISTER</a></li>
-                        <!-- icon -->
-                        <li><a href="#">INSIGHTS</a></li>
-                        <li class="has-dropdown">
-                            <a href="#">SCRPI</a>
-                            <ul id="nav-dropdown" class="dropdown">
-                                <li><a href="#">SCRPI</a></li>
-                                <li><a href="#">Roasters</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Contact</a></li>
+    <nav class="top-bar" data-topbar role="navigation" id="nav">
+        <ul class="title-area">
+            <li class="name"><!-- Leave this empty --></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+            <ul>
+                <li class="has-dropdown">
+                    <a href="#">ABOUT</a>
+                    <ul id="nav-dropdown" class="dropdown">
+                        <li><a href="#">Transparency</a></li>
+                        <li><a href="#">SE@G</a></li>
                     </ul>
-                </section>
-            </nav>
-        </div>
-    </div>
+                </li>
+                <li><a href="#">TT COFFEES</a></li>
+                <li><a href="#">REGISTER</a></li>
+                <!-- icon -->
+                <li><a href="#">INSIGHTS</a></li>
+                <li class="has-dropdown">
+                    <a href="#">SCRPI</a>
+                    <ul id="nav-dropdown" class="dropdown">
+                        <li><a href="#">SCRPI</a></li>
+                        <li><a href="#">Roasters</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </section>
+    </nav>
 </div>
 
 <div class="container">
