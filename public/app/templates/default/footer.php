@@ -3,7 +3,7 @@
 
 <footer class="ttcFooter">
     <div class="row">
-        <div class="small-3 medium-3 large-3 columns">
+        <div class="small-4 medium-4 large-4 columns">
             <div class="left">
                 <ul>
                     <li><a href="#">ABOUT</a></li>
@@ -15,14 +15,15 @@
                 </ul>
             </div>
         </div>
-        <div class="small-3 medium-3 large-3 columns">
-        </div>
-        <div class="small-3 medium-3 large-3 columns">
-            <div class="right" id="socialIcons">
-                <ul>
-                    <li><i class="fa fa-facebook fa-2x"></i></li>
-                    <li><i class="fa fa-twitter fa-2x"></i></li>
+        <div class="small-8 medium-8 large-8 columns">
+            <div class=" small-12 columns right" id="socialIcons">
+                <ul class="right">
+                    <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
                 </ul>
+            </div>
+            <div class="right small-12 columns" id="powered">
+                <a href="#" class="right">Powered by Social Enterprise @ Goizueta</a>
             </div>
         </div>
     </div>

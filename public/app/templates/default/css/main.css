@@ -30,10 +30,21 @@ body {
       margin-top: 40px; }
       .ttcFooter #socialIcons ul li i {
         background-color: #fff;
+        color: #d1d1d1;
         height: 50px;
         width: 50px;
         padding-top: 10px;
         border-radius: 25px; }
+      .ttcFooter #socialIcons ul li i:hover {
+        background-color: #d1d1d1;
+        color: #fff;
+        height: 50px;
+        width: 50px;
+        padding-top: 10px;
+        border-radius: 25px; }
+
+.ttcFooter #powered a {
+  color: #fff; }
 
 meta.foundation-version {
   font-family: "/5.4.7/"; }

@@ -22,22 +22,34 @@ $socialIcons: #D1D1D1;
   }
   #socialIcons{
     margin-top: 20px;
-      ul{
-      display: inline;
-      text-align: center;
-      li {
+      ul {
         display: inline;
-        margin-top: 40px;
-        i {
-          background-color: $socialBGColor;
-          color: $socialIcons;
-          height: 50px;
-          width: 50px;
-          padding-top: 10px;
-          border-radius: 25px;
+        text-align: center;
+        li {
+          display: inline;
+          margin-top: 40px;
+          i {
+            background-color: $socialBGColor;
+            color: #d1d1d1;
+            height: 50px;
+            width: 50px;
+            padding-top: 10px;
+            border-radius: 25px;
+          }
+          i:hover {
+            background-color: #d1d1d1;
+            color: $socialBGColor;
+            height: 50px;
+            width: 50px;
+            padding-top: 10px;
+            border-radius: 25px;
+          }
         }
       }
-    }
+
+  }
+  #powered a {
+    color: $aColor;
   }
 }
 
