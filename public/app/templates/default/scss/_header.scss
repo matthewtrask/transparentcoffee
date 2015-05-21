@@ -25,6 +25,11 @@ $topbar-menu-link-color-toggled: #020202;
 .top-bar .toggle-topbar {
   left:0px;
 }
+#header-logo {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 40px;
+}
 
 @media #{$medium-up} {
   #nav-dropdown {

@@ -112,6 +112,11 @@ select {
 .top-bar .toggle-topbar {
   left: 0px; }
 
+#header-logo {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 40px; }
+
 @media only screen and (min-width: 40.063em) {
   #nav-dropdown {
     box-shadow: #999999 0px 0px 6px 3px;

@@ -41,7 +41,8 @@
                 </li>
                 <li><a href="#">TT COFFEES</a></li>
                 <li><a href="#">REGISTER</a></li>
-                <!-- icon -->
+                <li><a href="#"><img id="header-logo" src="<?php echo helpers\url::template_path() .
+                    'img/Transparent%20Trade%20White-08-09.png'?>"/></a></li>
                 <li><a href="#">INSIGHTS</a></li>
                 <li class="has-dropdown">
                     <a href="#">SCRPI</a>
