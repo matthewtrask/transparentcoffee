@@ -33,7 +33,7 @@
         <section class="top-bar-section">
             <ul>
                 <li class="has-dropdown">
-                    <a href="#">ABOUT</a>
+                    <a class="dropdown-link" href="#">ABOUT</a>
                     <ul id="nav-dropdown" class="dropdown">
                         <li><a href="#">Transparency</a></li>
                         <li><a href="#">SE@G</a></li>
@@ -45,7 +45,7 @@
                     'img/Transparent%20Trade%20White-08-09.png'?>"/></a></li>
                 <li><a href="#">INSIGHTS</a></li>
                 <li class="has-dropdown">
-                    <a href="#">SCRPI</a>
+                    <a class="dropdown-link" href="#">SCRPI</a>
                     <ul id="nav-dropdown" class="dropdown">
                         <li><a href="#">SCRPI</a></li>
                         <li><a href="#">Roasters</a></li>

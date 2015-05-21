@@ -117,9 +117,14 @@ select {
   margin-bottom: 5px;
   width: 40px; }
 
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .top-bar-section ul li a {
+    padding-left: 15.75px !important;
+    padding-right: 15.75px !important; } }
+
 @media only screen and (min-width: 40.063em) {
   #nav-dropdown {
-    box-shadow: #999999 0px 0px 6px 3px;
+    box-shadow: #999999 0px 0px 4px 1px;
     margin-top: -15px;
     text-align: center; }
   section.top-bar-section {
