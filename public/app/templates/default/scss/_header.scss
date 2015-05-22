@@ -32,8 +32,6 @@ $topbar-link-padding-medium: $topbar-height / 4;
   width: 40px;
 }
 
-
-
 @media #{$medium-only} {
   .top-bar-section ul li a {
     padding-left: $topbar-link-padding-medium !important;

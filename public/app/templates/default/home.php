@@ -5,6 +5,16 @@
     "/>
     <noscript><img src="<?php echo helpers\url::template_path() . 'img/beans-in-hand-half.jpg'?>"></noscript>
     <div class="text-wrapper">
-        <h1 id="suit-text">Transparent Trade Coffee</h1>
+        <h1 id="coffee-text">Transparent Trade Coffee</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="small-10 small-offset-1 columns">
+        <p id="specialty-text">Where specialty coffee consumers and direct trade roasters come together to share information and insights about the economic treatment of coffee growers.</p>
+    </div>
+</div>
+<div class="row">
+    <div id="coffee-icon">
+        <i class="fa fa-coffee fa-5x"></i>
     </div>
 </div>

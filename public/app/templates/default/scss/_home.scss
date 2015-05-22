@@ -3,6 +3,11 @@
   font-style: normal;
   src: url('../font/Raleway-ExtraLight.ttf');
 }
+@font-face {
+  font-family: RalewayLight;
+  font-style: normal;
+  src: url('../font/Raleway-Light.ttf');
+}
 
 .img-overlay {
   background-color: black;
@@ -16,8 +21,7 @@
   position: relative;
   width: 100%;
 }
-
-#suit-text {
+#coffee-text {
   color: white !important;
   position: absolute;
   left: 0;
@@ -25,21 +29,37 @@
   text-align: center !important;
   font-family: RalewayExtraLight;
 }
+#specialty-text {
+  font-family: RalewayLight;
+}
+#coffee-icon {
+  text-align: center;
+}
+
 @media #{$large-up} {
-  #suit-text {
+  #coffee-text {
     top: 195px;
     font-size: 72px;
   }
+  #specialty-text {
+    font-size: 28px;
+  }
 }
 @media #{$medium-only} {
-  #suit-text {
+  #coffee-text {
     top: 150px;
     font-size: 50px;
   }
+  #specialty-text {
+    font-size: 22px;
+  }
 }
 @media #{$small-only} {
-  #suit-text {
+  #coffee-text {
     top: 120px;
     font-size: 32px;
+  }
+  #specialty-text {
+    font-size: 18px;
   }
 }

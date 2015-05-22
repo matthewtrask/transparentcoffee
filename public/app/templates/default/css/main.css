@@ -142,6 +142,11 @@ select {
   font-style: normal;
   src: url("../font/Raleway-ExtraLight.ttf"); }
 
+@font-face {
+  font-family: RalewayLight;
+  font-style: normal;
+  src: url("../font/Raleway-Light.ttf"); }
+
 .img-overlay {
   background-color: black; }
   .img-overlay img {
@@ -153,7 +158,7 @@ select {
   position: relative;
   width: 100%; }
 
-#suit-text {
+#coffee-text {
   color: white !important;
   position: absolute;
   left: 0;
@@ -161,20 +166,32 @@ select {
   text-align: center !important;
   font-family: RalewayExtraLight; }
 
+#specialty-text {
+  font-family: RalewayLight; }
+
+#coffee-icon {
+  text-align: center; }
+
 @media only screen and (min-width: 64.063em) {
-  #suit-text {
+  #coffee-text {
     top: 195px;
-    font-size: 72px; } }
+    font-size: 72px; }
+  #specialty-text {
+    font-size: 28px; } }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  #suit-text {
+  #coffee-text {
     top: 150px;
-    font-size: 50px; } }
+    font-size: 50px; }
+  #specialty-text {
+    font-size: 22px; } }
 
 @media only screen and (max-width: 40em) {
-  #suit-text {
+  #coffee-text {
     top: 120px;
-    font-size: 32px; } }
+    font-size: 32px; }
+  #specialty-text {
+    font-size: 18px; } }
 
 .ttcFooter {
   background-color: #000;
