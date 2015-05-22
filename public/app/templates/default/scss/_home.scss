@@ -1,3 +1,45 @@
-body {
-	font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: RalewayExtraLight;
+  font-style: normal;
+  src: url('../font/Raleway-ExtraLight.ttf');
+}
+
+.img-overlay {
+  background-color: black;
+  img {
+    opacity: .4;
+  }
+}
+#text-wrapper {
+  opacity: 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+#suit-text {
+  color: white !important;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center !important;
+  font-family: RalewayExtraLight;
+}
+@media #{$large-up} {
+  #suit-text {
+    top: 195px;
+    font-size: 72px;
+  }
+}
+@media #{$medium-only} {
+  #suit-text {
+    top: 150px;
+    font-size: 50px;
+  }
+}
+@media #{$small-only} {
+  #suit-text {
+    top: 120px;
+    font-size: 32px;
+  }
 }

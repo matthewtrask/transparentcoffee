@@ -137,8 +137,44 @@ select {
     text-align: left;
     border-top: 1px solid lightgrey; } }
 
-body {
-  font-family: Arial, Helvetica, sans-serif; }
+@font-face {
+  font-family: RalewayExtraLight;
+  font-style: normal;
+  src: url("../font/Raleway-ExtraLight.ttf"); }
+
+.img-overlay {
+  background-color: black; }
+  .img-overlay img {
+    opacity: .4; }
+
+#text-wrapper {
+  opacity: 0;
+  text-align: center;
+  position: relative;
+  width: 100%; }
+
+#suit-text {
+  color: white !important;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center !important;
+  font-family: RalewayExtraLight; }
+
+@media only screen and (min-width: 64.063em) {
+  #suit-text {
+    top: 195px;
+    font-size: 72px; } }
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  #suit-text {
+    top: 150px;
+    font-size: 50px; } }
+
+@media only screen and (max-width: 40em) {
+  #suit-text {
+    top: 120px;
+    font-size: 32px; } }
 
 .ttcFooter {
   background-color: #000;
