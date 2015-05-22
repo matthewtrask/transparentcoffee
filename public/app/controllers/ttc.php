@@ -52,5 +52,9 @@ class ttc extends \core\controller{
 
 	public function contact() {
 		$data['title'] = 'Contact';
+
+		View::rendertemplate('header', $data);
+		View::rendertemplate('contact', $data);
+		View::rendertemplate('footer');
 	}
 }
