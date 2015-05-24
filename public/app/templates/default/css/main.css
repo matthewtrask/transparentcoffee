@@ -7,6 +7,9 @@ section.top-bar-section {
 body {
   font-family: Arial, Helvetica, sans-serif; }
 
+#contactForm .formInput {
+  border-radius: 10px; }
+
 .ttcFooter {
   background-color: #000;
   height: 150px; }
