@@ -16,6 +16,8 @@
 			helpers\url::template_path() . 'css/main.css',
 		))
 	?>
+    <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
 
 	<!-- JS -->
 	<?php 

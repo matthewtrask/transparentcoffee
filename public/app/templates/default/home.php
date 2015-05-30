@@ -18,3 +18,7 @@
         <i class="fa fa-coffee fa-5x"></i>
     </div>
 </div>
+<div class="slick single-item autoplay">
+    <div><img src="<?php echo helpers\url::template_path() . 'img/CounterCulture1.jpg'?>"/></div>
+    <div><img src="<?php echo helpers\url::template_path() . 'img/red-beans.JPG'?>"/></div>
+</div>
