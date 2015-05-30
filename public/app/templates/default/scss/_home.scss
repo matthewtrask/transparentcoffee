@@ -1,3 +1,5 @@
+@import "../../../../bower_components/foundation/scss/foundation/components/global";
+
 @font-face {
   font-family: RalewayExtraLight;
   font-style: normal;
@@ -65,10 +67,34 @@
     font-family: RalewayRegular;
   }
 }
+
 .white-button {
   color: black !important;
-  background-color: white !important;
+  background-color: #FCFCFC !important;
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  -webkit-transition-duration: 0.2s !important;
+  -moz-transition-duration: 0.2s !important;
+  transition-duration: 0.2s !important;
+  .fa-angle-right {
+    padding-left: 10px;
+    font-size: 13px;
+  }
 }
+.white-button:hover {
+  background-color: #F0F0F0 !important;
+}
+.white-button:active {
+  background-color: #E8E8E8 !important;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
 
 @media #{$large-up} {
   #coffee-text {
@@ -90,6 +116,9 @@
     .sub-title {
       font-size: 22px;
       margin-bottom: 10px;
+    }
+    .button {
+      margin-top: 10px;
     }
   }
 }
@@ -114,6 +143,9 @@
       font-size: 20px;
       margin-bottom: 8px;
     }
+    .button {
+      margin-top: 5px;
+    }
   }
 }
 @media #{$small-only} {
@@ -136,6 +168,15 @@
     .sub-title {
       font-size: 16px;
       margin-bottom: 6px;
+    }
+    .button {
+      font-size: 12px !important;
+      margin-top: 5px;
+      padding: rem-calc(10) !important;
+      .fa-angle-right {
+        padding-left: 8px;
+        font-size: 12px;
+      }
     }
   }
 }

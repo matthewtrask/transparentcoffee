@@ -28,7 +28,8 @@
             <div class="sub-title">Counter Culture</div>
             At Counter Culture Coffee, we approach our work with a relentless pursuit of coffee perfection,
             a dedication to real sustainability, and a commitment to cutting-edge coffee education throughout the coffee chain.
-            <br><a href="#" class="button white-button">READ MORE</a>
+            <br><a href="#" class="button small white-button">READ MORE<i class="fa fa-angle-right"></i>
+            </a>
         </div>
     </div>
     <div class="slide slide--has-caption slick-slide">
@@ -40,7 +41,8 @@
             <div class="sub-title">Farmers to 40</div>
             Farmers to 40 is a social enterprise providing excellent coffee and returning 40%
             of the retail bag price directly to our partner farmers in Nicaragua.
-            <br><a href="#" class="button white-button">READ MORE</a>
+            <br><a href="#" class="button small white-button">READ MORE<i class="fa fa-angle-right fa-2x"></i>
+            </a>
         </div>
     </div>
 </div>

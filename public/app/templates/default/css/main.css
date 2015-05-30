@@ -137,6 +137,111 @@ select {
     text-align: left;
     border-top: 1px solid lightgrey; } }
 
+meta.foundation-version {
+  font-family: "/5.4.7/"; }
+
+meta.foundation-mq-small {
+  font-family: "/only screen/";
+  width: 0em; }
+
+meta.foundation-mq-medium {
+  font-family: "/only screen and (min-width:40.063em)/";
+  width: 40.063em; }
+
+meta.foundation-mq-large {
+  font-family: "/only screen and (min-width:64.063em)/";
+  width: 64.063em; }
+
+meta.foundation-mq-xlarge {
+  font-family: "/only screen and (min-width:90.063em)/";
+  width: 90.063em; }
+
+meta.foundation-mq-xxlarge {
+  font-family: "/only screen and (min-width:120.063em)/";
+  width: 120.063em; }
+
+meta.foundation-data-attribute-namespace {
+  font-family: false; }
+
+html, body {
+  height: 100%; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html,
+body {
+  font-size: 100%; }
+
+body {
+  background: #fff;
+  color: #222;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  position: relative;
+  cursor: auto; }
+
+a:hover {
+  cursor: pointer; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+img {
+  -ms-interpolation-mode: bicubic; }
+
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
+  max-width: none !important; }
+
+.left {
+  float: left !important; }
+
+.right {
+  float: right !important; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.hide {
+  display: none !important;
+  visibility: hidden; }
+
+.invisible {
+  visibility: hidden; }
+
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+img {
+  display: inline-block;
+  vertical-align: middle; }
+
+textarea {
+  height: auto;
+  min-height: 50px; }
+
+select {
+  width: 100%; }
+
 @font-face {
   font-family: RalewayExtraLight;
   font-style: normal;
@@ -202,7 +307,28 @@ select {
 
 .white-button {
   color: black !important;
-  background-color: white !important; }
+  background-color: #FCFCFC !important;
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  -webkit-transition-duration: 0.2s !important;
+  -moz-transition-duration: 0.2s !important;
+  transition-duration: 0.2s !important; }
+  .white-button .fa-angle-right {
+    padding-left: 10px;
+    font-size: 13px; }
+
+.white-button:hover {
+  background-color: #F0F0F0 !important; }
+
+.white-button:active {
+  background-color: #E8E8E8 !important;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important; }
 
 @media only screen and (min-width: 64.063em) {
   #coffee-text {
@@ -220,7 +346,9 @@ select {
     font-size: 18px; }
     .slide-caption .sub-title {
       font-size: 22px;
-      margin-bottom: 10px; } }
+      margin-bottom: 10px; }
+    .slide-caption .button {
+      margin-top: 10px; } }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
   #coffee-text {
@@ -238,7 +366,9 @@ select {
     font-size: 15px; }
     .slide-caption .sub-title {
       font-size: 20px;
-      margin-bottom: 8px; } }
+      margin-bottom: 8px; }
+    .slide-caption .button {
+      margin-top: 5px; } }
 
 @media only screen and (max-width: 40em) {
   #coffee-text {
@@ -256,7 +386,14 @@ select {
     font-size: 12px; }
     .slide-caption .sub-title {
       font-size: 16px;
-      margin-bottom: 6px; } }
+      margin-bottom: 6px; }
+    .slide-caption .button {
+      font-size: 12px !important;
+      margin-top: 5px;
+      padding: 0.625rem !important; }
+      .slide-caption .button .fa-angle-right {
+        padding-left: 8px;
+        font-size: 12px; } }
 
 .ttcFooter {
   background-color: #000;

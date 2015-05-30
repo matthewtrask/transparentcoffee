@@ -43,3 +43,10 @@
 @import "../../../../bower_components/foundation/scss/foundation/components/offcanvas";
 @import "../../../../bower_components/foundation/scss/foundation/components/visibility";
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
