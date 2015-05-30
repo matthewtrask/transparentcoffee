@@ -147,10 +147,20 @@ select {
   font-style: normal;
   src: url("../font/Raleway-Light.ttf"); }
 
+@font-face {
+  font-family: RalewayRegular;
+  font-style: normal;
+  src: url("../font/Raleway-Regular.ttf"); }
+
 .img-overlay {
   background-color: black; }
   .img-overlay img {
     opacity: .4; }
+
+.img-overlay-2 {
+  background-color: black; }
+  .img-overlay-2 img {
+    opacity: .5; }
 
 #text-wrapper {
   opacity: 0;
@@ -172,26 +182,81 @@ select {
 #coffee-icon {
   text-align: center; }
 
+.slide--has-caption {
+  position: relative; }
+
+.slide-title {
+  color: white;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: RalewayLight; }
+
+.slide-caption {
+  position: absolute;
+  color: white;
+  font-family: RalewayLight; }
+  .slide-caption .sub-title {
+    font-family: RalewayRegular; }
+
+.white-button {
+  color: black !important;
+  background-color: white !important; }
+
 @media only screen and (min-width: 64.063em) {
   #coffee-text {
     top: 195px;
     font-size: 72px; }
   #specialty-text {
-    font-size: 28px; } }
+    font-size: 28px; }
+  .slide-title {
+    top: 30px;
+    font-size: 50px; }
+  .slide-caption {
+    width: 40%;
+    top: 150px;
+    left: 50px;
+    font-size: 18px; }
+    .slide-caption .sub-title {
+      font-size: 22px;
+      margin-bottom: 10px; } }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
   #coffee-text {
     top: 150px;
     font-size: 50px; }
   #specialty-text {
-    font-size: 22px; } }
+    font-size: 22px; }
+  .slide-title {
+    top: 20px;
+    font-size: 40px; }
+  .slide-caption {
+    width: 60%;
+    top: 100px;
+    left: 40px;
+    font-size: 15px; }
+    .slide-caption .sub-title {
+      font-size: 20px;
+      margin-bottom: 8px; } }
 
 @media only screen and (max-width: 40em) {
   #coffee-text {
     top: 120px;
     font-size: 32px; }
   #specialty-text {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .slide-title {
+    top: 15px;
+    font-size: 28px; }
+  .slide-caption {
+    width: 60%;
+    top: 75px;
+    left: 30px;
+    font-size: 12px; }
+    .slide-caption .sub-title {
+      font-size: 16px;
+      margin-bottom: 6px; } }
 
 .ttcFooter {
   background-color: #000;
