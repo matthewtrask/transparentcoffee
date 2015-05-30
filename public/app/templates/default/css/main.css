@@ -131,6 +131,8 @@ select {
     display: inline-block; } }
 
 @media only screen and (max-width: 40em) {
+  #li-header-logo {
+    display: none; }
   #nav {
     text-align: left; }
   section.top-bar-section li {
@@ -285,6 +287,7 @@ select {
   font-family: RalewayLight; }
 
 #coffee-icon {
+  margin-top: -20px;
   text-align: center; }
 
 .slide--has-caption {
@@ -342,6 +345,8 @@ select {
   #coffee-text {
     top: 195px;
     font-size: 72px; }
+  #coffee-icon {
+    font-size: 90px; }
   #specialty-text {
     font-size: 28px; }
   .slide-title {
@@ -364,6 +369,8 @@ select {
     font-size: 50px; }
   #specialty-text {
     font-size: 22px; }
+  #coffee-icon {
+    font-size: 70px; }
   .slide-title {
     top: 20px;
     font-size: 40px; }
@@ -384,6 +391,8 @@ select {
     font-size: 32px; }
   #specialty-text {
     font-size: 18px; }
+  #coffee-icon {
+    font-size: 50px; }
   .slide-title {
     top: 15px;
     font-size: 28px; }

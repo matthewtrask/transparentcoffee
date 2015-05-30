@@ -50,6 +50,9 @@ $topbar-link-padding-medium: $topbar-height / 4;
   }
 }
 @media #{$small-only} {
+  #li-header-logo {
+    display: none;
+  }
   #nav {
     text-align: left;
   }

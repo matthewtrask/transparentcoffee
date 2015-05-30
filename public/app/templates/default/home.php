@@ -15,7 +15,7 @@
 </div>
 <div class="row">
     <div id="coffee-icon">
-        <i class="fa fa-coffee fa-5x"></i>
+        <i class="fa fa-coffee"></i>
     </div>
 </div>
 <div class="slick single-item autoplay">
