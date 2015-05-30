@@ -46,3 +46,7 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <a href="#"><img id="home-bottom-logo" src="<?php echo helpers\url::template_path() .
+            'img/Transparent-Trade-Tan-Large-08-10.png'?>"/></a>
+</div>

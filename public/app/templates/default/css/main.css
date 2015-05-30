@@ -305,6 +305,9 @@ select {
   .slide-caption .sub-title {
     font-family: RalewayRegular; }
 
+.slick-dots {
+  margin-left: 0; }
+
 .white-button {
   color: black !important;
   background-color: #FCFCFC !important;
@@ -329,6 +332,11 @@ select {
   -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
   -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important; }
+
+#home-bottom-logo {
+  width: 10%;
+  margin-left: 45%;
+  text-align: center; }
 
 @media only screen and (min-width: 64.063em) {
   #coffee-text {

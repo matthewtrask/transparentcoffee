@@ -67,6 +67,9 @@
     font-family: RalewayRegular;
   }
 }
+.slick-dots {
+  margin-left: 0;
+}
 
 .white-button {
   color: black !important;
@@ -94,7 +97,11 @@
   -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
 }
-
+#home-bottom-logo {
+  width: 10%;
+  margin-left: 45%;
+  text-align: center;
+}
 
 @media #{$large-up} {
   #coffee-text {
