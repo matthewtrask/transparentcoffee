@@ -53,8 +53,16 @@ class ttc extends \core\controller{
 	public function contact() {
 		$data['title'] = 'Contact';
 
+		$mail = new \helpers\phpmailer\mail;
+
 		View::rendertemplate('header', $data);
 		View::rendertemplate('contact', $data);
 		View::rendertemplate('footer');
+
+		$mail->from = $email;
+		$mail->subject = "A message for TTC";
+		$mail->body = "Name:" . $name . "<br />Message:" . $message;
+		$mail->send();
+
 	}
 }
