@@ -62,7 +62,10 @@ class ttc extends \core\controller{
 		$mail->from = $email;
 		$mail->subject = "A message for TTC";
 		$mail->body = "Name:" . $name . "<br />Message:" . $message;
-		$mail->send();
+		if(!$mail->send()) {
+			echo 'Message was not sent';
+			
+		}
 
 	}
 }
