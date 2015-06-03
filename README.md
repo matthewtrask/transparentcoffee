@@ -1,3 +1,7 @@
+#Transparent Trade Coffee
+___
+
+
 Initial Commit. Will build this out with spec and pull request information. 
 
 [Git workflow](http://nvie.com/posts/a-successful-git-branching-model/)
