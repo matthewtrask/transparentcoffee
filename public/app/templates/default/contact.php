@@ -4,33 +4,38 @@
 
 <form action="" method="post" id="contactForm" data-abide>
     <div class="row">
-        <div class="large-6">
+        <div class="large-12">
             <div class="row">
-                <div class="small-2 centered columns">
+                <div class="small-4 centered columns">
                     <label for="Name" class="right inline">Name:</label>
                 </div>
-                <div class="small-10 centered columns">
+                <div class="small-8 centered columns input">
                     <input class="formInput right" type="text" placeholder="Name" for="Name" id="Name" required>
                 </div>
             </div>
             <div class="row">
-                <div class="small-2 centered columns">
+                <div class="small-4 centered columns">
                     <label for="Email" class="right inline">Email:</label>
                 </div>
-                <div class="small-10 centered columns">
+                <div class="small-8 centered columns input">
                     <input class="formInput right" type="email" placeholder="Email" for="Email" id="Email" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-2 centered columns">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-4 centered columns">
                     <label for="Message" class="right inline">Message:</label>
                 </div>
-                <div class="small-10 centered columns">
+                <div class="small-8 centered columns input">
                     <textarea class="formInput right" type="text" placeholder="Message" for="Message" id="Message" required></textarea>
                 </div>
             </div>
             <div class="row">
-                <div class="small-5 centered columns">
+                <div class="small-6 centered columns">
                     <input type="submit" value="Submit" class="button expand left">
                 </div>
             </div>
