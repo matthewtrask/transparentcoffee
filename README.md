@@ -9,11 +9,11 @@ We are moving a site off wix.com and moving it to a custom platform and adding a
 
 ##Tools
 ___
-+[SimpleMVC Framework](simplemvcframework.com)
-+[Foundation](foundation.zurb.com)
-+[NPM](npm.com)
-+[GulpJs](gulpjs.com)
-+[Vagrant](vagrantup.com)
++ [SimpleMVC Framework](simplemvcframework.com)
++ [Foundation](foundation.zurb.com)
++ [NPM](npm.com)
++ [GulpJs](gulpjs.com)
++ [Vagrant](vagrantup.com)
 
 ####How to install the project
 If you want to help us develop this project, you must fork the repo first, then clone it to your local machine. 
