@@ -51,21 +51,20 @@ class ttc extends \core\controller{
 	}
 
 	public function contact() {
+
+
 		$data['title'] = 'Contact';
 
-		$mail = new \helpers\phpmailer\mail;
+		$mail = new \helpers\phpmailer\phpmailer;
+
 
 		View::rendertemplate('header', $data);
 		View::rendertemplate('contact', $data);
 		View::rendertemplate('footer');
 
-		$mail->from = $email;
-		$mail->subject = "A message for TTC";
-		$mail->body = "Name:" . $name . "<br />Message:" . $message;
-		if(!$mail->send()) {
-			echo 'Message was not sent';
-			
-		}
+		$mail->setFrom($_POST['email']);
+		$mail->
+
 
 	}
 }
