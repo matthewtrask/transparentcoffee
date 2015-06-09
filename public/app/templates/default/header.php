@@ -16,6 +16,8 @@
 			helpers\url::template_path() . 'css/main.css',
 		))
 	?>
+    <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
 
 	<!-- JS -->
 	<?php
@@ -43,7 +45,7 @@
                 </li>
                 <li><a href="#">TT COFFEES</a></li>
                 <li><a href="#">REGISTER</a></li>
-                <li><a href="#"><img id="header-logo" src="<?php echo helpers\url::template_path() .
+                <li id="li-header-logo"><a href="#"><img id="header-logo" src="<?php echo helpers\url::template_path() .
                     'img/Transparent%20Trade%20White-08-09.png'?>"/></a></li>
                 <li><a href="#">INSIGHTS</a></li>
                 <li class="has-dropdown">

@@ -13,6 +13,7 @@ class ttc extends \core\controller{
 		$data['title'] = 'Home';
 
 		View::rendertemplate('header', $data);
+        View::rendertemplate('home');
 		View::rendertemplate('footer');
 	}
 
