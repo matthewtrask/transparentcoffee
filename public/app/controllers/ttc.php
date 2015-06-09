@@ -33,6 +33,10 @@ class ttc extends \core\controller{
 	public function seg() {
 		$data['title'] = 'SEG';
 
+		View::rendertemplate('header', $data);
+		View::rendertemplate('SE@G');
+		View::rendertemplate('footer');
+
 	}
 
 	public function ttcoffees() {
