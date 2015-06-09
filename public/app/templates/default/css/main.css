@@ -412,6 +412,17 @@ select {
         padding-left: 8px;
         font-size: 12px; } }
 
+ul.reasons {
+  list-style: none; }
+  ul.reasons li {
+    list-style: none;
+    margin-left: 90px; }
+    ul.reasons li :before {
+      content: "-"; }
+
+#contactForm input.input {
+  width: 70%; }
+
 .ttcFooter {
   background-color: #000;
   height: 150px; }
