@@ -259,32 +259,10 @@ select {
   font-style: normal;
   src: url("../font/Raleway-Regular.ttf"); }
 
-.img-overlay {
-  background-color: black; }
-  .img-overlay img {
-    opacity: .4; }
-
 .img-overlay-2 {
   background-color: black; }
   .img-overlay-2 img {
     opacity: .5; }
-
-#text-wrapper {
-  opacity: 0;
-  text-align: center;
-  position: relative;
-  width: 100%; }
-
-#coffee-text {
-  color: white !important;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  text-align: center !important;
-  font-family: RalewayExtraLight; }
-
-#specialty-text {
-  font-family: RalewayLight; }
 
 #coffee-icon {
   margin-top: -20px;
@@ -342,13 +320,8 @@ select {
   text-align: center; }
 
 @media only screen and (min-width: 64.063em) {
-  #coffee-text {
-    top: 195px;
-    font-size: 72px; }
   #coffee-icon {
     font-size: 90px; }
-  #specialty-text {
-    font-size: 28px; }
   .slide-title {
     top: 30px;
     font-size: 50px; }
@@ -364,11 +337,6 @@ select {
       margin-top: 10px; } }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  #coffee-text {
-    top: 150px;
-    font-size: 50px; }
-  #specialty-text {
-    font-size: 22px; }
   #coffee-icon {
     font-size: 70px; }
   .slide-title {
@@ -386,11 +354,6 @@ select {
       margin-top: 5px; } }
 
 @media only screen and (max-width: 40em) {
-  #coffee-text {
-    top: 120px;
-    font-size: 32px; }
-  #specialty-text {
-    font-size: 18px; }
   #coffee-icon {
     font-size: 50px; }
   .slide-title {
@@ -411,6 +374,58 @@ select {
       .slide-caption .button .fa-angle-right {
         padding-left: 8px;
         font-size: 12px; } }
+
+@media only screen and (min-width: 64.063em) {
+  .page-header {
+    font-size: 32px; }
+  .image-text {
+    top: 195px;
+    font-size: 72px; }
+  .light-font {
+    font-size: 28px; } }
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .page-header {
+    font-size: 24px; }
+  .image-text {
+    top: 150px;
+    font-size: 50px; }
+  .light-font {
+    font-size: 22px; } }
+
+@media only screen and (max-width: 40em) {
+  .page-header {
+    font-size: 18px; }
+  .image-text {
+    top: 120px;
+    font-size: 32px; }
+  .light-font {
+    font-size: 18px; } }
+
+.img-overlay {
+  background-color: black; }
+  .img-overlay img {
+    opacity: .4; }
+
+#text-wrapper {
+  opacity: 0;
+  text-align: center;
+  position: relative;
+  width: 100%; }
+
+.image-text {
+  color: white !important;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center !important;
+  font-family: RalewayExtraLight; }
+
+.light-font {
+  font-family: RalewayLight; }
+
+#contactForm input.input {
+  width: 70%; }
 
 .ttcFooter {
   background-color: #000;
@@ -16277,15 +16292,3 @@ th.hide-for-touch {
     display: table-cell !important; }
   th.show-for-print {
     display: table-cell !important; } }
-
-@media only screen and (min-width: 64.063em) {
-  .page-header {
-    font-size: 32px; } }
-
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .page-header {
-    font-size: 24px; } }
-
-@media only screen and (max-width: 40em) {
-  .page-header {
-    font-size: 18px; } }

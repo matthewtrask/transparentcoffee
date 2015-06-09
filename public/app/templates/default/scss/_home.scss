@@ -15,35 +15,11 @@
   font-style: normal;
   src: url('../font/Raleway-Regular.ttf');
 }
-
-.img-overlay {
-  background-color: black;
-  img {
-    opacity: .4;
-  }
-}
 .img-overlay-2 {
   background-color: black;
   img {
     opacity: .5;
   }
-}
-#text-wrapper {
-  opacity: 0;
-  text-align: center;
-  position: relative;
-  width: 100%;
-}
-#coffee-text {
-  color: white !important;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  text-align: center !important;
-  font-family: RalewayExtraLight;
-}
-#specialty-text {
-  font-family: RalewayLight;
 }
 #coffee-icon {
   margin-top: -20px;
@@ -105,15 +81,8 @@
 }
 
 @media #{$large-up} {
-  #coffee-text {
-    top: 195px;
-    font-size: 72px;
-  }
   #coffee-icon {
     font-size: 90px;
-  }
-  #specialty-text {
-    font-size: 28px;
   }
   .slide-title {
     top: 30px;
@@ -134,13 +103,6 @@
   }
 }
 @media #{$medium-only} {
-  #coffee-text {
-    top: 150px;
-    font-size: 50px;
-  }
-  #specialty-text {
-    font-size: 22px;
-  }
   #coffee-icon {
     font-size: 70px;
   }
@@ -163,13 +125,6 @@
   }
 }
 @media #{$small-only} {
-  #coffee-text {
-    top: 120px;
-    font-size: 32px;
-  }
-  #specialty-text {
-    font-size: 18px;
-  }
   #coffee-icon {
     font-size: 50px;
   }
@@ -196,4 +151,64 @@
       }
     }
   }
+}
+//GLOBAL STYLES
+@media #{$large-up} {
+  .page-header {
+    font-size: 32px;
+  }
+  .image-text {
+    top: 195px;
+    font-size: 72px;
+  }
+  .light-font {
+    font-size: 28px;
+  }
+}
+@media #{$medium-only} {
+  .page-header {
+    font-size: 24px;
+  }
+  .image-text {
+    top: 150px;
+    font-size: 50px;
+  }
+  .light-font {
+    font-size: 22px;
+  }
+}
+@media #{$small-only} {
+  .page-header {
+    font-size: 18px;
+  }
+  .image-text {
+    top: 120px;
+    font-size: 32px;
+  }
+  .light-font {
+    font-size: 18px;
+  }
+}
+.img-overlay {
+  background-color: black;
+  img {
+    opacity: .4;
+  }
+}
+#text-wrapper {
+  opacity: 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+.image-text {
+  color: white !important;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center !important;
+  font-family: RalewayExtraLight;
+}
+.light-font {
+  font-family: RalewayLight;
 }

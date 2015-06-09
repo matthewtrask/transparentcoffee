@@ -4,7 +4,8 @@
 
 	<!-- Site meta -->
 	<meta charset="utf-8">
-	<title><?php echo $data['title'].' | '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $data['title'].' | '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
 	<link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
     <script src="/bower_components/modernizr/modernizr.js"></script>
 
