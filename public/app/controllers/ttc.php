@@ -24,6 +24,10 @@ class ttc extends \core\controller{
 
 	public function transparency() {
 		$data['title'] = 'Transparency';
+
+		View::rendertemplate('header', $data);
+		View::rendertemplate('transparency');
+		View::rendertemplate('footer');
 	}
 
 	public function seg() {
