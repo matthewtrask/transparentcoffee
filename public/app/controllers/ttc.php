@@ -6,13 +6,14 @@ use helpers\url;
 use helpers\form;
 use helpers\phpmailer\mail;
 use core\view;
+use core\controller;
 
-class ttc extends \core\controller{
+class ttc extends Controller {
 
 	public function index() {
 		$data['title'] = 'Home';
 
-		View::rendertemplate('header', $data);
+        View::rendertemplate('header', $data);
         View::rendertemplate('home');
 		View::rendertemplate('footer');
 	}
@@ -53,6 +54,13 @@ class ttc extends \core\controller{
 
 	public function roasters() {
 		$data['title'] = 'Roasters';
+
+        $model = new \Models\ttc();
+        $data['roasters'] = $model->getRoasters();
+
+        View::rendertemplate('header', $data);
+        View::rendertemplate('roasters');
+        View::rendertemplate('footer');
 	}
 
 	public function contact() {
