@@ -45,6 +45,10 @@ class ttc extends \core\controller{
 
 	public function scrpi() {
 		$data['title'] = 'SCRPI';
+
+        View::rendertemplate('header', $data);
+        View::rendertemplate('scrpi');
+        View::rendertemplate('footer');
 	}
 
 	public function roasters() {
