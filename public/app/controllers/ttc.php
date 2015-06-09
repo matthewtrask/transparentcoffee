@@ -57,9 +57,8 @@ class ttc extends Controller {
 
         $model = new \Models\ttc();
         $data['roasters'] = $model->getRoasters();
-
         View::rendertemplate('header', $data);
-        View::rendertemplate('roasters');
+        View::rendertemplate('roasters', $data);
         View::rendertemplate('footer');
 	}
 
