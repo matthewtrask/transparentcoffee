@@ -466,6 +466,12 @@ select {
 .ttcFooter #powered a {
   color: #fff; }
 
+.panel-text p {
+  font-style: italic; }
+
+.panel-text a p {
+  text-decoration: underline; }
+
 meta.foundation-version {
   font-family: "/5.4.7/"; }
 
