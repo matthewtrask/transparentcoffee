@@ -62,8 +62,6 @@ class ttc extends \core\controller{
 		View::rendertemplate('contact', $data);
 		View::rendertemplate('footer');
 
-		$mail->setFrom($_POST['email']);
-		$mail->
 
 
 	}
