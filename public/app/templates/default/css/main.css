@@ -375,6 +375,7 @@ select {
         padding-left: 8px;
         font-size: 12px; } }
 
+<<<<<<< HEAD
 @media only screen and (min-width: 64.063em) {
   .page-header {
     font-size: 32px; }
@@ -423,6 +424,15 @@ select {
 
 .light-font {
   font-family: RalewayLight; }
+
+ul.reasons {
+  list-style: none; }
+ul.reasons li {
+  list-style: none;
+  margin-left: 90px; }
+ul.reasons li :before {
+  content: "-"; }
+
 
 #contactForm input.input {
   width: 70%; }

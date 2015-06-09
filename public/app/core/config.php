@@ -29,7 +29,7 @@ class Config {
 		//database details ONLY NEEDED IF USING A DATABASE
 		define('DB_TYPE', 'mysql');
 		define('DB_HOST', 'localhost');
-		define('DB_NAME', 'schotchbox');
+		define('DB_NAME', 'ttc');
 		define('DB_USER', 'root');
 		define('DB_PASS', 'root');
 		define('PREFIX', 'ttc_');
