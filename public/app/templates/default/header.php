@@ -20,9 +20,10 @@
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
 
 	<!-- JS -->
-	<?php 
+	<?php
 		helpers\assets::js(array(
 			helpers\url::template_path() . 'js/jquery.js',
+			helpers\url::template_path() . 'js/main.js'
 		))
 	?>
 </head>

