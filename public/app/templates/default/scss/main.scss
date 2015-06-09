@@ -4,6 +4,7 @@
 @import 'form';
 @import 'display';
 @import 'footer';
+@import 'scrpi';
 @import "../../../../bower_components/foundation/scss/foundation/components/grid";
 @import "../../../../bower_components/foundation/scss/foundation/components/global";
 @import "../../../../bower_components/foundation/scss/foundation/components/accordion";
@@ -43,10 +44,18 @@
 @import "../../../../bower_components/foundation/scss/foundation/components/offcanvas";
 @import "../../../../bower_components/foundation/scss/foundation/components/visibility";
 
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
+@media #{$large-up} {
+  .page-header {
+    font-size: 32px;
+  }
 }
-
+@media #{$medium-only} {
+  .page-header {
+    font-size: 24px;
+  }
+}
+@media #{$small-only} {
+  .page-header {
+    font-size: 18px;
+  }
+}
