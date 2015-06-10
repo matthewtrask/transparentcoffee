@@ -13,7 +13,7 @@
     "/>
     <noscript><img src="<?php echo helpers\url::template_path() . 'img/transparency-half.png'?>"></noscript>
     <div class="text-wrapper">
-        <h1 id="coffee-text">Transparency</h1>
+        <h1 class="image-text">Transparency</h1>
     </div>
 </div>
 <div style="height:20px">
