@@ -424,6 +424,18 @@ select {
 .light-font {
   font-family: RalewayLight; }
 
+ul.reasons {
+  list-style: none; }
+  ul.reasons li {
+    list-style: none;
+    margin-left: 90px; }
+    ul.reasons li :before {
+      content: "-"; }
+
+img#SEGImg {
+  height: 75%;
+  width: 75%; }
+
 #contactForm input.input {
   width: 70%; }
 
