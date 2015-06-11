@@ -10,6 +10,12 @@ use core\controller;
 
 class ttc extends Controller {
 
+	private $_db;
+
+	public function __construct(){
+
+	}
+
 	public function index() {
 		$data['title'] = 'Home';
 
@@ -25,10 +31,18 @@ class ttc extends Controller {
 
 	public function transparency() {
 		$data['title'] = 'Transparency';
+
+		View::rendertemplate('header', $data);
+		View::rendertemplate('transparency');
+		View::rendertemplate('footer');
 	}
 
 	public function seg() {
 		$data['title'] = 'SEG';
+
+		View::rendertemplate('header', $data);
+		View::rendertemplate('SE@G');
+		View::rendertemplate('footer');
 
 	}
 
@@ -38,10 +52,17 @@ class ttc extends Controller {
 
 	public function register() {
 		$data['title'] = 'Register';
+
+
+		View::rendertemplate('header', $data);
+		View::rendertemplate('registration');
+		View::rendertemplate('footer');
 	}
 
 	public function insight() {
 		$data['title'] = 'Insights';
+
+		
 	}
 
 	public function scrpi() {
