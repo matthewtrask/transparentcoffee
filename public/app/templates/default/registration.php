@@ -7,7 +7,7 @@
  */
 ?>
 
-<div class="img-overlay">
+<div class="img-overlay-2">
     <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
@@ -23,8 +23,8 @@
 
 <div class="row">
     <div class="small-offset-1 small-10 columns">
-        <h4>Currently, only single-origin coffees sold through direct trade or near direct trade
-            channels can be featured on the Transparent Trade Coffee website.</h4>
+        <p class="light-font-smaller">Currently, only single-origin coffees sold through direct trade or near direct trade
+            channels can be featured on the Transparent Trade Coffee website.</p>
     </div>
 </div>
 <div style="height: 20px">
@@ -35,7 +35,7 @@
     <div class="small-3 medium-3 large-3 columns">
 
     </div>
-    <div class="small-6 medium-6 large-6 small-centered medium-centered large-centered columns">
+    <div class="small-6 medium-6 large-6 small-centered medium-centered large-centered columns light-font-smaller">
         <form action="" method="POST" data-abide enctype="multipart/form-data">
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">

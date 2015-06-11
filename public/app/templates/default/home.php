@@ -8,9 +8,9 @@
         <h1 class="image-text">Transparent Trade Coffee</h1>
     </div>
 </div>
-<div class="row">
+<div style="margin-top: 10px;" class="row">
     <div class="small-10 small-offset-1 columns">
-        <p class="light-font">Where specialty coffee consumers and direct trade roasters come together to share information and insights about the economic treatment of coffee growers.</p>
+        <p class="light-font-bigger">Where specialty coffee consumers and direct trade roasters come together to share information and insights about the economic treatment of coffee growers.</p>
     </div>
 </div>
 <div class="row">

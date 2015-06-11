@@ -1,4 +1,4 @@
-<div class="img-overlay">
+<div class="img-overlay-2">
     <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
@@ -14,7 +14,7 @@
 
 <div class="row">
     <div class="small-offset-1 small-10 columns">
-        <p>We are always interested in questions, comments and ideas from others who are interested in promoting transparency within specialty coffee markets. If you are one of these people and have something to share, please contact us using the link below.</p>
+        <p class="light-font-bigger">We are always interested in questions, comments and ideas from others who are interested in promoting transparency within specialty coffee markets. If you are one of these people and have something to share, please contact us using the link below.</p>
     </div>
 </div>
 
@@ -24,7 +24,7 @@
 
     </div>
     <div class="small-6 medium-6 large-6 small-centered medium-centered large-centered columns">
-        <form action="" method="POST" data-abide class="custom">
+        <form action="" method="POST" data-abide class="custom light-font-bigger">
             <div class="row">
                 <div class="small-3 large-3 columns">
                     <label for="Name" class="inline">Name:</label>

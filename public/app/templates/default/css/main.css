@@ -391,30 +391,36 @@ select {
 
 @media only screen and (min-width: 64.063em) {
   .page-header {
-    font-size: 32px; }
+    font-size: 36px; }
   .image-text {
     top: 195px;
     font-size: 72px; }
-  .light-font {
-    font-size: 28px; } }
+  .light-font-bigger {
+    font-size: 26px; }
+  .light-font-smaller {
+    font-size: 18px; } }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
   .page-header {
-    font-size: 24px; }
+    font-size: 28px; }
   .image-text {
     top: 150px;
     font-size: 50px; }
-  .light-font {
-    font-size: 22px; } }
+  .light-font-bigger {
+    font-size: 22px; }
+  .light-font-smaller {
+    font-size: 16px; } }
 
 @media only screen and (max-width: 40em) {
   .page-header {
-    font-size: 18px; }
+    font-size: 22px; }
   .image-text {
     top: 120px;
     font-size: 32px; }
-  .light-font {
-    font-size: 18px; } }
+  .light-font-bigger {
+    font-size: 16px; }
+  .light-font-smaller {
+    font-size: 14px; } }
 
 .img-overlay {
   background-color: black; }
@@ -425,8 +431,13 @@ select {
   .image-text {
     top: 90px !important;
     font-size: 26px !important; }
-  .light-font {
-    font-size: 16px !important; } }
+  .light-font-bigger {
+    font-size: 14px !important; }
+  .light-font-smaller {
+    font-size: 12px !important; } }
+
+.page-header {
+  font-family: RalewayRegular !important; }
 
 #text-wrapper {
   opacity: 0;
@@ -442,7 +453,10 @@ select {
   text-align: center !important;
   font-family: RalewayExtraLight; }
 
-.light-font {
+.light-font-bigger {
+  font-family: RalewayLight; }
+
+.light-font-smaller {
   font-family: RalewayLight; }
 
 ul.reasons {
@@ -527,6 +541,26 @@ img#SEGImg {
 
 #roasters-text {
   margin-top: 20px; }
+
+@media only screen and (min-width: 64.063em) {
+  #seg-header {
+    margin-top: -60px !important;
+    font-size: 50px !important; } }
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  #seg-header {
+    margin-top: -45px !important;
+    font-size: 35px !important; } }
+
+@media only screen and (max-width: 40em) {
+  #seg-header {
+    margin-top: -25px !important;
+    font-size: 26px; } }
+
+@media only screen and (max-width: 450px) {
+  #seg-header {
+    margin-top: -10px !important;
+    font-size: 20px !important; } }
 
 meta.foundation-version {
   font-family: "/5.4.7/"; }

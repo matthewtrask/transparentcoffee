@@ -171,38 +171,47 @@
 //GLOBAL STYLES
 @media #{$large-up} {
   .page-header {
-    font-size: 32px;
+    font-size: 36px;
   }
   .image-text {
     top: 195px;
     font-size: 72px;
   }
-  .light-font {
-    font-size: 28px;
+  .light-font-bigger {
+    font-size: 26px;
+  }
+  .light-font-smaller {
+    font-size: 18px;
   }
 }
 @media #{$medium-only} {
   .page-header {
-    font-size: 24px;
+    font-size: 28px;
   }
   .image-text {
     top: 150px;
     font-size: 50px;
   }
-  .light-font {
+  .light-font-bigger {
     font-size: 22px;
+  }
+  .light-font-smaller {
+    font-size: 16px;
   }
 }
 @media #{$small-only} {
   .page-header {
-    font-size: 18px;
+    font-size: 22px;
   }
   .image-text {
     top: 120px;
     font-size: 32px;
   }
-  .light-font {
-    font-size: 18px;
+  .light-font-bigger {
+    font-size: 16px;
+  }
+  .light-font-smaller {
+    font-size: 14px;
   }
 }
 .img-overlay {
@@ -217,9 +226,15 @@
     top: 90px !important;
     font-size: 26px !important;
   }
-  .light-font {
-    font-size: 16px !important;
+  .light-font-bigger {
+    font-size: 14px !important;
   }
+  .light-font-smaller {
+    font-size: 12px !important;
+  }
+}
+.page-header {
+  font-family: RalewayRegular !important;
 }
 #text-wrapper {
   opacity: 0;
@@ -235,6 +250,9 @@
   text-align: center !important;
   font-family: RalewayExtraLight;
 }
-.light-font {
+.light-font-bigger {
+  font-family: RalewayLight;
+}
+.light-font-smaller {
   font-family: RalewayLight;
 }
