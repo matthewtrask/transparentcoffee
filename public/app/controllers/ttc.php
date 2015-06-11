@@ -60,6 +60,8 @@ class ttc extends \core\controller{
 
 	public function insight() {
 		$data['title'] = 'Insights';
+
+		
 	}
 
 	public function scrpi() {
