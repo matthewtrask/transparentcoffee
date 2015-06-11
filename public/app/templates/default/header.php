@@ -42,23 +42,23 @@
                 <li class="has-dropdown">
                     <a class="dropdown-link" href="#">ABOUT</a>
                     <ul id="nav-dropdown" class="dropdown">
-                        <li><a href="#">Transparency</a></li>
-                        <li><a href="#">SE@G</a></li>
+                        <li><a href="transparency">Transparency</a></li>
+                        <li><a href="seg">SE@G</a></li>
                     </ul>
                 </li>
-                <li><a href="#">TT COFFEES</a></li>
-                <li><a href="#">REGISTER</a></li>
+                <li><a href="transparentcoffees">TT COFFEES</a></li>
+                <li><a href="register">REGISTER</a></li>
                 <li id="li-header-logo"><a href="#"><img id="header-logo" src="<?php echo helpers\url::template_path() .
                     'img/Transparent%20Trade%20White-08-09.png'?>"/></a></li>
-                <li><a href="#">INSIGHTS</a></li>
+                <li><a href="insights">INSIGHTS</a></li>
                 <li class="has-dropdown">
                     <a class="dropdown-link" href="#">SCRPI</a>
                     <ul id="nav-dropdown" class="dropdown">
-                        <li><a href="#">SCRPI</a></li>
-                        <li><a href="#">Roasters</a></li>
+                        <li><a href="scrpi">SCRPI</a></li>
+                        <li><a href="roasters">Roasters</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
         </section>
     </nav>
