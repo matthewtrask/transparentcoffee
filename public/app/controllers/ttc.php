@@ -9,6 +9,12 @@ use core\view;
 
 class ttc extends \core\controller{
 
+	private $_db;
+
+	public function __construct(){
+
+	}
+
 	public function index() {
 		$data['title'] = 'Home';
 
@@ -45,6 +51,11 @@ class ttc extends \core\controller{
 
 	public function register() {
 		$data['title'] = 'Register';
+
+
+		View::rendertemplate('header', $data);
+		View::rendertemplate('registration');
+		View::rendertemplate('footer');
 	}
 
 	public function insight() {
