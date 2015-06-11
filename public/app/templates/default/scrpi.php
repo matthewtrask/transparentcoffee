@@ -1,7 +1,7 @@
 <div class="img-overlay">
     <img src="<?php echo helpers\url::template_path() . 'img/Baskets.jpg'?>">
     <div class="text-wrapper">
-        <h1 class="image-text">Specialty Coffee Retail Price Index</h1>
+        <h1 class="scrpi-header" class="image-text">Specialty Coffee Retail Price Index</h1>
     </div>
 </div>
 <div class="row">

@@ -8,13 +8,13 @@
 ?>
 
 <div class="img-overlay">
-    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/coffeebeans-quarter.jpg'?>, (small)],
-    [<?php echo helpers\url::template_path() . 'img/coffeebeans-half.jpg'?>, (medium)],
-    [<?php echo helpers\url::template_path() . 'img/coffeebeans.jpg'?>, (large)]
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
     "/>
-    <noscript><img src="<?php echo helpers\url::template_path() . 'img/coffeebeans-fourth.png'?>"></noscript>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>"></noscript>
     <div class="text-wrapper">
-        <h2 style="margin-top: -50px;" class="image-text">Register</h2>
+        <h2 class="image-text">Register</h2>
     </div>
 </div>
 <div style="height: 20px">
@@ -22,7 +22,7 @@
 </div>
 
 <div class="row">
-    <div class="small-12 medium-12 large-12">
+    <div class="small-offset-1 small-10 columns">
         <h4>Currently, only single-origin coffees sold through direct trade or near direct trade
             channels can be featured on the Transparent Trade Coffee website.</h4>
     </div>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="row">
-    <div class="small-3 medium-3 large-3">
+    <div class="small-3 medium-3 large-3 columns">
 
     </div>
     <div class="small-6 medium-6 large-6 small-centered medium-centered large-centered columns">
@@ -133,7 +133,7 @@
                     <input name="greenPPP" class="regInput" type="file" placeholder="greenPPP" for="greenPPP" id="greenPPP" required>
                 </div>
             </div>
-            <div class="small-8 medium-8 large-8 columns">
+            <div class="small-offset-2 small-8 medium-8 large-8 columns">
                 <input id="submitButton" type="submit" value="Submit" class="button expand white-button">
             </div>
         </form>

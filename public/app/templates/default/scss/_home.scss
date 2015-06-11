@@ -81,9 +81,6 @@
 }
 
 @media #{$large-up} {
-  #coffee-icon {
-    font-size: 90px;
-  }
   .slide-title {
     top: 30px;
     font-size: 50px;
@@ -103,9 +100,6 @@
   }
 }
 @media #{$medium-only} {
-  #coffee-icon {
-    font-size: 70px;
-  }
   .slide-title {
     top: 20px;
     font-size: 40px;
@@ -125,9 +119,6 @@
   }
 }
 @media #{$small-only} {
-  #coffee-icon {
-    font-size: 50px;
-  }
   .slide-title {
     top: 15px;
     font-size: 28px;
@@ -148,6 +139,31 @@
       .fa-angle-right {
         padding-left: 8px;
         font-size: 12px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .slide-title {
+    top: 10px !important;
+    font-size: 24px !important;
+  }
+  .slide-caption {
+    width: 60% !important;
+    top: 45px !important;
+    left: 20px !important;
+    font-size: 8px !important;
+    .sub-title {
+      font-size: 12px !important;
+      margin-bottom: 5px !important;
+    }
+    .button {
+      font-size: 8px !important;
+      margin-top: 4px !important;
+      padding: rem-calc(8) !important;
+      .fa-angle-right {
+        padding-left: 6px !important;
+        font-size: 8px !important;
       }
     }
   }
@@ -193,6 +209,16 @@
   background-color: black;
   img {
     opacity: .4;
+  }
+}
+//extra-small screens
+@media only screen and (max-width: 450px) {
+  .image-text {
+    top: 90px !important;
+    font-size: 26px !important;
+  }
+  .light-font {
+    font-size: 16px !important;
   }
 }
 #text-wrapper {

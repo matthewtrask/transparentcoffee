@@ -14,8 +14,10 @@
     </div>
 </div>
 <div class="row">
-    <div id="coffee-icon">
-        <i class="fa fa-coffee"></i>
+    <div id="coffee-icon" class="small-offset-4 small-4 columns">
+        <div class="small-offset-1 small-10 columns">
+            <img src="<?php echo helpers\url::template_path() . 'img/heart-coffee.jpg'?>"/>
+        </div>
     </div>
 </div>
 <div class="slick single-item autoplay">
