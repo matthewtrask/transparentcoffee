@@ -8,14 +8,16 @@
         <h1 class="image-text">Transparent Trade Coffee</h1>
     </div>
 </div>
-<div class="row">
+<div style="margin-top: 10px;" class="row">
     <div class="small-10 small-offset-1 columns">
-        <p class="light-font">Where specialty coffee consumers and direct trade roasters come together to share information and insights about the economic treatment of coffee growers.</p>
+        <p class="light-font-bigger">Where specialty coffee consumers and direct trade roasters come together to share information and insights about the economic treatment of coffee growers.</p>
     </div>
 </div>
 <div class="row">
-    <div id="coffee-icon">
-        <i class="fa fa-coffee"></i>
+    <div id="coffee-icon" class="small-offset-4 small-4 columns">
+        <div class="small-offset-1 small-10 columns">
+            <img src="<?php echo helpers\url::template_path() . 'img/heart-coffee.jpg'?>"/>
+        </div>
     </div>
 </div>
 <div class="slick single-item autoplay">

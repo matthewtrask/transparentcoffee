@@ -65,6 +65,7 @@ use \core\router,
 
 //define routes
 Router::any('', '\controllers\ttc@index');
+Router::any('home', '\controllers\ttc@index');
 Router::any('about', '\controllers\ttc@about');
 Router::any('transparency', '\controllers\ttc@transparency');
 Router::any('seg', 'controllers\ttc@seg');
