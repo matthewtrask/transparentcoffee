@@ -14,3 +14,40 @@ div.slide.slick-slide.featuredRoaster.slick-active {
     margin-left: auto;
   }
 }
+
+.menu li {
+  list-style: none;
+}
+
+div.ttcoffees {
+  height: 150px;
+  width: 800px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  ul#TTCList {
+    margin-left: 0.1em;
+    li {
+      font-size: .70rem;
+      list-style: none;
+      margin-left: 0.1em;
+    }
+  }
+  img {
+    border-radius: 15px;
+    height: 141px;
+    width: 300px;
+    margin-top: 5px;
+  }
+  div.Percent {
+    height: 150px;
+    width: 160px;
+    background-color: black;
+    color: #fff;
+    border-radius: 15px;
+    margin-left: -40px;
+    margin-top: -5px;
+    h2 {
+      color: #fff;
+    }
+  }
+}
