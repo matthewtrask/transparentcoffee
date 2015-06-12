@@ -1,0 +1,16 @@
+.featuredCoffees {
+  font-family: RalewayLight;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: RalewayRegular !important;
+  }
+}
+
+
+div.slide.slick-slide.featuredRoaster.slick-active {
+  margin-right: auto;
+  margin-left: auto;
+  img {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
