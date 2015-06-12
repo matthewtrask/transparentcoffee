@@ -14,9 +14,12 @@ $(document).ready(function(){
     });
     e.preventDefault();
   });
+  //
     $('#header-logo').hover(function(){
         this.src = "app/templates/default/img/Transparent-Trade-Tan-Large-08-10.png";
     }, function(){
         this.src = "app/templates/default/img/Transparent%20Trade%20White-08-09.png";
     });
+  //Slider on TT Coffees
+
 });

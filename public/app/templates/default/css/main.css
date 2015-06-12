@@ -471,6 +471,13 @@ img#SEGImg {
   height: 75%;
   width: 75%; }
 
+div.slide.slick-slide.featuredRoaster.slick-active {
+  margin-right: auto;
+  margin-left: auto; }
+  div.slide.slick-slide.featuredRoaster.slick-active img {
+    margin-right: auto;
+    margin-left: auto; }
+
 #contactForm input.input {
   width: 70%; }
 
