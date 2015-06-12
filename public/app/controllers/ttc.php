@@ -48,6 +48,10 @@ class ttc extends Controller {
 
 	public function ttcoffees() {
 		$data['title'] = 'Transparent Coffees';
+
+		View::rendertemplate('header', $data);
+		View::rendertemplate('ttcoffees');
+		View::rendertemplate('footer');
 	}
 
 	public function register() {
