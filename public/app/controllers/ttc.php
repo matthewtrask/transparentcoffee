@@ -49,8 +49,17 @@ class ttc extends Controller {
 	public function ttcoffees() {
 		$data['title'] = 'Transparent Coffees';
 
+        $model = new \Models\ttc();
+        $ttcoffees = $model->getTTCoffees();
+        $data['ttcoffees'] = $ttcoffees;
+
+        foreach ($ttcoffees as $ttcoffee) {
+            $filterRoaster[] = $ttcoffee->roaster_name;
+        }
+        $filterRoaster = array_unique($filterRoaster);
+        $data['filter_roaster'] = $filterRoaster;
 		View::rendertemplate('header', $data);
-		View::rendertemplate('ttcoffees');
+		View::rendertemplate('ttcoffees', $data);
 		View::rendertemplate('footer');
 	}
 
