@@ -55,7 +55,7 @@
             <input id="Africa" type="checkbox" name="Africa" value="Africa"> Africa<br />
             <input id="MidEast" type="checkbox" name="MidEast" value="MidEast"> Middle East<br />
             <input id="Pacific" type="checkbox" name="Pacific" value="Pacific"> Pacific
-        <li id="price"><b>Green Price</b></li><hr />
+        <li id="price"><b>Effective Grower Share</b></li><hr />
             <input id="TwentyPer" type="checkbox" name="TwentyPer" value="TwentyPer"> 20-29%<br />
             <input id="ThirtyPer" type="checkbox" name="ThirtyPer" value="ThirtyPer"> 30-39%<br />
             <input id="FourtyPer" type="checkbox" name="FourtyPer" value="FourtyPer"> 40-49%<br />
@@ -81,7 +81,7 @@
         </div>
         <div class="small-2 medium-2 large-2 columns">
           <div class="Percent">
-            <h2>21%</h2>
+            <h2 style="padding-top: 30px; padding-left: 40px;">21%</h2>
           </div>
         </div>
       </div>
