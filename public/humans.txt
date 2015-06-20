@@ -1,0 +1,18 @@
+/* TEAM */
+Justin Rector - jrec15@gmail.com
+Matt Trask    - mjftrask@gmail.com - @matthewtrask
+
+
+/* THANKS */
+
+
+
+/* SITE */
+
+Last Updated: June 18th, 2015
+
+Standards: HTML5, CSS3
+
+Components: PHP, jQuery, Modernizr, Gulp, Sass
+
+Software: Simple MVC Framework
