@@ -24,7 +24,7 @@ class ttc extends Model
         $ttcoffees = array();
         foreach ($result as $ttcoffee) {
             $current = new \TTCoffee($ttcoffee->roaster_name, $ttcoffee->roaster_logo, $ttcoffee->farm_name, $ttcoffee->farm_country, $ttcoffee->farm_region, $ttcoffee->coffee_name,
-                $description, $ttcoffee->retail_price, $ttcoffee->currency, $ttcoffee->bag_size, $ttcoffee->gppp, $ttcoffee->egs, $ttcoffee->url);
+                $ttcoffee->description, $ttcoffee->retail_price, $ttcoffee->currency, $ttcoffee->bag_size, $ttcoffee->gppp, $ttcoffee->egs, $ttcoffee->url);
             $ttcoffees[] = $current;
         }
         return $ttcoffees;

@@ -489,11 +489,12 @@ div.slide.slick-slide.featuredRoaster.slick-active {
 div.ttcoffees {
   height: 150px;
   max-width: 800px;
-  border: 1px solid #000;
-  border-radius: 15px; }
-  div.ttcoffees ul#TTCList {
+  border: 1px solid #B0B0B0;
+  border-radius: 15px;
+  margin-bottom: 10px; }
+  div.ttcoffees .TTCList {
     margin-left: 0.1em; }
-    div.ttcoffees ul#TTCList li {
+    div.ttcoffees .TTCList li {
       font-size: .70rem;
       list-style: none;
       margin-left: 0.1em; }
@@ -505,7 +506,7 @@ div.ttcoffees {
   div.ttcoffees div.Percent {
     width: 100%;
     height: 150px;
-    background-color: black;
+    background-color: #B0B0B0;
     color: #fff;
     border-radius: 15px;
     display: table;
@@ -515,6 +516,34 @@ div.ttcoffees {
       color: #fff;
       float: none; }
 
+div.ttcoffees:hover {
+  border: 1px solid #414042;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s; }
+  div.ttcoffees:hover div.Percent {
+    background-color: #414042;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s; }
+
+div.ttcoffees:not(:hover) {
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s; }
+  div.ttcoffees:not(:hover) div.Percent {
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s; }
+
 .fa-plus-circle {
   font-size: 12px; }
 
@@ -523,6 +552,40 @@ div.ttcoffees {
 
 .fa-search-plus {
   font-size: 10px; }
+
+.quick-view-logo {
+  height: 200px;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px; }
+
+.website-link a {
+  color: #2A5DB0; }
+
+.website-link a:hover {
+  color: #1F437F; }
+
+.TTCList {
+  margin-left: 0.1em; }
+  .TTCList li {
+    font-size: .8rem;
+    list-style: none;
+    margin-left: 0.1em; }
+
+.circle {
+  border: 3px solid black;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  font-size: 32px;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  white-space: nowrap; }
 
 #contactForm input.input {
   width: 70%; }

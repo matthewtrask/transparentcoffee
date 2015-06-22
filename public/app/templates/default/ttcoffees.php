@@ -84,7 +84,6 @@
 <div class="row" style="margin-bottom: 20px">
     <div class="hidden-for-small-only medium-3 large-3 columns">
         <div id="menu" class="menu">
-          <!-- menu goes here! -->
           <p class="text-center">Menu</p><hr/>
           <ul>
             <li id="roaster"><b>Roaster</b></li><hr />
@@ -113,31 +112,70 @@
         </div>
     </div>
     <div class="small-12 medium-9 large-9 columns" style="margin-top: 45px;">
-        <div class="ttcoffees">
-            <?php foreach ($data['ttcoffees'] as $ttcoffee): ?>
-                <div class='row'>
-                    <div class='small-3 medium-3 large-3 columns logo-wrapper'>
-                        <div class="text-center">
-                            <img src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/>
-                            <i class="fa fa-search-plus"></i>
+        <?php foreach ($data['ttcoffees'] as $key => $ttcoffee): ?>
+            <div class="ttcoffees">
+                <a href="#" data-reveal-id="quick-view-<?php echo $key?>">
+                    <div class='row'>
+                        <div class='small-3 medium-3 large-3 columns logo-wrapper'>
+                            <div class="text-center">
+                                <img src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/>
+                                <i class="fa fa-search-plus"></i>
+                            </div>
+                        </div>
+                        <div class="small-6 medium-6 large-6 columns" id="TTCpanel">
+                            <h3><?php echo $ttcoffee->roaster_name?></h3>
+                            <h5><?php echo $ttcoffee->coffee_name?></h5>
+                            <ul class="TTCList" style="margin-left: 0.1rem;">
+                                <li><em>Retail Price:</em> <?php
+                                    if ($ttcoffee->currency == 'USD') {
+                                        echo '$' . round($ttcoffee->retail_price, 2);
+                                    }
+                                    else {
+                                        echo round($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
+                                    }
+                                    echo ' per ' . $ttcoffee->bag_size?> ounce bag</li>
+                                <li><em>Green Price:</em> $<?php echo round($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
+                            </ul>
+                        </div>
+                        <div class="small-3 medium-3 large-3 columns">
+                            <div class="Percent">
+                               <h2><?php echo round($ttcoffee->egs)?>%</h2>
+                            </div>
                         </div>
                     </div>
-                    <div class="small-6 medium-6 large-6 columns" id="TTCpanel">
-                        <h3><?php echo $ttcoffee->roaster_name?></h3>
-                        <h5><?php echo $ttcoffee->coffee_name?></h5>
-                        <ul id="TTCList" style="margin-left: 0.1rem;">
-                            <li><em>Retail Price:</em> $<?php echo round($ttcoffee->retail_price, 2) . ' per ' .
-                                                        $ttcoffee->bag_size?> ounce bag</li>
-                            <li><em>Green Price:</em> $<?php echo round($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
-                        </ul>
-                    </div>
-                    <div class="small-3 medium-3 large-3e columns">
-                        <div class="Percent">
-                           <h2><?php echo round($ttcoffee->egs)?>%</h2>
+                </a>
+                <div id="quick-view-<?php echo $key?>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                    <div class="row">
+                        <div class="small-6 columns">
+                            <h2 id="modalTitle"><?php echo $ttcoffee->roaster_name?></h2>
+                            <p class="lead"><?php echo $ttcoffee->coffee_name?></p>
+                            <ul class="TTCList" style="margin-left: 0.1rem;">
+                                <li><em>Farm:</em> <?php echo $ttcoffee->farm_name . ', ' . $ttcoffee->farm_country?></li>
+                                <li><em>Retail Price:</em> <?php
+                                    if ($ttcoffee->currency == 'USD') {
+                                        echo '$' . round($ttcoffee->retail_price, 2);
+                                    }
+                                    else {
+                                        echo round($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
+                                    }
+                                    echo ' per ' . $ttcoffee->bag_size?> ounce bag</li>
+                                <li><em>Green Price:</em> $<?php echo round($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
+                            </ul>
+                            <p><?php echo $ttcoffee->description?></p>
+                            <div class="website-link"><a href="<?php echo $ttcoffee->url?>">Go to website</a></div>
+                        </div>
+                        <div class="small-6 columns">
+                            <div class="row">
+                                <div class="small-offset-2 small-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
+                            </div>
+                            <div class="small-offset-4 small-4 columns text-center">
+                                <div class="circle"><?php echo round($ttcoffee->egs)?>%</div>
+                            </div>
                         </div>
                     </div>
+                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
                 </div>
-            <?php endforeach; ?>
-        </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>
