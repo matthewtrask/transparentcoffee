@@ -39,13 +39,55 @@
       roaster's on-line store to learn more and to make your coffee purchase.
   </div>
 </div>
+    <div class="show-for-small-only text-center">
+        <dl class="accordion" data-accordion>
+            <dd class="accordion-navigation">
+                <a href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
+                <div id="panel1" class="content">
+                    <?php foreach ($data['filter_roaster'] as $roaster) {
+                        echo "<input type='checkbox' name='$roaster' value='$roaster'> $roaster<br>";
+                    }
+                    ?>
+                </div>
+            </dd>
+            <dd class="accordion-navigation">
+                <a href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
+                <div id="panel2" class="content">
+                    <input id="southAmer" type="checkbox" name="southAmer" value="southAmer"> South America<br />
+                    <input id="centralAmer" type="checkbox" name="centralAmer" value="centralAmer"> Central America<br />
+                    <input id="Africa" type="checkbox" name="Africa" value="Africa"> Africa<br />
+                    <input id="MidEast" type="checkbox" name="MidEast" value="MidEast"> Middle East<br />
+                    <input id="Pacific" type="checkbox" name="Pacific" value="Pacific"> Pacific
+                </div>
+            </dd>
+            <dd class="accordion-navigation">
+                <a href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
+                <div id="panel3" class="content">
+                    <input id="TwentyPer" type="checkbox" name="TwentyPer" value="TwentyPer"> 20-29%<br />
+                    <input id="ThirtyPer" type="checkbox" name="ThirtyPer" value="ThirtyPer"> 30-39%<br />
+                    <input id="FourtyPer" type="checkbox" name="FourtyPer" value="FourtyPer"> 40-49%<br />
+                    <input id="FiftyPer" type="checkbox" name="FiftyPer" value="FiftyPer"> 50-59%<br />
+                    <input id="SixtyPer" type="checkbox" name="SixtyPer" value="SixtyPer"> 60% or more<br />
+                </div>
+            </dd>
+            <dd class="accordion-navigation">
+                <a href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
+                <div id="panel4" class="content">
+                    <input id="TwoFiftyDlr" type="checkbox" name="TwoFiftyDlr" value="TwoFiftyDlr"> $2.50 - $3.00<br />
+                    <input id="ThreeDlr" type="checkbox" name="ThreeDlr" value="ThreeDlr"> $3.00 - $3.50<br />
+                    <input id="ThreeFiftyDlr" type="checkbox" name="ThreeFiftyDlr" value="ThreeFiftyDlr"> $3.50 - $4.00<br />
+                    <input id="FourDlr" type="checkbox" name="FourDlr" value="FourDlr"> $4.00 +<br />
+                </div>
+            </dd>
+        </dl>
+    </div>
 <div class="row" style="margin-bottom: 20px">
-    <div class="small-3 medium-3 large-3 columns">
+    <div class="hidden-for-small-only medium-3 large-3 columns">
         <div id="menu" class="menu">
           <!-- menu goes here! -->
           <p class="text-center">Menu</p><hr/>
           <ul>
-            <li id="company"><b>Roaster</b></li><hr />
+            <li id="roaster"><b>Roaster</b></li><hr />
                 <?php foreach ($data['filter_roaster'] as $roaster) {
                     echo "<input type='checkbox' name='$roaster' value='$roaster'> $roaster<br>";
                 }
@@ -67,21 +109,20 @@
                 <input id="ThreeDlr" type="checkbox" name="ThreeDlr" value="ThreeDlr"> $3.00 - $3.50<br />
                 <input id="ThreeFiftyDlr" type="checkbox" name="ThreeFiftyDlr" value="ThreeFiftyDlr"> $3.50 - $4.00<br />
                 <input id="FourDlr" type="checkbox" name="FourDlr" value="FourDlr"> $4.00 +<br />
-
-
-
           </ul>
         </div>
     </div>
-    <div class="small-9 medium-9 large-9 columns" style="margin-top: 45px;">
+    <div class="small-12 medium-9 large-9 columns" style="margin-top: 45px;">
         <div class="ttcoffees">
             <?php foreach ($data['ttcoffees'] as $ttcoffee): ?>
                 <div class='row'>
-                    <div class='small-2 medium-2 large-2 columns'>
-                        <img src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/>
-                        <i class="fa fa-search-plus"></i>
+                    <div class='small-3 medium-3 large-3 columns logo-wrapper'>
+                        <div class="text-center">
+                            <img src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/>
+                            <i class="fa fa-search-plus"></i>
+                        </div>
                     </div>
-                    <div class="small-8 medium-8 large-8 columns" id="TTCpanel">
+                    <div class="small-6 medium-6 large-6 columns" id="TTCpanel">
                         <h3><?php echo $ttcoffee->roaster_name?></h3>
                         <h5><?php echo $ttcoffee->coffee_name?></h5>
                         <ul id="TTCList" style="margin-left: 0.1rem;">
@@ -90,7 +131,7 @@
                             <li><em>Green Price:</em> $<?php echo round($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
                         </ul>
                     </div>
-                    <div class="small-2 medium-2 large-2 columns">
+                    <div class="small-3 medium-3 large-3e columns">
                         <div class="Percent">
                            <h2><?php echo round($ttcoffee->egs)?>%</h2>
                         </div>

@@ -21,7 +21,7 @@ div.slide.slick-slide.featuredRoaster.slick-active {
 
 div.ttcoffees {
   height: 150px;
-  width: 800px;
+  max-width: 800px;
   border: 1px solid #000;
   border-radius: 15px;
   ul#TTCList {
@@ -32,22 +32,34 @@ div.ttcoffees {
       margin-left: 0.1em;
     }
   }
+
   img {
     border-radius: 15px;
-    height: 141px;
-    width: 300px;
-    margin-top: 5px;
+    height: 115px;
+    width: 90%;
+    margin-left: 5%;
   }
   div.Percent {
+    width: 100%;
     height: 150px;
-    width: 160px;
     background-color: black;
     color: #fff;
     border-radius: 15px;
-    margin-left: -40px;
-    margin-top: -5px;
+    display: table;
+    text-align: center;
+    padding-top: 41px;
     h2 {
       color: #fff;
+      float: none;
     }
   }
+}
+.fa-plus-circle {
+  font-size: 12px;
+}
+.fa-minus-circle {
+  font-size: 12px;
+}
+.fa-search-plus {
+  font-size: 10px;
 }
