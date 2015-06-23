@@ -125,7 +125,7 @@ class ttc extends Controller {
                             echo "<h3>$ttcoffee->roaster_name</h3>";
                             echo "<h5>$ttcoffee->coffee_name</h5>";
                             echo "<ul class='TTCList' style='margin-left: 0.1rem;'>";
-                                echo '<li><em>Retail Price:</em>';
+                                echo '<li><em>Retail Price: </em>';
                                     if ($ttcoffee->currency == 'USD') {
                                         echo '$' . round($ttcoffee->retail_price, 2);
                                     }
@@ -150,7 +150,7 @@ class ttc extends Controller {
                             echo "<p class='lead'>$ttcoffee->coffee_name</p>";
                             echo '<ul class="TTCList" style="margin-left: 0.1rem;">';
                                 echo "<li><em>Farm:</em> " . $ttcoffee->farm_name . ', ' . $ttcoffee->farm_country . "</li>";
-                                echo '<li><em>Retail Price:</em>';
+                                echo '<li><em>Retail Price: </em>';
                                     if ($ttcoffee->currency == 'USD') {
                                         echo '$' . round($ttcoffee->retail_price, 2);
                                     }
