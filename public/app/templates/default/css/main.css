@@ -607,6 +607,9 @@ div.ttcoffee:not(:hover) {
   display: block;
   padding: 2px; }
 
+.noUi-connect {
+  background: #B0B0B0 none repeat scroll 0% 0% !important; }
+
 #contactForm input.input {
   width: 70%; }
 
