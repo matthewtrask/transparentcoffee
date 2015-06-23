@@ -75,6 +75,7 @@ Router::any('insights','\controllers\ttc@insights');
 Router::any('scrpi', '\controllers\ttc@scrpi');
 Router::any('roasters', '\controllers\ttc@roasters');
 Router::any('contact', '\controllers\ttc@contact');
+Router::any('ttcoffeesAjax', '\controllers\ttc@ttcoffeesAjax');
 Router::POST('contact', '\controllers\ttc@contact');
 
 //if no route found
