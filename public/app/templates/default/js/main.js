@@ -96,8 +96,6 @@ $(document).ready(function(){
 
 
     $("input:checkbox").change(function() {
-        //var name = $(this).attr('name');
-        //var value = $(this).attr('value');
         var data = $("#menu-form").serialize();
 
         $.ajax({
@@ -110,19 +108,49 @@ $(document).ready(function(){
                 document.getElementById("ttcoffees").innerHTML = data;
             }
         });
-        //var ajaxRequest = new XMLHttpRequest();
-        //ajaxRequest.onreadystatechange = function() {
-        //    if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
-        //        document.getElementById("ttcoffees").innerHTML = ajaxRequest.responseText;
-        //    }
-        //}
-        //ajaxRequest.open("POST",'ttcoffeesAjax',true);
-        //ajaxRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        //if ($(this).is(":checked")) {
-        //    ajaxRequest.send("name=" + name + "&value=" + value + "&checked=true");
-        //}
-        //else {
-        //    ajaxRequest.send("name=" + name + "&value=" + value + "&checked=false");
-        //}
+    });
+    $("input:checkbox").change(function() {
+        var data = $("#menu-form").serialize();
+
+        $.ajax({
+            url: "ttcoffeesAjax", // link of your "whatever" php
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data, // all data will be passed here
+            success: function(data){
+                document.getElementById("ttcoffees").innerHTML = data;
+            }
+        });
+    });
+    $("#slider-egs").on({change: function() {
+        var data = $("#menu-form").serialize();
+
+        $.ajax({
+            url: "ttcoffeesAjax", // link of your "whatever" php
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data, // all data will be passed here
+            success: function(data){
+                document.getElementById("ttcoffees").innerHTML = data;
+            }
+        });
+    }
+    });
+    $("#slider-gppp").on({change: function() {
+        var data = $("#menu-form").serialize();
+
+        $.ajax({
+            url: "ttcoffeesAjax", // link of your "whatever" php
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data, // all data will be passed here
+            success: function(data){
+                document.getElementById("ttcoffees").innerHTML = data;
+            }
+        });
+    }
     });
 });

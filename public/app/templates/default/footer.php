@@ -28,12 +28,6 @@
         </div>
     </div>
 </footer>
-<script src="/bower_components/foundation/js/foundation.min.js"></script>
-<script src="/bower_components/foundation/js/foundation/foundation.accordion.js"></script>
-<script src="/bower_components/fastclick/lib/fastclick.js"></script>
-<script type="text/javascript" src="/bower_components/slick-1.5.0/slick/slick.min.js"></script>
-<script type="text/javascript" src="/app/templates/default/js/slick.js"></script>
-<!-- JS -->
 <?php
 helpers\assets::js(array(
     helpers\url::template_path() . 'js/jquery.js',
@@ -44,6 +38,11 @@ helpers\assets::js(array(
     helpers\url::template_path() . 'js/jquery.liblink.js'
 ))
 ?>
+<script src="/bower_components/foundation/js/foundation.min.js"></script>
+<script src="/bower_components/foundation/js/foundation/foundation.accordion.js"></script>
+<script src="/bower_components/fastclick/lib/fastclick.js"></script>
+<script type="text/javascript" src="/bower_components/slick-1.5.0/slick/slick.min.js"></script>
+<script type="text/javascript" src="/app/templates/default/js/slick.js"></script>
 
 <script>
     $("#swap").on("replace", function() {

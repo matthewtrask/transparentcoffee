@@ -69,7 +69,6 @@ class ttc extends Controller {
         $ttcoffees = $model->getTTCoffees();
         if (isset($_POST['roaster'])) {
             $roasters = $_POST['roaster'];
-            print_r($roasters);
             foreach ($ttcoffees as $key => $ttcoffee) {
                 if (!in_array($ttcoffee->roaster_name, $roasters)) {
                     unset($ttcoffees[$key]);
@@ -114,7 +113,7 @@ class ttc extends Controller {
         }
         foreach ($ttcoffees as $key => $ttcoffee) {
             echo '<div class="ttcoffee">';
-                echo "<a href='#' data-reveal-id='quick-view-$key>";
+                echo "<a href='#' data-reveal-id='quick-view-$key'>";
                     echo "<div class='row'>";
                         echo "<div class='small-3 medium-3 large-3 columns logo-wrapper'>";
                             echo '<div class="text-center">';
@@ -177,9 +176,9 @@ class ttc extends Controller {
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';
-                echo '<a class="close-reveal-modal" aria-label="Close">&#215;</a>';
+                    echo '<a class="close-reveal-modal" aria-label="Close">&#215;</a>';
+                echo '</div>';
             echo '</div>';
-        echo '</div>';
         }
     }
 
