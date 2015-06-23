@@ -13,18 +13,12 @@
     </div>
 </div>
 <div class="row featuredCoffees" style="margin-top: 20px">
-  <div class="small-2 medium-2 large-2 columns">
-  </div>
-  <div class="small-8 medium-8 large-8 small-centered medium-centered large-centered columns">
+  <div class="small-offset-2 small-8 columns">
     <h2 class="text-center">Featured Roaster</h2><hr />
-    <div class="slick single-item autoplay" id="">
-      <div class="featuredRoasters slick single-item autoplay ">
-          <div class="slide slick-slide featuredRoaster"><img src="<?php echo \helpers\url::template_path() . "img/CounterCultureLogo.jpg" ?>"></div>
-          <div class="slide slick-slide featuredRoaster"><img src="<?php echo \helpers\url::template_path() . "img/BirdRock.png"?>"></div>
+      <?php $coffee = $data['ttcoffees'][array_rand($data['ttcoffees'])];?>
+      <div class="small-offset-2 small-8 columns">
+            <div class="featuredRoaster"><img src='data:image/jpeg;base64, <?php echo $coffee->roaster_logo ?>'/></div>
       </div>
-    </div>
-  </div>
-  <div class="small-2 medium-2 large-2 columns">
   </div>
 </div>
 
@@ -39,7 +33,7 @@
       roaster's on-line store to learn more and to make your coffee purchase.
   </div>
 </div>
-    <div class="show-for-small-only text-center">
+<div class="show-for-small-only">
         <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
                 <a href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
@@ -82,38 +76,37 @@
         </dl>
     </div>
 <div class="row" style="margin-bottom: 20px">
-    <div class="hidden-for-small-only medium-3 large-3 columns">
+    <div class="hide-for-small-only medium-3 large-3 columns">
         <div id="menu" class="menu">
           <p class="text-center">Menu</p><hr/>
-          <ul>
-            <li id="roaster"><b>Roaster</b></li><hr />
-                <?php foreach ($data['filter_roaster'] as $roaster) {
-                    echo "<input type='checkbox' name='$roaster' value='$roaster'> $roaster<br>";
-                }
-                ?>
-            <li id="regions"><b>Region</b></li><hr />
-                <input id="southAmer" type="checkbox" name="southAmer" value="southAmer"> South America<br />
-                <input id="centralAmer" type="checkbox" name="centralAmer" value="centralAmer"> Central America<br />
-                <input id="Africa" type="checkbox" name="Africa" value="Africa"> Africa<br />
-                <input id="MidEast" type="checkbox" name="MidEast" value="MidEast"> Middle East<br />
-                <input id="Pacific" type="checkbox" name="Pacific" value="Pacific"> Pacific
-            <li id="price"><b>Effective Grower Share</b></li><hr />
-                <input id="TwentyPer" type="checkbox" name="TwentyPer" value="TwentyPer"> 20-29%<br />
-                <input id="ThirtyPer" type="checkbox" name="ThirtyPer" value="ThirtyPer"> 30-39%<br />
-                <input id="FourtyPer" type="checkbox" name="FourtyPer" value="FourtyPer"> 40-49%<br />
-                <input id="FiftyPer" type="checkbox" name="FiftyPer" value="FiftyPer"> 50-59%<br />
-                <input id="SixtyPer" type="checkbox" name="SixtyPer" value="SixtyPer"> 60% or more<br />
-            <li id="price"><b>Green Price Per Pound</b></li><hr />
-                <input id="TwoFiftyDlr" type="checkbox" name="TwoFiftyDlr" value="TwoFiftyDlr"> $2.50 - $3.00<br />
-                <input id="ThreeDlr" type="checkbox" name="ThreeDlr" value="ThreeDlr"> $3.00 - $3.50<br />
-                <input id="ThreeFiftyDlr" type="checkbox" name="ThreeFiftyDlr" value="ThreeFiftyDlr"> $3.50 - $4.00<br />
-                <input id="FourDlr" type="checkbox" name="FourDlr" value="FourDlr"> $4.00 +<br />
-          </ul>
+            <form id="menu-form">
+              <ul>
+                <li id="roaster"><b>Roaster</b></li><hr />
+                    <?php foreach ($data['filter_roaster'] as $roaster) {
+                        echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> $roaster<br>";
+                    }
+                    ?>
+                <li id="regions"><b>Region</b></li><hr />
+                    <input id="southAmer" type="checkbox" name="region[]" value="South America"> South America<br />
+                    <input id="centralAmer" type="checkbox" name="region[]" value="Central America"> Central America<br />
+                    <input id="Africa" type="checkbox" name="region[]" value="Africa"> Africa<br />
+                    <input id="MidEast" type="checkbox" name="region[]" value="Middle East"> Middle East<br />
+                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"> Pacific
+                <li id="egs"><b>Effective Grower Share</b></li><hr />
+                  <div id="slider-egs" class="noUiSlider"></div>
+                  <input id="egs-lower" type="hidden" name="egs-lower">
+                  <input id="egs-upper" type="hidden" name="egs-upper">
+                <li id="price"><b>Green Price Per Pound</b></li><hr />
+                  <div id="slider-gppp" class="noUiSlider"></div>
+                  <input id="gppp-lower" type="hidden" name="gppp-lower">
+                  <input id="gppp-upper" type="hidden" name="gppp-upper">
+              </ul>
+            </form>
         </div>
     </div>
-    <div class="small-12 medium-9 large-9 columns" style="margin-top: 45px;">
+    <div id='ttcoffees' class="small-12 medium-9 large-9 columns" style="margin-top: 45px;">
         <?php foreach ($data['ttcoffees'] as $key => $ttcoffee): ?>
-            <div class="ttcoffees">
+            <div class="ttcoffee">
                 <a href="#" data-reveal-id="quick-view-<?php echo $key?>">
                     <div class='row'>
                         <div class='small-3 medium-3 large-3 columns logo-wrapper'>

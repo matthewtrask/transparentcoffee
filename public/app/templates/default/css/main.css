@@ -486,24 +486,24 @@ img#SEGImg {
 .menu li {
   list-style: none; }
 
-div.ttcoffees {
+div.ttcoffee {
   height: 150px;
   max-width: 800px;
   border: 1px solid #B0B0B0;
   border-radius: 15px;
   margin-bottom: 10px; }
-  div.ttcoffees .TTCList {
+  div.ttcoffee .TTCList {
     margin-left: 0.1em; }
-    div.ttcoffees .TTCList li {
+    div.ttcoffee .TTCList li {
       font-size: .70rem;
       list-style: none;
       margin-left: 0.1em; }
-  div.ttcoffees img {
+  div.ttcoffee img {
     border-radius: 15px;
     height: 115px;
     width: 90%;
     margin-left: 5%; }
-  div.ttcoffees div.Percent {
+  div.ttcoffee div.Percent {
     width: 100%;
     height: 150px;
     background-color: #B0B0B0;
@@ -512,18 +512,18 @@ div.ttcoffees {
     display: table;
     text-align: center;
     padding-top: 41px; }
-    div.ttcoffees div.Percent h2 {
+    div.ttcoffee div.Percent h2 {
       color: #fff;
       float: none; }
 
-div.ttcoffees:hover {
+div.ttcoffee:hover {
   border: 1px solid #414042;
   -o-transition: .5s;
   -ms-transition: .5s;
   -moz-transition: .5s;
   -webkit-transition: .5s;
   transition: .5s; }
-  div.ttcoffees:hover div.Percent {
+  div.ttcoffee:hover div.Percent {
     background-color: #414042;
     -o-transition: .5s;
     -ms-transition: .5s;
@@ -531,13 +531,13 @@ div.ttcoffees:hover {
     -webkit-transition: .5s;
     transition: .5s; }
 
-div.ttcoffees:not(:hover) {
+div.ttcoffee:not(:hover) {
   -o-transition: .5s;
   -ms-transition: .5s;
   -moz-transition: .5s;
   -webkit-transition: .5s;
   transition: .5s; }
-  div.ttcoffees:not(:hover) div.Percent {
+  div.ttcoffee:not(:hover) div.Percent {
     -o-transition: .5s;
     -ms-transition: .5s;
     -moz-transition: .5s;

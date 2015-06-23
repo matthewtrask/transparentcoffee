@@ -88,6 +88,12 @@ $(document).ready(function(){
             );
         }
     });
+    $("#slider-egs").Link('lower').to($("#egs-lower"));
+    $("#slider-egs").Link('upper').to($("#egs-upper"));
+    $("#slider-gppp").Link('lower').to($("#gppp-lower"));
+    $("#slider-gppp").Link('upper').to($("#gppp-upper"));
+
+
 
     $("input:checkbox").change(function() {
         //var name = $(this).attr('name');
@@ -101,13 +107,13 @@ $(document).ready(function(){
             cache: false,
             data: data, // all data will be passed here
             success: function(data){
-                document.getElementById("ttcoffees").innerHTML = data.responseText;
+                document.getElementById("ttcoffees").innerHTML = data;
             }
         });
         //var ajaxRequest = new XMLHttpRequest();
         //ajaxRequest.onreadystatechange = function() {
         //    if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
-                document.getElementById("ttcoffees").innerHTML = ajaxRequest.responseText;
+        //        document.getElementById("ttcoffees").innerHTML = ajaxRequest.responseText;
         //    }
         //}
         //ajaxRequest.open("POST",'ttcoffeesAjax',true);

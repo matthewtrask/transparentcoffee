@@ -10,7 +10,6 @@
     <link rel="author" href="humans.txt" />
 	<link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
     <script src="/bower_components/modernizr/modernizr.js"></script>
-
 	<!-- CSS -->
 	<?php
 		helpers\assets::css(array(
@@ -18,19 +17,12 @@
             '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
             "h//cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css",
 			helpers\url::template_path() . 'css/main.css',
+            helpers\url::template_path() . 'css/jquery.nouislider.min.css'
 		))
 	?>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
 
-	<!-- JS -->
-	<?php
-		helpers\assets::js(array(
-			helpers\url::template_path() . 'js/jquery.js',
-            helpers\url::template_path() . '//cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js',
-			helpers\url::template_path() . 'js/main.js'
-		))
-	?>
 </head>
 <body>
 <div class="fixed">
