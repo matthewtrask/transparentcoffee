@@ -475,13 +475,13 @@ img#SEGImg {
   font-family: RalewayLight; }
   .featuredCoffees h1, .featuredCoffees h2, .featuredCoffees h3, .featuredCoffees h4, .featuredCoffees h5, .featuredCoffees h6 {
     font-family: RalewayRegular !important; }
-
-div.slide.slick-slide.featuredRoaster.slick-active {
-  margin-right: auto;
-  margin-left: auto; }
-  div.slide.slick-slide.featuredRoaster.slick-active img {
-    margin-right: auto;
-    margin-left: auto; }
+  .featuredCoffees img {
+    max-height: 200px;
+    margin-top: -10px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
 
 .menu li {
   list-style: none; }
@@ -586,6 +586,26 @@ div.ttcoffees:not(:hover) {
   height: 100px;
   line-height: 100px;
   white-space: nowrap; }
+
+#slider-egs {
+  margin-bottom: 10px; }
+
+.tooltip2 {
+  display: block;
+  position: absolute;
+  border: 1px solid #D9D9D9;
+  font: 400 12px/12px Arial;
+  border-radius: 3px;
+  background: #fff;
+  top: -30px;
+  padding: 5px;
+  left: -4px;
+  text-align: center;
+  width: 40px; }
+
+.tooltip2 strong {
+  display: block;
+  padding: 2px; }
 
 #contactForm input.input {
   width: 70%; }
