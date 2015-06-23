@@ -34,12 +34,13 @@
   </div>
 </div>
 <div class="show-for-small-only">
+    <form id="mobile-menu-form">
         <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
                 <a href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel1" class="content">
                     <?php foreach ($data['filter_roaster'] as $roaster) {
-                        echo "<input type='checkbox' name='$roaster' value='$roaster'> $roaster<br>";
+                        echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> $roaster<br>";
                     }
                     ?>
                 </div>
@@ -47,34 +48,40 @@
             <dd class="accordion-navigation">
                 <a href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel2" class="content">
-                    <input id="southAmer" type="checkbox" name="southAmer" value="southAmer"> South America<br />
-                    <input id="centralAmer" type="checkbox" name="centralAmer" value="centralAmer"> Central America<br />
-                    <input id="Africa" type="checkbox" name="Africa" value="Africa"> Africa<br />
-                    <input id="MidEast" type="checkbox" name="MidEast" value="MidEast"> Middle East<br />
-                    <input id="Pacific" type="checkbox" name="Pacific" value="Pacific"> Pacific
+                    <input id="southAmer" type="checkbox" name="region[]" value="South America"> South America<br />
+                    <input id="centralAmer" type="checkbox" name="region[]" value="Central America"> Central America<br />
+                    <input id="Africa" type="checkbox" name="region[]" value="Africa"> Africa<br />
+                    <input id="MidEast" type="checkbox" name="region[]" value="Middle East"> Middle East<br />
+                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"> Pacific
                 </div>
             </dd>
             <dd class="accordion-navigation">
                 <a href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel3" class="content">
-                    <input id="TwentyPer" type="checkbox" name="TwentyPer" value="TwentyPer"> 20-29%<br />
-                    <input id="ThirtyPer" type="checkbox" name="ThirtyPer" value="ThirtyPer"> 30-39%<br />
-                    <input id="FourtyPer" type="checkbox" name="FourtyPer" value="FourtyPer"> 40-49%<br />
-                    <input id="FiftyPer" type="checkbox" name="FiftyPer" value="FiftyPer"> 50-59%<br />
-                    <input id="SixtyPer" type="checkbox" name="SixtyPer" value="SixtyPer"> 60% or more<br />
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <div id="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <input id="egs-lower" type="hidden" name="egs-lower">
+                            <input id="egs-upper" type="hidden" name="egs-upper">
+                        </div>
+                    </div>
                 </div>
             </dd>
             <dd class="accordion-navigation">
                 <a href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel4" class="content">
-                    <input id="TwoFiftyDlr" type="checkbox" name="TwoFiftyDlr" value="TwoFiftyDlr"> $2.50 - $3.00<br />
-                    <input id="ThreeDlr" type="checkbox" name="ThreeDlr" value="ThreeDlr"> $3.00 - $3.50<br />
-                    <input id="ThreeFiftyDlr" type="checkbox" name="ThreeFiftyDlr" value="ThreeFiftyDlr"> $3.50 - $4.00<br />
-                    <input id="FourDlr" type="checkbox" name="FourDlr" value="FourDlr"> $4.00 +<br />
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <div id="slider-gppp" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <input id="gppp-lower" type="hidden" name="gppp-lower">
+                            <input id="gppp-upper" type="hidden" name="gppp-upper">
+                        </div>
+                    </div>
                 </div>
             </dd>
         </dl>
-    </div>
+    </form>
+</div>
 <div class="row" style="margin-bottom: 20px">
     <div class="hide-for-small-only medium-3 large-3 columns">
         <div id="menu" class="menu">

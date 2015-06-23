@@ -96,21 +96,12 @@ $(document).ready(function(){
 
 
     $("input:checkbox").change(function() {
-        var data = $("#menu-form").serialize();
-
-        $.ajax({
-            url: "ttcoffeesAjax", // link of your "whatever" php
-            type: "POST",
-            async: true,
-            cache: false,
-            data: data, // all data will be passed here
-            success: function(data){
-                document.getElementById("ttcoffees").innerHTML = data;
-            }
-        });
-    });
-    $("input:checkbox").change(function() {
-        var data = $("#menu-form").serialize();
+        if ($("#menu-form").is(":visible")) {
+            var data = $("#menu-form").serialize();
+        }
+        else {
+            var data = $("#mobile-menu-form").serialize();
+        }
 
         $.ajax({
             url: "ttcoffeesAjax", // link of your "whatever" php
@@ -124,8 +115,12 @@ $(document).ready(function(){
         });
     });
     $("#slider-egs").on({change: function() {
-        var data = $("#menu-form").serialize();
-
+        if ($("#menu-form").is(":visible")) {
+            var data = $("#menu-form").serialize();
+        }
+        else {
+            var data = $("#mobile-menu-form").serialize();
+        }
         $.ajax({
             url: "ttcoffeesAjax", // link of your "whatever" php
             type: "POST",
@@ -139,8 +134,12 @@ $(document).ready(function(){
     }
     });
     $("#slider-gppp").on({change: function() {
-        var data = $("#menu-form").serialize();
-
+        if ($("#menu-form").is(":visible")) {
+            var data = $("#menu-form").serialize();
+        }
+        else {
+            var data = $("#mobile-menu-form").serialize();
+        }
         $.ajax({
             url: "ttcoffeesAjax", // link of your "whatever" php
             type: "POST",
