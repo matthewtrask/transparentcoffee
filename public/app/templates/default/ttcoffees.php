@@ -60,9 +60,9 @@
                 <div id="panel3" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
-                            <div id="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
-                            <input id="egs-lower" type="hidden" name="egs-lower">
-                            <input id="egs-upper" type="hidden" name="egs-upper">
+                            <div class="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <input class="egs-lower" type="hidden" name="egs-lower">
+                            <input class="egs-upper" type="hidden" name="egs-upper">
                         </div>
                     </div>
                 </div>
@@ -72,9 +72,9 @@
                 <div id="panel4" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
-                            <div id="slider-gppp" class="noUiSlider" style="margin-top: 25px;"></div>
-                            <input id="gppp-lower" type="hidden" name="gppp-lower">
-                            <input id="gppp-upper" type="hidden" name="gppp-upper">
+                            <div class="slider-gppp" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <input class="gppp-lower" type="hidden" name="gppp-lower">
+                            <input class="gppp-upper" type="hidden" name="gppp-upper">
                         </div>
                     </div>
                 </div>
@@ -100,13 +100,13 @@
                     <input id="MidEast" type="checkbox" name="region[]" value="Middle East"> Middle East<br />
                     <input id="Pacific" type="checkbox" name="region[]" value="Pacific"> Pacific
                 <li id="egs"><b>Effective Grower Share</b></li><hr />
-                  <div id="slider-egs" class="noUiSlider"></div>
-                  <input id="egs-lower" type="hidden" name="egs-lower">
-                  <input id="egs-upper" type="hidden" name="egs-upper">
+                  <div class="slider-egs" class="noUiSlider"></div>
+                  <input class="egs-lower" type="hidden" name="egs-lower">
+                  <input class="egs-upper" type="hidden" name="egs-upper">
                 <li id="price"><b>Green Price Per Pound</b></li><hr />
-                  <div id="slider-gppp" class="noUiSlider"></div>
-                  <input id="gppp-lower" type="hidden" name="gppp-lower">
-                  <input id="gppp-upper" type="hidden" name="gppp-upper">
+                  <div class="slider-gppp" class="noUiSlider"></div>
+                  <input class="gppp-lower" type="hidden" name="gppp-lower">
+                  <input class="gppp-upper" type="hidden" name="gppp-upper">
               </ul>
             </form>
         </div>

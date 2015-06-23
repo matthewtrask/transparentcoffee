@@ -30,7 +30,7 @@ $(document).ready(function(){
             $(this).children().children().eq(1).removeClass('fa-minus-circle');
         }
     });
-    $("#slider-egs").noUiSlider({
+    $(".slider-egs").noUiSlider({
         start: [20, 60],
         step: 1,
         connect: true,
@@ -39,7 +39,7 @@ $(document).ready(function(){
             'max': 60
         }
     });
-    $("#slider-egs").Link('lower').to("-inline-<div class='tooltip2'></div>", function ( value ) {
+    $(".slider-egs").Link('lower').to("-inline-<div class='tooltip2'></div>", function ( value ) {
 
         // The tooltip HTML is 'this', so additional
         // markup can be inserted here.
@@ -47,7 +47,7 @@ $(document).ready(function(){
             '<span>' + Number(value).toString() + "%</span>"
         );
     });
-    $("#slider-egs").Link('upper').to("-inline-<div class='tooltip2'></div>", function ( value ) {
+    $(".slider-egs").Link('upper').to("-inline-<div class='tooltip2'></div>", function ( value ) {
 
         if (value == 60) {
             $(this).html(
@@ -60,7 +60,7 @@ $(document).ready(function(){
             );
         }
     });
-    $("#slider-gppp").noUiSlider({
+    $(".slider-gppp").noUiSlider({
         start: [2.5, 4],
         step: .25,
         connect: true,
@@ -69,13 +69,13 @@ $(document).ready(function(){
             'max': 4
         }
     });
-    $("#slider-gppp").Link('lower').to("-inline-<div class='tooltip2'></div>", function ( value ) {
+    $(".slider-gppp").Link('lower').to("-inline-<div class='tooltip2'></div>", function ( value ) {
 
         $(this).html(
             '<span>$' + Number(value).toString() + "</span>"
         );
     });
-    $("#slider-gppp").Link('upper').to("-inline-<div class='tooltip2'></div>", function ( value ) {
+    $(".slider-gppp").Link('upper').to("-inline-<div class='tooltip2'></div>", function ( value ) {
 
         if (value == 4) {
             $(this).html(
@@ -88,10 +88,10 @@ $(document).ready(function(){
             );
         }
     });
-    $("#slider-egs").Link('lower').to($("#egs-lower"));
-    $("#slider-egs").Link('upper').to($("#egs-upper"));
-    $("#slider-gppp").Link('lower').to($("#gppp-lower"));
-    $("#slider-gppp").Link('upper').to($("#gppp-upper"));
+    $(".slider-egs").Link('lower').to($(".egs-lower"));
+    $(".slider-egs").Link('upper').to($(".egs-upper"));
+    $(".slider-gppp").Link('lower').to($(".gppp-lower"));
+    $(".slider-gppp").Link('upper').to($(".gppp-upper"));
 
 
 
@@ -114,7 +114,7 @@ $(document).ready(function(){
             }
         });
     });
-    $("#slider-egs").on({change: function() {
+    $(".slider-egs").on({change: function() {
         if ($("#menu-form").is(":visible")) {
             var data = $("#menu-form").serialize();
         }
@@ -133,7 +133,7 @@ $(document).ready(function(){
         });
     }
     });
-    $("#slider-gppp").on({change: function() {
+    $(".slider-gppp").on({change: function() {
         if ($("#menu-form").is(":visible")) {
             var data = $("#menu-form").serialize();
         }
