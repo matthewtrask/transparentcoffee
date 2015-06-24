@@ -16,7 +16,7 @@
   <div class="small-offset-2 small-8 columns">
     <h2 class="text-center">Featured Roaster</h2><hr />
       <?php $coffee = $data['ttcoffees'][array_rand($data['ttcoffees'])];?>
-      <div class="small-offset-2 small-8 columns">
+      <div class="small-offset-4 small-4 columns">
             <div class="featuredRoaster"><img src='data:image/jpeg;base64, <?php echo $coffee->roaster_logo ?>'/></div>
       </div>
   </div>
@@ -33,11 +33,11 @@
       roaster's on-line store to learn more and to make your coffee purchase.
   </div>
 </div>
-<div class="show-for-small-only">
+<div class="show-for-medium-down">
     <form id="mobile-menu-form">
         <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
-                <a href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center" href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel1" class="content">
                     <?php foreach ($data['filter_roaster'] as $roaster) {
                         echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> $roaster<br>";
@@ -46,7 +46,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center" href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel2" class="content">
                     <input id="southAmer" type="checkbox" name="region[]" value="South America"> South America<br />
                     <input id="centralAmer" type="checkbox" name="region[]" value="Central America"> Central America<br />
@@ -56,7 +56,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center" href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel3" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
@@ -68,7 +68,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center" href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel4" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
@@ -83,7 +83,7 @@
     </form>
 </div>
 <div class="row" style="margin-bottom: 20px">
-    <div class="hide-for-small-only medium-3 large-3 columns">
+    <div class="hide-for-small hide-for-medium large-3 columns">
         <div id="menu" class="menu">
           <p class="text-center">Menu</p><hr/>
             <form id="menu-form">
@@ -111,14 +111,16 @@
             </form>
         </div>
     </div>
-    <div id='ttcoffees' class="small-12 medium-9 large-9 columns" style="margin-top: 45px;">
+    <div id='ttcoffees' class="small-12 medium-12 large-9 columns" style="margin-top: 45px;">
         <?php foreach ($data['ttcoffees'] as $key => $ttcoffee): ?>
             <div class="ttcoffee">
                 <a href="#" data-reveal-id="quick-view-<?php echo $key?>">
                     <div class='row'>
                         <div class='small-3 medium-3 large-3 columns logo-wrapper'>
-                            <div class="text-center">
-                                <img src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/>
+                            <div class="text-center wrapper-parent">
+                                <div class="thumbnail-wrapper">
+                                    <img src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/>
+                                </div>
                                 <i class="fa fa-search-plus"></i>
                             </div>
                         </div>
@@ -137,7 +139,7 @@
                                 <li><em>Green Price:</em> $<?php echo round($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
                             </ul>
                         </div>
-                        <div class="small-3 medium-3 large-3 columns">
+                        <div class="percent-wrapper small-3 medium-3 large-3 columns">
                             <div class="Percent">
                                <h2><?php echo round($ttcoffee->egs)?>%</h2>
                             </div>
