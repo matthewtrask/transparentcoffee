@@ -112,7 +112,7 @@
         </div>
     </div>
     <div id='ttcoffees' class="small-12 medium-12 large-9 columns" style="margin-top: 45px;">
-        <?php foreach ($data['ttcoffees'] as $key => $ttcoffee): ?>
+        <?php shuffle($data['ttcoffees']);foreach ($data['ttcoffees'] as $key => $ttcoffee): ?>
             <div class="ttcoffee">
                 <a href="#" data-reveal-id="quick-view-<?php echo $key?>">
                     <div class='row'>

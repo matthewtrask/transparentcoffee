@@ -111,6 +111,7 @@ class ttc extends Controller {
                 }
             }
         }
+        shuffle($ttcoffees);
         foreach ($ttcoffees as $key => $ttcoffee) {
             echo '<div class="ttcoffee">';
                 echo "<a href='#' data-reveal-id='quick-view-$key'>";
