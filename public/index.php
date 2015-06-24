@@ -78,8 +78,8 @@ Router::any('contact', '\controllers\ttc@contact');
 Router::POST('contact', '\controllers\ttc@contact');
 
 Router::any('admin', '\controllers\admin\admin@index');
-Router::any('admin/login', '\controllers\admin\auth@login');
-Router::any('admin/logout', '\controllers\admin\auth@logout');
+Router::any('login', '\controllers\admin\auth@login');
+Router::any('logout', '\controllers\admin\auth@logout');
 
 Router::any('admin/users', '\controllers\admin\users@index');
 Router::any('admin/users/add', '\controllers\admin\users@add');
@@ -90,9 +90,9 @@ Router::any('admin/posts/add', '\controllers\admin\posts@add');
 Router::any('admin/posts/edit/(:num)', '\controllers\admin\posts@edit');
 Router::any('admin/posts/delete/(:num)', '\controllers\admin\posts@delete');
 
-Router::any('admin/cats', '\controllers\admin\cats@index');
-Router::any('admin/cats/add', '\controllers\admin\cats@add');
-Router::any('admin/cats/edit/(:num)', '\controllers\admin\cats@edit');
+Router::any('cats', '\controllers\admin\cats@index');
+Router::any('addcat', '\controllers\admin\cats@add');
+Router::any('cats/edit/(:num)', '\controllers\admin\cats@edit');
 Router::any('admin/cats/delete/(:num)', '\controllers\admin\cats@delete');
 
 Router::any('category/(:any)', '\controllers\blog@cat');

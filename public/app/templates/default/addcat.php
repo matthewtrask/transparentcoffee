@@ -2,7 +2,7 @@
 	<div class="small-12 medium-12 large-12"></div>
 		<ul class="breadcrumbs">
 			<li><a href='<?php echo DIR;?>admin'>Admin</a> <span class="divider"></span></li>
-			<li><a href='<?php echo DIR;?>admin/cats'>Categories</a> <span class="divider"></span></li>
+			<li><a href='<?php echo DIR;?>cats'>Categories</a> <span class="divider"></span></li>
 			<li>Add Category</li>
 		</ul>
 

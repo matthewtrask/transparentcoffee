@@ -42,45 +42,18 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
     <section class="top-bar-section">
-      <ul>
-        <li class="show-for-small-only"><a href="home"><i class="fa fa-home"></i></a></li>
-        <li class="has-dropdown">
-          <a class="dropdown-link" href="#">ABOUT</a>
-          <ul id="nav-dropdown" class="dropdown">
-            <li><a href="transparency">Transparency</a></li>
-            <li><a href="seg">SE@G</a></li>
-          </ul>
-        </li>
-        <li><a href="transparentcoffees">TT COFFEES</a></li>
-        <li><a href="register">REGISTER</a></li>
-        <li id="li-header-logo"><a href="home"><img id="header-logo" src="<?php echo helpers\url::template_path() .
-                'img/Transparent%20Trade%20White-08-09.png'?>"/></a></li>
-        <li><a href="insights">INSIGHTS</a></li>
-        <li class="has-dropdown">
-          <a class="dropdown-link" href="#">SCRPI</a>
-          <ul id="nav-dropdown" class="dropdown">
-            <li><a href="scrpi">SCRPI</a></li>
-            <li><a href="roasters">Roasters</a></li>
-          </ul>
-        </li>
-        <li><a href="contact">Contact</a></li>
-      </ul>
+      <section class="top-bar-section">
+        <ul>
+          <li class="show-for-small-only"><a href="home"><i class="fa fa-home"></i></a></li>
+          <li><a href="<?php echo DIR;?>home">Home</a></li>
+          <li><a href="<?php echo DIR;?>cats">Categories</a></li>
+          <li><a href="<?php echo DIR;?>posts">Posts</a></li>
+          <li><a href="<?php echo DIR;?>users">Users</a></li>
+        </ul>
+
+        <ul>
+          <li><a href="<?php echo DIR;?>admin/logout">Logout</a></li>
+        </ul>
     </section>
   </nav>
 </div>
-
-
-<!-- Collect the nav links, forms, and other content for toggling -->
-    <section class="top-bar-section">
-      <ul>
-        <li class="show-for-small-only"><a href="home"><i class="fa fa-home"></i></a></li>
-        <li><a href="<?php echo DIR;?>admin/cats">Categories</a></li>
-        <li><a href="<?php echo DIR;?>admin/posts">Posts</a></li>
-        <li><a href="<?php echo DIR;?>admin/users">Users</a></li>
-      </ul>
-
-      <ul>
-      	<li><a href="<?php echo DIR;?>admin/logout">Logout</a></li>
-      </ul>
-  
-

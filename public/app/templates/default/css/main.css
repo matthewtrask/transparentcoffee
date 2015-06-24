@@ -139,6 +139,14 @@ select {
     text-align: left;
     border-top: 1px solid lightgrey; } }
 
+#login {
+  margin: auto;
+  width: 500px;
+  margin-top: 100px; }
+
+#addCat {
+  margin-top: 100px; }
+
 meta.foundation-version {
   font-family: "/5.4.7/"; }
 
@@ -529,22 +537,22 @@ div.ttcoffees {
 .ttcFooter li a:hover {
   color: #808080; }
 
-.ttcFooter #socialIcons {
+.ttcFooter .socialIcons {
   margin-top: 20px; }
-  .ttcFooter #socialIcons ul {
+  .ttcFooter .socialIcons ul {
     display: inline;
     text-align: center; }
-    .ttcFooter #socialIcons ul li {
+    .ttcFooter .socialIcons ul li {
       display: inline;
       margin-top: 40px; }
-      .ttcFooter #socialIcons ul li i {
+      .ttcFooter .socialIcons ul li i {
         background-color: #fff;
         color: #d1d1d1;
         height: 50px;
         width: 50px;
         padding-top: 10px;
         border-radius: 25px; }
-      .ttcFooter #socialIcons ul li i:hover {
+      .ttcFooter .socialIcons ul li i:hover {
         background-color: #d1d1d1;
         color: #fff;
         height: 50px;
@@ -552,7 +560,7 @@ div.ttcoffees {
         padding-top: 10px;
         border-radius: 25px; }
 
-.ttcFooter #powered a {
+.ttcFooter .powered a {
   color: #fff; }
 
 .panel-text p {
@@ -603,6 +611,14 @@ div.ttcoffees {
   #seg-header {
     margin-top: -10px !important;
     font-size: 20px !important; } }
+
+#login {
+  margin: auto;
+  width: 500px;
+  margin-top: 100px; }
+
+#addCat {
+  margin-top: 100px; }
 
 meta.foundation-version {
   font-family: "/5.4.7/"; }

@@ -16,13 +16,13 @@
             </div>
         </div>
         <div class="small-8 medium-8 large-8 columns">
-            <div class=" small-12 columns right" id="socialIcons">
+            <div class=" small-12 columns right socialIcons">
                 <ul class="right">
                     <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
                 </ul>
             </div>
-            <div class="right small-12 columns" id="powered">
+            <div class="right small-12 columns powered">
                 <a href="#" class="right">Powered by Social Enterprise @ Goizueta</a>
             </div>
         </div>

@@ -9,7 +9,7 @@
 
 <div class='row'>
 	<div class='small-12 medium-12 large-12 columns'>
-		<p><a href='<?php echo DIR;?>admin/cats' class='button success'>Categories</a></p>
+		<p><a href='<?php echo DIR;?>cats' class='button success'>Categories</a></p>
 	</div>
 
 	<div class='small-12 medium-12 large-12 columns'>
@@ -21,5 +21,3 @@
 	</div>
 
 </div>
-             
-            

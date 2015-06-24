@@ -1,6 +1,6 @@
 <div class="row" id="editCat">
 	<div class="small-12 medium-12 large-12 columns">
-		<ul class="breadcrumb">
+		<ul class="breadcrumbs">
 			<li><a href='<?php echo DIR;?>admin'>Admin</a> <span class="divider">></span></li>
 			<li><a href='<?php echo DIR;?>admin/cats'>Categories</a> <span class="divider">></span></li>
 			<li>Edit Category</li>
