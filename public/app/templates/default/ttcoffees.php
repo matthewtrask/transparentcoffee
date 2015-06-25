@@ -82,7 +82,7 @@
         </dl>
     </form>
 </div>
-<div class="row" style="margin-bottom: 20px">
+<div class="row" style="margin-top: 20px">
     <div class="hide-for-small hide-for-medium large-3 columns">
         <div id="menu" class="menu">
           <p class="text-center">Menu</p><hr/>
@@ -111,7 +111,13 @@
             </form>
         </div>
     </div>
-    <div id='ttcoffees' class="small-12 medium-12 large-9 columns" style="margin-top: 45px;">
+    <div id='ttcoffees' class="small-12 medium-12 large-9 columns">
+        <div class="small-9 columns">
+            <h3>Transparent Coffees</h3>
+        </div>
+        <div class="small-3 columns">
+            <p class="egs-gppp">Effective Grower Share /<br>Green Price Per Pound</p>
+        </div>
         <?php shuffle($data['ttcoffees']);foreach ($data['ttcoffees'] as $key => $ttcoffee): ?>
             <div class="ttcoffee">
                 <a href="#" data-reveal-id="quick-view-<?php echo $key?>">
@@ -141,7 +147,10 @@
                         </div>
                         <div class="percent-wrapper small-3 medium-3 large-3 columns">
                             <div class="Percent">
-                               <h2><?php echo round($ttcoffee->egs)?>%</h2>
+                                <h3><?php echo round($ttcoffee->egs)?>%</h3>
+                            </div>
+                            <div class="gppp">
+                                <h3>$<?php echo round($ttcoffee->gppp, 2)?></h3>
                             </div>
                         </div>
                     </div>
@@ -170,8 +179,13 @@
                             <div class="row">
                                 <div class="small-offset-2 small-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
-                            <div class="small-offset-4 small-4 columns text-center">
-                                <div class="circle"><?php echo round($ttcoffee->egs)?>%</div>
+                            <div class="small-offset-2 small-8 columns text-center">
+                                <div class="small-6 columns">
+                                    <div class="circle"><?php echo round($ttcoffee->egs)?>%</div>
+                                </div>
+                                <div class="small-6 columns">
+                                    <div class="square">$<?php echo round($ttcoffee->gppp, 2)?></div>
+                                </div>
                             </div>
                         </div>
                     </div>

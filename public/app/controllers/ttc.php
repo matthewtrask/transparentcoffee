@@ -111,14 +111,22 @@ class ttc extends Controller {
                 }
             }
         }
+        echo '<div class="small-9 columns">';
+            echo '<h3>Transparent Coffees</h3>';
+        echo '</div>';
+        echo '<div class="small-3 columns">';
+            echo '<p class="egs-gppp">Effective Grower Share /<br>Green Price Per Pound</p>';
+        echo '</div>';
         shuffle($ttcoffees);
         foreach ($ttcoffees as $key => $ttcoffee) {
             echo '<div class="ttcoffee">';
                 echo "<a href='#' data-reveal-id='quick-view-$key'>";
                     echo "<div class='row'>";
                         echo "<div class='small-3 medium-3 large-3 columns logo-wrapper'>";
-                            echo '<div class="text-center">';
-                                echo "<img src='data:image/jpeg;base64, $ttcoffee->roaster_logo'/>";
+                            echo '<div class="text-center wrapper-parent">';
+                                echo '<div class="thumbnail-wrapper">';
+                                    echo "<img src='data:image/jpeg;base64, $ttcoffee->roaster_logo'/>";
+                                echo '</div>';
                                 echo "<i class='fa fa-search-plus'></i>";
                             echo '</div>';
                         echo '</div>';
@@ -139,7 +147,10 @@ class ttc extends Controller {
                         echo '</div>';
                         echo '<div class="small-3 medium-3 large-3 columns">';
                             echo '<div class="Percent">';
-                                echo "<h2>" . round($ttcoffee->egs) . "%</h2>";
+                                echo "<h3>" . round($ttcoffee->egs) . "%</h3>";
+                            echo '</div>';
+                            echo '<div class="gppp">';
+                                echo "<h3>$" . round($ttcoffee->gppp, 2) . "</h3>";
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';
@@ -172,8 +183,13 @@ class ttc extends Controller {
                                     echo '</a>';
                                 echo '</div>';
                             echo '</div>';
-                            echo '<div class="small-offset-4 small-4 columns text-center">';
-                                echo "<div class='circle'>" . round($ttcoffee->egs) . "%</div>";
+                            echo '<div class="small-offset-2 small-8 columns text-center">';
+                                echo '<div class="small-6 columns">';
+                                    echo "<div class='circle'>" . round($ttcoffee->egs) . "%</div>";
+                                echo '</div>';
+                                echo '<div class="small-6 columns">';
+                                    echo "<div class='square'>$" . round($ttcoffee->gppp, 2) . '</div>';
+                                echo '</div>';
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';
