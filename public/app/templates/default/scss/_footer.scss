@@ -20,7 +20,7 @@ $socialIcons: #D1D1D1;
   li a:hover {
     color: $aHover;
   }
-  #socialIcons{
+  .socialIcons{
     margin-top: 20px;
       ul {
         display: inline;
@@ -48,7 +48,7 @@ $socialIcons: #D1D1D1;
       }
 
   }
-  #powered a {
+  .powered a {
     color: $aColor;
   }
 }

@@ -210,7 +210,6 @@ class ttc extends Controller {
 
 	public function insight() {
 		$data['title'] = 'Insights';
-
 		
 	}
 
@@ -237,14 +236,15 @@ class ttc extends Controller {
 
 		$data['title'] = 'Contact';
 
-		$mail = new \helpers\phpmailer\phpmailer;
-
+		$mail = new \helpers\phpmailer\mail();
+		$mail->setFrom($email);
+		$mail->subject('A message for TTC');
+		$mail->body($Name ."<br>". $Message);
+		$mail->send();
 
 		View::rendertemplate('header', $data);
 		View::rendertemplate('contact', $data);
 		View::rendertemplate('footer');
-
-
 
 	}
 }
