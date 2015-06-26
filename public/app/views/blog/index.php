@@ -1,7 +1,7 @@
 
 
 <div class='row'>
-	<div class='col-md-8'>
+	<div class='small-12 medium-12 large-12 columns'>
 
 		<?php
 		if($data['posts']){
@@ -29,7 +29,7 @@
 	
 	</div>
 
-	<div class='col-md-4'>
+	<div class='small-12 medium-12 large-12 columns'>
 		<ul>
 		<?php
 		if($data['cats']){

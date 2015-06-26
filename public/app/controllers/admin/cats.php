@@ -9,11 +9,11 @@ class Cats extends \core\controller {
 	private $_model;
 
 	function __construct(){
-
+		
 		if(!Session::get('loggedin')){
-			Url::redirect('/login');
+			Url::redirect('admin/login');
 		}
-
+		
 		$this->_model = new \models\admin\cats();
 	}
 
@@ -30,9 +30,9 @@ class Cats extends \core\controller {
 		</script>
 		";
 
-		View::rendertemplate('adminheader',$data);
-		View::rendertemplate('cats',$data);
-		View::rendertemplate('footer',$data);
+		View::renderadmintemplate('header',$data);
+		View::render('admin/cats',$data);
+		View::renderadmintemplate('footer',$data);
 	}
 
 	public function add(){
@@ -57,19 +57,19 @@ class Cats extends \core\controller {
 				$this->_model->insert_cat($data);
 
 				Session::set('message','Category added');
-				Url::redirect('cats');
+				Url::redirect('admin/cats');
 
 			}
 		}
 
-		View::rendertemplate('adminheader',$data);
-		View::rendertemplate('addcat',$data,$error);
-		View::rendertemplate('footer',$data);
+		View::renderadmintemplate('header',$data);
+		View::render('admin/addcat',$data,$error);
+		View::renderadmintemplate('footer',$data);
 
 	}
 
 	public function edit($id){
-
+		
 		$data['title'] = 'Edit Category';
 		$data['row'] = $this->_model->getcat($id);
 
@@ -94,14 +94,14 @@ class Cats extends \core\controller {
 				$this->_model->update_cat($data,$where);
 
 				Session::set('message','Category Updated');
-				Url::redirect('cats');
+				Url::redirect('admin/cats');
 
 			}
 		}
 
-		View::rendertemplate('adminheader',$data);
-		View::rendertemplate('editcat',$data,$error);
-		View::rendertemplate('footer',$data);
+		View::renderadmintemplate('header',$data);
+		View::render('admin/editcat',$data,$error);
+		View::renderadmintemplate('footer',$data);
 	}
 
 	public function delete($id){

@@ -103,7 +103,7 @@ textarea {
 select {
   width: 100%; }
 
-#nav {
+#nav, .nav {
   text-align: center;
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
@@ -16446,3 +16446,11 @@ th.hide-for-touch {
     display: table-cell !important; }
   th.show-for-print {
     display: table-cell !important; } }
+
+
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

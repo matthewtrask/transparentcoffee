@@ -22,9 +22,9 @@ class Users extends \core\controller{
 		$data['title'] = 'Users';
 		$data['users'] = $this->_model->getusers();
 
-		View::rendertemplate('header',$data);
+		View::renderadmintemplate('header',$data);
 		View::render('admin/users',$data);
-		View::rendertemplate('footer',$data);
+		View::renderadmintemplate('footer',$data);
 	}
 
 	public function add(){
@@ -65,9 +65,9 @@ class Users extends \core\controller{
 
 		}
 
-		View::rendertemplate('header',$data);
+		View::renderadmintemplate('header',$data);
 		View::render('admin/adduser',$data,$error);
-		View::rendertemplate('footer',$data);
+		View::renderadmintemplate('footer',$data);
 
 	}
 
@@ -111,9 +111,9 @@ class Users extends \core\controller{
 
 		}
 
-		View::rendertemplate('header',$data);
+		View::renderadmintemplate('header',$data);
 		View::render('admin/edituser',$data,$error);
-		View::rendertemplate('footer',$data);
+		View::renderadmintemplate('footer',$data);
 
 	}
 

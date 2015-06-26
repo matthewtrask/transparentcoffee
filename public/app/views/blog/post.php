@@ -1,11 +1,14 @@
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+		<ul class="breadcrumbs">
+			<li><a href='<?php echo DIR;?>'>Blog</a></li>
+			<li><?php echo $data['post'][0]->postTitle;?></li>
+		</ul>
+	</div>
+</div>
 
-<ul class="breadcrumb">
-	<li><a href='<?php echo DIR;?>'>Blog</a> <span class="divider">></span></li>
-	<li><?php echo $data['post'][0]->postTitle;?></li>
-</ul>
-
-<div class='row'>
-	<div class='col-md-12'>
+<div class='row'  style="margin-bottom: 20px;">
+	<div class='small-12 medium-12 large-12 columns'>
 
 		<?php
 		if($data['post']){

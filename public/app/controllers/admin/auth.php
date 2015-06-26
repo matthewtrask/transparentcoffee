@@ -31,15 +31,15 @@ class Auth extends \core\controller {
 
 		}
 
-		View::rendertemplate('header',$data);
+		View::renderadmintemplate('loginheader',$data);
 		View::render('admin/login',$data,$error);
-		View::rendertemplate('footer',$data);
+		View::renderadmintemplate('footer',$data);
 	}
 
 	public function logout(){
 
 		Session::destroy();
-		Url::redirect('login');
+		Url::redirect('admin/login');
 
 	}
 

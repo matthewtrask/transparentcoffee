@@ -12,7 +12,7 @@ class Posts extends \core\controller {
 	function __construct(){
 		
 		if(!Session::get('loggedin')){
-			Url::redirect('login');
+			Url::redirect('admin/login');
 		}
 		
 		$this->_model = new \models\admin\posts();
@@ -32,9 +32,9 @@ class Posts extends \core\controller {
 		</script>
 		";
 
-		View::rendertemplate('adminheader',$data);
+		View::renderadmintemplate('header',$data);
 		View::render('admin/posts',$data);
-		View::rendertemplate('adminfooter',$data);
+		View::renderadmintemplate('footer',$data);
 	}
 
 	public function add(){
@@ -90,9 +90,9 @@ class Posts extends \core\controller {
 			}
 		}
 
-		View::rendertemplate('adminheader',$data);
+		View::renderadmintemplate('header',$data);
 		View::render('admin/addpost',$data,$error);
-		View::rendertemplate('adminfooter',$data);
+		View::renderadmintemplate('footer',$data);
 
 	}
 
@@ -153,9 +153,9 @@ class Posts extends \core\controller {
 			}
 		}
 
-		View::rendertemplate('adminheader',$data);
+		View::renderadmintemplate('header',$data);
 		View::render('admin/editpost',$data,$error);
-		View::rendertemplate('adminfooter',$data);
+		View::renderadmintemplate('footer',$data);
 	}
 
 	public function delete($id){

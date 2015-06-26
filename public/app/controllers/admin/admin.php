@@ -9,7 +9,7 @@ class Admin extends \core\controller {
 	public function __construct(){
 
 		if(!Session::get('loggedin')){
-			Url::redirect('login');
+			Url::redirect('admin/login');
 		}
 
 	}
@@ -18,9 +18,9 @@ class Admin extends \core\controller {
 		
 		$data['title'] = 'Admin';
 
-		View::rendertemplate('adminheader',$data);
-		View::rendertemplate('admin',$data);
-		View::rendertemplate('footer',$data);
+		View::renderadmintemplate('header',$data);
+		View::render('admin/admin',$data);
+		View::renderadmintemplate('footer',$data);
 
 	}
 
