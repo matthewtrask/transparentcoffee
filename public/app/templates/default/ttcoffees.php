@@ -153,11 +153,11 @@
                         </div>
                         <div class="percent-wrapper small-3 medium-3 large-3 columns">
                             <div class="Percent">
-                                <div class="percent-abbrev rotate">E.G.S.</div>
+                                <div class="percent-abbrev rotate">EGS</div>
                                 <h3><?php echo round($ttcoffee->egs, 1)?>%</h3>
                             </div>
                             <div class="gppp">
-                                <div class="gppp-abbrev rotate">G.P. / lb</div>
+                                <div class="gppp-abbrev rotate">GPPP</div>
                                 <h3>$<?php echo number_format($ttcoffee->gppp, 2)?></h3>
                             </div>
                         </div>
