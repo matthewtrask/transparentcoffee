@@ -12,19 +12,19 @@
         <h1 class="ttcoffee-header image-text">Transparent Coffees</h1>
     </div>
 </div>
-<div class="row featuredCoffees" style="margin-top: 20px">
-  <div class="small-offset-2 small-8 columns">
-    <h2 class="text-center">Featured Roaster</h2><hr />
-      <?php $coffee = $data['ttcoffees'][array_rand($data['ttcoffees'])];?>
-      <div class="small-offset-4 small-4 columns">
-            <div class="featuredRoaster"><img src='data:image/jpeg;base64, <?php echo $coffee->roaster_logo ?>'/></div>
-      </div>
-  </div>
-</div>
+<!--<div class="row featuredCoffees" style="margin-top: 20px">-->
+<!--  <div class="small-offset-2 small-8 columns">-->
+<!--    <h2 class="text-center">Featured Roaster</h2><hr />-->
+<!--      --><?php //$coffee = $data['ttcoffees'][array_rand($data['ttcoffees'])];?>
+<!--      <div class="small-offset-4 small-4 columns">-->
+<!--            <div class="featuredRoaster"><img src='data:image/jpeg;base64, --><?php //echo $coffee->roaster_logo ?><!--'/></div>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 <div class="row">
   <div class="small-12 medium-12 large-12 column">
-    <p>The following roasters have provided the information that allows
+    <p style="margin-top: 20px;">The following roasters have provided the information that allows
       consumers to know exactly how much the grower was paid for his/her
       green coffee. We encourage you to consider the green prices paid
       to growers, and/or the effective grower share numbers when making
@@ -90,15 +90,15 @@
               <ul>
                 <li id="roaster"><b>Roaster</b></li><hr />
                     <?php foreach ($data['filter_roaster'] as $roaster) {
-                        echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> $roaster<br>";
+                        echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> <span class='filter_roaster'>$roaster</span><br>";
                     }
                     ?>
                 <li id="regions"><b>Region</b></li><hr />
-                    <input id="southAmer" type="checkbox" name="region[]" value="South America"> South America<br />
-                    <input id="centralAmer" type="checkbox" name="region[]" value="Central America"> Central America<br />
-                    <input id="Africa" type="checkbox" name="region[]" value="Africa"> Africa<br />
-                    <input id="MidEast" type="checkbox" name="region[]" value="Middle East"> Middle East<br />
-                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"> Pacific
+                    <input id="southAmer" type="checkbox" name="region[]" value="South America"><span class="region"> South America</span><br />
+                    <input id="centralAmer" type="checkbox" name="region[]" value="Central America"><span class="region"> Central America</span><br />
+                    <input id="Africa" type="checkbox" name="region[]" value="Africa"><span class="region"> Africa</span><br />
+                    <input id="MidEast" type="checkbox" name="region[]" value="Middle East"><span class="region"> Middle East</span><br />
+                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"><span class="region"> Pacific</span>
                 <li id="egs"><b>Effective Grower Share</b></li><hr />
                   <div class="slider-egs" class="noUiSlider"></div>
                   <input class="egs-lower" type="hidden" name="egs-lower">
@@ -116,7 +116,13 @@
             <h3>Transparent Coffees</h3>
         </div>
         <div class="small-3 columns">
-            <p class="egs-gppp">Effective Grower Share /<br>Green Price Per Pound</p>
+            <a class="button tiny secondary dropdown-btn" data-dropdown="hover1" data-options="is_hover:true">Default</a>
+
+            <ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>
+                <li class="sort-dropdown"><a>Green Price Per Pound</a></li>
+                <li class="sort-dropdown"><a>Effective Grower Share</a></li>
+            </ul>
+            <a id="down" class="button tiny secondary arrow-btn"><i class="fa fa-angle-down fa-2x"></i></a>
         </div>
         <?php shuffle($data['ttcoffees']);foreach ($data['ttcoffees'] as $key => $ttcoffee): ?>
             <div class="ttcoffee">
@@ -130,27 +136,29 @@
                                 <i class="fa fa-search-plus"></i>
                             </div>
                         </div>
-                        <div class="small-6 medium-6 large-6 columns" id="TTCpanel">
-                            <h3><?php echo $ttcoffee->roaster_name?></h3>
-                            <h5><?php echo $ttcoffee->coffee_name?></h5>
+                        <div class="small-6 medium-6 large-6 columns TTCpanel">
+                            <h3 class="roaster_name"><?php echo $ttcoffee->roaster_name?></h3>
+                            <h5 class="coffee_name"><?php echo $ttcoffee->coffee_name?></h5>
                             <ul class="TTCList" style="margin-left: 0.1rem;">
                                 <li><em>Retail Price:</em> <?php
                                     if ($ttcoffee->currency == 'USD') {
-                                        echo '$' . round($ttcoffee->retail_price, 2);
+                                        echo '$' . number_format($ttcoffee->retail_price, 2);
                                     }
                                     else {
-                                        echo round($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
+                                        echo '$' . number_format($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
                                     }
                                     echo ' per ' . $ttcoffee->bag_size?> ounce bag</li>
-                                <li><em>Green Price:</em> $<?php echo round($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
+                                <li><em>Green Price:</em> $<?php echo number_format($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
                             </ul>
                         </div>
                         <div class="percent-wrapper small-3 medium-3 large-3 columns">
                             <div class="Percent">
-                                <h3><?php echo round($ttcoffee->egs)?>%</h3>
+                                <div class="percent-abbrev rotate">E.G.S.</div>
+                                <h3><?php echo round($ttcoffee->egs, 1)?>%</h3>
                             </div>
                             <div class="gppp">
-                                <h3>$<?php echo round($ttcoffee->gppp, 2)?></h3>
+                                <div class="gppp-abbrev rotate">G.P. / lb</div>
+                                <h3>$<?php echo number_format($ttcoffee->gppp, 2)?></h3>
                             </div>
                         </div>
                     </div>
@@ -164,13 +172,13 @@
                                 <li><em>Farm:</em> <?php echo $ttcoffee->farm_name . ', ' . $ttcoffee->farm_country?></li>
                                 <li><em>Retail Price:</em> <?php
                                     if ($ttcoffee->currency == 'USD') {
-                                        echo '$' . round($ttcoffee->retail_price, 2);
+                                        echo '$' . number_format($ttcoffee->retail_price, 2);
                                     }
                                     else {
-                                        echo round($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
+                                        echo number_format($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
                                     }
                                     echo ' per ' . $ttcoffee->bag_size?> ounce bag</li>
-                                <li><em>Green Price:</em> $<?php echo round($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
+                                <li><em>Green Price:</em> $<?php echo number_format($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
                             </ul>
                             <p><?php echo $ttcoffee->description?></p>
                             <div class="website-link"><a href="<?php echo $ttcoffee->url?>">Go to website</a></div>
@@ -181,10 +189,10 @@
                             </div>
                             <div class="small-offset-2 small-8 columns text-center">
                                 <div class="small-6 columns">
-                                    <div class="circle"><?php echo round($ttcoffee->egs)?>%</div>
+                                    <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
                                 </div>
                                 <div class="small-6 columns">
-                                    <div class="square">$<?php echo round($ttcoffee->gppp, 2)?></div>
+                                    <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
                                 </div>
                             </div>
                         </div>

@@ -35,7 +35,8 @@ helpers\assets::js(array(
     helpers\url::template_path() . 'js/main.js',
     helpers\url::template_path() . 'js/jquery.nouislider.all.min.js',
     helpers\url::template_path() . 'js/zepto.min.js',
-    helpers\url::template_path() . 'js/jquery.liblink.js'
+    helpers\url::template_path() . 'js/jquery.liblink.js',
+    helpers\url::template_path() . 'js/flowtype.js',
 ))
 ?>
 <script src="/bower_components/foundation/js/foundation.min.js"></script>

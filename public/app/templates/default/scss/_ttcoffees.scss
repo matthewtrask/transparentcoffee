@@ -1,3 +1,5 @@
+
+
 .featuredCoffees {
   font-family: RalewayLight;
   h1, h2, h3, h4, h5, h6 {
@@ -14,8 +16,54 @@
   font-size: 13px;
   margin-left: 8px;
 }
+.filter_roaster {
+  font-size: 12px;
+}
+.region {
+  font-size: 12px;
+}
 
-
+.dropdown-btn {
+  position: absolute !important;
+  left: 22px !important;
+  top: 20px !important;
+  height: 20px !important;
+  width: 126px !important;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+  border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  -webkit-border-radius: 1px !important;
+  font-size: 11px !important;
+}
+.dropdown-ul {
+  width: 152px !important;
+  li {
+    font-size: 11px !important;
+  }
+}
+.arrow-btn {
+  position: absolute !important;
+  left: 151px !important;
+  top: 20px !important;
+  height: 20px !important;
+  width: 24px !important;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+  border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  -webkit-border-radius: 1px !important;
+  i {
+    height: 20px !important;
+    position: absolute !important;
+    left: 5px;
+    top: 0px;
+  }
+}
 div.ttcoffee {
   min-height: 150px;
   width: 100%;
@@ -31,8 +79,11 @@ div.ttcoffee {
       margin-left: 0.1em;
     }
   }
-  #TTCpanel h3 {
-    font-size: 24px;
+  .TTCpanel h3 {
+    font-size: 22px;
+  }
+  #TTCpanel h5 {
+    font-size: 16px;
   }
   .thumbnail-wrapper {
     display: table-cell;
@@ -48,27 +99,54 @@ div.ttcoffee {
     margin-left: auto;
     margin-right: auto;
   }
+  .rotate {
+
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+  }
   div.percent-wrapper {
     min-height: 150px;
   }
   div.Percent {
-    width: 100%;
-    min-height: 75px;
-    padding: 15px;
-    background-color: #B0B0B0;
-    color: #fff;
-    border-bottom: 2px solid white;
-    border-top-right-radius: 13px;
-    text-align: center;
-    h3 {
+      width: 100%;
+      min-height: 75px;
+      padding: 15px;
+      padding-left: 40px !important; //because of abbreviation
+      background-color: #B0B0B0;
       color: #fff;
-      float: none;
-    }
+      border-bottom: 2px solid white;
+      border-top-right-radius: 13px;
+      text-align: center;
+      h3 {
+          color: #fff;
+          float: none;
+      }
+      .percent-abbrev {
+          position: absolute;
+          top: 27px !important;
+          left: -10px;
+          width: 80px;
+          border-bottom: 2px solid white;
+      }
   }
   div.gppp {
     width: 100%;
     min-height: 75px;
     padding: 15px;
+    padding-left: 40px !important; //because of abbreviation
     background-color: #B0B0B0;
     color: #fff;
     border-bottom-right-radius: 13px;
@@ -76,6 +154,13 @@ div.ttcoffee {
     h3 {
       color: #fff;
       float: none;
+    }
+    .gppp-abbrev {
+      position: absolute;
+      top: 107px !important;
+      left: -10px;
+      width: 80px;
+      border-bottom: 2px solid white;
     }
   }
 }
@@ -199,5 +284,134 @@ div.ttcoffee:not(:hover) {
 .noUi-connect {
   background: #B0B0B0 none repeat scroll 0% 0% !important;
 }
-
+@media #{$medium-up} {
+  .dropdown-btn {
+    position: absolute !important;
+    left: 22px !important;
+    top: 20px !important;
+    height: 20px !important;
+    width: 126px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+    border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+    -webkit-border-radius: 1px !important;
+    font-size: 11px !important;
+  }
+  .dropdown-ul {
+    width: 152px !important;
+    li {
+      font-size: 11px !important;
+    }
+  }
+  .arrow-btn {
+    position: absolute !important;
+    left: 151px !important;
+    top: 20px !important;
+    height: 20px !important;
+    width: 24px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+    border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+    -webkit-border-radius: 1px !important;
+    i {
+      height: 20px !important;
+      position: absolute !important;
+      left: 5px;
+      top: 0px;
+    }
+  }
+}
+@media #{$small-only} {
+  .dropdown-btn {
+      position: absolute !important;
+      left: 22px !important;
+      top: 20px !important;
+      height: 20px !important;
+      width: 60px !important;
+      padding-top: 3px !important;
+      padding-bottom: 3px !important;
+      padding-left: 3px !important;
+      padding-right: 3px !important;
+      border-radius: 1px !important;
+      -moz-border-radius: 1px !important;
+      -webkit-border-radius: 1px !important;
+      font-size: 10px !important;
+}
+.dropdown-ul {
+  width: 152px !important;
+  li {
+    font-size: 10px !important;
+  }
+}
+.arrow-btn {
+  position: absolute !important;
+  left: 85px !important;
+  top: 20px !important;
+  height: 20px !important;
+  width: 24px !important;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+  border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  -webkit-border-radius: 1px !important;
+  i {
+    height: 20px !important;
+    position: absolute !important;
+    left: 5px;
+    top: 0px;
+  }
+}
+  //extra-small screens
+  @media only screen and (max-width: 450px) {
+    .dropdown-btn {
+      position: absolute !important;
+      left: 22px !important;
+      top: 20px !important;
+      height: 20px !important;
+      width: 40px !important;
+      padding-top: 3px !important;
+      padding-bottom: 3px !important;
+      padding-left: 3px !important;
+      padding-right: 3px !important;
+      border-radius: 1px !important;
+      -moz-border-radius: 1px !important;
+      -webkit-border-radius: 1px !important;
+      font-size: 10px !important;
+    }
+    .dropdown-ul {
+      width: 152px !important;
+      li {
+        font-size: 10px !important;
+      }
+    }
+    .arrow-btn {
+      position: absolute !important;
+      left: 65px !important;
+      top: 20px !important;
+      height: 20px !important;
+      width: 24px !important;
+      padding-top: 3px !important;
+      padding-bottom: 3px !important;
+      padding-left: 3px !important;
+      padding-right: 3px !important;
+      border-radius: 1px !important;
+      -moz-border-radius: 1px !important;
+      -webkit-border-radius: 1px !important;
+      i {
+        height: 20px !important;
+        position: absolute !important;
+        left: 5px;
+        top: 0px;
+      }
+    }
+  }
+}
 

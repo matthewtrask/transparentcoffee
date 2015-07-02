@@ -31,11 +31,11 @@ $(document).ready(function(){
         }
     });
     $(".slider-egs").noUiSlider({
-        start: [20, 60],
+        start: [15, 60],
         step: 1,
         connect: true,
         range: {
-            'min': 20,
+            'min': 15,
             'max': 60
         }
     });
@@ -96,60 +96,197 @@ $(document).ready(function(){
 
 
     $("input:checkbox").change(function() {
+        var sort = $(".dropdown-btn").text();
+        var arrow = $(".arrow-btn").attr('id');
+
         if ($("#menu-form").is(":visible")) {
             var data = $("#menu-form").serialize();
         }
         else {
             var data = $("#mobile-menu-form").serialize();
         }
-
+        if (sort == 'Green Price Per Pound') {
+            data += '&sort=gppp';
+        }
+        else if (sort == 'Effective Grower Share') {
+            data += '&sort=egs';
+        }
+        else if (sort == 'Default') {
+            data += '&sort=default';
+        }
+        data += '&arrow=' + arrow;
         $.ajax({
-            url: "ttcoffeesAjax", // link of your "whatever" php
+            url: "ttcoffeesAjax",
             type: "POST",
             async: true,
             cache: false,
             data: data, // all data will be passed here
             success: function(data){
                 document.getElementById("ttcoffees").innerHTML = data;
+                flowRoaster();
+                flowCoffee();
+                $(document).foundation()
             }
         });
     });
     $(".slider-egs").on({change: function() {
+        var sort = $(".dropdown-btn").text();
+        var arrow = $(".arrow-btn").attr('id');
+
         if ($("#menu-form").is(":visible")) {
             var data = $("#menu-form").serialize();
         }
         else {
             var data = $("#mobile-menu-form").serialize();
         }
+        if (sort == 'Green Price Per Pound') {
+            data += '&sort=gppp';
+        }
+        else if (sort == 'Effective Grower Share') {
+            data += '&sort=egs';
+        }
+        else if (sort == 'Default') {
+            data += '&sort=default';
+        }
+        data += '&arrow=' + arrow;
         $.ajax({
-            url: "ttcoffeesAjax", // link of your "whatever" php
+            url: "ttcoffeesAjax",
             type: "POST",
             async: true,
             cache: false,
             data: data, // all data will be passed here
             success: function(data){
                 document.getElementById("ttcoffees").innerHTML = data;
+                flowRoaster();
+                flowCoffee();
+                $(document).foundation()
             }
         });
     }
     });
     $(".slider-gppp").on({change: function() {
+        var sort = $(".dropdown-btn").text();
+        var arrow = $(".arrow-btn").attr('id');
+
         if ($("#menu-form").is(":visible")) {
             var data = $("#menu-form").serialize();
         }
         else {
             var data = $("#mobile-menu-form").serialize();
         }
+        if (sort == 'Green Price Per Pound') {
+            data += '&sort=gppp';
+        }
+        else if (sort == 'Effective Grower Share') {
+            data += '&sort=egs';
+        }
+        else if (sort == 'Default') {
+            data += '&sort=default';
+        }
+        data += '&arrow=' + arrow;
         $.ajax({
-            url: "ttcoffeesAjax", // link of your "whatever" php
+            url: "ttcoffeesAjax",
             type: "POST",
             async: true,
             cache: false,
             data: data, // all data will be passed here
             success: function(data){
                 document.getElementById("ttcoffees").innerHTML = data;
+                flowRoaster();
+                flowCoffee();
+                $(document).foundation()
             }
         });
     }
     });
+    $(document).on('click', '.sort-dropdown', function () {
+        var sort = $(this).text();
+        var arrow = $(".arrow-btn").attr('id');
+        if ($("#menu-form").is(":visible")) {
+            var data = $("#menu-form").serialize();
+        }
+        else {
+            var data = $("#mobile-menu-form").serialize();
+        }
+        if (sort == 'Green Price Per Pound') {
+            data += '&sort=gppp';
+        }
+        else if (sort == 'Effective Grower Share') {
+            data += '&sort=egs';
+        }
+        else if (sort == 'Default') {
+            data += '&sort=default';
+        }
+        data += '&arrow=' + arrow;
+        $.ajax({
+            url: "ttcoffeesAjax",
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data, // all data will be passed here
+            success: function (data) {
+                document.getElementById("ttcoffees").innerHTML = data;
+                flowRoaster();
+                flowCoffee();
+                $(document).foundation();
+            }
+        });
+    });
+    $(document).on('click', '.arrow-btn', function () {
+        var sort = $(".dropdown-btn").text();
+        var oldArrow = $(".arrow-btn").attr('id');
+        if (oldArrow == 'up') {
+            var arrow = 'down';
+        }
+        else {
+            var arrow = 'up';
+        }
+        if ($("#menu-form").is(":visible")) {
+            var data = $("#menu-form").serialize();
+        }
+        else {
+            var data = $("#mobile-menu-form").serialize();
+        }
+        if (sort == 'Green Price Per Pound') {
+            data += '&sort=gppp';
+        }
+        else if (sort == 'Effective Grower Share') {
+            data += '&sort=egs';
+        }
+        else if (sort == 'Default') {
+            data += '&sort=default';
+        }
+        data += '&arrow=' + arrow;
+        $.ajax({
+            url: "ttcoffeesAjax",
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data, // all data will be passed here
+            success: function (data) {
+                document.getElementById("ttcoffees").innerHTML = data;
+                flowRoaster();
+                flowCoffee();
+                $(document).foundation();
+            }
+        });
+    });
+    //FLOW TYPE
+    function flowRoaster() {
+        $(".roaster_name").flowtype({
+            maximum: 800,
+            minFont: 15,
+            maxFont: 22,
+            fontRatio: 17
+        });
+    }
+    function flowCoffee() {
+        $(".coffee_name").flowtype({
+            maximum: 800,
+            minFont: 12,
+            maxFont: 16,
+            fontRatio: 22
+        });
+    }
 });
+
