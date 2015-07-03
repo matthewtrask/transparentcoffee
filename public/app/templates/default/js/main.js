@@ -1,15 +1,13 @@
 // Ajax call to post data to controller
 $(document).ready(function(){
     //FLOW TYPE
-    function flowRoaster() {
+    function flowText() {
         $(".roaster_name").flowtype({
             maximum: 800,
             minFont: 15,
             maxFont: 22,
             fontRatio: 17
         });
-    }
-    function flowCoffee() {
         $(".coffee_name").flowtype({
             maximum: 800,
             minFont: 12,
@@ -17,8 +15,7 @@ $(document).ready(function(){
             fontRatio: 22
         });
     }
-    flowRoaster();
-    flowCoffee();
+    flowText();
   $('#submitButton').click(function(e){
     $.ajax({
       url: 'http://192.168.33.10/contact',
@@ -142,8 +139,7 @@ $(document).ready(function(){
             data: data, // all data will be passed here
             success: function(data){
                 document.getElementById("ttcoffees").innerHTML = data;
-                flowRoaster();
-                flowCoffee();
+                flowText();
                 $(document).foundation()
             }
         });
@@ -176,8 +172,7 @@ $(document).ready(function(){
             data: data, // all data will be passed here
             success: function(data){
                 document.getElementById("ttcoffees").innerHTML = data;
-                flowRoaster();
-                flowCoffee();
+                flowText();
                 $(document).foundation()
             }
         });
@@ -211,8 +206,7 @@ $(document).ready(function(){
             data: data, // all data will be passed here
             success: function(data){
                 document.getElementById("ttcoffees").innerHTML = data;
-                flowRoaster();
-                flowCoffee();
+                flowText();
                 $(document).foundation()
             }
         });
@@ -245,8 +239,7 @@ $(document).ready(function(){
             data: data, // all data will be passed here
             success: function (data) {
                 document.getElementById("ttcoffees").innerHTML = data;
-                flowRoaster();
-                flowCoffee();
+                flowText();
                 $(document).foundation();
             }
         });
@@ -284,8 +277,7 @@ $(document).ready(function(){
             data: data, // all data will be passed here
             success: function (data) {
                 document.getElementById("ttcoffees").innerHTML = data;
-                flowRoaster();
-                flowCoffee();
+                flowText();
                 $(document).foundation();
             }
         });

@@ -490,10 +490,17 @@ img#SEGImg {
   margin-left: 8px; }
 
 .filter_roaster {
-  font-size: 12px; }
+  font-size: 13px; }
 
 .region {
-  font-size: 12px; }
+  font-size: 13px; }
+
+.custom-accordion-panel a {
+  padding-left: 0px !important; }
+
+.custom-accordion-panel .content {
+  padding-right: 0px !important;
+  padding-left: 0px !important; }
 
 .dropdown-btn {
   position: absolute !important;
@@ -533,6 +540,10 @@ img#SEGImg {
     position: absolute !important;
     left: 5px;
     top: 0px; }
+
+.custom-accordion-panel a {
+  background-color: white !important;
+  font-size: 15px !important; }
 
 div.ttcoffee {
   min-height: 150px;
