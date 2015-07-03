@@ -111,6 +111,39 @@
             </form>
         </div>
     </div>
+</div>
+<div class="row" style="margin-bottom: 20px">
+  <div class="small-3 medium-3 large-3 columns">
+    <div id="menu" class="menu">
+      <!-- menu goes here! -->
+      <p class="text-center">Menu</p><hr/>
+      <ul>
+        <li id="company"><b>Company</b></li><hr />
+            <input type="checkbox" name="CounterCul" value="counterCul"> Counter Culture<br />
+            <input type="checkbox" name="BirdRock" value="BirdRock"> Bird Rock<br />
+            <input type="checkbox" name="FarmTo40" value="FarmTo40"> Farmers to 40<br />
+        <li id="regions"><b>Regions</b></li><hr />
+            <input id="southAmer" type="checkbox" name="southAmer" value="southAmer"> South America<br />
+            <input id="centralAmer" type="checkbox" name="centralAmer" value="centralAmer"> Central America<br />
+            <input id="Africa" type="checkbox" name="Africa" value="Africa"> Africa<br />
+            <input id="MidEast" type="checkbox" name="MidEast" value="MidEast"> Middle East<br />
+            <input id="Pacific" type="checkbox" name="Pacific" value="Pacific"> Pacific
+        <li id="price"><b>Effective Grower Share</b></li><hr />
+            <input id="TwentyPer" type="checkbox" name="TwentyPer" value="TwentyPer"> 20-29%<br />
+            <input id="ThirtyPer" type="checkbox" name="ThirtyPer" value="ThirtyPer"> 30-39%<br />
+            <input id="FourtyPer" type="checkbox" name="FourtyPer" value="FourtyPer"> 40-49%<br />
+            <input id="FiftyPer" type="checkbox" name="FiftyPer" value="FiftyPer"> 50-59%<br />
+            <input id="SixtyPer" type="checkbox" name="SixtyPer" value="SixtyPer"> 60% or more<br />
+      </ul>
+    </div>
+  </div>
+  <div class="small-9 medium-9 large-9 columns" style="margin-top: 45px;">
+    <div class="ttcoffees">
+      <div class="rows">
+        <div class="small-2 medium-2 large-2 columns">
+          <img src="<?php echo helpers\url::template_path() . "img/CounterCultureLogo.jpg";?>">
+        </div>
+    </div>
     <div id='ttcoffees' class="small-12 medium-12 large-9 columns">
         <div class="small-9 columns">
             <h3>Transparent Coffees</h3>
@@ -122,7 +155,6 @@
                 <li class="sort-dropdown"><a>Green Price Per Pound</a></li>
                 <li class="sort-dropdown"><a>Effective Grower Share</a></li>
             </ul>
-            <a id="down" class="button tiny secondary arrow-btn"><i class="fa fa-angle-down fa-2x"></i></a>
         </div>
         <?php shuffle($data['ttcoffees']);foreach ($data['ttcoffees'] as $key => $ttcoffee): ?>
             <div class="ttcoffee">

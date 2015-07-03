@@ -18,7 +18,7 @@ class Url {
 		if($fullpath == false){
 			$url = DIR . $url;
 		}
-		
+
 		header('Location: '.$url);
 		exit;
 	}
@@ -29,6 +29,10 @@ class Url {
 	 */
 	public static function template_path(){
 		return DIR.'app/templates/'.Session::get('template').'/';
+	}
+
+	public static function admin_template_path(){
+		return DIR.'app/templates/admin/';
 	}
 
 	/**
@@ -47,7 +51,7 @@ class Url {
 		} else {
 			$replace = '<a href="http$2://$4">'.$custom.'</a>';
 		}
-	
+
 		return preg_replace($regex, $replace, $text);
 	}
 
@@ -103,5 +107,5 @@ class Url {
 		return $segments[0];
 	}
 
-	
+
 }

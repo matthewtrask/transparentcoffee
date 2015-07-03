@@ -103,10 +103,7 @@ textarea {
 select {
   width: 100%; }
 
-html, body {
-  height: 100%; }
-
-#nav {
+#nav, .nav {
   text-align: center;
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
@@ -141,6 +138,14 @@ html, body {
   section.top-bar-section li {
     text-align: left;
     border-top: 1px solid lightgrey; } }
+
+#login {
+  margin: auto;
+  width: 500px;
+  margin-top: 100px; }
+
+#addCat {
+  margin-top: 100px; }
 
 meta.foundation-version {
   font-family: "/5.4.7/"; }
@@ -859,22 +864,22 @@ div.ttcoffee:not(:hover) {
 .ttcFooter li a:hover {
   color: #808080; }
 
-.ttcFooter #socialIcons {
+.ttcFooter .socialIcons {
   margin-top: 20px; }
-  .ttcFooter #socialIcons ul {
+  .ttcFooter .socialIcons ul {
     display: inline;
     text-align: center; }
-    .ttcFooter #socialIcons ul li {
+    .ttcFooter .socialIcons ul li {
       display: inline;
       margin-top: 40px; }
-      .ttcFooter #socialIcons ul li i {
+      .ttcFooter .socialIcons ul li i {
         background-color: #fff;
         color: #d1d1d1;
         height: 50px;
         width: 50px;
         padding-top: 10px;
         border-radius: 25px; }
-      .ttcFooter #socialIcons ul li i:hover {
+      .ttcFooter .socialIcons ul li i:hover {
         background-color: #d1d1d1;
         color: #fff;
         height: 50px;
@@ -882,7 +887,7 @@ div.ttcoffee:not(:hover) {
         padding-top: 10px;
         border-radius: 25px; }
 
-.ttcFooter #powered a {
+.ttcFooter .powered a {
   color: #fff; }
 
 .panel-text p {
@@ -933,6 +938,14 @@ div.ttcoffee:not(:hover) {
   #seg-header {
     margin-top: -10px !important;
     font-size: 20px !important; } }
+
+#login {
+  margin: auto;
+  width: 500px;
+  margin-top: 100px; }
+
+#addCat {
+  margin-top: 100px; }
 
 meta.foundation-version {
   font-family: "/5.4.7/"; }
@@ -16760,3 +16773,11 @@ th.hide-for-touch {
     display: table-cell !important; }
   th.show-for-print {
     display: table-cell !important; } }
+
+
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

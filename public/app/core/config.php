@@ -17,7 +17,7 @@ class Config {
 		ob_start();
 
 		//site address
-		define('DIR', '');
+		define('DIR', 'http://192.168.33.10/');
 
 		//set default controller and method for legacy calls
 		define('DEFAULT_CONTROLLER', 'welcome');

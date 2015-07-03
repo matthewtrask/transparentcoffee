@@ -15,7 +15,7 @@
 		helpers\assets::css(array(
 			//'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
             '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
-            "h//cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css",
+            "//cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css",
 			helpers\url::template_path() . 'css/main.css',
             helpers\url::template_path() . 'css/jquery.nouislider.min.css'
 		))
