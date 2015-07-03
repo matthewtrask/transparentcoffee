@@ -1,5 +1,24 @@
 // Ajax call to post data to controller
 $(document).ready(function(){
+    //FLOW TYPE
+    function flowRoaster() {
+        $(".roaster_name").flowtype({
+            maximum: 800,
+            minFont: 15,
+            maxFont: 22,
+            fontRatio: 17
+        });
+    }
+    function flowCoffee() {
+        $(".coffee_name").flowtype({
+            maximum: 800,
+            minFont: 12,
+            maxFont: 16,
+            fontRatio: 22
+        });
+    }
+    flowRoaster();
+    flowCoffee();
   $('#submitButton').click(function(e){
     $.ajax({
       url: 'http://192.168.33.10/contact',
@@ -271,22 +290,5 @@ $(document).ready(function(){
             }
         });
     });
-    //FLOW TYPE
-    function flowRoaster() {
-        $(".roaster_name").flowtype({
-            maximum: 800,
-            minFont: 15,
-            maxFont: 22,
-            fontRatio: 17
-        });
-    }
-    function flowCoffee() {
-        $(".coffee_name").flowtype({
-            maximum: 800,
-            minFont: 12,
-            maxFont: 16,
-            fontRatio: 22
-        });
-    }
 });
 

@@ -581,38 +581,50 @@ div.ttcoffee {
     min-height: 75px;
     padding: 15px;
     padding-left: 40px !important;
-    background-color: #B0B0B0;
+    background-color: #7B7B7B;
     color: #fff;
-    border-bottom: 2px solid white;
-    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
     text-align: center; }
     div.ttcoffee div.Percent h3 {
       color: #fff;
       float: none; }
     div.ttcoffee div.Percent .percent-abbrev {
       position: absolute;
-      top: 27px !important;
-      left: -10px;
-      width: 80px;
-      border-bottom: 2px solid white; }
+      top: 108px !important;
+      left: -15px;
+      width: 79px;
+      height: 24px;
+      border-bottom: 2px solid white;
+      background-color: #D8A560; }
+  div.ttcoffee div.fill {
+    width: 22px;
+    height: 3px;
+    top: 76px;
+    left: 14px;
+    position: absolute;
+    background-color: #D8A560;
+    border-right: 1px solid white; }
   div.ttcoffee div.gppp {
     width: 100%;
     min-height: 75px;
     padding: 15px;
     padding-left: 40px !important;
-    background-color: #B0B0B0;
+    background-color: #7B7B7B;
     color: #fff;
-    border-bottom-right-radius: 13px;
+    border-bottom: 2px solid white;
+    border-top-right-radius: 13px;
     text-align: center; }
     div.ttcoffee div.gppp h3 {
       color: #fff;
       float: none; }
     div.ttcoffee div.gppp .gppp-abbrev {
       position: absolute;
-      top: 107px !important;
-      left: -10px;
-      width: 80px;
-      border-bottom: 2px solid white; }
+      top: 27px !important;
+      left: -15px;
+      width: 79px;
+      height: 24px;
+      border-bottom: 2px solid white;
+      background-color: #D8A560; }
 
 div.ttcoffee:hover {
   border: 2px solid #414042;
@@ -691,7 +703,7 @@ div.ttcoffee:not(:hover) {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  font-size: 32px;
+  font-size: 28px;
   width: 100px;
   height: 100px;
   line-height: 100px;
@@ -700,7 +712,7 @@ div.ttcoffee:not(:hover) {
 .square {
   margin-top: 5px;
   border: 3px solid black;
-  font-size: 32px;
+  font-size: 28px;
   width: 90px;
   height: 90px;
   line-height: 90px;

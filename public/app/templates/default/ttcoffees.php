@@ -152,13 +152,14 @@
                             </ul>
                         </div>
                         <div class="percent-wrapper small-3 medium-3 large-3 columns">
-                            <div class="Percent">
-                                <div class="percent-abbrev rotate">EGS</div>
-                                <h3><?php echo round($ttcoffee->egs, 1)?>%</h3>
-                            </div>
                             <div class="gppp">
                                 <div class="gppp-abbrev rotate">GPPP</div>
                                 <h3>$<?php echo number_format($ttcoffee->gppp, 2)?></h3>
+                            </div>
+                            <div class="fill"></div>
+                            <div class="Percent">
+                                <div class="percent-abbrev rotate">EGS</div>
+                                <h3><?php echo round($ttcoffee->egs, 1)?>%</h3>
                             </div>
                         </div>
                     </div>
@@ -189,10 +190,10 @@
                             </div>
                             <div class="small-offset-2 small-8 columns text-center">
                                 <div class="small-6 columns">
-                                    <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
+                                    <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
                                 </div>
                                 <div class="small-6 columns">
-                                    <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
+                                    <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
                                 </div>
                             </div>
                         </div>
