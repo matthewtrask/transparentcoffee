@@ -87,27 +87,51 @@
         <div id="menu" class="menu">
           <p class="text-center">Menu</p><hr/>
             <form id="menu-form">
-              <ul>
-                <li id="roaster"><b>Roaster</b></li><hr />
-                    <?php foreach ($data['filter_roaster'] as $roaster) {
-                        echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> <span class='filter_roaster'>$roaster</span><br>";
-                    }
-                    ?>
-                <li id="regions"><b>Region</b></li><hr />
-                    <input id="southAmer" type="checkbox" name="region[]" value="South America"><span class="region"> South America</span><br />
-                    <input id="centralAmer" type="checkbox" name="region[]" value="Central America"><span class="region"> Central America</span><br />
-                    <input id="Africa" type="checkbox" name="region[]" value="Africa"><span class="region"> Africa</span><br />
-                    <input id="MidEast" type="checkbox" name="region[]" value="Middle East"><span class="region"> Middle East</span><br />
-                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"><span class="region"> Pacific</span>
-                <li id="egs"><b>Effective Grower Share</b></li><hr />
-                  <div class="slider-egs" class="noUiSlider"></div>
-                  <input class="egs-lower" type="hidden" name="egs-lower">
-                  <input class="egs-upper" type="hidden" name="egs-upper">
-                <li id="price"><b>Green Price Per Pound</b></li><hr />
-                  <div class="slider-gppp" class="noUiSlider"></div>
-                  <input class="gppp-lower" type="hidden" name="gppp-lower">
-                  <input class="gppp-upper" type="hidden" name="gppp-upper">
-              </ul>
+                <dl class="accordion custom-accordion" data-accordion>
+                    <dd class="accordion-navigation custom-accordion-panel">
+                        <a href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
+                        <div id="panel1" class="content">
+                            <?php foreach ($data['filter_roaster'] as $roaster) {
+                                echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> <span class='filter_roaster'>$roaster</span><br>";
+                            }
+                            ?>
+                        </div>
+                    </dd>
+                    <dd class="accordion-navigation custom-accordion-panel">
+                        <a href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
+                        <div id="panel2" class="content">
+                            <input id="southAmer" class='region' type="checkbox" name="region[]" value="South America"> <span class='region'>South America</span><br />
+                            <input id="centralAmer" class='region' type="checkbox" name="region[]" value="Central America"> <span class='region'>Central America</span><br />
+                            <input id="Africa" class='region' type="checkbox" name="region[]" value="Africa"> <span class='region'>Africa</span><br />
+                            <input id="MidEast" class='region' type="checkbox" name="region[]" value="Middle East"> <span class='region'>Middle East</span><br />
+                            <input id="Pacific" class='region' type="checkbox" name="region[]" value="Pacific"> <span class='region'>Pacific</span>
+                        </div>
+                    </dd>
+                    <dd class="accordion-navigation custom-accordion-panel">
+                        <a href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
+                        <div id="panel3" class="content">
+                            <div class="row">
+                                <div class="small-offset-1 small-10 columns">
+                                    <div class="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
+                                    <input class="egs-lower" type="hidden" name="egs-lower">
+                                    <input class="egs-upper" type="hidden" name="egs-upper">
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                    <dd class="accordion-navigation custom-accordion-panel">
+                        <a href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
+                        <div id="panel4" class="content">
+                            <div class="row">
+                                <div class="small-offset-1 small-10 columns">
+                                    <div class="slider-gppp" class="noUiSlider" style="margin-top: 25px;"></div>
+                                    <input class="gppp-lower" type="hidden" name="gppp-lower">
+                                    <input class="gppp-upper" type="hidden" name="gppp-upper">
+                                </div>
+                            </div>
+                        </div>
+                    </dd>
+                </dl>
             </form>
         </div>
     </div>
@@ -184,13 +208,14 @@
                             </ul>
                         </div>
                         <div class="percent-wrapper small-3 medium-3 large-3 columns">
-                            <div class="Percent">
-                                <div class="percent-abbrev rotate">EGS</div>
-                                <h3><?php echo round($ttcoffee->egs, 1)?>%</h3>
-                            </div>
                             <div class="gppp">
                                 <div class="gppp-abbrev rotate">GPPP</div>
                                 <h3>$<?php echo number_format($ttcoffee->gppp, 2)?></h3>
+                            </div>
+                            <div class="fill"></div>
+                            <div class="Percent">
+                                <div class="percent-abbrev rotate">EGS</div>
+                                <h3><?php echo round($ttcoffee->egs, 1)?>%</h3>
                             </div>
                         </div>
                     </div>
@@ -221,10 +246,10 @@
                             </div>
                             <div class="small-offset-2 small-8 columns text-center">
                                 <div class="small-6 columns">
-                                    <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
+                                    <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
                                 </div>
                                 <div class="small-6 columns">
-                                    <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
+                                    <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
                                 </div>
                             </div>
                         </div>
