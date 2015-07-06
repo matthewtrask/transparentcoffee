@@ -78,6 +78,16 @@
     font-size: 15px !important;
   }
 }
+.fill {
+  width: 23px;
+  height: 3px;
+  top: 76px;
+  left: 13px;
+  position: absolute;
+  background-color: #D8A560;
+  border-right: 1px solid white;
+}
+
 div.ttcoffee {
   min-height: 150px;
   width: 100%;
@@ -88,7 +98,7 @@ div.ttcoffee {
   .TTCList {
     margin-left: 0.1em;
     li {
-      font-size: .70rem;
+      font-size: .7rem;
       list-style: none;
       margin-left: 0.1em;
     }
@@ -104,14 +114,14 @@ div.ttcoffee {
     vertical-align: middle;
     height: 120px;
     width: 170px;
-  }
-  img {
-    margin-top: 5px;
-    max-height: 120px;
-    max-width: 140px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    img {
+      margin-top: 5px;
+      max-height: 120px;
+      max-width: 140px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   .rotate {
 
@@ -150,7 +160,7 @@ div.ttcoffee {
       }
       .percent-abbrev {
         position: absolute;
-        top: 108px !important;
+        top: 108px;
         left: -15px;
         width: 79px;
         height: 24px;
@@ -158,16 +168,7 @@ div.ttcoffee {
         background-color: #D8A560;
       }
   }
-  div.fill {
-      width: 22px;
-      height: 3px;
-      top: 76px;
-      left: 14px;
-      position: absolute;
-      background-color: #D8A560;
-      border-right: 1px solid white;
-  }
-  div.gppp {
+ div.gppp {
     width: 100%;
     min-height: 75px;
     padding: 15px;
@@ -184,7 +185,7 @@ div.ttcoffee {
     }
     .gppp-abbrev {
       position: absolute;
-      top: 27px !important;
+      top: 27px;
       left: -15px;
       width: 79px;
       height: 24px;
@@ -356,47 +357,79 @@ div.ttcoffee:not(:hover) {
     }
   }
 }
-@media #{$small-only} {
+@media #{$small-only} and (min-width: 451px) {
   .dropdown-btn {
-      position: absolute !important;
-      left: 22px !important;
-      top: 20px !important;
-      height: 20px !important;
-      width: 60px !important;
-      padding-top: 3px !important;
-      padding-bottom: 3px !important;
-      padding-left: 3px !important;
-      padding-right: 3px !important;
-      border-radius: 1px !important;
-      -moz-border-radius: 1px !important;
-      -webkit-border-radius: 1px !important;
-      font-size: 10px !important;
-}
-.dropdown-ul {
-  width: 152px !important;
-  li {
+    position: absolute !important;
+    left: 22px !important;
+    top: 20px !important;
+    height: 20px !important;
+    width: 60px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+    border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+    -webkit-border-radius: 1px !important;
     font-size: 10px !important;
   }
-}
-.arrow-btn {
-  position: absolute !important;
-  left: 85px !important;
-  top: 20px !important;
-  height: 20px !important;
-  width: 24px !important;
-  padding-top: 3px !important;
-  padding-bottom: 3px !important;
-  padding-left: 3px !important;
-  padding-right: 3px !important;
-  border-radius: 1px !important;
-  -moz-border-radius: 1px !important;
-  -webkit-border-radius: 1px !important;
-  i {
-    height: 20px !important;
-    position: absolute !important;
-    left: 5px;
-    top: 0px;
+  .dropdown-ul {
+    width: 152px !important;
+    li {
+      font-size: 10px !important;
+    }
   }
+  .arrow-btn {
+    position: absolute !important;
+    left: 85px !important;
+    top: 20px !important;
+    height: 20px !important;
+    width: 24px !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+    border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+    -webkit-border-radius: 1px !important;
+    i {
+      height: 20px !important;
+      position: absolute !important;
+      left: 5px;
+      top: 0px;
+    }
+  }
+  .thumbnail-wrapper {
+    height: 110px !important;
+    width: 150px !important;
+    img {
+      max-height: 110px !important;
+      max-width: 120px !important;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+  }
+  .percent-abbrev {
+    width: 74px !important;
+    top: 102px !important;
+    left: -13px !important;
+
+  }
+  .gppp-abbrev {
+    width: 74px !important;
+    top: 25px !important;
+    left: -13px !important;
+  }
+  .fill {
+    left: 12px !important;
+    top: 75px !important;
+    width: 24px !important;
+  }
+  .dropdown-ul {
+    width: 140px !important;
+  }
+
 }
   //extra-small screens
   @media only screen and (max-width: 450px) {
@@ -441,6 +474,35 @@ div.ttcoffee:not(:hover) {
         top: 0px;
       }
     }
+    .thumbnail-wrapper {
+      height: 110px !important;
+      width: 110px !important;
+      img {
+        max-height: 90px !important;
+        max-width: 90px !important;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+      }
+    }
+    .percent-abbrev {
+      width: 74px !important;
+      top: 102px !important;
+      left: -13px !important;
+
+    }
+    .gppp-abbrev {
+      width: 74px !important;
+      top: 25px !important;
+      left: -13px !important;
+    }
+    .fill {
+      left: 12px !important;
+      top: 75px !important;
+      width: 24px !important;
+    }
+    .dropdown-ul {
+      width: 125px !important;
+    }
   }
-}
 

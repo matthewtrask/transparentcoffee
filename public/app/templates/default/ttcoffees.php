@@ -136,10 +136,10 @@
         </div>
     </div>
     <div id='ttcoffees' class="small-12 medium-12 large-9 columns">
-        <div class="small-9 columns">
+        <div class="small-8 medium-9 columns">
             <h3>Transparent Coffees</h3>
         </div>
-        <div class="small-3 columns">
+        <div class="small-4 medium-3 columns">
             <a class="button tiny secondary dropdown-btn" data-dropdown="hover1" data-options="is_hover:true">Default</a>
 
             <ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>
@@ -160,11 +160,12 @@
                                 <i class="fa fa-search-plus"></i>
                             </div>
                         </div>
-                        <div class="small-6 medium-6 large-6 columns TTCpanel">
+                        <div class="small-5 medium-6 large-6 columns TTCpanel">
                             <h3 class="roaster_name"><?php echo $ttcoffee->roaster_name?></h3>
                             <h5 class="coffee_name"><?php echo $ttcoffee->coffee_name?></h5>
                             <ul class="TTCList" style="margin-left: 0.1rem;">
-                                <li><em>Retail Price:</em> <?php
+                                <li class="show-for-medium-up"><em>Farm:</em> <?php echo $ttcoffee->farm_name . ', ' . $ttcoffee->farm_country?></li>
+                                <li class="show-for-medium-up"><em>Retail Price:</em> <?php
                                     if ($ttcoffee->currency == 'USD') {
                                         echo '$' . number_format($ttcoffee->retail_price, 2);
                                     }
@@ -172,10 +173,18 @@
                                         echo '$' . number_format($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
                                     }
                                     echo ' per ' . $ttcoffee->bag_size?> ounce bag</li>
-                                <li><em>Green Price:</em> $<?php echo number_format($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
+                                <li class="show-for-small-only"><em>Retail Price:</em> <?php
+                                    if ($ttcoffee->currency == 'USD') {
+                                        echo '$' . number_format($ttcoffee->retail_price, 2);
+                                    }
+                                    else {
+                                        echo '$' . number_format($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
+                                    }
+                                    echo ' per ' . $ttcoffee->bag_size?> oz</li>
+                                <li><em>Green Price:</em> $<?php echo number_format($ttcoffee->gppp, 2)?> per pound</li>
                             </ul>
                         </div>
-                        <div class="percent-wrapper small-3 medium-3 large-3 columns">
+                        <div class="percent-wrapper small-4 medium-3 large-3 columns">
                             <div class="gppp">
                                 <div class="gppp-abbrev rotate">GPPP</div>
                                 <h3>$<?php echo number_format($ttcoffee->gppp, 2)?></h3>

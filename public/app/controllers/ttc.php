@@ -111,27 +111,27 @@ class ttc extends Controller {
                 }
             }
         }
-        if ($_POST['sort'] == 'gppp') {
-            $_POST['sort'] = 'Green Price Per Pound';
-        }
-        else if ($_POST['sort'] == 'egs') {
-            $_POST['sort'] = 'Effective Grower Share';
-        }
-        else if ($_POST['sort'] == 'default') {
-            $_POST['sort'] = 'Default';
-        }
+//        if ($_POST['sort'] == 'gppp') {
+//            $_POST['sort'] = 'Green Price Per Pound';
+//        }
+//        else if ($_POST['sort'] == 'egs') {
+//            $_POST['sort'] = 'Effective Grower Share';
+//        }
+//        else if ($_POST['sort'] == 'default') {
+//            $_POST['sort'] = 'Default';
+//        }
         echo '<div class="small-9 columns">';
             echo '<h3>Transparent Coffees</h3>';
         echo '</div>';
         echo '<div class="small-3 columns">';
             echo "<a class='button tiny secondary dropdown-btn' data-dropdown='hover1'
-                     data-options='is_hover:true'>" . $_POST['sort'] . "</a>";
+                     data-options='is_hover:true'>" . strtoupper($_POST['sort']) . "</a>";
             echo '<ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>';
-                if ($_POST['sort'] == 'Green Price Per Pound') {
+                if ($_POST['sort'] == 'gppp') {
                     echo '<li class="sort-dropdown"><a>Effective Grower Share</a></li>';
                     echo '<li class="sort-dropdown"><a>Default</a></li>';
                 }
-                else if ($_POST['sort'] == 'Effective Grower Share') {
+                else if ($_POST['sort'] == 'egs') {
                     echo '<li class="sort-dropdown"><a>Green Price Per Pound</a></li>';
                     echo '<li class="sort-dropdown"><a>Default</a></li>';
                 }
@@ -145,9 +145,9 @@ class ttc extends Controller {
 
         shuffle($ttcoffees);
         switch($_POST['sort']) {
-            case 'Default':
+            case 'default':
                 break;
-            case 'Green Price Per Pound':
+            case 'gppp':
                 if ($_POST['arrow'] == 'down') {
                     $ttcoffees = $this->quicksort($ttcoffees, 'gppp', 'down');
                 }
@@ -155,7 +155,7 @@ class ttc extends Controller {
                     $ttcoffees = $this->quicksort($ttcoffees, 'gppp', 'up');
                 }
                 break;
-            case 'Effective Grower Share':
+            case 'egs':
                 if ($_POST['arrow'] == 'down') {
                     $ttcoffees = $this->quicksort($ttcoffees, 'egs', 'down');
                 }
