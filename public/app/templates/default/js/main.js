@@ -4,7 +4,7 @@ $(document).ready(function(){
     function flowText() {
         $(".roaster_name").flowtype({
             maximum: 800,
-            minFont: 15,
+            minFont: 14,
             maxFont: 22,
             fontRatio: 17
         });
@@ -13,6 +13,12 @@ $(document).ready(function(){
             minFont: 12,
             maxFont: 16,
             fontRatio: 22
+        });
+        $(".TTCList li").flowtype({
+            maximum: 800,
+            minFont: 10,
+            maxFont: 14,
+            fontRatio: 20
         });
     }
     flowText();

@@ -103,7 +103,10 @@ textarea {
 select {
   width: 100%; }
 
-#nav, .nav {
+html, body {
+  height: 100%; }
+
+#nav {
   text-align: center;
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
@@ -550,6 +553,15 @@ img#SEGImg {
   background-color: white !important;
   font-size: 15px !important; }
 
+.fill {
+  width: 23px;
+  height: 3px;
+  top: 76px;
+  left: 13px;
+  position: absolute;
+  background-color: #D8A560;
+  border-right: 1px solid white; }
+
 div.ttcoffee {
   min-height: 150px;
   width: 100%;
@@ -560,7 +572,7 @@ div.ttcoffee {
   div.ttcoffee .TTCList {
     margin-left: 0.1em; }
     div.ttcoffee .TTCList li {
-      font-size: .70rem;
+      font-size: .7rem;
       list-style: none;
       margin-left: 0.1em; }
   div.ttcoffee .TTCpanel h3 {
@@ -572,13 +584,13 @@ div.ttcoffee {
     vertical-align: middle;
     height: 120px;
     width: 170px; }
-  div.ttcoffee img {
-    margin-top: 5px;
-    max-height: 120px;
-    max-width: 140px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto; }
+    div.ttcoffee .thumbnail-wrapper img {
+      margin-top: 5px;
+      max-height: 120px;
+      max-width: 140px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
   div.ttcoffee .rotate {
     /* Safari */
     -webkit-transform: rotate(-90deg);
@@ -606,20 +618,12 @@ div.ttcoffee {
       float: none; }
     div.ttcoffee div.Percent .percent-abbrev {
       position: absolute;
-      top: 108px !important;
+      top: 108px;
       left: -15px;
       width: 79px;
       height: 24px;
       border-bottom: 2px solid white;
       background-color: #D8A560; }
-  div.ttcoffee div.fill {
-    width: 22px;
-    height: 3px;
-    top: 76px;
-    left: 14px;
-    position: absolute;
-    background-color: #D8A560;
-    border-right: 1px solid white; }
   div.ttcoffee div.gppp {
     width: 100%;
     min-height: 75px;
@@ -635,7 +639,7 @@ div.ttcoffee {
       float: none; }
     div.ttcoffee div.gppp .gppp-abbrev {
       position: absolute;
-      top: 27px !important;
+      top: 27px;
       left: -15px;
       width: 79px;
       height: 24px;
@@ -795,7 +799,7 @@ div.ttcoffee:not(:hover) {
       left: 5px;
       top: 0px; } }
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 40em) and (min-width: 451px) {
   .dropdown-btn {
     position: absolute !important;
     left: 22px !important;
@@ -831,9 +835,30 @@ div.ttcoffee:not(:hover) {
       height: 20px !important;
       position: absolute !important;
       left: 5px;
-      top: 0px; } }
+      top: 0px; }
+  .thumbnail-wrapper {
+    height: 110px !important;
+    width: 150px !important; }
+    .thumbnail-wrapper img {
+      max-height: 110px !important;
+      max-width: 120px !important;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px; }
+  .percent-abbrev {
+    width: 74px !important;
+    top: 102px !important;
+    left: -13px !important; }
+  .gppp-abbrev {
+    width: 74px !important;
+    top: 25px !important;
+    left: -13px !important; }
+  .fill {
+    left: 12px !important;
+    top: 75px !important;
+    width: 24px !important; } }
 
-@media only screen and (max-width: 40em) and (max-width: 450px) {
+@media only screen and (max-width: 450px) {
   .dropdown-btn {
     position: absolute !important;
     left: 22px !important;
@@ -869,7 +894,28 @@ div.ttcoffee:not(:hover) {
       height: 20px !important;
       position: absolute !important;
       left: 5px;
-      top: 0px; } }
+      top: 0px; }
+  .thumbnail-wrapper {
+    height: 110px !important;
+    width: 110px !important; }
+    .thumbnail-wrapper img {
+      max-height: 90px !important;
+      max-width: 90px !important;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px; }
+  .percent-abbrev {
+    width: 74px !important;
+    top: 102px !important;
+    left: -13px !important; }
+  .gppp-abbrev {
+    width: 74px !important;
+    top: 25px !important;
+    left: -13px !important; }
+  .fill {
+    left: 12px !important;
+    top: 75px !important;
+    width: 24px !important; } }
 
 #contactForm input.input {
   width: 70%; }
@@ -16796,11 +16842,3 @@ th.hide-for-touch {
     display: table-cell !important; }
   th.show-for-print {
     display: table-cell !important; } }
-
-
-
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
