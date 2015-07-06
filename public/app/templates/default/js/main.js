@@ -10,15 +10,15 @@ $(document).ready(function(){
         });
         $(".coffee_name").flowtype({
             maximum: 800,
-            minFont: 12,
+            minFont: 11,
             maxFont: 16,
             fontRatio: 22
         });
         $(".TTCList li").flowtype({
             maximum: 800,
-            minFont: 10,
+            minFont: 9,
             maxFont: 14,
-            fontRatio: 20
+            fontRatio: 25
         });
     }
     flowText();

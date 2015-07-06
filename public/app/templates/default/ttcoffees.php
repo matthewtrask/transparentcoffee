@@ -136,10 +136,10 @@
         </div>
     </div>
     <div id='ttcoffees' class="small-12 medium-12 large-9 columns">
-        <div class="small-9 columns">
+        <div class="small-8 medium-9 columns">
             <h3>Transparent Coffees</h3>
         </div>
-        <div class="small-3 columns">
+        <div class="small-4 medium-3 columns">
             <a class="button tiny secondary dropdown-btn" data-dropdown="hover1" data-options="is_hover:true">Default</a>
 
             <ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>

@@ -426,6 +426,9 @@ div.ttcoffee:not(:hover) {
     top: 75px !important;
     width: 24px !important;
   }
+  .dropdown-ul {
+    width: 140px !important;
+  }
 
 }
   //extra-small screens
@@ -497,6 +500,9 @@ div.ttcoffee:not(:hover) {
       left: 12px !important;
       top: 75px !important;
       width: 24px !important;
+    }
+    .dropdown-ul {
+      width: 125px !important;
     }
   }
 

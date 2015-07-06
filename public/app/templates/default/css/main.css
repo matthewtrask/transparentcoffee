@@ -856,7 +856,9 @@ div.ttcoffee:not(:hover) {
   .fill {
     left: 12px !important;
     top: 75px !important;
-    width: 24px !important; } }
+    width: 24px !important; }
+  .dropdown-ul {
+    width: 140px !important; } }
 
 @media only screen and (max-width: 450px) {
   .dropdown-btn {
@@ -915,7 +917,9 @@ div.ttcoffee:not(:hover) {
   .fill {
     left: 12px !important;
     top: 75px !important;
-    width: 24px !important; } }
+    width: 24px !important; }
+  .dropdown-ul {
+    width: 125px !important; } }
 
 #contactForm input.input {
   width: 70%; }
