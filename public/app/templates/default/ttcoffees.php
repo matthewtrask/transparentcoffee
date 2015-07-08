@@ -199,7 +199,10 @@
                 </a>
                 <div id="quick-view-<?php echo $key?>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
                     <div class="row">
-                        <div class="small-6 columns">
+                        <div class="small-12 medium-6 columns">
+                            <div class="show-for-small-only">
+                                <div class="small-12 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
+                            </div>
                             <h2 id="modalTitle"><?php echo $ttcoffee->roaster_name?></h2>
                             <p class="lead"><?php echo $ttcoffee->coffee_name?></p>
                             <ul class="TTCList" style="margin-left: 0.1rem;">
@@ -217,15 +220,15 @@
                             <p><?php echo $ttcoffee->description?></p>
                             <div class="website-link"><a href="<?php echo $ttcoffee->url?>">Go to website</a></div>
                         </div>
-                        <div class="small-6 columns">
+                        <div class="small-12 medium-6 columns">
                             <div class="row">
-                                <div class="small-offset-2 small-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
+                                <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
-                            <div class="small-offset-2 small-8 columns text-center">
-                                <div class="small-6 columns">
+                            <div class="small-12 medium-offset-2 medium-8 columns text-center">
+                                <div class="small-6 medium-6 columns">
                                     <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
                                 </div>
-                                <div class="small-6 columns">
+                                <div class="small-6 medium-6 columns">
                                     <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
                                 </div>
                             </div>

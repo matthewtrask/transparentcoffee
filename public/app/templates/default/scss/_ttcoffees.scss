@@ -357,6 +357,20 @@ div.ttcoffee:not(:hover) {
     }
   }
 }
+@media #{$medium-only} {
+  .circle {
+    font-size: 16px !important;
+    width: 45px !important;
+    height: 45px !important;
+    line-height: 45px !important;
+  }
+  .square {
+    font-size: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+}
 @media #{$small-only} and (min-width: 451px) {
   .dropdown-btn {
     position: absolute !important;
