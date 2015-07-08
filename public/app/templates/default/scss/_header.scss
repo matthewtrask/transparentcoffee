@@ -17,8 +17,13 @@ $topbar-menu-icon-color-toggled: #020202;
 $topbar-menu-link-color-toggled: #020202;
 $topbar-link-padding-medium: $topbar-height / 4;
 
-html,body {
-  height:100%;
+html,body
+{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden !important;
 }
 #nav {
   text-align: center;
