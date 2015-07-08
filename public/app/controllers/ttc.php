@@ -8,12 +8,12 @@ use helpers\phpmailer\mail;
 use core\view;
 use core\controller;
 
-class ttc extends Controller {
+class ttc extends \core\controller {
 
-	private $_db;
+	private $_model;
 
 	public function __construct(){
-
+        $this->_model = new \models\ttc();
 	}
 
 	public function index() {
@@ -49,8 +49,7 @@ class ttc extends Controller {
 	public function ttcoffees() {
 		$data['title'] = 'Transparent Coffees';
 
-        $model = new \Models\ttc();
-        $ttcoffees = $model->getTTCoffees();
+        $ttcoffees = $this->_model->getTTCoffees();
         $data['ttcoffees'] = $ttcoffees;
 
         foreach ($ttcoffees as $ttcoffee) {
@@ -65,8 +64,8 @@ class ttc extends Controller {
 
     public function ttcoffeesAjax() {
         $data['title'] = 'Transparent Coffees';
-        $model = new \Models\ttc();
-        $ttcoffees = $model->getTTCoffees();
+//        $model = new \Models\ttc();
+        $ttcoffees = $this->_model->getTTCoffees();
         if (isset($_POST['roaster'])) {
             $roasters = $_POST['roaster'];
             foreach ($ttcoffees as $key => $ttcoffee) {
@@ -300,8 +299,8 @@ class ttc extends Controller {
 	public function roasters() {
 		$data['title'] = 'Roasters';
 
-        $model = new \Models\ttc();
-        $data['roasters'] = $model->getRoasters();
+//        $model = new \Models\ttc();
+        $data['roasters'] = $this->_model->getRoasters();
         View::rendertemplate('header', $data);
         View::rendertemplate('roasters', $data);
         View::rendertemplate('footer');

@@ -6,6 +6,7 @@
  * Time: 8:19 PM
  */
 ?>
+<div class="ttcoffees">
 <div class="img-overlay">
     <img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>">
     <div class="text-wrapper">
@@ -224,12 +225,16 @@
                             <div class="row">
                                 <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
-                            <div class="small-12 medium-offset-2 medium-8 columns text-center">
-                                <div class="small-6 medium-6 columns">
-                                    <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
-                                </div>
-                                <div class="small-6 medium-6 columns">
-                                    <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
+                            <div class="row">
+                                <div class="small-offset-1 small-6 medium-offset-2 medium-6 columns text-center">
+                                    <div class="row">
+                                        <div class="small-2 medium-2 columns">
+                                            <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
+                                        </div>
+                                        <div class="small-2 medium-2 columns">
+                                            <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -239,4 +244,5 @@
             </div>
         <?php endforeach; ?>
     </div>
+</div>
 </div>
