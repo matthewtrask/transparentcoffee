@@ -271,6 +271,15 @@ div.ttcoffee:not(:hover) {
     margin-left: 0.1em;
   }
 }
+
+.TTCList-popup {
+  margin-left: 0.1em;
+  li {
+    font-size: 1em;
+    list-style: none;
+    margin-left: 0.1em;
+  }
+}
 .circle {
   border: 3px solid black;
   -webkit-border-radius: 50%;

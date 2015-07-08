@@ -206,7 +206,7 @@
                             </div>
                             <h2 id="modalTitle"><?php echo $ttcoffee->roaster_name?></h2>
                             <p class="lead"><?php echo $ttcoffee->coffee_name?></p>
-                            <ul class="TTCList" style="margin-left: 0.1rem;">
+                            <ul class="TTCList-popup" style="margin-left: 0.1rem;">
                                 <li><em>Farm:</em> <?php echo $ttcoffee->farm_name . ', ' . $ttcoffee->farm_country?></li>
                                 <li><em>Retail Price:</em> <?php
                                     if ($ttcoffee->currency == 'USD') {
