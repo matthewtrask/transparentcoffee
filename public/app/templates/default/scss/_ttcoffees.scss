@@ -342,9 +342,9 @@ div.ttcoffee:not(:hover) {
     font-size: 11px !important;
   }
   .dropdown-ul {
-    width: 152px !important;
+    width: 152px;
     li {
-      font-size: 11px !important;
+      font-size: 11px;
     }
   }
   .arrow-btn {
@@ -380,6 +380,18 @@ div.ttcoffee:not(:hover) {
     width: 50px !important;
     height: 50px !important;
     line-height: 50px !important;
+  }
+  .dropdown-ul {
+    width: 135px !important;
+    li {
+      font-size: 11px;
+    }
+  }
+  .dropdown-btn {
+    width: 110px !important;
+  }
+  .arrow-btn {
+    left: 135px !important;
   }
 }
 @media #{$small-only} and (min-width: 451px) {
@@ -500,34 +512,51 @@ div.ttcoffee:not(:hover) {
       }
     }
     .thumbnail-wrapper {
-      height: 110px !important;
-      width: 110px !important;
+      height: 100px !important;
+      width: 100px !important;
       img {
-        max-height: 90px !important;
-        max-width: 90px !important;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 10px;
+        max-height: 80px !important;
+        max-width: 80px !important;
+        padding-left: 20%;
+        padding-right: 20%;
+        padding-top: 5px;
       }
     }
     .percent-abbrev {
-      width: 74px !important;
-      top: 102px !important;
-      left: -13px !important;
+      width: 76px !important;
+      top: 100px !important;
+      left: -26px !important;
+      border-right: 2px solid white;
 
     }
     .gppp-abbrev {
       width: 74px !important;
       top: 25px !important;
-      left: -13px !important;
+      left: -25px !important;
     }
     .fill {
-      left: 12px !important;
-      top: 75px !important;
-      width: 24px !important;
+      display: none;
+//      left: 12px !important;
+//      top: 75px !important;
+//      width: 24px !important;
     }
     .dropdown-ul {
       width: 125px !important;
+    }
+    .fa-search-plus {
+      position: absolute !important;
+      left: 50px !important;
+    }
+    div.ttcoffee {
+      h3 {
+        font-size: 20px;
+      }
+      div.Percent {
+        padding-left: 20px !important;
+      }
+      div.gppp {
+        padding-left: 20px !important;
+      }
     }
   }
 
