@@ -34,7 +34,7 @@
 			</select>
 		</p>
 
-		<p><input type='submit' name='submit' value='Submit'></p>
+		<p><input class="button" type='submit' name='submit' value='Submit'></p>
 		</form>
 
 		<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>

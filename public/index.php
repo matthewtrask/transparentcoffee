@@ -80,7 +80,7 @@ Router::POST('contact', '\controllers\ttc@contact');
 
 Router::any('admin', '\controllers\admin\admin@index');
 Router::any('admin/login', '\controllers\admin\auth@login');
-Router::any('admin/logout', '\controllers\admin\auth@logout');
+Router::any('logout', '\controllers\admin\auth@logout');
 
 Router::any('admin/users', '\controllers\admin\users@index');
 Router::any('admin/users/add', '\controllers\admin\users@add');

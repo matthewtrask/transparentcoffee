@@ -11,9 +11,9 @@
 
 				echo "<h2><a href='".DIR."$row->postSlug'>$row->postTitle</a></h2>\n";
 
-					echo "<div class='col-md-3'>";
-						echo "<p><img src='".DIR."$row->postImg' class='img-responsive'></p>";
-					echo "</div>";
+//					echo "<div class='col-md-3'>";
+//						echo "<p><img src='".DIR."$row->postImg' class='img-responsive'></p>";
+//					echo "</div>";
 
 					echo "<div class='col-md-9'>";
 						echo "<p>Posted on ".date('jS M Y H:i:s', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p>";
@@ -29,17 +29,17 @@
 	
 	</div>
 
-	<div class='small-12 medium-12 large-12 columns'>
-		<ul>
-		<?php
-		if($data['cats']){
-			foreach($data['cats'] as $crow){
-				echo "<li><a href='".DIR."category/$crow->catSlug'>$crow->catTitle</a></li>";
-			}
-		}
-		?>
-		</ul>
-	</div>
+<!--	<div class='small-12 medium-12 large-12 columns'>-->
+<!--		<ul>-->
+<!--		--><?php
+//		if($data['cats']){
+//			foreach($data['cats'] as $crow){
+//				echo "<li><a href='".DIR."category/$crow->catSlug'>$crow->catTitle</a></li>";
+//			}
+//		}
+//		?>
+<!--		</ul>-->
+<!--	</div>-->
 </div>
 
 <div class='clearfix'></div>
