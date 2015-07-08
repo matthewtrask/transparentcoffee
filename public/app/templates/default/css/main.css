@@ -799,6 +799,18 @@ div.ttcoffee:not(:hover) {
       left: 5px;
       top: 0px; } }
 
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .circle {
+    font-size: 16px !important;
+    width: 45px !important;
+    height: 45px !important;
+    line-height: 45px !important; }
+  .square {
+    font-size: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important; } }
+
 @media only screen and (max-width: 40em) and (min-width: 451px) {
   .dropdown-btn {
     position: absolute !important;
@@ -926,7 +938,8 @@ div.ttcoffee:not(:hover) {
 
 .ttcFooter {
   background-color: #000;
-  height: 150px; }
+  height: 150px;
+  overflow: hidden; }
 
 .ttcFooter ul li {
   list-style: none; }
@@ -936,6 +949,9 @@ div.ttcoffee:not(:hover) {
 
 .ttcFooter li a:hover {
   color: #808080; }
+
+.ttcFooter .row {
+  height: 150px !important; }
 
 .ttcFooter .socialIcons {
   margin-top: 20px; }

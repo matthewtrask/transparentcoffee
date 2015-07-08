@@ -8,6 +8,7 @@ $socialIcons: #D1D1D1;
 .ttcFooter {
   background-color: $primary-color;
   height: $footerHeight;
+  overflow: hidden;
 }
 
 .ttcFooter {
@@ -19,6 +20,9 @@ $socialIcons: #D1D1D1;
   }
   li a:hover {
     color: $aHover;
+  }
+  .row {
+    height: 150px !important;
   }
   .socialIcons{
     margin-top: 20px;

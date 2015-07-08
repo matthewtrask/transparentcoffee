@@ -37,7 +37,7 @@
                 <li class="has-dropdown">
                     <a class="dropdown-link" href="#">ABOUT</a>
                     <ul id="nav-dropdown" class="dropdown">
-                        <li><a href="transparency">Transparency</a></li>
+                        <li><a href="transparency">TRANSPARENCY</a></li>
                         <li><a href="seg">SE@G</a></li>
                     </ul>
                 </li>
@@ -50,10 +50,10 @@
                     <a class="dropdown-link" href="#">SCRPI</a>
                     <ul id="nav-dropdown" class="dropdown">
                         <li><a href="scrpi">SCRPI</a></li>
-                        <li><a href="roasters">Roasters</a></li>
+                        <li><a href="roasters">ROASTERS</a></li>
                     </ul>
                 </li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="contact">CONTACT</a></li>
             </ul>
         </section>
     </nav>
