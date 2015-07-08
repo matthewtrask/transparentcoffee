@@ -226,7 +226,7 @@
                                 <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
                             <div class="row">
-                                <div class="small-offset-1 small-6 medium-offset-2 medium-6 columns text-center">
+                                <div class="small-offset-1 small-6 medium-offset-3 medium-5 columns text-center">
                                     <div class="row">
                                         <div class="small-2 medium-2 columns">
                                             <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>

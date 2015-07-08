@@ -245,7 +245,7 @@ class ttc extends \core\controller {
                                 echo '</div>';
                             echo '</div>';
                             echo '<div class="row">';
-                                echo '<div class="small-offset-1 small-6 medium-offset-2 medium-6 columns text-center">';
+                                echo '<div class="small-offset-1 small-6 medium-offset-3 medium-5 columns text-center">';
                                     echo '<div class="row">';
                                         echo '<div class="small-2 medium-2 columns">';
                                             echo "<div class='square'>$" . number_format($ttcoffee->gppp, 2) . '</div>';

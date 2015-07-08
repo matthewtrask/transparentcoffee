@@ -169,7 +169,37 @@
   }
 }
 //GLOBAL STYLES
-@media #{$large-up} {
+@media #{$xxlarge-up} {
+  .page-header {
+    font-size: 45px;
+  }
+  .image-text {
+    top: 300px;
+    font-size: 85px;
+  }
+  .light-font-bigger {
+    font-size: 30px;
+  }
+  .light-font-smaller {
+    font-size: 22px;
+  }
+}
+@media #{$xlarge-only} {
+  .page-header {
+    font-size: 40px;
+  }
+  .image-text {
+    top: 240px;
+    font-size: 80px;
+  }
+  .light-font-bigger {
+    font-size: 28px;
+  }
+  .light-font-smaller {
+    font-size: 20px;
+  }
+}
+@media #{$large-only} {
   .page-header {
     font-size: 36px;
   }

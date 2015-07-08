@@ -404,7 +404,29 @@ select {
         padding-left: 6px !important;
         font-size: 8px !important; } }
 
-@media only screen and (min-width: 64.063em) {
+@media only screen and (min-width: 120.063em) {
+  .page-header {
+    font-size: 45px; }
+  .image-text {
+    top: 300px;
+    font-size: 85px; }
+  .light-font-bigger {
+    font-size: 30px; }
+  .light-font-smaller {
+    font-size: 22px; } }
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {
+  .page-header {
+    font-size: 40px; }
+  .image-text {
+    top: 240px;
+    font-size: 80px; }
+  .light-font-bigger {
+    font-size: 28px; }
+  .light-font-smaller {
+    font-size: 20px; } }
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
   .page-header {
     font-size: 36px; }
   .image-text {

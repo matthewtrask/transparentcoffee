@@ -3,7 +3,7 @@ namespace Models;
 
 use Core\Model;
 
-require '/var/www/public/app/library/TTCoffee.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/app/library/TTCoffee.php';
 
 class ttc extends Model
 {
@@ -28,5 +28,10 @@ class ttc extends Model
             $ttcoffees[] = $current;
         }
         return $ttcoffees;
+    }
+    public function getLogos() {
+        $result = $this->_db->select('SELECT * FROM'.PREFIX.'roaster');
+        return $result;
+
     }
 }
