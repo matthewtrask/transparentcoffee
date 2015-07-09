@@ -22,20 +22,20 @@ $(document).ready(function(){
         });
     }
     flowText();
-  $('#submitButton').click(function(e){
-    $.ajax({
-      url: 'http://192.168.33.10/contact',
-      type: 'POST',
-      data: '#contactForm',
-      success: function(){
-        alert('Successfully sent!');
-      },
-      error: function(){
-        alert('There was an error sending your information. Please try again.');
-      }
-    });
-    e.preventDefault();
-  });
+  // $('#submitButton').click(function(e){
+  //   $.ajax({
+  //     url: 'http://192.168.33.10/contact',
+  //     type: 'POST',
+  //     data: '#contactForm',
+  //     success: function(){
+  //       alert('Successfully sent!');
+  //     },
+  //     error: function(){
+  //       alert('There was an error sending your information. Please try again.');
+  //     }
+  //   });
+  //   e.preventDefault();
+  // });
   //
     $('#header-logo').hover(function(){
         this.src = "app/templates/default/img/Transparent-Trade-Tan-Large-08-10.png";
@@ -289,4 +289,3 @@ $(document).ready(function(){
         });
     });
 });
-
