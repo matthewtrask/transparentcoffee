@@ -20,33 +20,12 @@
         </div>
     </div>
 </div>
-<div class="slick single-item autoplay">
-    <div class="slide slide--has-caption slick-slide">
-        <div class="img-overlay-2">
-            <img src="<?php echo helpers\url::template_path() . 'img/CounterCulture1.jpg'?>"/>
-        </div>
-        <div class="slide-title">Featured Roasters</div>
-        <div class="slide-caption">
-            <div class="sub-title">Counter Culture</div>
-            At Counter Culture Coffee, we approach our work with a relentless pursuit of coffee perfection,
-            a dedication to real sustainability, and a commitment to cutting-edge coffee education throughout the coffee chain.
-            <br><a href="#" class="button small white-button">READ MORE<i class="fa fa-angle-right"></i>
-            </a>
-        </div>
+<div class="slick-multiple autoplay">
+    <?php foreach ($data['roasters'] as $roaster): ?>
+    <div>
+        <img src='data:image/jpeg;base64, <?php echo $roaster->roaster_logo ?>'/>
     </div>
-    <div class="slide slide--has-caption slick-slide">
-        <div class="img-overlay-2">
-            <img src="<?php echo helpers\url::template_path() . 'img/red-beans.JPG'?>"/>
-        </div>
-        <div class="slide-title">Featured Roasters</div>
-        <div class="slide-caption">
-            <div class="sub-title">Farmers to 40</div>
-            Farmers to 40 is a social enterprise providing excellent coffee and returning 40%
-            of the retail bag price directly to our partner farmers in Nicaragua.
-            <br><a href="#" class="button small white-button">READ MORE<i class="fa fa-angle-right fa-2x"></i>
-            </a>
-        </div>
-    </div>
+    <?php endforeach; ?>
 </div>
 <div class="row">
     <a href="#"><img id="home-bottom-logo" src="<?php echo helpers\url::template_path() .

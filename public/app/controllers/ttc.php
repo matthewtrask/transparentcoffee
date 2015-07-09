@@ -19,8 +19,10 @@ class ttc extends \core\controller {
 	public function index() {
 		$data['title'] = 'Home';
 
+        $roasters = $this->_model->getLogos();
+        $data['roasters'] = $roasters;
         View::rendertemplate('header', $data);
-        View::rendertemplate('home');
+        View::rendertemplate('home', $data);
 		View::rendertemplate('footer');
 	}
 
@@ -205,7 +207,6 @@ class ttc extends \core\controller {
                                 echo '<div class="gppp-abbrev rotate">GPPP</div>';
                                 echo "<h3>$" . number_format($ttcoffee->gppp, 2) . "</h3>";
                             echo '</div>';
-                            echo "<div class='fill'></div>";
                             echo '<div class="Percent">';
                                 echo '<div class="percent-abbrev rotate">EGS</div>';
                                 echo "<h3>" . round($ttcoffee->egs, 1) . "%</h3>";

@@ -30,7 +30,7 @@ class ttc extends Model
         return $ttcoffees;
     }
     public function getLogos() {
-        $result = $this->_db->select('SELECT * FROM'.PREFIX.'roaster');
+        $result = $this->_db->select('SELECT * FROM '.PREFIX.'roaster');
         return $result;
 
     }
