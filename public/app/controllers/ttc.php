@@ -385,6 +385,8 @@ class ttc extends \core\controller {
         // FIX THIS
 		$data['title'] = 'Contact';
 
+        
+
 		$mail = new \helpers\phpmailer\mail();
 		$mail->setFrom($email);
 		$mail->subject('A message for TTC');
