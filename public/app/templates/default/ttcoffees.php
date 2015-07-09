@@ -190,7 +190,7 @@
                                 <div class="gppp-abbrev rotate">GPPP</div>
                                 <h3>$<?php echo number_format($ttcoffee->gppp, 2)?></h3>
                             </div>
-                            <div class="fill"></div>
+<!--                            <div class="fill"></div>-->
                             <div class="Percent">
                                 <div class="percent-abbrev rotate">EGS</div>
                                 <h3><?php echo round($ttcoffee->egs, 1)?>%</h3>
