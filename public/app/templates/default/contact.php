@@ -27,26 +27,26 @@
         <form action="" method="POST" data-abide class="custom light-font-bigger">
             <div class="row">
                 <div class="small-3 large-3 columns">
-                    <label for="Name" class="inline">Name:</label>
+                    <label for="name" class="inline">Name:</label>
                 </div>
                 <div class="small-9 large-9 columns">
-                    <input name="Name" class="formInput" type="text" placeholder="Name" for="Name" id="Name" required>
+                    <input name="name" class="formInput" type="text" placeholder="Name" for="name" id="name" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 large-3 centered columns">
-                    <label for="Email" class="inline">Email</label>
+                    <label for="email" class="inline">Email</label>
                 </div>
                 <div class="small-9 large-9 centered columns input">
-                    <input name="Email" class="formInput" type="text" placeholder="Email" for="Name" id="Name" required>
+                    <input name="email" class="formInput" type="text" placeholder="Email" for="eame" id="email" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 large-3 centered columns">
-                    <label for="Message" class="inline">Message:</label>
+                    <label for="message" class="inline">Message:</label>
                 </div>
                 <div class="small-9 large-9 centered columns input">
-                    <textarea name="Message" class="formInput" type="text" placeholder="Message" for="Message" id="Message" required></textarea>
+                    <textarea name="eessage" class="formInput" type="text" placeholder="Message" for="eessage" id="message" required></textarea>
                 </div>
             </div>
             <div class="row">
