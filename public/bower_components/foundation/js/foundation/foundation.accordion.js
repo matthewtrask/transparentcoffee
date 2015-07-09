@@ -9,7 +9,7 @@
     settings : {
       content_class: 'content',
       active_class: 'active',
-      multi_expand: false,
+      multi_expand: true,
       toggleable: true,
       callback : function () {}
     },

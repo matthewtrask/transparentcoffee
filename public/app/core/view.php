@@ -41,6 +41,10 @@ class View {
 		}
 		require "app/templates/". \helpers\Session::get('template') ."/$path.php";
 	}
+
+	public static function renderadmintemplate($path,$data = false){
+		require "app/templates/admin/$path.php";
+	}
 	
 	/**
 	 * add HTTP header to headers array 
