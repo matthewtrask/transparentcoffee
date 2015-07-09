@@ -42,7 +42,7 @@
                     <label for="submitName" class="inline">Your Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="submitName" class="regInput" type="text" placeholder="Your Name" for="submitName" id="submitName" required">
+                    <input name="submitName" class="regInput" type="text" placeholder="Your Name" for="submitName" id="submitName" required>
                 </div>
             </div>
             <div class="row">
@@ -50,7 +50,7 @@
                     <label for="submitEmail" class="inline">Your Email:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="submitEmail" class="regInput" type="text" placeholder="Your Email" for="submitEmail" id="submitEmail" required">
+                    <input name="submitEmail" class="regInput" type="text" placeholder="Your Email" for="submitEmail" id="submitEmail" required>
                 </div>
             </div>
             <div class="row">
@@ -63,10 +63,18 @@
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
+                    <label for="roasterDescription" class="inline">Roaster Description:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <textarea name="roasterDescription" placeholder="Roaster Description (Maximum of 140 characters)" maxlength="140" onKeyDown="charLimiti(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
                     <label for="roasterImage" class="inline">Roaster logo:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="roasterImage" class="dropzone regInput" type="file" for="roasterImage"  id="roasterImage" required>
+                    <input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage" required>
                 </div>
             </div><hr />
             <div class="row">
@@ -75,6 +83,14 @@
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
                     <input name="coffeeName" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName" id="coffeeName" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeDescription" class="inline">Roaster Description:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <textarea name="coffeeDescription" placeholder="Roaster Description (Maximum of 140 characters)" maxlength="140" onKeyDown="charLimiti(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
                 </div>
             </div>
             <div class="row">
@@ -100,7 +116,16 @@
                 <div class="small-9 medium-9 large-9 columns">
                     <input name="coffeeBagSize" class="regInput" type="text" placeholder="Coffee Bag Size" for="coffeeBagSize" id="coffeeBagSize" required>
                 </div>
-            </div><hr/>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeGPPP" class="inline">Coffee Green Price Per Pound Paid:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeGPPP" class="regInput" type="text" placeholder="Coffee Bag Size" for="coffeeBagSize" id="coffeeBagSize" required>
+                </div>
+            </div>
+            <hr/>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
                     <label for="farmName" class="inline">Farm Name:</label>
@@ -127,7 +152,7 @@
             </div><hr/>
             <div class="row">
                 <div class="small-5 medium-5 large-5 columns">
-                    <label for="greenPPP" class="inline">Green Price Per Pound paid to farm or cooperative</label>
+                    <label for="greenPPP" class="inline">Green Price Per Pound paid to farm or cooperative(Proof)</label>
                 </div>
                 <div class="small-7 medium-7 large-7 columns">
                     <input name="greenPPP" class="regInput" type="file" placeholder="greenPPP" for="greenPPP" id="greenPPP" required>
@@ -142,3 +167,26 @@
 
     </div>
 </div>
+<script type="text/javascript">
+    function charLimit(limitField, limitCount, limitNum) {
+    if (limitField.value.length > limitNum) {
+      limitField.value = limitField.value.substring(0, limitNum);
+    } else {
+      limitCount.value = limitNum - limitField.value.length;
+       }
+    }
+    function CheckFileName() {
+        var fileName = document.getElementById("uploadFile").value
+        if (fileName == "") {
+            alert("Browse to upload a valid File with png extension");
+            return false;
+        }
+        else if (fileName.split(".")[1].toUpperCase() == "PNG")
+            return true;
+        else {
+            alert("File with " + fileName.split(".")[1] + " is invalid. Upload a validfile with png extensions");
+            return false;
+        }
+        return true;
+    }
+</script>

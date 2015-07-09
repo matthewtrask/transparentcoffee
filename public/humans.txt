@@ -13,6 +13,6 @@ Last Updated: June 18th, 2015
 
 Standards: HTML5, CSS3
 
-Components: PHP, jQuery, Modernizr, Gulp, Sass
+Components: PHP, jQuery, Modernizr, Gulp, Sass, FontAwesome
 
 Software: Simple MVC Framework

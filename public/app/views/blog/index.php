@@ -1,6 +1,15 @@
+<div class="img-overlay-2">
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
+    "/>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>"></noscript>
+    <div class="text-wrapper">
+        <h2 class="image-text">Insights</h2>
+    </div>
+</div>
 
-
-<div class='row'>
+<div class='row' style="margin-top: 20px">
 	<div class='small-12 medium-12 large-12 columns'>
 
 		<?php
@@ -19,14 +28,14 @@
 						echo "<p>Posted on ".date('jS M Y H:i:s', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p>";
 						echo "<div class='content'>".stripslashes($row->postDesc)."</div>";
 						echo "<p><a href='".DIR."$row->postSlug' class='btn btn-primary btn-sm'>Read More</a></p>";
-					echo "</div>"; 
+					echo "</div>";
 
-					
+
 				echo "</div>\n";
 			}
 		}
 		?>
-	
+
 	</div>
 
 <!--	<div class='small-12 medium-12 large-12 columns'>-->

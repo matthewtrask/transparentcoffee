@@ -34,4 +34,33 @@ class ttc extends Model
         return $result;
 
     }
+    public function insertPendingCoffee(){
+        $this->_db->insert("INSERT INTO ".PREFIX."coffee_pending (
+        coffee_name,
+        description,
+        retail_price,
+        bag_size,
+        currency,
+        gppp,
+        url
+        ) VALUES (
+        ".$cleanCoffeeName.","
+        .$cleanCoffeeDesc.","
+        .$cleanCoffeePrice.","
+        .$cleanBagSize.","
+        .$cleanCurrency.","
+        .$cleanCoffeeGPPP.","
+        .$cleanFarmWebsite.")
+        ");
+    }
+
+    public function insertPendingRoaster(){
+        $this->_db->insert("INSERT INTO ".PREFIX."roaster_pending(
+        roaster_name,
+        roaster_logo
+        ) VALUES (
+        ".$cleanRoaster.","
+        .$roasterImage.")
+        ");
+    }
 }

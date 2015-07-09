@@ -294,6 +294,39 @@ class ttc extends \core\controller {
 	public function register() {
 		$data['title'] = 'Register';
 
+		$name = $_POST['submitName'];
+		$email = $_POST['submitEmail'];
+		$roaster = $_POST['roasterName'];
+        $roasterDescription = $_POST['roasterDescription'];
+        $roasterImage = $_FILES['roasterImage'];
+        $coffeeName = $_POST['coffeeName'];
+        $coffeeDescription = $_POST['coffeeDescription'];
+        $coffeePrice = $_POST['coffeePrice'];
+        $coffeeCurrency = $_POST['coffeeCurrency'];
+        $bagSize = $_POST['bagSize'];
+        $coffeeGPPP = $_POST['coffeeGPPP'];
+        $farmName = $_POST['farmName'];
+        $farmLocation = $_POST['farmLocation'];
+        $farmWebsite = $_POST['farmWebsite'];
+        $farmGPPP = $_FILES['greenPPP'];
+
+        $cleanName = filter_var($name, FILTER_SANITIZE_STRING);
+        $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+        $cleanRoaster = filter_var($roaster, FILTER_SANITIZE_STRING);
+        $cleanRoasterDesc = filter_var($roasterDescription, FILTER_SANITIZE_STRING);
+        $cleanCoffeeName = filter_var($coffeeName, FILTER_SANITIZE_STRING);
+        $cleanCoffeeDesc = filter_var($coffeeDescription, FILTER_SANITIZE_STRING);
+        $cleanCoffeePrice = filter_var($coffeePrice, FILTER_SANITIZE_STRING);
+        $cleanCoffeeCurrency = filter_var($coffeeCurrency, FILTER_SANITIZE_STRING);
+        $cleanBagSize = filter_var($bagSize, FILTER_SANITIZE_STRING);
+        $cleanCoffeeGPPP = filter_var($coffeeGPPP, FILTER_SANITIZE_STRING);
+        $cleanFarmName = filter_var($farmName, FILTER_SANITIZE_STRING);
+        $cleanFarmLocation = filter_var($farmLocation, FILTER_SANITIZE_STRING);
+        $cleanFarmWebsite = filter_var($farmWebsite, FILTER_VALIDATE_URL);
+
+        $this->_model->insertPendingCoffee($cleanCoffeeName, $cleanCoffeeDesc, $cleanCoffeePrice, $cleanBagSize, $cleanCoffeeCurrency, $cleanCoffeeGPPP, $cleanFarmWebsite);
+        $this->_model->insertPendingRoaster($cleanRoaster, $roasterImage);
+
 
 		View::rendertemplate('header', $data);
 		View::rendertemplate('registration');
@@ -302,7 +335,7 @@ class ttc extends \core\controller {
 
 	public function insight() {
 		$data['title'] = 'Insights';
-		
+
 	}
 
 	public function scrpi() {
@@ -325,7 +358,7 @@ class ttc extends \core\controller {
 
 	public function contact() {
 
-
+        // FIX THIS
 		$data['title'] = 'Contact';
 
 		$mail = new \helpers\phpmailer\mail();
