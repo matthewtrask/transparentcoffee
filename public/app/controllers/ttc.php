@@ -4,6 +4,7 @@ namespace controllers;
 
 use helpers\url;
 use helpers\form;
+use helpers\paginator;
 use helpers\phpmailer\mail;
 use core\view;
 use core\controller;
@@ -15,10 +16,17 @@ class ttc extends \core\controller {
 
 	public function __construct(){
         $this->_model = new \models\ttc();
+        $this->_modelblog = new \models\blog\blog();
 	}
 
 	public function index() {
 		$data['title'] = 'Home';
+
+        $pages = new Paginator('3','page');
+        $pages->set_total(count($this->_modelblog->getpoststotal()));
+        $data['posts'] = $this->_modelblog->getposts($pages->get_limit());
+        $data['page_links'] = $pages->page_links();
+        $data['cats'] = $this->_modelblog->getcats();
 
         $roasters = $this->_model->getLogos();
         $data['roasters'] = $roasters;
