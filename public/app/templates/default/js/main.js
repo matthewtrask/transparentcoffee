@@ -4,21 +4,21 @@ $(document).ready(function(){
     function flowText() {
         $(".roaster_name").flowtype({
             maximum: 800,
-            minFont: 14,
+            minFont: 13,
             maxFont: 22,
             fontRatio: 17
         });
         $(".coffee_name").flowtype({
             maximum: 800,
-            minFont: 11,
+            minFont: 10,
             maxFont: 16,
             fontRatio: 22
         });
         $(".TTCList li").flowtype({
             maximum: 800,
-            minFont: 9,
+            minFont: 8,
             maxFont: 14,
-            fontRatio: 25
+            fontRatio: 50
         });
     }
     flowText();
