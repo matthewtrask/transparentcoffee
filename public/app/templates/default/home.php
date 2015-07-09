@@ -20,12 +20,27 @@
         </div>
     </div>
 </div>
-<div class="slick-multiple autoplay">
-    <?php foreach ($data['roasters'] as $roaster): ?>
-    <div>
-        <img src='<?php echo $roaster->roaster_logo ?>'/>
+<div class="row">
+    <div class="small-offset-1 small-10 columns" style="text-align: center;">
+        <h1 style="margin-top: 20px;" class="page-header">Featured Roasters</h1>
     </div>
-    <?php endforeach; ?>
+</div>
+<div class="row">
+    <?php shuffle($data['roasters'])?>
+    <div class="show-for-medium-up slick-multiple autoplay">
+        <?php foreach ($data['roasters'] as $roaster): ?>
+            <div class="featured-wrapper">
+                <img src='<?php echo $roaster->roaster_logo ?>'/>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="show-for-small-only slick slick-custom autoplay">
+        <?php foreach ($data['roasters'] as $roaster): ?>
+            <div class="featured-wrapper">
+                <img src='<?php echo $roaster->roaster_logo ?>'/>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>
 <div class="row">
     <a href="#"><img id="home-bottom-logo" src="<?php echo helpers\url::template_path() .

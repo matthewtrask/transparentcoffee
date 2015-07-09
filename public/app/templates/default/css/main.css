@@ -334,6 +334,16 @@ select {
   margin-left: 45%;
   text-align: center; }
 
+.featured-wrapper {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px; }
+
+.slick-custom .featured-wrapper {
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 20px; }
+
 @media only screen and (min-width: 64.063em) {
   .slide-title {
     top: 30px;
@@ -407,6 +417,8 @@ select {
 @media only screen and (min-width: 120.063em) {
   .page-header {
     font-size: 45px; }
+  .sub-header {
+    font-size: 40px; }
   .image-text {
     top: 300px;
     font-size: 85px; }
@@ -418,6 +430,8 @@ select {
 @media only screen and (min-width: 90.063em) and (max-width: 120em) {
   .page-header {
     font-size: 40px; }
+  .sub-header {
+    font-size: 36px; }
   .image-text {
     top: 240px;
     font-size: 80px; }
@@ -429,6 +443,8 @@ select {
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
   .page-header {
     font-size: 36px; }
+  .sub-header {
+    font-size: 32px; }
   .image-text {
     top: 195px;
     font-size: 72px; }
@@ -440,6 +456,8 @@ select {
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
   .page-header {
     font-size: 28px; }
+  .sub-header {
+    font-size: 24px; }
   .image-text {
     top: 150px;
     font-size: 50px; }
@@ -451,6 +469,8 @@ select {
 @media only screen and (max-width: 40em) {
   .page-header {
     font-size: 22px; }
+  .sub-header {
+    font-size: 18px; }
   .image-text {
     top: 120px;
     font-size: 32px; }
@@ -471,9 +491,11 @@ select {
   .light-font-bigger {
     font-size: 14px !important; }
   .light-font-smaller {
-    font-size: 12px !important; } }
+    font-size: 12px !important; }
+  .sub-header {
+    font-size: 16px; } }
 
-.page-header {
+.page-header, .sub-header {
   font-family: RalewayRegular !important; }
 
 #text-wrapper {
