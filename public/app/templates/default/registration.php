@@ -144,6 +144,15 @@
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
+                    <label for="farmRegion" class="inline">Farm Region:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="farmRegion" class="regInput" type="text" placeholder="Farm Region" for="farmRegion" id="farmRegion" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
                     <label for="farmWebSite" class="inline">Farm Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">

@@ -307,6 +307,7 @@ class ttc extends \core\controller {
         $coffeeGPPP = $_POST['coffeeGPPP'];
         $farmName = $_POST['farmName'];
         $farmLocation = $_POST['farmLocation'];
+        $farmRegion = $_POST['farmRegion'];
         $farmWebsite = $_POST['farmWebsite'];
         $farmGPPP = $_FILES['greenPPP'];
 
@@ -322,11 +323,33 @@ class ttc extends \core\controller {
         $cleanCoffeeGPPP = filter_var($coffeeGPPP, FILTER_SANITIZE_STRING);
         $cleanFarmName = filter_var($farmName, FILTER_SANITIZE_STRING);
         $cleanFarmLocation = filter_var($farmLocation, FILTER_SANITIZE_STRING);
+        $cleanFarmRegion = filter_var($farmRegion, FILTER_SANITIZE_STRING);
         $cleanFarmWebsite = filter_var($farmWebsite, FILTER_VALIDATE_URL);
 
-        $this->_model->insertPendingCoffee($cleanCoffeeName, $cleanCoffeeDesc, $cleanCoffeePrice, $cleanBagSize, $cleanCoffeeCurrency, $cleanCoffeeGPPP, $cleanFarmWebsite);
-        $this->_model->insertPendingRoaster($cleanRoaster, $roasterImage);
+        $pendingCoffee = array(
+            'coffee_name'  => $cleanCoffeeName,
+            'description'  => $cleanCoffeeDesc,
+            'retail_price' => $cleanCoffeePrice,
+            'bag_size'     => $cleanBagSizes,
+            'currency'     => $cleanCoffeeCurrency,
+            'gppp'         => $cleanCoffeeGPPP,
+            'url'          => $cleanFarmWebsite
+            );
+        $pendingRoaster = array(
+            'roaster_name' => $cleanRoaster,
+            'roaster_desc' => $cleanRoasterDesc,
+            'roaster_logo' => $roasterImage
+            );
+        $pendingFarmer = array(
+            'farm_name'    => $cleanFarmName,
+            'farm_country' => $cleanFarmLocation,
+            'farm_region'  => $cleanFarmRegion
+            );
 
+
+        $this->_model->insertPendingCoffee();
+        $this->_model->insertPendingRoaster();
+        $this->_model->insertPendingGrower();
 
 		View::rendertemplate('header', $data);
 		View::rendertemplate('registration');

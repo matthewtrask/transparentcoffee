@@ -34,33 +34,29 @@ class ttc extends Model
         return $result;
 
     }
-    public function insertPendingCoffee(){
-        $this->_db->insert("INSERT INTO ".PREFIX."coffee_pending (
-        coffee_name,
-        description,
-        retail_price,
-        bag_size,
-        currency,
-        gppp,
-        url
-        ) VALUES (
-        ".$cleanCoffeeName.","
-        .$cleanCoffeeDesc.","
-        .$cleanCoffeePrice.","
-        .$cleanBagSize.","
-        .$cleanCurrency.","
-        .$cleanCoffeeGPPP.","
-        .$cleanFarmWebsite.")
-        ");
+    public function insertPendingCoffee($pendingCoffee){
+        $this->_db->insert(PREFIX."coffee_pending", $pendingCoffee);
     }
 
-    public function insertPendingRoaster(){
-        $this->_db->insert("INSERT INTO ".PREFIX."roaster_pending(
-        roaster_name,
-        roaster_logo
-        ) VALUES (
-        ".$cleanRoaster.","
-        .$roasterImage.")
-        ");
-    }
+    // public function insertPendingRoaster($cleanRoaster, $roasterImage){
+    //     $this->_db->insert("INSERT INTO ".PREFIX."roaster_pending(
+    //     roaster_name,
+    //     roaster_logo
+    //     ) VALUES (
+    //     ".$cleanRoaster.","
+    //     .$roasterImage.")
+    //     ");
+    // }
+
+    // public function insertPendingGrower(){
+    //     $this->_db->insert('INSERT INTO '.PREFIX.'grower_pending(
+    //     farm_name,
+    //     farm_country,
+    //     farm_region
+    //     ) VALUES (
+    //     '.$cleanFarmName.','
+    //     .$cleanFarmLocation.','
+    //     .$cleanFarmRegion.')
+    //     ');
+    // }
 }
