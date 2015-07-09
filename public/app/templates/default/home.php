@@ -23,7 +23,7 @@
 <div class="slick-multiple autoplay">
     <?php foreach ($data['roasters'] as $roaster): ?>
     <div>
-        <img src='data:image/jpeg;base64, <?php echo $roaster->roaster_logo ?>'/>
+        <img src='<?php echo $roaster->roaster_logo ?>'/>
     </div>
     <?php endforeach; ?>
 </div>

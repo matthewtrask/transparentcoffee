@@ -156,7 +156,7 @@
                         <div class='small-3 medium-3 large-3 columns logo-wrapper'>
                             <div class="text-center wrapper-parent">
                                 <div class="thumbnail-wrapper">
-                                    <img src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/>
+                                    <img src='<?php echo $ttcoffee->roaster_logo ?>'/>
                                 </div>
                                 <i class="fa fa-search-plus"></i>
                             </div>
@@ -202,7 +202,7 @@
                     <div class="row">
                         <div class="small-12 medium-6 columns">
                             <div class="show-for-small-only">
-                                <div class="small-12 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
+                                <div class="small-12 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='<?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
                             <h2 id="modalTitle"><?php echo $ttcoffee->roaster_name?></h2>
                             <p class="lead"><?php echo $ttcoffee->coffee_name?></p>
@@ -223,7 +223,7 @@
                         </div>
                         <div class="small-12 medium-6 columns">
                             <div class="row">
-                                <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='data:image/jpeg;base64, <?php echo $ttcoffee->roaster_logo ?>'/></a></div>
+                                <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='<?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
                             <div class="row">
                                 <div class="small-offset-1 small-6 medium-offset-3 medium-5 columns text-center">

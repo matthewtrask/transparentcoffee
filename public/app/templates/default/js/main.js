@@ -18,11 +18,11 @@ $(document).ready(function(){
             maximum: 800,
             minFont: 8,
             maxFont: 14,
-            fontRatio: 50
+            fontRatio: 22
         });
     }
     flowText();
-  // $('#submitButton').click(function(e){
+  //$('#submitButton').click(function(e){
   //   $.ajax({
   //     url: 'http://192.168.33.10/contact',
   //     type: 'POST',
@@ -35,8 +35,9 @@ $(document).ready(function(){
   //     }
   //   });
   //   e.preventDefault();
-  // });
+  //});
   //
+
     $('#header-logo').hover(function(){
         this.src = "app/templates/default/img/Transparent-Trade-Tan-Large-08-10.png";
     }, function(){
@@ -128,13 +129,16 @@ $(document).ready(function(){
             var data = $("#mobile-menu-form").serialize();
         }
         if (sort == 'Green Price Per Pound') {
-            data += '&sort=gppp';
+            data += '&sort=GPPP';
         }
         else if (sort == 'Effective Grower Share') {
-            data += '&sort=egs';
+            data += '&sort=EGS';
         }
         else if (sort == 'Default') {
-            data += '&sort=default';
+            data += '&sort=Default';
+        }
+        else {
+            data += '&sort=' + sort;
         }
         data += '&arrow=' + arrow;
         $.ajax({
@@ -161,13 +165,16 @@ $(document).ready(function(){
             var data = $("#mobile-menu-form").serialize();
         }
         if (sort == 'Green Price Per Pound') {
-            data += '&sort=gppp';
+            data += '&sort=GPPP';
         }
         else if (sort == 'Effective Grower Share') {
-            data += '&sort=egs';
+            data += '&sort=EGS';
         }
         else if (sort == 'Default') {
-            data += '&sort=default';
+            data += '&sort=Default';
+        }
+        else {
+            data += '&sort=' + sort;
         }
         data += '&arrow=' + arrow;
         $.ajax({
@@ -195,13 +202,16 @@ $(document).ready(function(){
             var data = $("#mobile-menu-form").serialize();
         }
         if (sort == 'Green Price Per Pound') {
-            data += '&sort=gppp';
+            data += '&sort=GPPP';
         }
         else if (sort == 'Effective Grower Share') {
-            data += '&sort=egs';
+            data += '&sort=EGS';
         }
         else if (sort == 'Default') {
-            data += '&sort=default';
+            data += '&sort=Default';
+        }
+        else {
+            data += '&sort=' + sort;
         }
         data += '&arrow=' + arrow;
         $.ajax({
@@ -228,13 +238,16 @@ $(document).ready(function(){
             var data = $("#mobile-menu-form").serialize();
         }
         if (sort == 'Green Price Per Pound') {
-            data += '&sort=gppp';
+            data += '&sort=GPPP';
         }
         else if (sort == 'Effective Grower Share') {
-            data += '&sort=egs';
+            data += '&sort=EGS';
         }
         else if (sort == 'Default') {
-            data += '&sort=default';
+            data += '&sort=Default';
+        }
+        else {
+            data += '&sort=' + sort;
         }
         data += '&arrow=' + arrow;
         $.ajax({
@@ -266,13 +279,16 @@ $(document).ready(function(){
             var data = $("#mobile-menu-form").serialize();
         }
         if (sort == 'Green Price Per Pound') {
-            data += '&sort=gppp';
+            data += '&sort=GPPP';
         }
         else if (sort == 'Effective Grower Share') {
-            data += '&sort=egs';
+            data += '&sort=EGS';
         }
         else if (sort == 'Default') {
-            data += '&sort=default';
+            data += '&sort=Default';
+        }
+        else {
+            data += '&sort=' + sort;
         }
         data += '&arrow=' + arrow;
         $.ajax({

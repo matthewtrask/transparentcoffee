@@ -34,29 +34,22 @@ class ttc extends Model
         return $result;
 
     }
+    public function insertContact($contact) {
+        $this->_db->insert(PREFIX."contact", $contact);
+    }
     public function insertPendingCoffee($pendingCoffee){
         $this->_db->insert(PREFIX."coffee_pending", $pendingCoffee);
     }
 
-    // public function insertPendingRoaster($cleanRoaster, $roasterImage){
-    //     $this->_db->insert("INSERT INTO ".PREFIX."roaster_pending(
-    //     roaster_name,
-    //     roaster_logo
-    //     ) VALUES (
-    //     ".$cleanRoaster.","
-    //     .$roasterImage.")
-    //     ");
-    // }
+     public function insertPendingRoaster($pendingRoaster){
+         $this->_db->insert(PREFIX."roaster_pending", $pendingRoaster);
+     }
 
-    // public function insertPendingGrower(){
-    //     $this->_db->insert('INSERT INTO '.PREFIX.'grower_pending(
-    //     farm_name,
-    //     farm_country,
-    //     farm_region
-    //     ) VALUES (
-    //     '.$cleanFarmName.','
-    //     .$cleanFarmLocation.','
-    //     .$cleanFarmRegion.')
-    //     ');
-    // }
+     public function insertPendingGrower($pendingGrower){
+         $this->_db->insert(PREFIX.'grower_pending', $pendingGrower);
+     }
+
+     public function getLastId() {
+         return $this->_db->lastInsertId();
+     }
 }

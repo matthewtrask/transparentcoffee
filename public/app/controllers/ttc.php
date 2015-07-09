@@ -7,6 +7,7 @@ use helpers\form;
 use helpers\phpmailer\mail;
 use core\view;
 use core\controller;
+use Core\Model;
 
 class ttc extends \core\controller {
 
@@ -112,21 +113,21 @@ class ttc extends \core\controller {
                 }
             }
         }
-//        if ($_POST['sort'] == 'gppp') {
-//            $_POST['sort'] = 'Green Price Per Pound';
-//        }
-//        else if ($_POST['sort'] == 'egs') {
-//            $_POST['sort'] = 'Effective Grower Share';
-//        }
-//        else if ($_POST['sort'] == 'default') {
-//            $_POST['sort'] = 'Default';
-//        }
+        if ($_POST['sort'] == 'gppp') {
+            $_POST['sort'] = 'GPPP';
+        }
+        else if ($_POST['sort'] == 'egs') {
+            $_POST['sort'] = 'EGS';
+        }
+        else if ($_POST['sort'] == 'default') {
+            $_POST['sort'] = 'Default';
+        }
         echo '<div class="small-9 columns">';
             echo '<h3>Transparent Coffees</h3>';
         echo '</div>';
         echo '<div class="small-3 columns">';
             echo "<a class='button tiny secondary dropdown-btn' data-dropdown='hover1'
-                     data-options='is_hover:true'>" . strtoupper($_POST['sort']) . "</a>";
+                     data-options='is_hover:true'>" . $_POST['sort'] . "</a>";
             echo '<ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>';
                 if ($_POST['sort'] == 'gppp') {
                     echo '<li class="sort-dropdown"><a>Effective Grower Share</a></li>';
@@ -146,9 +147,9 @@ class ttc extends \core\controller {
 
         shuffle($ttcoffees);
         switch($_POST['sort']) {
-            case 'default':
+            case 'Default':
                 break;
-            case 'gppp':
+            case 'GPPP':
                 if ($_POST['arrow'] == 'down') {
                     $ttcoffees = $this->quicksort($ttcoffees, 'gppp', 'down');
                 }
@@ -156,7 +157,7 @@ class ttc extends \core\controller {
                     $ttcoffees = $this->quicksort($ttcoffees, 'gppp', 'up');
                 }
                 break;
-            case 'egs':
+            case 'EGS':
                 if ($_POST['arrow'] == 'down') {
                     $ttcoffees = $this->quicksort($ttcoffees, 'egs', 'down');
                 }
@@ -173,7 +174,7 @@ class ttc extends \core\controller {
                         echo "<div class='small-3 medium-3 large-3 columns logo-wrapper'>";
                             echo '<div class="text-center wrapper-parent">';
                                 echo '<div class="thumbnail-wrapper">';
-                                    echo "<img src='data:image/jpeg;base64, $ttcoffee->roaster_logo'/>";
+                                    echo "<img src='$ttcoffee->roaster_logo'/>";
                                 echo '</div>';
                                 echo "<i class='fa fa-search-plus'></i>";
                             echo '</div>';
@@ -218,7 +219,7 @@ class ttc extends \core\controller {
                     echo '<div class="row">';
                         echo '<div class="small-12 medium-6 columns">';
                             echo "<div class='show-for-small-only'>";
-                                echo "<div class='small-12 columns'><a href=" . $ttcoffee->url . "><img class='quick-view-logo' src='data:image/jpeg;base64, " . $ttcoffee->roaster_logo . "'/></a></div>";
+                                echo "<div class='small-12 columns'><a href=" . $ttcoffee->url . "><img class='quick-view-logo' src='$ttcoffee->roaster_logo'/></a></div>";
                             echo "</div>";
                             echo "<h2 id='modalTitle'>$ttcoffee->roaster_name</h2>";
                             echo "<p class='lead'>$ttcoffee->coffee_name</p>";
@@ -241,7 +242,7 @@ class ttc extends \core\controller {
                             echo '<div class="row">';
                                 echo '<div class="show-for-medium-up medium-offset-2 medium-8 columns">';
                                     echo "<a href='$ttcoffee->url'>";
-                                        echo "<img class='quick-view-logo' src='data:image/jpeg;base64, $ttcoffee->roaster_logo'/>";
+                                        echo "<img class='quick-view-logo' src='$ttcoffee->roaster_logo'/>";
                                     echo '</a>';
                                 echo '</div>';
                             echo '</div>';
@@ -295,67 +296,147 @@ class ttc extends \core\controller {
 	public function register() {
 		$data['title'] = 'Register';
 
-		$name = $_POST['submitName'];
-		$email = $_POST['submitEmail'];
-		$roaster = $_POST['roasterName'];
+		View::rendertemplate('header', $data);
+		View::rendertemplate('registration');
+		View::rendertemplate('footer');
+	}
+
+    public function submitRegister() {
+        if($_FILES['greenPPP']['size'] > 0)
+        {
+            $fileName = $_FILES['greenPPP']['name'];
+            $tmpName  = $_FILES['greenPPP']['tmp_name'];
+            $fileSize = $_FILES['greenPPP']['size'];
+            $fileType = $_FILES['greenPPP']['type'];
+
+            $fp      = fopen($tmpName, 'r');
+            $content = fread($fp, filesize($tmpName));
+            $content = addslashes($content);
+            fclose($fp);
+
+            if(!get_magic_quotes_gpc())
+            {
+                $fileName = addslashes($fileName);
+            }
+        }
+        else
+        {
+            $fileName = NULL;
+            $fileSize = NULL;
+            $fileType = NULL;
+            $content  = NULL;
+        }
+        $allowed_filetypes = array('.jpg','.jpeg','.png','.gif');
+        $max_filesize = 10485760;
+        $upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
+
+        $filename = $_FILES['roasterImage']['name'];
+        $ext = substr($filename, strpos($filename,'.'), strlen($filename)-1);
+
+        if(!in_array($ext,$allowed_filetypes))
+            die('The file you attempted to upload is not allowed.');
+
+        if(filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
+            die('The file you attempted to upload is too large.');
+
+        if(!is_writable($upload_path))
+            die('You cannot upload to the specified directory, please CHMOD it to 777.');
+
+        if(move_uploaded_file($_FILES['roasterImage']['tmp_name'],$upload_path . $filename)) {
+            $data = file_get_contents($upload_path . $filename);
+            $roasterImage = 'data:image/' . substr($ext, 1) . ';base64, ' . base64_encode($data);
+            unlink($upload_path . $filename);
+        } else {
+            echo 'There was an error during the file upload.  Please try again.';
+        }
+
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $email = $_POST['submitEmail'];
+        $roaster = $_POST['roasterName'];
         $roasterDescription = $_POST['roasterDescription'];
-        $roasterImage = $_FILES['roasterImage'];
         $coffeeName = $_POST['coffeeName'];
         $coffeeDescription = $_POST['coffeeDescription'];
         $coffeePrice = $_POST['coffeePrice'];
         $coffeeCurrency = $_POST['coffeeCurrency'];
-        $bagSize = $_POST['bagSize'];
+        $coffeeWebsite = $_POST['coffeeWebsite'];
+        $bagSize = $_POST['coffeeBagSize'];
         $coffeeGPPP = $_POST['coffeeGPPP'];
         $farmName = $_POST['farmName'];
         $farmLocation = $_POST['farmLocation'];
         $farmRegion = $_POST['farmRegion'];
-        $farmWebsite = $_POST['farmWebsite'];
-        $farmGPPP = $_FILES['greenPPP'];
 
-        $cleanName = filter_var($name, FILTER_SANITIZE_STRING);
+        $cleanFirstName = filter_var($firstName, FILTER_SANITIZE_STRING);
+        $cleanLastName = filter_var($lastName, FILTER_SANITIZE_STRING);
         $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
         $cleanRoaster = filter_var($roaster, FILTER_SANITIZE_STRING);
         $cleanRoasterDesc = filter_var($roasterDescription, FILTER_SANITIZE_STRING);
         $cleanCoffeeName = filter_var($coffeeName, FILTER_SANITIZE_STRING);
         $cleanCoffeeDesc = filter_var($coffeeDescription, FILTER_SANITIZE_STRING);
-        $cleanCoffeePrice = filter_var($coffeePrice, FILTER_SANITIZE_STRING);
+        $cleanCoffeePrice = filter_var($coffeePrice, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $cleanCoffeeCurrency = filter_var($coffeeCurrency, FILTER_SANITIZE_STRING);
-        $cleanBagSize = filter_var($bagSize, FILTER_SANITIZE_STRING);
-        $cleanCoffeeGPPP = filter_var($coffeeGPPP, FILTER_SANITIZE_STRING);
+        $cleanBagSize = filter_var($bagSize, FILTER_SANITIZE_NUMBER_INT);
+        $cleanCoffeeGPPP = filter_var($coffeeGPPP, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
+        $cleanCoffeeWebsite = filter_var($coffeeWebsite, FILTER_VALIDATE_URL);
         $cleanFarmName = filter_var($farmName, FILTER_SANITIZE_STRING);
         $cleanFarmLocation = filter_var($farmLocation, FILTER_SANITIZE_STRING);
         $cleanFarmRegion = filter_var($farmRegion, FILTER_SANITIZE_STRING);
-        $cleanFarmWebsite = filter_var($farmWebsite, FILTER_VALIDATE_URL);
 
-        $pendingCoffee = array(
-            'coffee_name'  => $cleanCoffeeName,
-            'description'  => $cleanCoffeeDesc,
-            'retail_price' => $cleanCoffeePrice,
-            'bag_size'     => $cleanBagSizes,
-            'currency'     => $cleanCoffeeCurrency,
-            'gppp'         => $cleanCoffeeGPPP,
-            'url'          => $cleanFarmWebsite
-            );
-        $pendingRoaster = array(
-            'roaster_name' => $cleanRoaster,
-            'roaster_desc' => $cleanRoasterDesc,
-            'roaster_logo' => $roasterImage
-            );
-        $pendingFarmer = array(
+        $contact = array(
+            'first_name'   => $cleanFirstName,
+            'last_name'    => $cleanLastName,
+            'email'        => $cleanEmail
+        );
+        $this->_model->insertContact($contact);
+        $contactId = $this->_model->getLastId();
+
+        $pendingGrower = array(
             'farm_name'    => $cleanFarmName,
             'farm_country' => $cleanFarmLocation,
             'farm_region'  => $cleanFarmRegion
-            );
+        );
+        $this->_model->insertPendingGrower($pendingGrower);
+        $growerId = $this->_model->getLastId();
 
+        $pendingRoaster = array(
+            'contact_id'          => $contactId,
+            'roaster_name'        => $cleanRoaster,
+            'roaster_logo'        => $roasterImage,
+            'roaster_description' => $cleanRoasterDesc
+        );
+        $this->_model->insertPendingRoaster($pendingRoaster);
+        $roasterId = $this->_model->getLastId();
 
-        $this->_model->insertPendingCoffee();
-        $this->_model->insertPendingRoaster();
-        $this->_model->insertPendingGrower();
+        $egs = $cleanCoffeeGPPP / ($cleanCoffeePrice / $cleanBagSize * 16 * .85);
+        $pendingCoffee = array(
+            'grower_id'         => $growerId,
+            'roaster_id'        => $roasterId,
+            'coffee_name'       => $cleanCoffeeName,
+            'description'       => $cleanCoffeeDesc,
+            'retail_price'      => $cleanCoffeePrice,
+            'currency'          => $cleanCoffeeCurrency,
+            'bag_size'          => $cleanBagSize,
+            'gppp'              => $cleanCoffeeGPPP,
+            'egs'               => $egs,
+            'gppp_confirmation' => $content,
+            'file_name'         => $fileName,
+            'file_type'         => $fileType,
+            'file_size'         => $fileSize,
+            'url'               => $cleanCoffeeWebsite
+        );
+        $this->_model->insertPendingCoffee($pendingCoffee);
 
-		View::rendertemplate('header', $data);
-		View::rendertemplate('registration');
-		View::rendertemplate('footer');
-	}
+        header('Location: thankyou');
+
+    }
+
+    public function thankyou() {
+        $data['title'] = 'Thank You';
+
+        View::rendertemplate('header', $data);
+        View::rendertemplate('thankyou');
+        View::rendertemplate('footer');
+    }
 
 	public function insight() {
 		$data['title'] = 'Insights';
