@@ -466,13 +466,25 @@ class ttc extends \core\controller {
         // FIX THIS
 		$data['title'] = 'Contact';
 
-        
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+
+        $cleanName = filter_var($name, FILTER_SANITIZE_STRING);
+        $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
+        $cleanMsg = filter_var($message, FILTER_SANITIZE_STRING);
 
 		$mail = new \helpers\phpmailer\mail();
-		$mail->setFrom($email);
+		$mail->setFrom($cleanEmail);
+        $mail->addAddress('bgoebel@emory.edu');
 		$mail->subject('A message for TTC');
-		$mail->body($Name ."<br>". $Message);
-		$mail->send();
+		$mail->body($cleanName ."<br>". $cleanMessage);
+
+        if(!empty($cleanName) && !empty($cleanEmail) && !empty($cleanMsg)){
+            $mail->send();
+        } else {
+            echo "Sorry, there was an error, please try again in just a few minutes";
+        }
 
 		View::rendertemplate('header', $data);
 		View::rendertemplate('contact', $data);
