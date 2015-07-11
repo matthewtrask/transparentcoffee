@@ -22,7 +22,7 @@ class ttc extends \core\controller {
 	public function index() {
 		$data['title'] = 'Home';
 
-        $pages = new Paginator('3','page');
+        $pages = new Paginator('1','page');
         $pages->set_total(count($this->_modelblog->getpoststotal()));
         $data['posts'] = $this->_modelblog->getposts($pages->get_limit());
         $data['page_links'] = $pages->page_links();
@@ -491,7 +491,7 @@ class ttc extends \core\controller {
         if(!empty($cleanName) && !empty($cleanEmail) && !empty($cleanMsg)){
             $mail->send();
         } else {
-            echo "Sorry, there was an error, please try again in just a few minutes";
+            echo "<div class='alert'>Sorry, there was an error, please try again in just a few minutes</div>";
         }
 
 		View::rendertemplate('header', $data);
