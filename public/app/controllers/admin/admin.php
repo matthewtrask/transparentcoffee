@@ -34,8 +34,8 @@ class Admin extends \core\controller {
 		$data['title'] = 'Registration Approval';
 
 		$pendingReg = $this->_adminModel->getTTCoffees();
-		echo "<Pre>";
-		print_r($pendingReg);
+		$data['pendingReg'] = $pendingReg;
+		
 		View::renderadmintemplate('header', $data);
 		View::render('admin/pending',$data);
 		View::renderadmintemplate('footer',$data);
