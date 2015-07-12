@@ -82,7 +82,7 @@
                     <label for="roasterImage" class="inline">Roaster Logo:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage" required>
+                    <input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
                 </div>
             </div><hr />
             <div class="row">
@@ -179,7 +179,7 @@
                 </div>
                 <div class="small-7 medium-7 large-7 columns">
                     <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-                    <input name="greenPPP" class="regInput" type="file" placeholder="greenPPP" for="greenPPP" id="greenPPP" required>
+                    <input name="greenPPP" class="regInput" type="file" placeholder="greenPPP" for="greenPPP" id="greenPPP">
                 </div>
             </div>
             <div class="small-offset-2 small-8 medium-8 large-8 columns">
