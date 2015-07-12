@@ -6,12 +6,12 @@
         <div class="small-4 medium-4 large-4 columns">
             <div class="left">
                 <ul>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">TT COFFEES</a></li>
-                    <li><a href="#">REGISTER</li>
-                    <li><a href="#">INSIGHTS</a></li>
-                    <li><a href="#">SCRPI</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="transparentcoffee">TT COFFEES</a></li>
+                    <li><a href="register">REGISTER</li>
+                    <li><a href="insights">INSIGHTS</a></li>
+                    <li><a href="scrpi">SCRPI</a></li>
+                    <li><a href="contact">CONTACT</a></li>
                 </ul>
             </div>
         </div>
