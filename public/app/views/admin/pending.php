@@ -1,5 +1,10 @@
 <div class="valign approval">
 	<div class="small-12 medium-12 large-12 columns">
+	<?php //echo "<pre>";print_r($data['pendingReg']);
+	$pendingReg = json_decode(json_encode($data['pendingReg']));
+	echo "<pre>";
+	print_r($pendingReg['coffee_name']);
+	?>
 		<h1>Registration Approval</h1>
 		<h3>Approved</h3>
 		<table>
@@ -25,7 +30,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td>Test</td>
+					<td></td>
 					<td>test@test.com</td>
 					<td>Counter Culture</td>
 					<td>Roaster Description</td>
