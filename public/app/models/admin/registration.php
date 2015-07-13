@@ -8,7 +8,7 @@ class Registration extends \core\model {
         return $this->_db->select('SELECT * FROM '.PREFIX.'coffee  AS c
                             INNER JOIN '.PREFIX.'roaster AS r  ON c.roaster_id = r.roaster_id
                             INNER JOIN '.PREFIX.'grower  AS g  ON c.grower_id  = g.grower_id
-                            INNER JOIN '.PREFIX.'contact AS ct ON r.contact_id = ct.contact_id');
+                            INNER JOIN '.PREFIX.'contact AS ct ON r.contact_id = ct.contact_id where roaster_name like "Higher Grounds Trading Company"');
         $ttcoffees = array();
         foreach ($result as $ttcoffee) {
             $current = new \TTCoffees($ttcoffee->roaster_name, $ttcoffee->roaster_logo, $ttcoffee->farm_name, $ttcoffee->farm_country, $ttcoffee->farm_region, $ttcoffee->coffee_name,
