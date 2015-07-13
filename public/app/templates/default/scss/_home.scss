@@ -79,17 +79,55 @@
   margin-left: 45%;
   text-align: center;
 }
-.featured-wrapper {
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 20px;
+.full-row {
+  background-color: #F4F4F4;
+}
+.slick-row {
+  width: 70vw !important;
+  margin-left: 15vw;
 }
 .slick-custom {
-  .featured-wrapper {
-    padding-left: 120px;
-    padding-right: 120px;
-    padding-top: 20px;
+  .featured-position {
+//    position: absolute !important;
   }
+  .featured-wrapper {
+    width: 30vw !important;
+    height: 30vw !important;
+    margin-top: 2vw !important;
+    margin-bottom: 2vw !important;
+    margin-left: 20vw !important;
+//    right: 20vw !important;
+//    margin-right: 35vw !important;
+    background-color: white;
+    position: relative !important;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute !important;
+      padding: 2vw !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+//      border-radius: 10px !important;
+//      -moz-border-radius: 10px !important;
+//      -webkit-border-radius: 10px !important;
+    }
+    -webkit-box-shadow: 0px 10px 18px 0px rgba(195,195,195,1);
+    -moz-box-shadow: 0px 10px 18px 0px rgba(195,195,195,1);
+    box-shadow: 0px 10px 18px 0px rgba(195,195,195,1);
+  }
+  .slick-list {
+    padding: 0 0 !important;
+  }
+}
+.slick-prev:before, .slick-next:before {
+  color: darkgrey !important;
+}
+.slick-prev, .slick-next {
+  color: darkgrey !important;
+}
+.slick-prev:hover, .slick-next:hover {
+  color: darkslategray !important;
 }
 
 @media #{$large-up} {
@@ -110,6 +148,9 @@
       margin-top: 10px;
     }
   }
+  .featured-wrapper {
+    border: 8px solid darkgrey;
+  }
 }
 @media #{$medium-only} {
   .slide-title {
@@ -129,6 +170,10 @@
       margin-top: 5px;
     }
   }
+  .featured-wrapper {
+      border: 7px solid darkgrey;
+  }
+
 }
 @media #{$small-only} {
   .slide-title {
@@ -153,6 +198,9 @@
         font-size: 12px;
       }
     }
+  }
+  .featured-wrapper {
+    border: 6px solid darkgrey;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -179,6 +227,9 @@
       }
     }
   }
+  .featured-wrapper {
+    border: 5px solid darkgrey;
+  }
 }
 //GLOBAL STYLES
 @media #{$xxlarge-up} {
@@ -190,7 +241,7 @@
   }
   .image-text {
     top: 300px;
-    font-size: 85px;
+    font-siz5: 85px;
   }
   .light-font-bigger {
     font-size: 30px;
@@ -291,6 +342,9 @@
   }
   .sub-header {
     font-size: 16px;
+  }
+  .featured-wrapper {
+    margin-left: 16vw !important;
   }
 }
 .page-header, .sub-header {

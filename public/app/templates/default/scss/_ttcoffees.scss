@@ -1,5 +1,4 @@
 
-
 .featuredCoffees {
   font-family: RalewayLight;
   h1, h2, h3, h4, h5, h6 {
@@ -8,6 +7,9 @@
 }
 .featuredRoaster {
   margin-bottom: 10px;
+}
+.ttcoffees {
+  background-color: #F5F5F5;
 }
 .menu li {
   list-style: none;
@@ -74,7 +76,7 @@
 }
 .custom-accordion-panel {
   a {
-    background-color: white !important;
+    background-color: #F5F5F5 !important;
     font-size: 15px !important;
   }
 }
@@ -93,9 +95,10 @@
 div.ttcoffee {
   min-height: 150px;
   width: 100%;
-  border: 2px solid #B0B0B0;
+  border: 2px solid #7B7B7B;
   border-radius: 15px;
   margin-bottom: 10px;
+  background-color: white;
   display: table;
   .TTCList {
     margin-left: 0.1em;

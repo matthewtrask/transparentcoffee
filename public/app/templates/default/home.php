@@ -25,21 +25,20 @@
         <h1 style="margin-top: 20px;" class="page-header">Featured Roasters</h1>
     </div>
 </div>
-<div class="row">
-    <?php shuffle($data['roasters'])?>
-    <div class="show-for-medium-up slick-multiple autoplay">
-        <?php foreach ($data['roasters'] as $roaster): ?>
-            <div class="featured-wrapper">
-                <img src='<?php echo $roaster->roaster_logo ?>'/>
-            </div>
-        <?php endforeach; ?>
-    </div>
-    <div class="show-for-small-only slick slick-custom autoplay">
-        <?php foreach ($data['roasters'] as $roaster): ?>
-            <div class="featured-wrapper">
-                <img src='<?php echo $roaster->roaster_logo ?>'/>
-            </div>
-        <?php endforeach; ?>
+<div class="full-row">
+    <div class="slick-row">
+        <?php shuffle($data['roasters'])?>
+        <div class="slick-home slick-custom">
+            <?php foreach ($data['roasters'] as $roaster): ?>
+                <div class="featured-position">
+                    <a href="<?php echo $roaster->roaster_url?>" target="_blank">
+                        <div class="featured-wrapper">
+                            <img src='<?php echo $roaster->roaster_logo ?>'/>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 </div>
 <div class="row">

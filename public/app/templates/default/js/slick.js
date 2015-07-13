@@ -16,12 +16,17 @@ $(document).ready(function(){
         dots: true,
         adaptiveHeight: true
     });
-    $('.slick-multiple').slick({
+    $('.slick-home').slick({
         infinite: true,
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000,
-        dots: true
+        autoplaySpeed: 5000,
+        dots: false,
+        arrows: true,
+        centerMode: true,
+        slide: 'featured_position',
+        pauseOnHover: false
+
     });
 });

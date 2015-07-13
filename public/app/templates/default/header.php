@@ -24,7 +24,14 @@
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
 
 </head>
-<body>
+<?php
+    if ($data['title'] == 'Transparent Coffees') {
+        echo "<body>";
+    }
+    else {
+        echo '<body class="overflow-body">';
+    }
+?>
 <div class="fixed">
     <nav class="top-bar" data-topbar role="navigation" id="nav">
         <ul class="title-area">

@@ -26,8 +26,8 @@
     </div>
     <div class="small-6 medium-6 large-6 columns light-font-smaller">
         <p>SE@G, an academic center within Emory University’s Goizueta Business School, powers Transparent Trade Coffee.</p>
-        <p>Our current coffee projects focus on the appropriate compensation of specialty coffee growers <a href="http://www.farmersto40.com">(Farmers to 40)</a>; on supporting community health programs in coffee country <a href="http://www.nicachc.org">(Nicaragua Community Health Connection)</a>; and on the critical intersection between these two domains <a href="http://www.nicachc.org/#!coffee/cxmz">(Los Robles Coffee Project)</a></p>
+        <p>Our current coffee projects focus on the appropriate compensation of specialty coffee growers <a href="http://www.farmersto40.com" target="_blank">(Farmers to 40)</a>; on supporting community health programs in coffee country <a href="http://www.nicachc.org">(Nicaragua Community Health Connection)</a>; and on the critical intersection between these two domains <a href="http://www.nicachc.org/#!coffee/cxmz">(Los Robles Coffee Project)</a></p>
         <p>Our faculty and staff look forward to sharing data and insights, and to working closely with dedicated roasters in the months and years ahead.</p>
-        <a href="http://goizueta.emory.edu/faculty/socialenterprise/">Learn more about SE@G</a>
+        <a href="http://goizueta.emory.edu/faculty/socialenterprise/" target="_blank">Learn more about SE@G</a>
     </div>
 </div>

@@ -219,11 +219,11 @@
                                 <li><em>Green Price:</em> $<?php echo number_format($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
                             </ul>
                             <p><?php echo $ttcoffee->description?></p>
-                            <div class="website-link"><a href="<?php echo $ttcoffee->url?>">Go to website</a></div>
+                            <div class="website-link"><a href="<?php echo $ttcoffee->url?>" target="_blank">Go to website</a></div>
                         </div>
                         <div class="small-12 medium-6 columns">
                             <div class="row">
-                                <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>"><img class='quick-view-logo' src='<?php echo $ttcoffee->roaster_logo ?>'/></a></div>
+                                <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>" target="_blank"><img class='quick-view-logo' src='<?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
                             <div class="row">
                                 <div class="small-offset-1 small-6 medium-offset-3 medium-5 columns text-center">
