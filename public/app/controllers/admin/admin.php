@@ -51,6 +51,7 @@ class Admin extends \core\controller
 //			echo $ttcoffee->roaster_name;
 //			echo "<img src='$ttcoffee->roaster_logo'/>";
 //		}
+		echo "<h2 id='pendingReg'>Pending Registration</h2>";
 		echo "<table>";
 			echo "<thead>";
 				echo "<tr>";
@@ -67,16 +68,29 @@ class Admin extends \core\controller
 					echo "<th>Green PPP</th>";
 					echo "<th>Website</th>";
 					echo "<th>Farm Name</th>";
-					echo "<th>Farm Country</th>";
 					echo "<th>Farm Region</th>";
+					echo "<th>Farm Country</th>";
 					echo "<th>GPPP Proof</th>";
 				echo "</tr>";
 			echo "</thead>";
 			foreach ($ttcoffees as $key => $ttcoffee) {
 				echo "<tbody>";
 				echo "<tr>";
-				echo "<td>" . $ttcoffee->roaster_name . "</td>";
-				echo "<td><img src='$ttcoffee->roaster_logo'/></td>";
+				echo "<td>".$ttcoffee->first_name." ".$ttcoffee->last_name."</td>";
+				echo "<td>".$ttcoffee->email."</td>";
+				echo "<td>".$ttcoffee->roaster_name."</td>";
+				echo "<td>".$ttcoffee->roaster_description."</td>";
+				echo "<td><img style='height: 100px; width: 75px; margin: 0 auto;' src='$ttcoffee->roaster_logo'/></td>";
+				echo "<td>".$ttcoffee->coffee_name."</td>";
+				echo "<td>".$ttcoffee->coffee_description."</td>";
+				echo "<td>$".$ttcoffee->retail_price."</td>";
+				echo "<td>".$ttcoffee->currency."</td>";
+				echo "<td>".$ttcoffee->bag_size."</td>";
+				echo "<td>$".$ttcoffee->gppp."</td>";
+				echo "<td>".$ttcoffee->url."</td>";
+				echo "<td>".$ttcoffee->farm_name."</td>";
+				echo "<td>".$ttcoffee->farm_region."</td>";
+				echo "<td>".$ttcoffee->farm_country."</td>";
 				echo "</tr>";
 				echo "</tbody>";
 			}
@@ -176,7 +190,7 @@ class Admin extends \core\controller
 ////			echo '<a class="close-reveal-modal" aria-label="Close">&#215;</a>';
 //			echo '</div>';
 //			echo '</div>';
-			//View::renderadmintemplate('header', $data);
+			View::renderadmintemplate('header', $data);
 			View::render('admin/pending', $data);
 			View::renderadmintemplate('footer', $data);
 		//}

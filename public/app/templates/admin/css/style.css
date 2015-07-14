@@ -68,3 +68,7 @@ section.top-bar-section ul li a:hover  {
 p#alertCSV {
 	width: 60%;
 }
+
+#pendingReg {
+	margin-top: 100px;
+}
