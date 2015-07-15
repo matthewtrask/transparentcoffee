@@ -6,7 +6,8 @@
 </div>
 <div class="row">
     <div class="small-offset-1 small-10 columns text-center">
-        <h1 class="page-header">Specialty Coffee Retail Price Index – 2015, Q1</h1>
+        <h1 class="page-header">Specialty Coffee Retail Price Index – 2015, Q2</h1>
+        <p>June 29, 2015</p>
     </div>
 </div>
 <div class="row">
