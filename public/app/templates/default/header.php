@@ -28,8 +28,7 @@
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
 
-</head>
-<?php
+</head><?php
     if ($data['title'] == 'Transparent Coffees') {
         echo "<body>";
     }
