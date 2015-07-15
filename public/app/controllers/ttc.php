@@ -434,7 +434,7 @@ class ttc extends \core\controller {
         );
         $this->_model->insertPendingCoffee($pendingCoffee);
 
-        header('Location: thankyou');
+        header('Location: admin/pending');
 
     }
 

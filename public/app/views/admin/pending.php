@@ -2,7 +2,7 @@
 		<div class='row fullWidth'>
 			<div class='small-12 medium-12 large-12 columns'>
 				<h2 id='pendingReg'>Pending Registration</h2>
-				<form method="POST" action="" form="enctype/multidatas" id="pendingForm">
+				<form onsubmit="myFunction(); return false;" id="pendingForm">
 					<table>
 		 				<thead>
 							<tr>
@@ -31,9 +31,10 @@
 							foreach ($data['ttcoffees'] as $ttcoffee) {
 								// foreach ($ttcoffee as $key => $ttcoffee){
 								echo "<tr>";
-								echo "<td class='formRow'><input type='checkbox' class='approve'>";
-								echo "<td class='formRow'>".$ttcoffee->first_name." ".$ttcoffee->last_name."</td>";
-								echo "<td class='formRow'>".$ttcoffee->email."</td>";
+								echo "<td class='formRow'><input type='checkbox' name=".$ttcoffee->coffee_id." class='approve'>";
+								echo "<td class='formRow'>".$ttcoffee->first_name."</td>";
+                                echo "<td class='formRow'>".$ttcoffee->last_name."</td>";
+                                echo "<td class='formRow'>".$ttcoffee->email."</td>";
 								echo "<td class='formRow'>".$ttcoffee->roaster_name."</td>";
 								echo "<td class='formRow'>".$ttcoffee->roaster_description."</td>";
 								echo "<td class='formRow'><img style='height: 100px; width: 75px; margin: 0 auto;' src='$ttcoffee->roaster_logo'/></td>";
@@ -62,25 +63,10 @@
 	</div>
 </div>
 <script>
-$(document).ready(function(){
-	$('#pendingReg').submit(function(e){
-	var approval = $(".approve").checked;
-
-	$.ajax({
-			type: "POST",
-			url: "http://192.168.33.10/admin/pending",
-			data: {"approved": $(".approve").prop("checked") },			
-			success: function(){
-				$("#pendingForm").submit();
-			},
-			error: function(){
-				console.log("failed");
-			}
- 		});
-	});
-});
+    function myFunction() {
+        //do stuff
+    }
 </script>
-
 
 
 
