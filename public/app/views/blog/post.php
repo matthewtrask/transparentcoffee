@@ -19,9 +19,11 @@
 					echo "<p>Posted on ".date('jS M Y H:i:s', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p>";
 
 					//echo "<p><img src='".DIR."$row->postImg' class='img-responsive'></p>";
-
-
+					echo "<a class='twitter-share-button' id='twitter-wjs' href='https://twitter.com/intent/tweet?text='A%20new%20post%20from%20TTC'  data-size='large'> Tweet</a>";
+					echo "<div class='fb-like' data-href='http://transparenttradecoffee.com/insights/'.$_SERVER[REQUEST_URI] data-layout='standard' data-action='like' data-show-faces='true' data-share='true'></div>";
+					//<script>document.write('<div class="fb-like" data-href="' + document.location.href + '"></div>');</script>
 					echo "<div class='content'>".stripslashes($row->postCont)."</div>";
+
 				echo "</div>\n";
 			}
 		}

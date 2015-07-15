@@ -4,12 +4,17 @@
 
 	<!-- Site meta -->
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $data['title'].' | '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
-    <meta name="ROBOTS" content="Index, Follow">
-    <link rel="author" href="humans.txt" />
-	<link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><?php echo $data['title'].' | '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
+  <meta name="ROBOTS" content="Index, Follow">
+  <link rel="me" href="https://twitter.com/_TTCoffee">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="PUBLIC">
+  <META NAME="DESCRIPTION" CONTENT="Working within the Social Enterprise @ Goizueta, Transparent Trade Coffee aims to bring light to how roasters are paying for coffee. Through a rigorous check, only roasters who pay their farmers more then 20% of the price sold can be featured on the site.">
+  <META NAME="KEYWORDS" CONTENT="coffee, Emory University, SE@G, transparent, trade, coffee, transparent trade coffee, farmers to 40, counter culture, intelligancia, roaster, coffee farm, coffee seach, ">
+  <META NAME="GOOGLEBOT" CONTENT="NOARCHIVE">
+  <link rel="author" href="humans.txt" />
+  <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
+  <script src="/bower_components/modernizr/modernizr.js"></script>
 	<!-- CSS -->
 	<?php
 		helpers\assets::css(array(
@@ -32,6 +37,32 @@
         echo '<body class="overflow-body">';
     }
 ?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));
+  </script>
 <div class="fixed">
     <nav class="top-bar" data-topbar role="navigation" id="nav">
         <ul class="title-area">

@@ -1044,6 +1044,10 @@ div.ttcoffee:not(:hover) {
 #contactForm input.input {
   width: 70%; }
 
+div.fb-like.fb_iframe_widget {
+  margin-left: 25px;
+  margin-bottom: 20px; }
+
 .ttcFooter {
   background-color: #000;
   height: 150px;
