@@ -1,6 +1,7 @@
 <?php
 
 class TTCoffee {
+    public $coffee_id;
     public $roaster_name;
     public $roaster_logo;
     public $farm_name;
@@ -15,9 +16,10 @@ class TTCoffee {
     public $egs; //effective grower share
     public $url;
 
-    function __construct($roaster_name, $roaster_logo, $farm_name, $farm_country, $farm_region, $coffee_name,
+    function __construct($coffee_id, $roaster_name, $roaster_logo, $farm_name, $farm_country, $farm_region, $coffee_name,
                        $description, $retail_price, $currency, $bag_size, $gppp, $egs, $url) {
-        $this->roaster_name = $roaster_name;
+        $this->coffee_id    = $coffee_id;
+        $this->roaster_name  = $roaster_name;
         $this->roaster_logo = $roaster_logo;
         $this->farm_name    = $farm_name;
         $this->farm_country = $farm_country;

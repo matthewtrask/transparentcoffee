@@ -23,7 +23,7 @@ class ttc extends Model
                                         INNER JOIN '.PREFIX.'contact AS ct ON r.contact_id = ct.contact_id');
         $ttcoffees = array();
         foreach ($result as $ttcoffee) {
-            $current = new \TTCoffee($ttcoffee->roaster_name, $ttcoffee->roaster_logo, $ttcoffee->farm_name, $ttcoffee->farm_country, $ttcoffee->farm_region, $ttcoffee->coffee_name,
+            $current = new \TTCoffee($ttcoffee->coffee_id, $ttcoffee->roaster_name, $ttcoffee->roaster_logo, $ttcoffee->farm_name, $ttcoffee->farm_country, $ttcoffee->farm_region, $ttcoffee->coffee_name,
                 $ttcoffee->description, $ttcoffee->retail_price, $ttcoffee->currency, $ttcoffee->bag_size, $ttcoffee->gppp, $ttcoffee->egs, $ttcoffee->url);
             $ttcoffees[] = $current;
         }
@@ -41,13 +41,32 @@ class ttc extends Model
         $this->_db->insert(PREFIX."coffee_pending", $pendingCoffee);
     }
 
-     public function insertPendingRoaster($pendingRoaster){
-         $this->_db->insert(PREFIX."roaster_pending", $pendingRoaster);
-     }
+    public function insertPendingRoaster($pendingRoaster){
+        $this->_db->insert(PREFIX."roaster_pending", $pendingRoaster);
+    }
 
-     public function insertPendingGrower($pendingGrower){
-         $this->_db->insert(PREFIX.'grower_pending', $pendingGrower);
-     }
+    public function insertPendingGrower($pendingGrower){
+        $this->_db->insert(PREFIX.'grower_pending', $pendingGrower);
+    }
+    public function approveCoffee($pendingCoffeeId){
+        $pendingCoffee = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE coffee_id = '.$pendingCoffeeId)[0];
+        unset($pendingCoffee['coffee_id']);
+        $pendingRoasterId = $pendingCoffee['roaster_id'];
+        $pendingGrowerId  = $pendingCoffee['grower_id'];
+        $this->_db->insert(PREFIX."coffee", $pendingCoffee);
+        $data = array('coffee_id' => $pendingCoffeeId);
+        $this->_db->delete(PREFIX."coffee_pending", $data);
+        $pendingRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$pendingRoasterId)[0];
+        unset($pendingRoaster['roaster_id']);
+        $this->_db->insert(PREFIX."roaster", $pendingRoaster);
+        $data = array('roaster_id' => $pendingRoasterId);
+        $this->_db->delete(PREFIX."roaster_pending", $data);
+        $pendingGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower_pending WHERE grower_id = '.$pendingGrowerId)[0];
+        unset($pendingGrower['grower_id']);
+        $this->_db->insert(PREFIX.'grower', $pendingGrower);
+        $data = array('grower_id' => $pendingGrowerId);
+        $this->_db->delete(PREFIX."grower_pending", $data);
+    }
 
      public function getLastId() {
          return $this->_db->lastInsertId();

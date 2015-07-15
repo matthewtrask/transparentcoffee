@@ -1,3 +1,13 @@
+<div class="img-overlay-2">
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
+    "/>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>"></noscript>
+    <div class="text-wrapper">
+        <h2 class="image-text">Insights</h2>
+    </div>
+</div>
 <div class="row" style="margin-top: 20px">
 	<div class="small-12 medium-12 large-12 columns">
 		<ul class="breadcrumbs">
