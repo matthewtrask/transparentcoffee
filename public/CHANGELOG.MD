@@ -29,4 +29,5 @@
 - Added the Social Media connections at the bottom of form
 
 ##REGISTER PAGE
-- added the input field for 
+- added the input field for Roaster Website
+- added the modal for the details of the site.
