@@ -206,7 +206,7 @@
                                         echo number_format($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
                                     }
                                     echo ' per ' . $ttcoffee->bag_size?> ounce bag</li>
-                                <li><em>Green Price:</em> $<?php echo number_format($ttcoffee->gppp, 2)?> per pound(f.o.b. or equivalent)</li>
+                                <li><em>Green Price:</em> $<?php echo number_format($ttcoffee->gppp, 2)?> per pound (f.o.b. or equivalent)</li>
                             </ul>
                             <p><?php echo $ttcoffee->description?></p>
                             <div class="website-link"><a href="<?php echo $ttcoffee->url?>" target="_blank">Go to website</a></div>
@@ -220,9 +220,11 @@
                                     <div class="row">
                                         <div class="small-2 medium-2 columns">
                                             <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
+                                            <div class="abbreviation">GPP</div>
                                         </div>
                                         <div class="small-2 medium-2 columns">
                                             <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
+                                            <div class="abbreviation">EGS</div>
                                         </div>
                                     </div>
                                 </div>
