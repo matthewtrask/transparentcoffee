@@ -84,3 +84,8 @@ button.button.registration {
 	margin-right: 10px;
 	width: 200px;
 }
+
+div.nicEdit-Pane form div input#href {
+	width: 200px;
+	height: 30px;
+}

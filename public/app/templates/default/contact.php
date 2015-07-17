@@ -55,6 +55,7 @@
                 </div>
             </div>
         </form>
+        <p>Stay in touch via Social Media.  Keep up with the latest news on Transparent Trade Coffee on <a target="_blank" href="https://www.facebook.com/transparentTrdCoffee">Facebook</a> and <a href="https://twitter.com/_ttcoffee" target="_blank">Twitter</a></p>
     </div>
     <div class="small-3 medium-3 large-3 columns">
 
