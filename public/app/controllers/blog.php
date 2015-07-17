@@ -13,7 +13,7 @@ class Blog extends \core\controller {
 
 	public function index(){
 
-		$data['title'] = 'Welcome to the blog';
+		$data['title'] = 'Insights';
 
 		$pages = new Paginator('10','page');
 		$pages->set_total(count($this->_model->getpoststotal()));

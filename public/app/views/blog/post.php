@@ -28,16 +28,18 @@
 					echo "<h2>$row->postTitle</h2>\n";
 					echo "<p>Posted on ".date('jS M Y H:i:s', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p>";
 
-					//echo "<p><img src='".DIR."$row->postImg' class='img-responsive'></p>";
-					echo "<a class='twitter-share-button' id='twitter-wjs' href='https://twitter.com/intent/tweet?text='A%20new%20post%20from%20TTC'  data-size='large'> Tweet</a>";
-					echo "<div class='fb-like' data-href='http://transparenttradecoffee.com/insights/'.$_SERVER[REQUEST_URI] data-layout='standard' data-action='like' data-show-faces='true' data-share='true'></div>";
-					//<script>document.write('<div class="fb-like" data-href="' + document.location.href + '"></div>');</script>
+
 					echo "<div class='content'>".stripslashes($row->postCont)."</div>";
 
 				echo "</div>\n";
 			}
 		}
 		?>
-
+		<hr/><p><em>Share on your favorite social media!</em></p>
+		<ul class="share-buttons">
+  			<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FTransparenttradecoffee.com%2Finsights&t=Insights%20of%20Transparent%20Trade%20Coffee" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+  			<li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2FTransparenttradecoffee.com%2Finsights&text=Insights%20of%20Transparent%20Trade%20Coffee:%20http%3A%2F%2FTransparenttradecoffee.com%2Finsights&via=_ttcoffee" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+  			<li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2FTransparenttradecoffee.com%2Finsights&title=Insights%20of%20Transparent%20Trade%20Coffee&summary=&source=http%3A%2F%2FTransparenttradecoffee.com%2Finsights" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+		</ul>
 	</div>
 </div>

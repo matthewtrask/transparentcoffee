@@ -13,6 +13,7 @@
 <div class="row">
     <div class="small-offset-1 small-10 columns text-left">
         <p class="light-font-smaller">The Specialty Coffee Retail Price Index (SCRPI)* is being developed by researchers at Social Enterprise @ Goizueta to track the retail prices charged by a representative group of “blue chip” North American specialty coffee roasters.</p>
+        <p class="light-font-smaller">Our team of researchers share their analysis and other interesting insights about coffee markets, roasters, producers and more.  Visit often and feel free to share with those in your networks.</p>
     </div>
 </div>
 
