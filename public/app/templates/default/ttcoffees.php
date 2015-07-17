@@ -10,7 +10,7 @@
 <div class="img-overlay">
     <img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>">
     <div class="text-wrapper">
-        <h1 class="ttcoffee-header image-text">Transparent Coffees</h1>
+        <h1 class="ttcoffee-header image-text">Transparently Traded Coffees</h1>
     </div>
 </div>
 <!--<div class="row featuredCoffees" style="margin-top: 20px">-->
@@ -25,13 +25,11 @@
 
 <div class="row">
   <div class="small-12 medium-12 large-12 column">
-    <p style="margin-top: 20px;">The following roasters have provided the information that allows
-      consumers to know exactly how much the grower was paid for his/her
-      green coffee. We encourage you to consider the green prices paid
-      to growers, and/or the effective grower share numbers when making
-      your purchase decisions. When you are satisfied with the economic
-      treatment of the coffee farmer, click on the listing to go to the
-      roaster's on-line store to learn more and to make your coffee purchase.
+    <p style="margin-top: 20px;">The following roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
+        We encourage you to consider the green prices paid to growers <b>(GPP)</b>, and/or the effective grower share <b>(EGS)</b> when making your purchase decisions.
+        When you are satisfied with the economic treatment of the coffee farmer, click on the listing to go to the roaster's on-line store to learn more and to make your coffee purchase.
+        <b>If you don’t see coffees from your favorite roaster listed here, please encourage them to <a class="hyperlink" href="register">register today.</b></a></p>
+      <br><p><i>* EGS = Effective Grower Share<br>* GPP = Green Price Per Pound</i></p>
   </div>
 </div>
 <div class="show-for-medium-down">
@@ -57,18 +55,6 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
-                <div id="panel3" class="content">
-                    <div class="row">
-                        <div class="small-offset-1 small-10 columns">
-                            <div class="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
-                            <input class="egs-lower" type="hidden" name="egs-lower">
-                            <input class="egs-upper" type="hidden" name="egs-upper">
-                        </div>
-                    </div>
-                </div>
-            </dd>
-            <dd class="accordion-navigation">
                 <a class="text-center" href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel4" class="content">
                     <div class="row">
@@ -80,13 +66,25 @@
                     </div>
                 </div>
             </dd>
+            <dd class="accordion-navigation">
+                <a class="text-center" href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
+                <div id="panel3" class="content">
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <div class="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <input class="egs-lower" type="hidden" name="egs-lower">
+                            <input class="egs-upper" type="hidden" name="egs-upper">
+                        </div>
+                    </div>
+                </div>
+            </dd>
         </dl>
     </form>
 </div>
 <div class="row" style="margin-top: 20px">
     <div class="hide-for-small hide-for-medium large-3 columns">
         <div id="menu" class="menu">
-          <p class="text-center">Menu</p><hr/>
+          <p class="text-center">Filter By</p><hr/>
             <form id="menu-form">
                 <dl class="accordion custom-accordion" data-accordion>
                     <dd class="accordion-navigation custom-accordion-panel">
@@ -108,37 +106,29 @@
                             <input id="Pacific" class='region' type="checkbox" name="region[]" value="Pacific"> <span class='region'>Pacific</span>
                         </div>
                     </dd>
-                    <dd class="accordion-navigation custom-accordion-panel">
-                        <a href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
-                        <div id="panel3" class="content">
-                            <div class="row">
-                                <div class="small-offset-1 small-10 columns">
-                                    <div class="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
-                                    <input class="egs-lower" type="hidden" name="egs-lower">
-                                    <input class="egs-upper" type="hidden" name="egs-upper">
-                                </div>
-                            </div>
+                    </dl>
+                    <div style="margin-bottom: 10px;"><b>Green Price Per Pound</b></div>
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <div class="slider-gppp" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <input class="gppp-lower" type="hidden" name="gppp-lower">
+                            <input class="gppp-upper" type="hidden" name="gppp-upper">
                         </div>
-                    </dd>
-                    <dd class="accordion-navigation custom-accordion-panel">
-                        <a href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
-                        <div id="panel4" class="content">
-                            <div class="row">
-                                <div class="small-offset-1 small-10 columns">
-                                    <div class="slider-gppp" class="noUiSlider" style="margin-top: 25px;"></div>
-                                    <input class="gppp-lower" type="hidden" name="gppp-lower">
-                                    <input class="gppp-upper" type="hidden" name="gppp-upper">
-                                </div>
-                            </div>
+                    </div>
+                    <div style="margin-bottom: 10px; margin-top: 5px;"><b>Effective Grower Share</b></div>
+                    <div class="row">
+                        <div class="small-offset-1 small-10 columns">
+                            <div class="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <input class="egs-lower" type="hidden" name="egs-lower">
+                            <input class="egs-upper" type="hidden" name="egs-upper">
                         </div>
-                    </dd>
-                </dl>
+                    </div>
             </form>
         </div>
     </div>
     <div id='ttcoffees' class="small-12 medium-12 large-9 columns">
         <div class="small-8 medium-9 columns">
-            <h3>Transparent Coffees</h3>
+            <h3>Transparently Traded Coffees</h3>
         </div>
         <div class="small-4 medium-3 columns">
             <a class="button tiny secondary dropdown-btn" data-dropdown="hover1" data-options="is_hover:true">Default</a>
@@ -187,7 +177,7 @@
                         </div>
                         <div class="percent-wrapper small-4 medium-3 large-3 columns">
                             <div class="gppp">
-                                <div class="gppp-abbrev rotate">GPPP</div>
+                                <div class="gppp-abbrev rotate">GPP</div>
                                 <h3>$<?php echo number_format($ttcoffee->gppp, 2)?></h3>
                             </div>
 <!--                            <div class="fill"></div>-->

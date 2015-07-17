@@ -84,12 +84,12 @@ $(document).ready(function(){
         }
     });
     $(".slider-gppp").noUiSlider({
-        start: [2.5, 4],
+        start: [2.5, 5],
         step: .25,
         connect: true,
         range: {
             'min': 2.5,
-            'max': 4
+            'max': 5
         }
     });
     $(".slider-gppp").Link('lower').to("-inline-<div class='tooltip2'></div>", function ( value ) {

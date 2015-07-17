@@ -213,7 +213,7 @@ class ttc extends \core\controller {
                         echo '</div>';
                         echo '<div class="small-4 medium-3 large-3 columns">';
                             echo '<div class="gppp">';
-                                echo '<div class="gppp-abbrev rotate">GPPP</div>';
+                                echo '<div class="gppp-abbrev rotate">GPP</div>';
                                 echo "<h3>$" . number_format($ttcoffee->gppp, 2) . "</h3>";
                             echo '</div>';
                             echo '<div class="Percent">';
@@ -241,7 +241,7 @@ class ttc extends \core\controller {
                                         echo number_format($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
                                     }
                                     echo ' per ' . $ttcoffee->bag_size . 'ounce bag</li>';
-                                echo "<li><em>Green Price:</em> $" . number_format($ttcoffee->gppp, 2) . " per pound(f.o.b. or equivalent)</li>";
+                                echo "<li><em>Green Price:</em> $" . number_format($ttcoffee->gppp, 2) . " per pound  d(f.o.b. or equivalent)</li>";
                             echo '</ul>';
                             echo "<p>$ttcoffee->description</p>";
                             echo "<div class='website-link'><a href='$ttcoffee->url'>Go to website</a></div>";
