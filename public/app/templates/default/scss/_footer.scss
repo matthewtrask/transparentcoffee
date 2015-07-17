@@ -1,6 +1,6 @@
 $primary-color: #000;
 $socialBGColor: #fff;
-$footerHeight: 150px;
+$footerHeight: 160px;
 $aColor: #fff;
 $aHover: #808080;
 $socialIcons: #D1D1D1;
@@ -53,6 +53,10 @@ $socialIcons: #D1D1D1;
 
   }
   .powered a {
+    color: $aColor;
+  }
+  .copyright p{
+    float: right;
     color: $aColor;
   }
 }

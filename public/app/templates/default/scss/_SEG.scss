@@ -22,3 +22,18 @@
     font-size: 20px !important;
   }
 }
+
+div.SEG.row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  div.small-6.columns.light-font-smaller.SEGLinks {
+    p{
+      a.seglink {
+      color: #055fc5;
+      }
+      a.seglink:hover {
+      color: ;
+      }
+    }
+  }
+}

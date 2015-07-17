@@ -25,16 +25,16 @@
 
 </div>
 
-<div class="row">
+<div class="row transparency">
     <div class="small-offset-1 small-10 columns light-font-smaller">
         <p>Coffee growers are primarily responsible for the excellent coffees that we drink. This is why, more and more, specialty coffee markets are recognizing and celebrating the many contributions of these growers.</p>
         <p>However, the current structure of global coffee markets is such that these growers have a hard time being adequately compensated for the work that they do on their farms and in their communities.</p>
         <p>It is time to clearly and succinctly inform coffee consumers about the economic treatment of coffee growers.</p>
         <p>To accomplish this goal, <b style="font-family: RalewayRegular;">Transparent Trade Coffee</b> provides:
             <ul class="reasons">
-                <li> - A forum for direct trade roasters that are genuinely committed to transparency in their dealings
+                <li>A forum for direct trade roasters that are genuinely committed to transparency in their dealings
                     with coffee growers; and</li>
-                <li> - A simple communication vehicle so that consumers can – at the time of purchase – know how
+                <li>A simple communication vehicle so that consumers can – at the time of purchase – know how
                     much of their coffee dollars are going back to growers.</li>
             </ul>
         </p>

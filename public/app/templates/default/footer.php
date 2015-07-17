@@ -23,7 +23,10 @@
                 </ul>
             </div>
             <div class="right small-12 columns powered">
-                <a href="#" class="right">Powered by Social Enterprise @ Goizueta</a>
+                <a href="#" class="right">Powered by Social Enterprise @ Goizueta</a></li>
+            </div>
+            <div class="right small-12 columns copyright">
+                <p>Copyright &copy; <?php echo date('Y');?> Transparent Trade Coffee</p>
             </div>
         </div>
     </div>
