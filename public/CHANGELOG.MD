@@ -11,7 +11,7 @@
 
 ##SE@G
 - Added margin to the top and bottom of the page
-- Altered link color and hover state 
+- Altered link color and hover state
 
 ##SCRPI
 - Changed Roasters in Navbars to Indexed Roasters
@@ -27,3 +27,6 @@
 
 ##CONTACT
 - Added the Social Media connections at the bottom of form
+
+##REGISTER PAGE
+- added the input field for 
