@@ -37,7 +37,12 @@ $(document).ready(function(){
   //   e.preventDefault();
   //});
   //
-
+  //  $('#selectall').on('click', function() {
+  //      console.log('hi');
+  //      $("#panel1 > input").each(function() {
+  //          this.checked = true;
+  //      });
+  //  });
     $('#header-logo').hover(function(){
         this.src = "app/templates/default/img/Transparent-Trade-Tan-Large-08-10.png";
     }, function(){

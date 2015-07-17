@@ -42,6 +42,7 @@
                         echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> $roaster<br>";
                     }
                     ?>
+                    <input style="margin-top: 5px;" id="selectall" type="button" name="selectall" value="Select All"/>
                 </div>
             </dd>
             <dd class="accordion-navigation">
@@ -94,6 +95,7 @@
                                 echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> <span class='filter_roaster'>$roaster</span><br>";
                             }
                             ?>
+                            <input style="margin-top: 5px;" id="selectall" type="button" name="selectall" value="Select All"/>
                         </div>
                     </dd>
                     <dd class="accordion-navigation custom-accordion-panel">

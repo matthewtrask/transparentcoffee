@@ -103,12 +103,22 @@ div.ttcoffee {
   margin-bottom: 10px;
   background-color: white;
   display: table;
+  i {
+    color: black !important;
+  }
+  i:hover {
+    color: black !important;
+  }
   .TTCList {
     margin-left: 0.1em;
     li {
       font-size: .7rem;
       list-style: none;
       margin-left: 0.1em;
+      color: black !important;
+    }
+    li:hover {
+      color: black !important;
     }
   }
   .TTCpanel h3 {

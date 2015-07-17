@@ -15,6 +15,13 @@
   font-style: normal;
   src: url('../font/Raleway-Regular.ttf');
 }
+.container a {
+  color: #055fc5;
+}
+.container a:hover,
+.container a:focus {
+  color: #36ba36 }
+
 .img-overlay-2 {
   background-color: black;
   img {

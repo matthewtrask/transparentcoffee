@@ -277,6 +277,13 @@ select {
   font-style: normal;
   src: url("../font/Raleway-Regular.ttf"); }
 
+.container a {
+  color: #055fc5; }
+
+.container a:hover,
+.container a:focus {
+  color: #36ba36; }
+
 .img-overlay-2 {
   background-color: black; }
   .img-overlay-2 img {
@@ -664,12 +671,19 @@ div.ttcoffee {
   margin-bottom: 10px;
   background-color: white;
   display: table; }
+  div.ttcoffee i {
+    color: black !important; }
+  div.ttcoffee i:hover {
+    color: black !important; }
   div.ttcoffee .TTCList {
     margin-left: 0.1em; }
     div.ttcoffee .TTCList li {
       font-size: .7rem;
       list-style: none;
-      margin-left: 0.1em; }
+      margin-left: 0.1em;
+      color: black !important; }
+    div.ttcoffee .TTCList li:hover {
+      color: black !important; }
   div.ttcoffee .TTCpanel h3 {
     font-size: 22px; }
   div.ttcoffee #TTCpanel h5 {
