@@ -10,7 +10,7 @@
 <div class="img-overlay">
     <img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>">
     <div class="text-wrapper">
-        <h1 class="ttcoffee-header image-text">Transparent Coffees</h1>
+        <h1 class="ttcoffee-header image-text">Transparently Traded Coffees</h1>
     </div>
 </div>
 <!--<div class="row featuredCoffees" style="margin-top: 20px">-->
@@ -25,13 +25,7 @@
 
 <div class="row">
   <div class="small-12 medium-12 large-12 column">
-    <p style="margin-top: 20px;">The following roasters have provided the information that allows
-      consumers to know exactly how much the grower was paid for his/her
-      green coffee. We encourage you to consider the green prices paid
-      to growers, and/or the effective grower share numbers when making
-      your purchase decisions. When you are satisfied with the economic
-      treatment of the coffee farmer, click on the listing to go to the
-      roaster's on-line store to learn more and to make your coffee purchase.
+    <p style="margin-top: 20px;">The following roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee. We encourage you to consider the green prices paid to growers <b>(GPP)</b>, and/or the effective grower share <b>(EGS)</b> when making your purchase decisions. When you are satisfied with the economic treatment of the coffee farmer, click on the listing to go to the roaster's on-line store to learn more and to make your coffee purchase.  <b>If you don’t see coffees from your favorite roaster listed here, please encourage them to register today.</b> <a href="register">Click here to register now!</a>
   </div>
 </div>
 <div class="show-for-medium-down">
@@ -86,7 +80,7 @@
 <div class="row" style="margin-top: 20px">
     <div class="hide-for-small hide-for-medium large-3 columns">
         <div id="menu" class="menu">
-          <p class="text-center">Menu</p><hr/>
+          <p class="text-center">Filter By</p><hr/>
             <form id="menu-form">
                 <dl class="accordion custom-accordion" data-accordion>
                     <dd class="accordion-navigation custom-accordion-panel">
@@ -138,7 +132,7 @@
     </div>
     <div id='ttcoffees' class="small-12 medium-12 large-9 columns">
         <div class="small-8 medium-9 columns">
-            <h3>Transparent Coffees</h3>
+            <h3>Transparently Traded Coffees</h3>
         </div>
         <div class="small-4 medium-3 columns">
             <a class="button tiny secondary dropdown-btn" data-dropdown="hover1" data-options="is_hover:true">Default</a>

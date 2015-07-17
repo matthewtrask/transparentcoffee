@@ -494,7 +494,7 @@ class ttc extends \core\controller {
         if(!empty($cleanName) && !empty($cleanEmail) && !empty($cleanMsg)){
             $mail->send();
         } else {
-            echo "<div class='alert'>Sorry, there was an error, please try again in just a few minutes</div>";
+            //echo "<div class='alert'>Sorry, there was an error, please try again in just a few minutes</div>";
         }
 
 		View::rendertemplate('header', $data);
