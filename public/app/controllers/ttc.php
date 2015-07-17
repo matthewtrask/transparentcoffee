@@ -363,6 +363,7 @@ class ttc extends \core\controller {
         $email = $_POST['submitEmail'];
         $roaster = $_POST['roasterName'];
         $roasterDescription = $_POST['roasterDescription'];
+		$roasterURL = $_POST['roasterURL'];
         $coffeeName = $_POST['coffeeName'];
         $coffeeDescription = $_POST['coffeeDescription'];
         $coffeePrice = $_POST['coffeePrice'];
@@ -379,6 +380,7 @@ class ttc extends \core\controller {
         $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
         $cleanRoaster = filter_var($roaster, FILTER_SANITIZE_STRING);
         $cleanRoasterDesc = filter_var($roasterDescription, FILTER_SANITIZE_STRING);
+		$cleanRoasterURL = filter_var($roasterURL, FILTER_SANITIZE_URL);
         $cleanCoffeeName = filter_var($coffeeName, FILTER_SANITIZE_STRING);
         $cleanCoffeeDesc = filter_var($coffeeDescription, FILTER_SANITIZE_STRING);
         $cleanCoffeePrice = filter_var($coffeePrice, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
@@ -410,7 +412,8 @@ class ttc extends \core\controller {
             'contact_id'          => $contactId,
             'roaster_name'        => $cleanRoaster,
             'roaster_logo'        => $roasterImage,
-            'roaster_description' => $cleanRoasterDesc
+            'roaster_description' => $cleanRoasterDesc,
+			'roasterURL'		  => $cleanRoasterURL
         );
         $this->_model->insertPendingRoaster($pendingRoaster);
         $roasterId = $this->_model->getLastId();
