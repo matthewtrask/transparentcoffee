@@ -47,6 +47,7 @@
 
         <form id="registrationForm" action="submitRegister" method="POST" data-abide enctype="multipart/form-data">
             <div class="row">
+                <h3 class="sub-header">Roaster</h3>
                 <div class="small-3 medium-3 large-3 columns">
                     <label for="firstName" class="inline">Your First Name:</label>
                 </div>
@@ -88,7 +89,7 @@
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="roasterURL" class="inline">Roaster Wesbite:</label>
+                    <label for="roasterURL" class="inline">Roaster Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
                     <input name="roasterURL" class="regInput" type="text" placeholder="Link to the roaster's website" for="roasterURL" id="roasterURL" required>
@@ -103,6 +104,7 @@
                 </div>
             </div><hr />
             <div class="row">
+                <h3 class="sub-header">Coffee #1</h3>
                 <div class="small-3 medium-3 large-3 columns">
                     <label for="coffeeName" class="inline">Coffee Name:</label>
                 </div>
@@ -152,14 +154,22 @@
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeWebSite" class="inline">Coffee Website:</label>
+                    <label for="coffeeWebSite" class="inline">Coffee Website</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
                     <input name="coffeeWebSite" class="regInput" type="text" placeholder="Website you would like to link to for this coffee" for="coffeeWebSite" id="coffeeWebSite" required>
                 </div>
             </div>
+            <div id="extra-coffees">
+                <div class="row">
+                    <div class="small-12 small-text-center columns">
+                        <a name="2" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+                    </div>
+                </div>
+            </div>
             <hr/>
             <div class="row">
+                <h3 class="sub-header">Farm</h3>
                 <div class="small-3 medium-3 large-3 columns">
                     <label for="farmName" class="inline">Farm Name:</label>
                 </div>

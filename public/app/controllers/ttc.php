@@ -316,6 +316,78 @@ class ttc extends \core\controller {
 		View::rendertemplate('footer');
 	}
 
+    public function extraCoffeeAjax() {
+        $data['title'] = 'Register';
+
+        $number = $_POST['number'];
+        for ($i = 2; $i <= $number; $i++) {
+        ?>
+        <div class="row">
+                <h3 class="sub-header">Coffee #<?php echo $i?></h3>
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeName-<?php echo $i?>" class="inline">Coffee Name:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeName-<?php echo $i?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $i?>" id="coffeeName-<?php echo $i?>" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeDescription-<?php echo $i?>" class="inline">Coffee Description:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <textarea name="coffeeDescription-<?php echo $i?>" placeholder="Enter a short description about your coffee (Maximum of 140 characters)" maxlength="140" onKeyDown="charLimiti(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeePrice-<?php echo $i?>" class="inline">Retail Price</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeePrice-<?php echo $i?>" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice-<?php echo $i?>" id="coffeePrice-<?php echo $i?>" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeCurrency-<?php echo $i?>" class="inline">Currency:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeCurrency-<?php echo $i?>" class="regInput" type="text" placeholder="Curency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency-<?php echo $i?>" id="coffeeCurrency-<?php echo $i?>" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeBagSize-<?php echo $i?>" class="inline">Coffee Bag Size (oz):</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeBagSize-<?php echo $i?>" class="regInput" type="text" placeholder="Coffee Bag Size (oz)" for="coffeeBagSize-<?php echo $i?>" id="coffeeBagSize-<?php echo $i?>" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeGPPP-<?php echo $i?>" class="inline">Coffee Green Price Per Pound Paid:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeGPPP-<?php echo $i?>" class="regInput" type="text" placeholder="Amount (in USD) that farmers receive pound" for="coffeeGPPP-<?php echo $i?>" id="coffeeGPPP-<?php echo $i?>" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeWebSite-<?php echo $i?>" class="inline">Coffee Website</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeWebSite-<?php echo $i?>" class="regInput" type="text" placeholder="Website you would like to link to for this coffee" for="coffeeWebSite-<?php echo $i?>" id="coffeeWebSite-<?php echo $i?>" required>
+                </div>
+            </div>
+            <? } ?>
+            <div class="row">
+                <div class="small-12 small-text-center columns">
+                    <a name="<?php echo $number + 1?>" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+                </div>
+            </div>
+        <?
+    }
+
     public function submitRegister() {
         if($_FILES['greenPPP']['size'] > 0)
         {
@@ -378,6 +450,21 @@ class ttc extends \core\controller {
         $coffeeWebsite = $_POST['coffeeWebsite'];
         $bagSize = $_POST['coffeeBagSize'];
         $coffeeGPPP = $_POST['coffeeGPPP'];
+        $extraCoffees = array();
+        for ($i = 2; $i > 0; $i++) {
+            if (isset($_POST["coffeeName-$i"])) {
+                $extraCoffees[$i]['coffeeName']        = filter_var($_POST["coffeeName-$i"], FILTER_SANITIZE_STRING);
+                $extraCoffees[$i]['coffeeDescription'] = filter_var($_POST["coffeeDescription-$i"], FILTER_SANITIZE_STRING);
+                $extraCoffees[$i]['coffeePrice']       = filter_var($_POST["coffeePrice-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+                $extraCoffees[$i]['coffeeCurrency']    = filter_var($_POST["coffeeCurrency-$i"], FILTER_SANITIZE_STRING);
+                $extraCoffees[$i]['coffeeWebsite']     = filter_var($_POST["coffeeWebsite-$i"], FILTER_VALIDATE_URL);
+                $extraCoffees[$i]['bagSize']           = filter_var($_POST["coffeeBagSize-$i"], FILTER_SANITIZE_NUMBER_INT);
+                $extraCoffees[$i]['coffeeGPPP']        = filter_var($_POST["coffeeGPPP-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+            }
+            else {
+                break;
+            }
+        }
         $farmName = $_POST['farmName'];
         $farmLocation = $_POST['farmLocation'];
         $farmRegion = $_POST['farmRegion'];
@@ -443,6 +530,33 @@ class ttc extends \core\controller {
             'url'               => $cleanCoffeeWebsite
         );
         $this->_model->insertPendingCoffee($pendingCoffee);
+        if (!empty($extraCoffees)) {
+            for ($i = 2; $i > 0; $i++) {
+                if (isset($extraCoffees[$i])) {
+                    $egs = $extraCoffees[$i]['coffeeGPPP'] / ($extraCoffees[$i]['coffeePrice'] / $extraCoffees[$i]['bagSize'] * 16 * .85);
+                    $pendingCoffee = array(
+                        'grower_id'         => $growerId,
+                        'roaster_id'        => $roasterId,
+                        'coffee_name'       => $extraCoffees[$i]['coffeeName'],
+                        'description'       => $extraCoffees[$i]['coffeeDescription'],
+                        'retail_price'      => $extraCoffees[$i]['coffeePrice'],
+                        'currency'          => $extraCoffees[$i]['currency'],
+                        'bag_size'          => $extraCoffees[$i]['bagSize'],
+                        'gppp'              => $extraCoffees[$i]['coffeeGPPP'],
+                        'egs'               => $egs,
+                        'gppp_confirmation' => $content,
+                        'file_name'         => $fileName,
+                        'file_type'         => $fileType,
+                        'file_size'         => $fileSize,
+                        'url'               => $extraCoffees[$i]['coffeeWebsite']
+                    );
+                    $this->_model->insertPendingCoffee($pendingCoffee);
+                }
+                else {
+                    break;
+                }
+            }
+        }
 
         header('Location: thankyou');
 

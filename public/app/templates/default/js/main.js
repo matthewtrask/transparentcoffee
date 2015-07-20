@@ -310,3 +310,19 @@ $(document).ready(function(){
         });
     });
 });
+$(document).on('click', '.extra-coffee', function(){
+    var number = this.name;
+    var data = 'number=' + number;
+    $.ajax({
+        url: "extraCoffeeAjax",
+        type: "POST",
+        async: true,
+        cache: false,
+        data: data, // all data will be passed here
+        success: function(data){
+            document.getElementById("extra-coffees").innerHTML = data;
+            flowText();
+            $(document).foundation();
+        }
+    });
+});

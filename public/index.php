@@ -78,6 +78,7 @@ Router::any('scrpi', '\controllers\ttc@scrpi');
 Router::any('roasters', '\controllers\ttc@roasters');
 Router::any('contact', '\controllers\ttc@contact');
 Router::any('ttcoffeesAjax', '\controllers\ttc@ttcoffeesAjax');
+Router::any('extraCoffeeAjax', '\controllers\ttc@extraCoffeeAjax');
 Router::POST('contact', '\controllers\ttc@contact');
 
 Router::any('admin', '\controllers\admin\admin@index');

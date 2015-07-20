@@ -54,7 +54,7 @@ class Admin extends \core\controller
         foreach ($_POST as $approvedCoffeeId) {
             $this->_ttcModel->approveCoffee($approvedCoffeeId);
         }
-        header('Location: /thankyou');
+        header('Location: /admin/pending');
     }
 
 }
