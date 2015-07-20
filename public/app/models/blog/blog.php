@@ -34,7 +34,7 @@ class Blog extends \core\model {
 				".PREFIX."posts.postSlug, 
 				".PREFIX."posts.postCont, 
 				".PREFIX."posts.postImg, 
-				".PREFIX."posts.postDate, 
+				".PREFIX."posts.postDate,
 				".PREFIX."post_cats.catTitle, 
 				".PREFIX."post_cats.catSlug 
 			FROM 

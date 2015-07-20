@@ -44,6 +44,7 @@ helpers\assets::js(array(
 ?>
 <script src="/bower_components/foundation/js/foundation.min.js"></script>
 <script src="/bower_components/foundation/js/foundation/foundation.accordion.js"></script>
+<script src="/bower_components/foundation/js/foundation/foundation.reveal.js"></script>
 <script src="/bower_components/fastclick/lib/fastclick.js"></script>
 <script type="text/javascript" src="/bower_components/slick-1.5.0/slick/slick.min.js"></script>
 <script type="text/javascript" src="/app/templates/default/js/slick.js"></script>
@@ -53,6 +54,9 @@ helpers\assets::js(array(
         $(document).foundation();
     });
     $(document).foundation();
+    $(document).ready(function(){
+        $('#dialog').foundation('reveal', 'open');
+    });
 </script>
 </body>
 </html>
