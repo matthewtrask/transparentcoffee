@@ -277,6 +277,19 @@ select {
   font-style: normal;
   src: url("../font/Raleway-Regular.ttf"); }
 
+.container a {
+  color: #055fc5; }
+
+.container a:hover,
+.container a:focus {
+  color: #36ba36; }
+
+.post h2 a {
+  color: black !important; }
+
+.post h2 a:hover {
+  color: black !important; }
+
 .img-overlay-2 {
   background-color: black; }
   .img-overlay-2 img {
@@ -362,6 +375,10 @@ select {
     padding: 2vw !important;
     top: 50% !important;
     left: 50% !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    -webkit-transform: translate(-50%, -50%) !important;
+    -moz-transform: translate(-50%, -50%) !important;
+    -o-transform: translate(-50%, -50%) !important;
     transform: translate(-50%, -50%) !important; }
 
 .slick-custom .slick-list {
@@ -577,6 +594,8 @@ select {
 
 .ttcoffees {
   background-color: #F5F5F5; }
+  .ttcoffees .active {
+    background-color: #F5F5F5 !important; }
 
 .menu li {
   list-style: none; }
@@ -658,12 +677,19 @@ div.ttcoffee {
   margin-bottom: 10px;
   background-color: white;
   display: table; }
+  div.ttcoffee i {
+    color: black !important; }
+  div.ttcoffee i:hover {
+    color: black !important; }
   div.ttcoffee .TTCList {
     margin-left: 0.1em; }
     div.ttcoffee .TTCList li {
       font-size: .7rem;
       list-style: none;
-      margin-left: 0.1em; }
+      margin-left: 0.1em;
+      color: black !important; }
+    div.ttcoffee .TTCList li:hover {
+      color: black !important; }
   div.ttcoffee .TTCpanel h3 {
     font-size: 22px; }
   div.ttcoffee #TTCpanel h5 {
@@ -818,9 +844,9 @@ div.ttcoffee:not(:hover) {
   -o-border-radius: 50%;
   border-radius: 50%;
   font-size: 28px;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
+  width: 95px;
+  height: 95px;
+  line-height: 95px;
   white-space: nowrap; }
 
 .square {
@@ -854,6 +880,9 @@ div.ttcoffee:not(:hover) {
 
 .noUi-connect {
   background: #B0B0B0 none repeat scroll 0% 0% !important; }
+
+.abbreviation {
+  margin-left: 30px !important; }
 
 @media only screen and (min-width: 40.063em) {
   .dropdown-btn {
@@ -904,6 +933,8 @@ div.ttcoffee:not(:hover) {
     width: 50px !important;
     height: 50px !important;
     line-height: 50px !important; }
+  .abbreviation {
+    margin-left: 8px !important; }
   .dropdown-ul {
     width: 135px !important; }
     .dropdown-ul li {
@@ -1139,9 +1170,11 @@ div.fb-like.fb_iframe_widget {
     margin-top: -10px !important;
     font-size: 20px !important; } }
 
-div.row.SEG {
+div.SEG.row {
   margin-top: 20px;
   margin-bottom: 20px; }
+  div.SEG.row div.small-6.columns.light-font-smaller.SEGLinks p a.seglink {
+    color: #055fc5; }
 
 #login {
   margin: auto;
@@ -15861,12 +15894,12 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #055fc5;
+  color: #000;
   text-decoration: none;
   line-height: inherit; }
   a:hover,
   a:focus {
-    color: #36BA36; }
+    color: black; }
   a img {
     border: none; }
 
@@ -16977,7 +17010,6 @@ th.hide-for-touch {
     display: table-cell !important; }
   th.show-for-print {
     display: table-cell !important; } }
-
 ul.share-buttons{
   list-style: none;
   padding: 0;

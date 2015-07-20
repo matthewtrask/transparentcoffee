@@ -37,7 +37,12 @@ $(document).ready(function(){
   //   e.preventDefault();
   //});
   //
-
+  //  $('#selectall').on('click', function() {
+  //      console.log('hi');
+  //      $("#panel1 > input").each(function() {
+  //          this.checked = true;
+  //      });
+  //  });
     $('#header-logo').hover(function(){
         this.src = "app/templates/default/img/Transparent-Trade-Tan-Large-08-10.png";
     }, function(){
@@ -84,12 +89,12 @@ $(document).ready(function(){
         }
     });
     $(".slider-gppp").noUiSlider({
-        start: [2.5, 4],
+        start: [2.5, 5],
         step: .25,
         connect: true,
         range: {
             'min': 2.5,
-            'max': 4
+            'max': 5
         }
     });
     $(".slider-gppp").Link('lower').to("-inline-<div class='tooltip2'></div>", function ( value ) {

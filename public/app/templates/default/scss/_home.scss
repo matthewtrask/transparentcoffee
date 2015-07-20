@@ -15,6 +15,19 @@
   font-style: normal;
   src: url('../font/Raleway-Regular.ttf');
 }
+.container a {
+  color: #055fc5;
+}
+.container a:hover,
+.container a:focus {
+  color: #36ba36 }
+.post h2 a {
+  color: black !important;
+}
+.post h2 a:hover {
+  color: black !important;
+}
+
 .img-overlay-2 {
   background-color: black;
   img {
@@ -107,6 +120,10 @@
       padding: 2vw !important;
       top: 50% !important;
       left: 50% !important;
+      -ms-transform: translate(-50%, -50%) !important;
+      -webkit-transform: translate(-50%, -50%) !important;
+      -moz-transform: translate(-50%, -50%) !important;
+      -o-transform: translate(-50%, -50%) !important;
       transform: translate(-50%, -50%) !important;
 //      border-radius: 10px !important;
 //      -moz-border-radius: 10px !important;

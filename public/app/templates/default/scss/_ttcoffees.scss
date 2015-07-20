@@ -10,6 +10,9 @@
 }
 .ttcoffees {
   background-color: #F5F5F5;
+  .active {
+    background-color: #F5F5F5 !important;
+  }
 }
 .menu li {
   list-style: none;
@@ -100,12 +103,22 @@ div.ttcoffee {
   margin-bottom: 10px;
   background-color: white;
   display: table;
+  i {
+    color: black !important;
+  }
+  i:hover {
+    color: black !important;
+  }
   .TTCList {
     margin-left: 0.1em;
     li {
       font-size: .7rem;
       list-style: none;
       margin-left: 0.1em;
+      color: black !important;
+    }
+    li:hover {
+      color: black !important;
     }
   }
   .TTCpanel h3 {
@@ -291,9 +304,9 @@ div.ttcoffee:not(:hover) {
   -o-border-radius: 50%;
   border-radius: 50%;
   font-size: 28px;
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
+  width: 95px;
+  height: 95px;
+  line-height: 95px;
   white-space: nowrap;
 }
 .square {
@@ -327,6 +340,9 @@ div.ttcoffee:not(:hover) {
 }
 .noUi-connect {
   background: #B0B0B0 none repeat scroll 0% 0% !important;
+}
+.abbreviation {
+  margin-left: 30px !important;
 }
 @media #{$medium-up} {
   .dropdown-btn {
@@ -383,6 +399,9 @@ div.ttcoffee:not(:hover) {
     width: 50px !important;
     height: 50px !important;
     line-height: 50px !important;
+  }
+  .abbreviation {
+    margin-left: 8px !important;
   }
   .dropdown-ul {
     width: 135px !important;
