@@ -341,7 +341,7 @@ class ttc extends \core\controller {
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeePrice-<?php echo $i?>" class="inline">Retail Price</label>
+                    <label for="coffeePrice-<?php echo $i?>" class="inline">Retail Price:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
                     <input name="coffeePrice-<?php echo $i?>" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice-<?php echo $i?>" id="coffeePrice-<?php echo $i?>" required>
@@ -352,7 +352,7 @@ class ttc extends \core\controller {
                     <label for="coffeeCurrency-<?php echo $i?>" class="inline">Currency:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeCurrency-<?php echo $i?>" class="regInput" type="text" placeholder="Curency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency-<?php echo $i?>" id="coffeeCurrency-<?php echo $i?>" required>
+                    <input name="coffeeCurrency-<?php echo $i?>" class="regInput" type="text" placeholder="Currency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency-<?php echo $i?>" id="coffeeCurrency-<?php echo $i?>" required>
                 </div>
             </div>
             <div class="row">
@@ -373,10 +373,10 @@ class ttc extends \core\controller {
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeWebSite-<?php echo $i?>" class="inline">Coffee Website</label>
+                    <label for="coffeeWebSite-<?php echo $i?>" class="inline">Coffee Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeWebSite-<?php echo $i?>" class="regInput" type="text" placeholder="Website you would like to link to for this coffee" for="coffeeWebSite-<?php echo $i?>" id="coffeeWebSite-<?php echo $i?>" required>
+                    <input name="coffeeWebSite-<?php echo $i?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebSite-<?php echo $i?>" id="coffeeWebSite-<?php echo $i?>" required>
                 </div>
             </div>
             <? } ?>
@@ -512,7 +512,7 @@ class ttc extends \core\controller {
         $this->_model->insertPendingRoaster($pendingRoaster);
         $roasterId = $this->_model->getLastId();
 
-        $egs = $cleanCoffeeGPPP / ($cleanCoffeePrice / $cleanBagSize * 16 * .85);
+        $egs = ($cleanCoffeeGPPP / ($cleanCoffeePrice / $cleanBagSize * 16 * .85)) * 100;
         $pendingCoffee = array(
             'grower_id'         => $growerId,
             'roaster_id'        => $roasterId,
@@ -540,7 +540,7 @@ class ttc extends \core\controller {
                         'coffee_name'       => $extraCoffees[$i]['coffeeName'],
                         'description'       => $extraCoffees[$i]['coffeeDescription'],
                         'retail_price'      => $extraCoffees[$i]['coffeePrice'],
-                        'currency'          => $extraCoffees[$i]['currency'],
+                        'currency'          => $extraCoffees[$i]['coffeeCurrency'],
                         'bag_size'          => $extraCoffees[$i]['bagSize'],
                         'gppp'              => $extraCoffees[$i]['coffeeGPPP'],
                         'egs'               => $egs,

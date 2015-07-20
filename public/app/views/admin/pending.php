@@ -7,9 +7,11 @@
 		 				<thead>
 							<tr>
 								<th>Approve</th>
-								<th>Name</th>
+								<th>First Name</th>
+                                <th>Last Name</th>
 								<th>Email</th>
 								<th>Roaster Name</th>
+                                <th>Roaster Website</th>
 								<th>Roaster Description</th>
 								<th>Roaster Logo</th>
 								<th>Coffee Name</th>
@@ -17,8 +19,9 @@
 								<th>Retail Price</th>
 								<th>Currency</th>
 								<th>Bag Size(in ounces)</th>
-								<th>Green PPP</th>
-								<th>Website</th>
+								<th>GPP</th>
+                                <th>EGS</th>
+								<th>Coffee Website</th>
 								<th>Farm Name</th>
 								<th>Farm Region</th>
 								<th>Farm Country</th>
@@ -36,14 +39,16 @@
                                 echo "<td class='formRow'>".$ttcoffee->last_name."</td>";
                                 echo "<td class='formRow'>".$ttcoffee->email."</td>";
 								echo "<td class='formRow'>".$ttcoffee->roaster_name."</td>";
-								echo "<td class='formRow'>".$ttcoffee->roaster_description."</td>";
+                                echo "<td class='formRow'><a target='_blank' href=".$ttcoffee->url."/>".$ttcoffee->url."</a></td>";
+                                echo "<td class='formRow'>".$ttcoffee->roaster_description."</td>";
 								echo "<td class='formRow'><img style='height: 100px; width: 75px; margin: 0 auto;' src='$ttcoffee->roaster_logo'/></td>";
 								echo "<td class='formRow'>".$ttcoffee->coffee_name."</td>";
-								echo "<td class='formRow'>".$ttcoffee->coffee_description."</td>";
+								echo "<td class='formRow'>".$ttcoffee->description."</td>";
 								echo "<td class='formRow'>$".$ttcoffee->retail_price."</td>";
 								echo "<td class='formRow'>".$ttcoffee->currency."</td>";
 								echo "<td class='formRow'>".$ttcoffee->bag_size."</td>";
 								echo "<td class='formRow'>$".$ttcoffee->gppp."</td>";
+                                echo "<td class='formRow'>".round($ttcoffee->egs, 1)."%</td>";
 								echo "<td class='formRow'><a target='_blank' href=".$ttcoffee->url."/>".$ttcoffee->url."</a></td>";
 								echo "<td class='formRow'>".$ttcoffee->farm_name."</td>";
 								echo "<td class='formRow'>".$ttcoffee->farm_region."</td>";

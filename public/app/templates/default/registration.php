@@ -92,7 +92,7 @@
                     <label for="roasterURL" class="inline">Roaster Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="roasterURL" class="regInput" type="text" placeholder="Link to the roaster's website" for="roasterURL" id="roasterURL" required>
+                    <input name="roasterURL" class="regInput" type="text" placeholder="Web page address for the roaster" for="roasterURL" id="roasterURL" required>
                 </div>
             </div>
             <div class="row">
@@ -122,7 +122,7 @@
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeePrice" class="inline">Retail Price</label>
+                    <label for="coffeePrice" class="inline">Retail Price:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
                     <input name="coffeePrice" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice" id="coffeePrice" required>
@@ -133,7 +133,7 @@
                     <label for="coffeeCurrency" class="inline">Currency:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeCurrency" class="regInput" type="text" placeholder="Curency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency" id="coffeeCurrency" required>
+                    <input name="coffeeCurrency" class="regInput" type="text" placeholder="Currency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency" id="coffeeCurrency" required>
                 </div>
             </div>
             <div class="row">
@@ -154,10 +154,10 @@
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeWebSite" class="inline">Coffee Website</label>
+                    <label for="coffeeWebSite" class="inline">Coffee Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeWebSite" class="regInput" type="text" placeholder="Website you would like to link to for this coffee" for="coffeeWebSite" id="coffeeWebSite" required>
+                    <input name="coffeeWebSite" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebSite" id="coffeeWebSite" required>
                 </div>
             </div>
             <div id="extra-coffees">
