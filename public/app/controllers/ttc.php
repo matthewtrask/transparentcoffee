@@ -357,10 +357,10 @@ class ttc extends \core\controller {
         if(!is_writable($upload_path))
             die('You cannot upload to the specified directory, please CHMOD it to 777.');
 
-        if(move_uploaded_file($_FILES['roasterImage']['tmp_name'],$upload_path . $filename)) {
-            $data = file_get_contents($upload_path . $filename);
+        if(move_uploaded_file($_FILES['roasterImage']['tmp_name'],$upload_path . '/' . $filename)) {
+            $data = file_get_contents($upload_path . '/' . $filename);
             $roasterImage = 'data:image/' . substr($ext, 1) . ';base64, ' . base64_encode($data);
-            unlink($upload_path . $filename);
+            unlink($upload_path . '/' . $filename);
         } else {
             echo 'There was an error during the file upload.  Please try again.';
         }
