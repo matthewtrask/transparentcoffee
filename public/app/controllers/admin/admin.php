@@ -57,4 +57,26 @@ class Admin extends \core\controller
         header('Location: /admin/pending');
     }
 
+    public function download()
+    {
+        header('Location: /thankyou');
+//        if(isset($_POST['id']))
+//        {
+//            // if id is set then get the file with the id from database
+//
+//            $id    = $_POST['id'];
+//
+//            $result = $this->_adminModel->getPendingFileInfo($id);
+//            var_dump($result);
+//            $fileSize = $result['file_size'];
+//            $fileType = $result['file_type'];
+//            $fileName = $result['file_name'];
+//
+//            header("Content-length: $fileSize");
+//            header("Content-type: $fileType");
+//            header("Content-Disposition: attachment; filename=$fileName");
+//            echo $result['gppp_confirmation'];
+//        }
+    }
+
 }

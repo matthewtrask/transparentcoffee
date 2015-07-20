@@ -53,7 +53,7 @@
 								echo "<td class='formRow'>".$ttcoffee->farm_name."</td>";
 								echo "<td class='formRow'>".$ttcoffee->farm_region."</td>";
 								echo "<td class='formRow'>".$ttcoffee->farm_country."</td>";
-								echo "<td class='formRow'>".$ttcoffee->gppp_proof."</td>";
+								echo "<td class='formRow'><a class='file-download' name='".$ttcoffee->coffee_id."' href=''>".$ttcoffee->file_name."</a></td>";
 								echo "</tr>";
 								echo "</tbody>";
 								

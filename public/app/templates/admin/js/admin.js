@@ -29,5 +29,22 @@ $(document).ready(function(){
 			}
 		});
 	});
+    $('.file-download').click( function() {
+        var data = 'id=' + this.name;
+        $.ajax({
+            url: "/download",
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data,
+            success: function(){
+                document.body.innerHTML = 'hi';
+                console.log('hi');
+            },
+            complete: function(){
+                console.log('yo');
+            }
+        });
+    });
 });
 
