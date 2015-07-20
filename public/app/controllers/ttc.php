@@ -420,7 +420,7 @@ class ttc extends \core\controller {
             'roaster_name'        => $cleanRoaster,
             'roaster_logo'        => $roasterImage,
             'roaster_description' => $cleanRoasterDesc,
-			'roasterURL'		  => $cleanRoasterURL
+			'roaster_url'		  => $cleanRoasterURL
         );
         $this->_model->insertPendingRoaster($pendingRoaster);
         $roasterId = $this->_model->getLastId();
@@ -444,7 +444,7 @@ class ttc extends \core\controller {
         );
         $this->_model->insertPendingCoffee($pendingCoffee);
 
-        header('Location: admin/pending');
+        header('Location: thankyou');
 
     }
 
