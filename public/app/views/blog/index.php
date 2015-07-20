@@ -27,7 +27,7 @@
 					echo "<div class='col-md-9'>";
 						echo "<p>Posted on ".date('jS M Y H:i:s', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p>";
 						echo "<div class='content'>".stripslashes($row->postDesc)."</div>";
-						echo "<p><a href='".DIR."$row->postSlug' style='margin-top: 20px' class='button primary'>Read More</a></p>";
+						echo "<p><a href='".DIR."$row->postSlug' style='margin-top: 20px' class='button primary' id='insightButton'>Read More</a></p>";
 					echo "</div>";
 				echo "</div>";
 

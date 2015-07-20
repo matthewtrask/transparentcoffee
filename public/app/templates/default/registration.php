@@ -30,38 +30,41 @@
 <div style="height: 20px">
 
 </div>
+<div class="row" id="regForm">
+    <div class="small-12 medium-12 large-12 columns">
+            <div id="dialog" class="reveal-modal" data-reveal aria-labelledby="popUpTitle" aria-hidden="true" role="dialog">
+                <h2 id="popUpTitle">Transparent Trade Coffee</h2>
+                <p>Thank you for your interest in registering your coffee with Transparent Trade Coffee. Please note that only single-origin coffees sold through direct trade or near direct trade channels are eligible for registration on the Transparent Trade Coffee website.  There is no limit on the number of coffees that you can submit for registration; however, each coffee must be registered as follows:</p>
+                <p><b>1.  Complete our online registration form providing the following details</b></p>
+                <ul>
+                    <li>Coffee Name</li>
+                    <li>Roaster Logo (please upload)</li>
+                    <li>Coffee’s (on-line) retail price (including currency and bag size)</li>
+                    <li>Description of Coffee (limited to 140 characters)</li>
+                    <li>Producer (i.e., farm or cooperative) name and location (country)</li>
+                    <li>Web page address (where coffee is listed for sale)</li>
+                    <li>Green price per pound (f.o.b.) paid to cooperative or producer</li>
+                </ul>
+                <p><b>2. Upload required documentation</b></p>
+                <ul>
+                    <li>If the green coffee was purchased directly from the grower, we will ask for documentation of the terms of sale. If the coffee was purchased through a middleman, this documentation should be provided by that middleman</li>
+                </ul>
+                <p>After registered coffees are submitted we validate (but do not audit) the green price as stated in the documented terms of sale, confirming that it is comparable with our other green prices (i.e., f.o.b. price per green pound paid to the producer). We then calculate the effective share of price that goes to the grower.</p>
+                <p>Before your registered coffee(s) go live on the website you receive an email asking you to confirm our calculations.  Once confirmed your coffees will be posted to the <a href="transparentcoffees">TT Coffees page.</a></p>
+                <p>In addition to being posted on our website, your coffees will be mentioned in a short TT Coffee Social Media update on both Facebook and Twitter.</p>
+                <p>If you have any questions, please reach out to team@transparenttradecoffee.org </p>
+                <a class="close-reveal-modal" style="margin-top: 83%; margin-right: 13%; font-size: 1.1rem;" aria-label="Close">I agree</a><a class="close-reveal-modal" style="color:red; margin-top: 83%; font-size: 1.1rem;" href="//transparenttradecoffee.com" aria-label="close">I do not agree</a>
+    </div>
+    </div>
+</div>
 
 <div class="row">
-    <div id="boxes">
-        <div id="dialog" class="window">
-            <h2>Transparent Trade Coffee</h2>
-            <p>Thank you for your interest in registering your coffee with Transparent Trade Coffee. Please note that only single-origin coffees sold through direct trade or near direct trade channels are eligible for registration on the Transparent Trade Coffee website.  There is no limit on the number of coffees that you can submit for registration; however, each coffee must be registered as follows:</p>
-            <p><b>1.  Complete our online registration form providing the following details</b></p>
-            <ul>
-                <li>Coffee Name</li>
-                <li>Roaster Logo (please upload)</li>
-                <li>Coffee’s (on-line) retail price (including currency and bag size)</li>
-                <li>Description of Coffee (limited to 140 characters)</li>
-                <li>Producer (i.e., farm or cooperative) name and location (country)</li>
-                <li>Web page address (where coffee is listed for sale)</li>
-                <li>Green price per pound (f.o.b.) paid to cooperative or producer</li>
-            </ul>
-            <p><b>2. Upload required documentation</b></p>
-            <ul>
-                <li>If the green coffee was purchased directly from the grower, we will ask for documentation of the terms of sale. If the coffee was purchased through a middleman, this documentation should be provided by that middleman</li>
-            </ul>
-            <p>After registered coffees are submitted we validate (but do not audit) the green price as stated in the documented terms of sale, confirming that it is comparable with our other green prices (i.e., f.o.b. price per green pound paid to the producer). We then calculate the effective share of price that goes to the grower.</p>
-            <p>Before your registered coffee(s) go live on the website you receive an email asking you to confirm our calculations.  Once confirmed your coffees will be posted to the <a href="transparentcoffees">TT Coffees page.
-            <p>In addition to being posted on our website, your coffees will be mentioned in a short TT Coffee Social Media update on both Facebook and Twitter.</p>
-            <p>If you have any questions, please reach out to team@transparenttradecoffee.org </p>
-            <div id="popupfoot"> <a href="#" class="close agree">I agree</a> | <a class="agree"style="color:red;" href="http://transparenttradecoffee.com">I do not agree</a> </div>
-        </div>
-        <div id="mask"></div>
-    </div>
+
     <div class="small-2 medium-2 large-2 columns">
 
     </div>
     <div class="small-8 medium-8 large-8 small-centered medium-centered large-centered columns light-font-smaller">
+
 
 
         <form id="registrationForm" action="submitRegister" method="POST" data-abide enctype="multipart/form-data">
@@ -249,4 +252,5 @@
         }
         return true;
     }
+
 </script>
