@@ -57,26 +57,33 @@ class Admin extends \core\controller
         header('Location: /admin/pending');
     }
 
-    public function download()
+    public function gppProof()
     {
-        header('Location: /thankyou');
-//        if(isset($_POST['id']))
-//        {
-//            // if id is set then get the file with the id from database
-//
-//            $id    = $_POST['id'];
-//
-//            $result = $this->_adminModel->getPendingFileInfo($id);
-//            var_dump($result);
-//            $fileSize = $result['file_size'];
-//            $fileType = $result['file_type'];
-//            $fileName = $result['file_name'];
-//
-//            header("Content-length: $fileSize");
-//            header("Content-type: $fileType");
-//            header("Content-Disposition: attachment; filename=$fileName");
-//            echo $result['gppp_confirmation'];
-//        }
+		if(isset($_GET['id']))
+        {
+            // if id is set then get the file with the id from database
+
+            $id    = $_GET['id'];
+
+            $result   = $this->_adminModel->getPendingFileInfo($id);
+            $fileSize = $result->file_size;
+            $fileType = $result->file_type;
+            $fileName = $result->file_name;
+			$fileUrl = $_SERVER['DOCUMENT_ROOT'] . '/app/uploads/' . $fileName;
+
+			header("Content-Description: File Transfer");
+			header("Content-Type: $fileType");
+			header("Content-Disposition: attachment; filename=\"".explode('-',$fileName)[1]."\";");
+			header("Content-Transfer-Encoding: binary");
+			header('Expires: 0');
+			header('Cache-Control: must-revalidate');
+			header('Pragma: public');
+			header("Content-Length: $fileSize");
+			ob_clean();
+			flush();
+            readfile(urldecode($fileUrl));
+			exit;
+        }
     }
 
 }

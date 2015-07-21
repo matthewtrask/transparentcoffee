@@ -391,15 +391,17 @@ class ttc extends \core\controller {
     public function submitRegister() {
         if($_FILES['greenPPP']['size'] > 0)
         {
-            $fileName = $_FILES['greenPPP']['name'];
+            $fileName = rand(1000,100000)."-".$_FILES['greenPPP']['name'];
             $tmpName  = $_FILES['greenPPP']['tmp_name'];
             $fileSize = $_FILES['greenPPP']['size'];
             $fileType = $_FILES['greenPPP']['type'];
+            $fileUploadPath = $_SERVER['DOCUMENT_ROOT'] . "/app/uploads/";
 
-            $fp      = fopen($tmpName, 'r');
-            $content = fread($fp, filesize($tmpName));
-            $content = addslashes($content);
-            fclose($fp);
+            move_uploaded_file($tmpName, $fileUploadPath.$fileName);
+//            $fp      = fopen($tmpName, 'r');
+//            $content = fread($fp, filesize($tmpName));
+//            $content = addslashes($content);
+//            fclose($fp);
 
             if(!get_magic_quotes_gpc())
             {
@@ -417,8 +419,8 @@ class ttc extends \core\controller {
         $max_filesize = 10485760;
         $upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
 
-        $filename = $_FILES['roasterImage']['name'];
-        $ext = substr($filename, strpos($filename,'.'), strlen($filename)-1);
+        $imageName = $_FILES['roasterImage']['name'];
+        $ext = substr($imageName, strpos($imageName,'.'), strlen($imageName)-1);
 
         if(!in_array($ext,$allowed_filetypes))
             die('The file you attempted to upload is not allowed.');
@@ -429,10 +431,10 @@ class ttc extends \core\controller {
         if(!is_writable($upload_path))
             die('You cannot upload to the specified directory, please CHMOD it to 777.');
 
-        if(move_uploaded_file($_FILES['roasterImage']['tmp_name'],$upload_path . '/' . $filename)) {
-            $data = file_get_contents($upload_path . '/' . $filename);
+        if(move_uploaded_file($_FILES['roasterImage']['tmp_name'],$upload_path . '/' . $imageName)) {
+            $data = file_get_contents($upload_path . '/' . $imageName);
             $roasterImage = 'data:image/' . substr($ext, 1) . ';base64, ' . base64_encode($data);
-            unlink($upload_path . '/' . $filename);
+            unlink($upload_path . '/' . $imageName);
         } else {
             echo 'There was an error during the file upload.  Please try again.';
         }
@@ -523,7 +525,6 @@ class ttc extends \core\controller {
             'bag_size'          => $cleanBagSize,
             'gppp'              => $cleanCoffeeGPPP,
             'egs'               => $egs,
-            'gppp_confirmation' => $content,
             'file_name'         => $fileName,
             'file_type'         => $fileType,
             'file_size'         => $fileSize,
@@ -544,7 +545,6 @@ class ttc extends \core\controller {
                         'bag_size'          => $extraCoffees[$i]['bagSize'],
                         'gppp'              => $extraCoffees[$i]['coffeeGPPP'],
                         'egs'               => $egs,
-                        'gppp_confirmation' => $content,
                         'file_name'         => $fileName,
                         'file_type'         => $fileType,
                         'file_size'         => $fileSize,

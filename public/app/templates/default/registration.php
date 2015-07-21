@@ -92,7 +92,7 @@
                     <label for="roasterURL" class="inline">Roaster Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="roasterURL" class="regInput" type="text" placeholder="Web page address for the roaster" for="roasterURL" id="roasterURL" required>
+                    <input name="roasterURL" class="regInput" type="text" placeholder="Roaster Website Home URL" for="roasterURL" id="roasterURL" required>
                 </div>
             </div>
             <div class="row">
@@ -149,7 +149,7 @@
                     <label for="coffeeGPPP" class="inline">Coffee Green Price Per Pound Paid:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeGPPP" class="regInput" type="text" placeholder="Amount (in USD) that farmers receive pound" for="coffeeGPPP" id="coffeeGPPP" required>
+                    <input name="coffeeGPPP" class="regInput" type="text" placeholder="Amount (in USD) that Farmer receives per pound" for="coffeeGPPP" id="coffeeGPPP" required>
                 </div>
             </div>
             <div class="row">
@@ -179,10 +179,10 @@
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="farmLocation" class="inline">Farm Country:</label>
+                    <label for="farmLocation" class="inline">Farm Location - Country:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="farmLocation" class="regInput" type="text" placeholder="Farm Country" for="farmLocation" id="farmLocation" required>
+                    <input name="farmLocation" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation" id="farmLocation" required>
                 </div>
             </div>
             <div class="row">

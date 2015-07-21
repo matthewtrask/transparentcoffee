@@ -3,7 +3,14 @@
 <head>
 
 	<!-- Site meta -->
-	<meta charset="utf-8">
+<!--  --><?php
+//    if ($data['title'] == 'Registration Approval') {
+//      echo "<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>";
+//    }
+//  else {
+     echo "<meta charset='utf-8'>";
+//  }
+//  ?>
 	<title><?php echo $data['title'].' - '.SITETITLE; //SITETITLE defined in app/core/config.php ?></title>
   <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
 	<!-- CSS -->
