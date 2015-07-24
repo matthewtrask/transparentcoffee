@@ -200,7 +200,7 @@
             </div>
             <hr/>
             <div id="extra-coffees">
-                <div class="row">
+                <div class="row" id="previous-coffee-button">
                     <div class="small-12 small-text-center columns">
                         <a name="2" class="button secondary tiny extra-coffee">Add Another Coffee</a>
                     </div>

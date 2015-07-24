@@ -310,7 +310,7 @@ $(document).ready(function(){
         });
     });
 });
-$(document).on('click', '.extra-coffee', function(){
+$(document).on('click', '.extra-coffee', function(event){
     var number = this.name;
     var data = 'number=' + number;
     $.ajax({
@@ -320,9 +320,13 @@ $(document).on('click', '.extra-coffee', function(){
         cache: false,
         data: data, // all data will be passed here
         success: function(data){
-            document.getElementById("extra-coffees").innerHTML = data;
-            flowText();
-            $(document).foundation();
+            document.getElementById("previous-coffee-button").remove();
+            //var oldhtml = document.getElementById("ttcoffees").innerHTML;
+            var newcontent = document.createElement('div');
+            newcontent.innerHTML = data;
+            while (newcontent.firstChild) {
+                document.getElementById("extra-coffees").appendChild(newcontent.firstChild);
+            }
         }
     });
 });

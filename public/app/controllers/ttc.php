@@ -328,88 +328,87 @@ class ttc extends \core\controller {
         $data['title'] = 'Register';
 
         $number = $_POST['number'];
-        for ($i = 2; $i <= $number; $i++) {
         ?>
         <div class="row">
-                <h3 class="sub-header">Coffee #<?php echo $i?></h3>
+                <h3 class="sub-header">Coffee #<?php echo $number?></h3>
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeName-<?php echo $i?>" class="inline">Coffee Name:</label>
+                    <label for="coffeeName-<?php echo $number?>" class="inline">Coffee Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeName-<?php echo $i?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $i?>" id="coffeeName-<?php echo $i?>" required>
+                    <input name="coffeeName-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $number?>" id="coffeeName-<?php echo $number?>" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeDescription-<?php echo $i?>" class="inline">Coffee Description:</label>
+                    <label for="coffeeDescription-<?php echo $number?>" class="inline">Coffee Description:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <textarea name="coffeeDescription-<?php echo $i?>" placeholder="Enter a short description about your coffee (Maximum of 140 characters)" maxlength="140" onKeyDown="charLimiti(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
+                    <textarea name="coffeeDescription-<?php echo $number?>" placeholder="Enter a short description about your coffee (Maximum of 140 characters)" maxlength="140" onKeyDown="charLimiti(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeePrice-<?php echo $i?>" class="inline">Retail Price:</label>
+                    <label for="coffeePrice-<?php echo $number?>" class="inline">Retail Price:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeePrice-<?php echo $i?>" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice-<?php echo $i?>" id="coffeePrice-<?php echo $i?>" required>
+                    <input name="coffeePrice-<?php echo $number?>" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice-<?php echo $number?>" id="coffeePrice-<?php echo $number?>" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeCurrency-<?php echo $i?>" class="inline">Currency:</label>
+                    <label for="coffeeCurrency-<?php echo $number?>" class="inline">Currency:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeCurrency-<?php echo $i?>" class="regInput" type="text" placeholder="Currency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency-<?php echo $i?>" id="coffeeCurrency-<?php echo $i?>" required>
+                    <input name="coffeeCurrency-<?php echo $number?>" class="regInput" type="text" placeholder="Currency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency-<?php echo $number?>" id="coffeeCurrency-<?php echo $number?>" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeBagSize-<?php echo $i?>" class="inline">Coffee Bag Size (oz):</label>
+                    <label for="coffeeBagSize-<?php echo $number?>" class="inline">Coffee Bag Size (oz):</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeBagSize-<?php echo $i?>" class="regInput" type="text" placeholder="Coffee Bag Size (oz)" for="coffeeBagSize-<?php echo $i?>" id="coffeeBagSize-<?php echo $i?>" required>
+                    <input name="coffeeBagSize-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Bag Size (oz)" for="coffeeBagSize-<?php echo $number?>" id="coffeeBagSize-<?php echo $number?>" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeGPPP-<?php echo $i?>" class="inline">Coffee Green Price Per Pound Paid:</label>
+                    <label for="coffeeGPPP-<?php echo $number?>" class="inline">Coffee Green Price Per Pound Paid:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeGPPP-<?php echo $i?>" class="regInput" type="text" placeholder="Amount (in USD) that farmers receive pound" for="coffeeGPPP-<?php echo $i?>" id="coffeeGPPP-<?php echo $i?>" required>
+                    <input name="coffeeGPPP-<?php echo $number?>" class="regInput" type="text" placeholder="Amount (in USD) that farmers receive pound" for="coffeeGPPP-<?php echo $number?>" id="coffeeGPPP-<?php echo $number?>" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeWebSite-<?php echo $i?>" class="inline">Coffee Website:</label>
+                    <label for="coffeeWebSite-<?php echo $number?>" class="inline">Coffee Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeWebSite-<?php echo $i?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebSite-<?php echo $i?>" id="coffeeWebSite-<?php echo $i?>" required>
+                    <input name="coffeeWebSite-<?php echo $number?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebSite-<?php echo $number?>" id="coffeeWebSite-<?php echo $number?>" required>
                 </div>
             </div>
             <div class="row">
-                <h3 class="sub-header">Farm #<?php echo $i?></h3>
+                <h3 class="sub-header">Farm #<?php echo $number?></h3>
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="farmName-<?php echo $i?>" class="inline">Farm Name:</label>
+                    <label for="farmName-<?php echo $number?>" class="inline">Farm Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="farmName-<?php echo $i?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $i?>" id="farmName-<?php echo $i?>" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
-                    <label for="farmLocation-<?php echo $i?>" class="inline">Farm Location - Country:</label>
-                </div>
-                <div class="small-9 medium-9 large-9 columns">
-                    <input name="farmLocation-<?php echo $i?>" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation-<?php echo $i?>" id="farmLocation-<?php echo $i?>" required>
+                    <input name="farmName-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $number?>" id="farmName-<?php echo $number?>" required>
                 </div>
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="farmRegion-<?php echo $i?>" class="inline">Farm Region:</label>
+                    <label for="farmLocation-<?php echo $number?>" class="inline">Farm Location - Country:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <select name="farmRegion-<?php echo $i?>" class="regInput" id="farmRegion-<?php echo $i?>" required>
+                    <input name="farmLocation-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation-<?php echo $number?>" id="farmLocation-<?php echo $number?>" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="farmRegion-<?php echo $number?>" class="inline">Farm Region:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <select name="farmRegion-<?php echo $number?>" class="regInput" id="farmRegion-<?php echo $number?>" required>
                         <option>South America</option>
                         <option>Central America</option>
                         <option>Africa</option>
@@ -421,15 +420,14 @@ class ttc extends \core\controller {
             </div>
             <div class="row">
                 <div class="small-5 medium-5 large-5 columns">
-                    <label for="greenPPP-<?php echo $i?>" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
+                    <label for="greenPPP-<?php echo $number?>" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
                 </div>
                 <div class="small-7 medium-7 large-7 columns">
                     <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-                    <input name="greenPPP-<?php echo $i?>" class="regInput" type="file" for="greenPPP-<?php echo $i?>" id="greenPPP-<?php echo $i?>">
+                    <input name="greenPPP-<?php echo $number?>" class="regInput" type="file" for="greenPPP-<?php echo $number?>" id="greenPPP-<?php echo $number?>">
                 </div>
             </div>
-            <? } ?>
-            <div class="row">
+            <div class="row" id="previous-coffee-button">
                 <div class="small-12 small-text-center columns">
                     <a name="<?php echo $number + 1?>" class="button secondary tiny extra-coffee">Add Another Coffee</a>
                 </div>
@@ -460,7 +458,7 @@ class ttc extends \core\controller {
         $max_filesize = 10485760;
         $upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
 
-        $imageName = $_FILES['roasterImage']['name'];
+        $numbermageName = $_FILES['roasterImage']['name'];
         $ext = substr($imageName, strpos($imageName,'.'), strlen($imageName)-1);
 
         if(!in_array($ext,$allowed_filetypes))
