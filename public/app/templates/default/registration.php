@@ -157,16 +157,8 @@
                     <input name="coffeeWebSite" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebSite" id="coffeeWebSite" required>
                 </div>
             </div>
-            <div id="extra-coffees">
-                <div class="row">
-                    <div class="small-12 small-text-center columns">
-                        <a name="2" class="button secondary tiny extra-coffee">Add Another Coffee</a>
-                    </div>
-                </div>
-            </div>
-            <hr/>
             <div class="row">
-                <h3 class="sub-header">Farm</h3>
+                <h3 class="sub-header">Farm #1</h3>
                 <div class="small-3 medium-3 large-3 columns">
                     <label for="farmName" class="inline">Farm Name:</label>
                 </div>
@@ -196,8 +188,8 @@
                         <option>Other</option>
                     </select>
                 </div>
-            </div><hr/>
-                <div class="row">
+            </div>
+            <div class="row">
                 <div class="small-5 medium-5 large-5 columns">
                     <label for="greenPPP" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
                 </div>
@@ -206,6 +198,15 @@
                     <input name="greenPPP" class="regInput" type="file" placeholder="greenPPP" for="greenPPP" id="greenPPP">
                 </div>
             </div>
+            <hr/>
+            <div id="extra-coffees">
+                <div class="row">
+                    <div class="small-12 small-text-center columns">
+                        <a name="2" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+                    </div>
+                </div>
+            </div>
+            <hr/>
             <div class="small-offset-2 small-8 medium-8 large-8 columns">
                 <input id="registrationSubmit" type="submit" value="Submit" class="button expand white-button">
             </div>

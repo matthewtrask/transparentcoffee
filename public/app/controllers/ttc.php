@@ -387,6 +387,47 @@ class ttc extends \core\controller {
                     <input name="coffeeWebSite-<?php echo $i?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebSite-<?php echo $i?>" id="coffeeWebSite-<?php echo $i?>" required>
                 </div>
             </div>
+            <div class="row">
+                <h3 class="sub-header">Farm #<?php echo $i?></h3>
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="farmName-<?php echo $i?>" class="inline">Farm Name:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="farmName-<?php echo $i?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $i?>" id="farmName-<?php echo $i?>" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="farmLocation-<?php echo $i?>" class="inline">Farm Location - Country:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="farmLocation-<?php echo $i?>" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation-<?php echo $i?>" id="farmLocation-<?php echo $i?>" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="farmRegion-<?php echo $i?>" class="inline">Farm Region:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <select name="farmRegion-<?php echo $i?>" class="regInput" id="farmRegion-<?php echo $i?>" required>
+                        <option>South America</option>
+                        <option>Central America</option>
+                        <option>Africa</option>
+                        <option>Middle East</option>
+                        <option>Pacific</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-5 medium-5 large-5 columns">
+                    <label for="greenPPP-<?php echo $i?>" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
+                </div>
+                <div class="small-7 medium-7 large-7 columns">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                    <input name="greenPPP-<?php echo $i?>" class="regInput" type="file" for="greenPPP-<?php echo $i?>" id="greenPPP-<?php echo $i?>">
+                </div>
+            </div>
             <? } ?>
             <div class="row">
                 <div class="small-12 small-text-center columns">
@@ -406,15 +447,8 @@ class ttc extends \core\controller {
             $fileUploadPath = $_SERVER['DOCUMENT_ROOT'] . "/app/uploads/";
 
             move_uploaded_file($tmpName, $fileUploadPath.$fileName);
-//            $fp      = fopen($tmpName, 'r');
-//            $content = fread($fp, filesize($tmpName));
-//            $content = addslashes($content);
-//            fclose($fp);
 
-            if(!get_magic_quotes_gpc())
-            {
-                $fileName = addslashes($fileName);
-            }
+            $fileName = addslashes($fileName);
         }
         else
         {
@@ -470,6 +504,10 @@ class ttc extends \core\controller {
                 $extraCoffees[$i]['coffeeWebsite']     = filter_var($_POST["coffeeWebsite-$i"], FILTER_VALIDATE_URL);
                 $extraCoffees[$i]['bagSize']           = filter_var($_POST["coffeeBagSize-$i"], FILTER_SANITIZE_NUMBER_INT);
                 $extraCoffees[$i]['coffeeGPPP']        = filter_var($_POST["coffeeGPPP-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+                $extraCoffees[$i]['farmName']          = filter_var($_POST["farmName-$i"], FILTER_SANITIZE_STRING);
+                $extraCoffees[$i]['farmLocation']      = filter_var($_POST["farmLocation-$i"], FILTER_SANITIZE_STRING);
+                $extraCoffees[$i]['farmRegion']        = filter_var($_POST["farmRegion-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+                $extraCoffees[$i]['greenPPP']          = filter_var($_POST["greenPPP-$i"], FILTER_SANITIZE_STRING);
             }
             else {
                 break;
@@ -542,6 +580,31 @@ class ttc extends \core\controller {
         if (!empty($extraCoffees)) {
             for ($i = 2; $i > 0; $i++) {
                 if (isset($extraCoffees[$i])) {
+                    if($_FILES["greenPPP-$i"]['size'] > 0)
+                    {
+                        $fileName = rand(1000,100000)."-".$_FILES["greenPPP-$i"]['name'];
+                        $tmpName  = $_FILES["greenPPP-$i"]['tmp_name'];
+                        $fileSize = $_FILES["greenPPP-$i"]['size'];
+                        $fileType = $_FILES["greenPPP-$i"]['type'];
+                        $fileUploadPath = $_SERVER['DOCUMENT_ROOT'] . "/app/uploads/";
+
+                        move_uploaded_file($tmpName, $fileUploadPath.$fileName);
+                        $fileName = addslashes($fileName);
+                    }
+                    else
+                    {
+                        $fileName = NULL;
+                        $fileSize = NULL;
+                        $fileType = NULL;
+                        $content  = NULL;
+                    }
+                    $pendingGrower = array (
+                        'farm_name' => $extraCoffees['farmName'],
+                        'farm_country' => $extraCoffees['farmLocation'],
+                        'farm_region' => $extraCoffees['farmRegion']
+                    );
+                    $this->_model->insertPendingGrower($pendingGrower);
+                    $growerId = $this->_model->getLastId();
                     $egs = $extraCoffees[$i]['coffeeGPPP'] / ($extraCoffees[$i]['coffeePrice'] / $extraCoffees[$i]['bagSize'] * 16 * .85);
                     $pendingCoffee = array(
                         'grower_id'         => $growerId,
