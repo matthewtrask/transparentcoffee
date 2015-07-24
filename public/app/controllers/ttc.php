@@ -316,6 +316,14 @@ class ttc extends \core\controller {
 		View::rendertemplate('footer');
 	}
 
+    public function registrationinfo() {
+        $data['title'] = 'Registration Info';
+
+        View::rendertemplate('header', $data);
+        View::rendertemplate('registrationinfo');
+        View::rendertemplate('footer');
+    }
+
     public function extraCoffeeAjax() {
         $data['title'] = 'Register';
 

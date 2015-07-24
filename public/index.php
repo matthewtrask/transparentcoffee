@@ -71,6 +71,7 @@ Router::any('transparency', '\controllers\ttc@transparency');
 Router::any('seg', 'controllers\ttc@seg');
 Router::any('transparentcoffees', '\controllers\ttc@ttcoffees');
 Router::any('register', '\controllers\ttc@register');
+Router::any('registrationinfo', '\controllers\ttc@registrationInfo');
 Router::any('submitRegister', '\controllers\ttc@submitRegister');
 Router::any('thankyou', '\controllers\ttc@thankyou');
 ;// Router::any('insights','\controllers\ttc@insights');

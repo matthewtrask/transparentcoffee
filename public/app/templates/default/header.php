@@ -79,7 +79,7 @@
                     </ul>
                 </li>
                 <li><a href="transparentcoffees">TT COFFEES</a></li>
-                <li><a href="register">REGISTER</a></li>
+                <li><a href="registrationinfo">REGISTER</a></li>
                 <li id="li-header-logo"><a href="home"><img id="header-logo" src="<?php echo helpers\url::template_path() .
                     'img/Transparent%20Trade%20White-08-09.png'?>"/></a></li>
                 <li><a href="insights">INSIGHTS</a></li>
