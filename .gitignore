@@ -1,5 +1,7 @@
 public/app/core/config.php
 
+public/app/uploads/*
+
 .idea
 
 .vagrant/machines/default/virtualbox/action_provision
