@@ -455,7 +455,6 @@ class ttc extends \core\controller {
             $fileName = NULL;
             $fileSize = NULL;
             $fileType = NULL;
-            $content  = NULL;
         }
         $allowed_filetypes = array('.jpg','.jpeg','.png','.gif');
         $max_filesize = 10485760;
@@ -506,7 +505,7 @@ class ttc extends \core\controller {
                 $extraCoffees[$i]['coffeeGPPP']        = filter_var($_POST["coffeeGPPP-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $extraCoffees[$i]['farmName']          = filter_var($_POST["farmName-$i"], FILTER_SANITIZE_STRING);
                 $extraCoffees[$i]['farmLocation']      = filter_var($_POST["farmLocation-$i"], FILTER_SANITIZE_STRING);
-                $extraCoffees[$i]['farmRegion']        = filter_var($_POST["farmRegion-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+                $extraCoffees[$i]['farmRegion']        = filter_var($_POST["farmRegion-$i"], FILTER_SANITIZE_STRING);
                 $extraCoffees[$i]['greenPPP']          = filter_var($_POST["greenPPP-$i"], FILTER_SANITIZE_STRING);
             }
             else {
@@ -596,12 +595,11 @@ class ttc extends \core\controller {
                         $fileName = NULL;
                         $fileSize = NULL;
                         $fileType = NULL;
-                        $content  = NULL;
                     }
                     $pendingGrower = array (
-                        'farm_name' => $extraCoffees['farmName'],
-                        'farm_country' => $extraCoffees['farmLocation'],
-                        'farm_region' => $extraCoffees['farmRegion']
+                        'farm_name' => $extraCoffees[$i]['farmName'],
+                        'farm_country' => $extraCoffees[$i]['farmLocation'],
+                        'farm_region' => $extraCoffees[$i]['farmRegion']
                     );
                     $this->_model->insertPendingGrower($pendingGrower);
                     $growerId = $this->_model->getLastId();
