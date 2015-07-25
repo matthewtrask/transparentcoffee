@@ -166,7 +166,8 @@ div.ttcoffee {
       width: 100%;
       min-height: 75px;
       padding: 15px;
-      padding-left: 40px !important; //because of abbreviation
+      padding-right: 20px !important;
+      padding-left: 28px !important; //because of abbreviation
 //      background-color: #B0B0B0;
       background-color: #7B7B7B;
       color: #fff;
@@ -190,7 +191,8 @@ div.ttcoffee {
     width: 100%;
     min-height: 75px;
     padding: 15px;
-    padding-left: 40px !important; //because of abbreviation
+    padding-right: 20px !important;
+    padding-left: 28px !important; //because of abbreviation
 //    background-color: #B0B0B0;
     background-color: #7B7B7B;
     color: #fff;
@@ -470,7 +472,7 @@ div.ttcoffee:not(:hover) {
     }
   }
   .percent-abbrev {
-    width: 76px !important;
+    width: 75px !important;
     top: 100px !important;
     left: -37px !important;
 
@@ -487,14 +489,17 @@ div.ttcoffee:not(:hover) {
 }
   //extra-small screens
   @media only screen and (max-width: 450px) {
+    .image-text {
+      font-size: 23px !important;
+    }
     .dropdown-btn {
       position: absolute !important;
       left: 22px !important;
-      top: 20px !important;
+      top: 5px !important;
       height: 20px !important;
       width: 40px !important;
-      padding-top: 3px !important;
-      padding-bottom: 3px !important;
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
       padding-left: 3px !important;
       padding-right: 3px !important;
       border-radius: 1px !important;
@@ -511,7 +516,7 @@ div.ttcoffee:not(:hover) {
     .arrow-btn {
       position: absolute !important;
       left: 65px !important;
-      top: 20px !important;
+      top: 5px !important;
       height: 20px !important;
       width: 24px !important;
       padding-top: 3px !important;
@@ -540,7 +545,7 @@ div.ttcoffee:not(:hover) {
       }
     }
     .percent-abbrev {
-      width: 76px !important;
+      width: 75px !important;
       top: 100px !important;
       left: -37px !important;
 
@@ -557,15 +562,18 @@ div.ttcoffee:not(:hover) {
       position: absolute !important;
       left: 50px !important;
     }
+    .dropdown-btn {
+      font-size: 8px !important;
+    }
+    #ttc-sub-header {
+      font-size: 13px;
+    }
     div.ttcoffee {
-      h3 {
-        font-size: 20px;
-      }
       div.Percent {
-        padding-left: 20px !important;
+        padding-left: 16px !important;
       }
       div.gppp {
-        padding-left: 20px !important;
+        padding-left: 16px !important;
       }
     }
   }

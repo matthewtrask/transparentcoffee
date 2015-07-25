@@ -18,7 +18,7 @@ $(document).ready(function(){
             maximum: 800,
             minFont: 8,
             maxFont: 14,
-            fontRatio: 22
+            fontRatio: 26
         });
     }
     flowText();
