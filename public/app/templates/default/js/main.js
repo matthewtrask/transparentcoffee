@@ -62,14 +62,14 @@ $(document).ready(function(){
     }, function(){
         this.src = "app/templates/default/img/Transparent%20Trade%20White-08-09.png";
     });
-    $('.accordion-navigation').click(function() {
-        if ($(this).children().children().eq(1).hasClass('fa-plus-circle')) {
-            $(this).children().children().eq(1).addClass('fa-minus-circle');
-            $(this).children().children().eq(1).removeClass('fa-plus-circle');
+    $('.panel-header').click(function() {
+        if ($(this).children().eq(1).hasClass('fa-plus-circle')) {
+            $(this).children().eq(1).addClass('fa-minus-circle');
+            $(this).children().eq(1).removeClass('fa-plus-circle');
         }
         else {
-            $(this).children().children().eq(1).addClass('fa-plus-circle');
-            $(this).children().children().eq(1).removeClass('fa-minus-circle');
+            $(this).children().eq(1).addClass('fa-plus-circle');
+            $(this).children().eq(1).removeClass('fa-minus-circle');
         }
     });
     $(".slider-egs").noUiSlider({

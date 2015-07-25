@@ -73,7 +73,7 @@
     <form id="mobile-menu-form">
         <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel1" class="content">
                     <?php foreach ($data['filter_roaster'] as $roaster) {
                         echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> $roaster<br>";
@@ -83,7 +83,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel2" class="content">
                     <input id="southAmer" type="checkbox" name="region[]" value="South America"> South America<br />
                     <input id="centralAmer" type="checkbox" name="region[]" value="Central America"> Central America<br />
@@ -93,7 +93,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel4" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
@@ -105,7 +105,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel3" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
@@ -126,7 +126,7 @@
             <form id="menu-form">
                 <dl class="accordion custom-accordion" data-accordion>
                     <dd class="accordion-navigation custom-accordion-panel">
-                        <a href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
+                        <a class="panel-header" href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
                         <div id="panel1" class="content">
                             <?php foreach ($data['filter_roaster'] as $roaster) {
                                 echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> <span class='filter_roaster'>$roaster</span><br>";
@@ -136,7 +136,7 @@
                         </div>
                     </dd>
                     <dd class="accordion-navigation custom-accordion-panel">
-                        <a href="#panel2"style="padding-bottom: 32px;"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
+                        <a class="panel-header"  href="#panel2"style="padding-bottom: 32px;"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
                         <div id="panel2" class="content">
                             <input id="southAmer" class='region' type="checkbox" name="region[]" value="South America"> <span class='region'>South America</span><br />
                             <input id="centralAmer" class='region' type="checkbox" name="region[]" value="Central America"> <span class='region'>Central America</span><br />
