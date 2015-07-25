@@ -22,27 +22,41 @@ $(document).ready(function(){
         });
     }
     flowText();
-  //$('#submitButton').click(function(e){
-  //   $.ajax({
-  //     url: 'http://192.168.33.10/contact',
-  //     type: 'POST',
-  //     data: '#contactForm',
-  //     success: function(){
-  //       alert('Successfully sent!');
-  //     },
-  //     error: function(){
-  //       alert('There was an error sending your information. Please try again.');
-  //     }
-  //   });
-  //   e.preventDefault();
-  //});
-  //
-  //  $('#selectall').on('click', function() {
-  //      console.log('hi');
-  //      $("#panel1 > input").each(function() {
-  //          this.checked = true;
-  //      });
-  //  });
+  $('#submitButton').click(function(e){
+     $.ajax({
+       url: 'http://192.168.33.10/contact',
+       type: 'POST',
+       data: '#contactForm',
+       success: function(){
+         alert('Successfully sent!');
+       },
+       error: function(){
+         alert('There was an error sending your information. Please try again.');
+       }
+     });
+     e.preventDefault();
+  });
+
+    $('.selectall').on('click', function() {
+        if (this.name == 'selectall') {
+            $("#panel1 > input").each(function () {
+                this.checked = true;
+            });
+            $('.selectall').each(function () {
+                this.name = 'deselectall';
+                this.value = 'Deselect All';
+            });
+        }
+        else {
+            $("#panel1 > input").each(function () {
+                this.checked = false;
+            });
+            $('.selectall').each(function () {
+                this.name = 'selectall';
+                this.value = 'Select All';
+            });
+        }
+    });
     $('#header-logo').hover(function(){
         this.src = "app/templates/default/img/Transparent-Trade-Tan-Large-08-10.png";
     }, function(){
@@ -139,8 +153,8 @@ $(document).ready(function(){
         else if (sort == 'Effective Grower Share') {
             data += '&sort=EGS';
         }
-        else if (sort == 'Default') {
-            data += '&sort=Default';
+        else if (sort == 'Order By') {
+            data += '&sort=orderby';
         }
         else {
             data += '&sort=' + sort;
@@ -175,8 +189,8 @@ $(document).ready(function(){
         else if (sort == 'Effective Grower Share') {
             data += '&sort=EGS';
         }
-        else if (sort == 'Default') {
-            data += '&sort=Default';
+        else if (sort == 'Order By') {
+            data += '&sort=orderby';
         }
         else {
             data += '&sort=' + sort;
@@ -212,8 +226,8 @@ $(document).ready(function(){
         else if (sort == 'Effective Grower Share') {
             data += '&sort=EGS';
         }
-        else if (sort == 'Default') {
-            data += '&sort=Default';
+        else if (sort == 'Order By') {
+            data += '&sort=orderby';
         }
         else {
             data += '&sort=' + sort;
@@ -248,8 +262,8 @@ $(document).ready(function(){
         else if (sort == 'Effective Grower Share') {
             data += '&sort=EGS';
         }
-        else if (sort == 'Default') {
-            data += '&sort=Default';
+        else if (sort == 'Order By') {
+            data += '&sort=orderby';
         }
         else {
             data += '&sort=' + sort;
@@ -289,8 +303,8 @@ $(document).ready(function(){
         else if (sort == 'Effective Grower Share') {
             data += '&sort=EGS';
         }
-        else if (sort == 'Default') {
-            data += '&sort=Default';
+        else if (sort == 'Order By') {
+            data += '&sort=orderby';
         }
         else {
             data += '&sort=' + sort;
