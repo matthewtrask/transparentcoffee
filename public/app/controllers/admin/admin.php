@@ -57,10 +57,11 @@ class Admin extends \core\controller
 
     public function pendingAjax()
     {
-    	print_r($_POST);
+    	
 
 
         foreach ($_POST as $approvedCoffeeId) {
+            print_r($approvedCoffeeId);exit;
             $this->_ttcModel->approveCoffee($approvedCoffeeId);
         }
 
