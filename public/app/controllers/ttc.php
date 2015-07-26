@@ -132,10 +132,10 @@ class ttc extends \core\controller {
         else if ($_POST['sort'] == 'orderby') {
             $_POST['sort'] = 'Order By';
         }
-        echo '<div class="small-9 columns">';
-            echo '<h3>Transparent Coffees</h3>';
+        echo '<div class="small-8 medium-9 columns">';
+            echo '<h3 id="ttc-sub-header">Transparently Traded Coffees</h3>';
         echo '</div>';
-        echo '<div class="small-3 columns">';
+        echo '<div class="small-4 medium-3 columns">';
             echo "<a class='button tiny secondary dropdown-btn' data-dropdown='hover1'
                      data-options='is_hover:true'>" . $_POST['sort'] . "</a>";
             echo '<ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>';
