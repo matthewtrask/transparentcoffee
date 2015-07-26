@@ -52,7 +52,7 @@
 								echo "<td class='formRow'>".$ttcPending->farm_name."</td>";
 								echo "<td class='formRow'>".$ttcPending->farm_region."</td>";
 								echo "<td class='formRow'>".$ttcPending->farm_country."</td>";
-								echo "<td class='formRow'><a href='/gppProof?id=".$ttcPending->coffee_id."'>".explode('-',$ttcoffee->file_name)[1]."</a></td>";
+								echo "<td class='formRow'><a href='/gppProof?id=".$ttcPending->coffee_id."'>".explode('-',$ttcPending->file_name)[1]."</a></td>";
 								echo "</tr>";
 								echo "</tbody>";
 								
@@ -116,7 +116,7 @@
 						echo "<td class='formRow'>".$ttcActive->farm_name."</td>";
 						echo "<td class='formRow'>".$ttcActive->farm_region."</td>";
 						echo "<td class='formRow'>".$ttcActive->farm_country."</td>";
-						echo "<td class='formRow'><a href='/gppProof?id=".$ttcActive->coffee_id."'>".explode('-',$ttcactive->file_name)[1]."</a></td>";
+						echo "<td class='formRow'><a href='/gppProof?id=".$ttcActive->coffee_id."'>".explode('-',$ttcActive->file_name)[1]."</a></td>";
 						echo "</tr>";
 					}
 					?>
@@ -174,7 +174,7 @@
 						echo "<td class='formRow'>".round($ttcArchive->egs, 1)."%</td>";
 						echo "<td class='formRow'><a target='_blank' href=".$ttcArchive->url."/>Here</a></td>";
 						echo "<td class='formRow'>".$ttcArchive->farm_name."</td>";
-						echo "<td class='formRow'>".$ttcarchive->farm_region."</td>";
+						echo "<td class='formRow'>".$ttcArchive->farm_region."</td>";
 						echo "<td class='formRow'>".$ttcArchive->farm_country."</td>";
 						echo "<td class='formRow'><a href='/gppProof?id=".$ttcArchivee->coffee_id."'>".explode('-',$ttcArchive->file_name)[1]."</a></td>";
 
