@@ -38,6 +38,7 @@
         <li><a href="admin/posts">Posts</a></li>
         <li><a href="admin/cats">Categories</a></li>
         <li><a href="admin/users">Users</a></li>
+        <li><a href="/admin/pending">Registrations</a></li>
         <li><a href="logout">Logout</a></li>
       </ul>
     </section>

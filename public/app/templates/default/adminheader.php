@@ -48,6 +48,7 @@
           <li><a href="<?php echo DIR;?>home">Home</a></li>
           <li><a href="<?php echo DIR;?>cats">Categories</a></li>
           <li><a href="<?php echo DIR;?>posts">Posts</a></li>
+          <li><a href="<?php echo DIR;?>Registration">Registration</a></li>
           <li><a href="<?php echo DIR;?>users">Users</a></li>
         </ul>
 

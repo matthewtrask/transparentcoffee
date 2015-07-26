@@ -685,7 +685,7 @@ class ttc extends \core\controller {
 		$mail->setFrom($cleanEmail);
         $mail->addAddress('bgoebel@emory.edu');
 		$mail->subject('A message for TTC');
-		$mail->body($cleanName ."<br>". $cleanMessage);
+		$mail->body($cleanName ."<br>". $cleanEmail ."<br>". $cleanMsg);
 
         if(!empty($cleanName) && !empty($cleanEmail) && !empty($cleanMsg)){
             $mail->send();

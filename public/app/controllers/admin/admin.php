@@ -40,22 +40,35 @@ class Admin extends \core\controller
 	{
 		$data['title'] = 'Registration Approval';
 
-		$ttcoffees = $this->_adminModel->getTTCoffees();
-		$data['ttcoffees'] = $ttcoffees;
+		$ttcPending = $this->_adminModel->getTTCoffees();
+		$ttcArchive = $this->_adminModel->getArchiveTTCoffees();
+		$ttcActive = $this->_adminModel->getActiveTTCoffees();
+		$data['ttcPending'] = $ttcPending;
+		$data['ttcActive'] = $ttcActive;
+		$data['ttcArchive'] = $ttcArchive;
 		
-	View::renderadmintemplate('header', $data);
-	View::render('admin/pending', $data);
-	View::renderadmintemplate('footer', $data);
+		View::renderadmintemplate('header', $data);
+		View::render('admin/pending', $data);
+		View::renderadmintemplate('footer', $data);
 	
 	}
 
+
+
     public function pendingAjax()
     {
+    	print_r($_POST);
+
+
         foreach ($_POST as $approvedCoffeeId) {
             $this->_ttcModel->approveCoffee($approvedCoffeeId);
         }
+
+
         header('Location: /admin/pending');
     }
+
+
 
     public function gppProof()
     {
@@ -85,5 +98,7 @@ class Admin extends \core\controller
 			exit;
         }
     }
+
+
 
 }
