@@ -123,14 +123,14 @@ class ttc extends \core\controller {
                 }
             }
         }
-        if ($_POST['sort'] == 'gppp') {
-            $_POST['sort'] = 'GPPP';
+        if ($_POST['sort'] == 'GPPP') {
+            $_POST['sort'] = 'GPP';
         }
-        else if ($_POST['sort'] == 'egs') {
-            $_POST['sort'] = 'EGS';
-        }
-        else if ($_POST['sort'] == 'default') {
-            $_POST['sort'] = 'Default';
+//        else if ($_POST['sort'] == 'EGS') {
+//            $_POST['sort'] = 'EGS';
+//        }
+        else if ($_POST['sort'] == 'orderby') {
+            $_POST['sort'] = 'Order By';
         }
         echo '<div class="small-9 columns">';
             echo '<h3>Transparent Coffees</h3>';
@@ -139,15 +139,13 @@ class ttc extends \core\controller {
             echo "<a class='button tiny secondary dropdown-btn' data-dropdown='hover1'
                      data-options='is_hover:true'>" . $_POST['sort'] . "</a>";
             echo '<ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>';
-                if ($_POST['sort'] == 'gppp') {
+                if ($_POST['sort'] == 'GPP') {
                     echo '<li class="sort-dropdown"><a>Effective Grower Share</a></li>';
-                    echo '<li class="sort-dropdown"><a>Default</a></li>';
                 }
-                else if ($_POST['sort'] == 'egs') {
+                else if ($_POST['sort'] == 'EGS') {
                     echo '<li class="sort-dropdown"><a>Green Price Per Pound</a></li>';
-                    echo '<li class="sort-dropdown"><a>Default</a></li>';
                 }
-                else {
+                else if ($_POST['sort'] == 'Order By') {
                     echo '<li class="sort-dropdown"><a>Green Price Per Pound</a></li>';
                     echo '<li class="sort-dropdown"><a>Effective Grower Share</a></li>';
                 }
@@ -261,9 +259,11 @@ class ttc extends \core\controller {
                                         echo '<div class="row">';
                                             echo '<div class="small-2 medium-2 columns">';
                                                 echo "<div class='square'>$" . number_format($ttcoffee->gppp, 2) . '</div>';
+                                                echo "<div class='abbreviation'>GPP</div>";
                                             echo '</div>';
                                             echo '<div class="small-2 medium-2 columns">';
                                                 echo "<div class='circle'>" . round($ttcoffee->egs, 1) . "%</div>";
+                                                echo "<div class='abbreviation'>EGS</div>";
                                             echo '</div>';
                                         echo '</div>';
                                     echo '</div>';
@@ -276,8 +276,8 @@ class ttc extends \core\controller {
             }
         }
     else {
-        echo '<div class="small-12 columns"><h4>There are currently no coffees available that meet your selected filters. Please
-            try again using different filters</h4></div>';
+        echo '<div class="small-12 columns"><h6>There are currently no coffees available that meet your selected filters. Please
+            try again using different filters.</h6></div>';
     }}
 
 

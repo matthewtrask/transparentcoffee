@@ -29,24 +29,61 @@
         We encourage you to consider the green prices paid to growers <b>(GPP)</b>, and/or the effective grower share <b>(EGS)</b> when making your purchase decisions.
         When you are satisfied with the economic treatment of the coffee farmer, click on the listing to go to the roaster's on-line store to learn more and to make your coffee purchase.
         <b>If you don’t see coffees from your favorite roaster listed here, please encourage them to <a class="hyperlink" href="register">register today.</b></a></p>
-      <br><p><i>* EGS = Effective Grower Share<br>* GPP = Green Price Per Pound</i></p>
+      <br><p>
+          <i>* GPP = Green Price Per Pound</i>  <small><a href="#" data-reveal-id="gpp-view">Learn More</a></small><br>
+          <i>* EGS = Effective Grower Share</i>  <small><a href="#" data-reveal-id="egs-view">Learn More</a></small
+      </p>
   </div>
+</div>
+<div id="gpp-view" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <div class="row">
+        <div class="small-10 small-offset-1 columns">
+            <h2 id="modalTitle">Green Price Per Pound</h2>
+            <p class="lead">Green price paid to the grower (GPP) is the final negotiated price per pound (in
+
+                $US) paid to a farmer or his/her cooperative, and represents the f.o.b. price at
+
+                the point and time of export.</p>
+        </div>
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<div id="egs-view" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <div class="row">
+        <div class="small-10 small-offset-1 columns">
+            <h2 id="modalTitle">Effective Grower Share</h2>
+            <p class="lead">Effective grower share (EGS) is the percentage of the retail price paid by a
+
+                consumer for a 12-ounce bag of coffee that is returned to the coffee grower.
+
+                EGS is calculated by dividing the green price paid to the grower (GPP) by the
+
+                green-pound equivalent price charged for each bag of roasted coffee. Green-
+
+                pound equivalent price is calculated by converting posted (on-line) prices to
+
+                one-pound equivalents, and then assuming 15% shrinkage during the roasting
+
+                process.</p>
+        </div>
+    </div>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 <div class="show-for-medium-down">
     <form id="mobile-menu-form">
         <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel1" class="content">
                     <?php foreach ($data['filter_roaster'] as $roaster) {
                         echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> $roaster<br>";
                     }
                     ?>
-                    <input style="margin-top: 5px;" id="selectall" type="button" name="selectall" value="Select All"/>
+                    <input style="margin-top: 5px;" class="selectall" type="button" name="selectall" value="Select All"/>
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel2" class="content">
                     <input id="southAmer" type="checkbox" name="region[]" value="South America"> South America<br />
                     <input id="centralAmer" type="checkbox" name="region[]" value="Central America"> Central America<br />
@@ -56,7 +93,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel4"><b>Green Price Per Pound</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel4" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
@@ -68,7 +105,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a class="text-center" href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel3" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
@@ -89,17 +126,17 @@
             <form id="menu-form">
                 <dl class="accordion custom-accordion" data-accordion>
                     <dd class="accordion-navigation custom-accordion-panel">
-                        <a href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
+                        <a class="panel-header" href="#panel1"><b>Roaster</b> <i class="fa fa-plus-circle"></i></a>
                         <div id="panel1" class="content">
                             <?php foreach ($data['filter_roaster'] as $roaster) {
                                 echo "<input id='$roaster' type='checkbox' name='roaster[]' value='$roaster'> <span class='filter_roaster'>$roaster</span><br>";
                             }
                             ?>
-                            <input style="margin-top: 5px;" id="selectall" type="button" name="selectall" value="Select All"/>
+                            <input style="margin-top: 5px;" class="selectall" type="button" name="selectall" value="Select All"/>
                         </div>
                     </dd>
                     <dd class="accordion-navigation custom-accordion-panel">
-                        <a href="#panel2"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
+                        <a class="panel-header"  href="#panel2"style="padding-bottom: 32px;"><b>Region</b> <i class="fa fa-plus-circle"></i></a>
                         <div id="panel2" class="content">
                             <input id="southAmer" class='region' type="checkbox" name="region[]" value="South America"> <span class='region'>South America</span><br />
                             <input id="centralAmer" class='region' type="checkbox" name="region[]" value="Central America"> <span class='region'>Central America</span><br />
@@ -130,10 +167,10 @@
     </div>
     <div id='ttcoffees' class="small-12 medium-12 large-9 columns">
         <div class="small-8 medium-9 columns">
-            <h3>Transparently Traded Coffees</h3>
+            <h3 id="ttc-sub-header">Transparently Traded Coffees</h3>
         </div>
         <div class="small-4 medium-3 columns">
-            <a class="button tiny secondary dropdown-btn" data-dropdown="hover1" data-options="is_hover:true">Default</a>
+            <a class="button tiny secondary dropdown-btn" data-dropdown="hover1" data-options="is_hover:true">Order By</a>
 
             <ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>
                 <li class="sort-dropdown"><a>Green Price Per Pound</a></li>
