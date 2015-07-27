@@ -71,6 +71,17 @@ class Admin extends \core\controller
 		foreach($_POST as $archivedCoffeeId){
 			$this->_ttcModel->archiveCoffee($archivedCoffeeId);
 		}
+
+		header('Location: /admin/pending');
+	}
+
+	public function activeAjax(){
+
+		foreach($_POST as $activeCoffeeId){
+			$this->_adminModel->activeCoffee($activeCoffeeId);
+		}
+
+		header('Location: /admin/pending');
 	}
 
     public function gppProof()
