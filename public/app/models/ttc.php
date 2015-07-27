@@ -58,21 +58,21 @@ class ttc extends model
         unset($pendingGrower['grower_id']);
         $this->_db->insert(PREFIX.'grower', $pendingGrower);
         $officialGrowerId = $this->_db->lastInsertId();
-        $data = array('grower_id' => $pendingGrowerId);
-        $this->_db->delete(PREFIX."grower_pending", $data);
+        $growerData = array('grower_id' => $pendingGrowerId);
+        $this->_db->delete(PREFIX."grower_pending", $growerData);
 
         $pendingRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$pendingRoasterId)[0];
         unset($pendingRoaster['roaster_id']);
         $this->_db->insert(PREFIX."roaster", $pendingRoaster);
         $officialRoasterId = $this->_db->lastInsertId();
-        $data = array('roaster_id' => $pendingRoasterId);
-        $this->_db->delete(PREFIX."roaster_pending", $data);
+        $roasterData = array('roaster_id' => $pendingRoasterId);
+        $this->_db->delete(PREFIX."roaster_pending", $roasterData);
 
         $pendingCoffee['grower_id']  = $officialGrowerId;
         $pendingCoffee['roaster_id'] = $officialRoasterId;
         $this->_db->insert(PREFIX."coffee", $pendingCoffee);
-        $data = array('coffee_id' => $pendingCoffeeId);
-        $this->_db->delete(PREFIX."coffee_pending", $data);
+        $coffeeData = array('coffee_id' => $pendingCoffeeId);
+        $this->_db->delete(PREFIX."coffee_pending", $coffeeData);
     }
 
      public function getLastId() {
