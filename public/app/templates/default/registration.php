@@ -111,7 +111,7 @@
                     <label for="coffeeName" class="inline">Coffee Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeName" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName" id="coffeeName" required pattern="alpha">
+                    <input name="coffeeName" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName" id="coffeeName" required pattern="alpha_numeric">
                     <small class="error">Please enter a valid coffee name</small>
                 </div>
             </div>
@@ -161,10 +161,10 @@
             </div>
             <div class="row">
                 <div class="small-3 medium-3 large-3 columns">
-                    <label for="coffeeWebSite" class="inline">Coffee Website:</label>
+                    <label for="coffeeWebsite" class="inline">Coffee Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeWebSite" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebSite" id="coffeeWebSite" pattern="domain">
+                    <input name="coffeeWebsite" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite" id="coffeeWebsite" pattern="domain">
                     <small class="error">Please enter a website link for this coffee</small>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                     <label for="farmName" class="inline">Farm Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="farmName" class="regInput" type="text" placeholder="Farm Name" for="farmName" id="farmName" required pattern="alpha">
+                    <input name="farmName" class="regInput" type="text" placeholder="Farm Name" for="farmName" id="farmName" required pattern="alpha_numeric">
                     <small class="error">Please enter a valid farm name for this coffee</small>
                 </div>
             </div>

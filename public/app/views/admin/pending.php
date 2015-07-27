@@ -25,7 +25,7 @@
 								<th>Farm Name</th>
 								<th>Farm Region</th>
 								<th>Farm Country</th>
-								<th>GPPP Proof</th>
+								<th>GPP Proof</th>
 							</tr>
 						</thead>
 						<?php 
@@ -33,12 +33,12 @@
 								// foreach ($ttcoffee as $key => $ttcoffee){
 								echo "<tbody>";
 								echo "<tr>";
-								echo "<td class='formRow'><input type='checkbox' name=".$ttcoffee->coffee_id." class='approve'>";
+								echo "<td class='formRow'><input type='checkbox' name=".$ttcPending->coffee_id." class='approve'>";
 								echo "<td class='formRow'>".$ttcPending->first_name."</td>";
                                 echo "<td class='formRow'>".$ttcPending->last_name."</td>";
                                 echo "<td class='formRow'>".$ttcPending->email."</td>";
 								echo "<td class='formRow'>".$ttcPending->roaster_name."</td>";
-                                echo "<td class='formRow'><a target='_blank' href=".$ttcPending->url."/>".$ttPending->url."</a></td>";
+                                echo "<td class='formRow'><a target='_blank' href=".$ttcPending->url."/>".$ttcPending->url."</a></td>";
                                 echo "<td class='formRow'>".$ttcPending->roaster_description."</td>";
 								echo "<td class='formRow'><img style='height: 100px; width: 75px; margin: 0 auto;' src='$ttcPending->roaster_logo'/></td>";
 								echo "<td class='formRow'>".$ttcPending->coffee_name."</td>";
@@ -106,9 +106,9 @@
                         echo "<td class='formRow'>".$ttcActive->roaster_description."</td>";
 						echo "<td class='formRow'><img style='height: 100px; width: 75px; margin: 0 auto;' src='$ttcActive->roaster_logo'/></td>";
 						echo "<td class='formRow'>".$ttcActive->coffee_name."</td>";
-						echo "<td class='formRow'>".$ttcActice->description."</td>";
+						echo "<td class='formRow'>".$ttcActive->description."</td>";
 						echo "<td class='formRow'>".$ttcActive->retail_price."</td>";
-						echo "<td class='formRow'>".$ttcActice->currency."</td>";
+						echo "<td class='formRow'>".$ttcActive->currency."</td>";
 						echo "<td class='formRow'>".$ttcActive->bag_size."</td>";
 						echo "<td class='formRow'>".$ttcActive->gppp."</td>";
 						echo "<td class='formRow'>".round($ttcActive->egs, 1)."%</td>";
@@ -176,7 +176,7 @@
 						echo "<td class='formRow'>".$ttcArchive->farm_name."</td>";
 						echo "<td class='formRow'>".$ttcArchive->farm_region."</td>";
 						echo "<td class='formRow'>".$ttcArchive->farm_country."</td>";
-						echo "<td class='formRow'><a href='/gppProof?id=".$ttcArchivee->coffee_id."'>".explode('-',$ttcArchive->file_name)[1]."</a></td>";
+						echo "<td class='formRow'><a href='/gppProof?id=".$ttcArchive->coffee_id."'>".explode('-',$ttcArchive->file_name)[1]."</a></td>";
 
 						echo "</tr>";
 					}

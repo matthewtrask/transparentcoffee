@@ -23,9 +23,8 @@ $(document).ready(function(){
             async: true,
             cache: false,
 			data: data,
-			success: function(data){
-                document.getElementById("pendingReg").innerHTML = data;
-				//console.log("It works");
+			success: function(){
+                window.location.reload();
 			}
 		});
 	});

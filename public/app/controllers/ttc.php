@@ -385,10 +385,10 @@ class ttc extends \core\controller {
         </div>
         <div class="row">
             <div class="small-3 medium-3 large-3 columns">
-                <label for="coffeeWebSite-<?php echo $number?>" class="inline">Coffee Website:</label>
+                <label for="coffeeWebsite-<?php echo $number?>" class="inline">Coffee Website:</label>
             </div>
             <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeeWebSite-<?php echo $number?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebSite-<?php echo $number?>" id="coffeeWebSite-<?php echo $number?>" pattern="domain">
+                <input name="coffeeWebsite-<?php echo $number?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite-<?php echo $number?>" id="coffeeWebsite-<?php echo $number?>" pattern="domain">
                 <small class="error">Please enter a website link for this coffee</small>
             </div>
         </div>
@@ -609,7 +609,7 @@ class ttc extends \core\controller {
                     );
                     $this->_model->insertPendingGrower($pendingGrower);
                     $growerId = $this->_model->getLastId();
-                    $egs = $extraCoffees[$i]['coffeeGPPP'] / ($extraCoffees[$i]['coffeePrice'] / $extraCoffees[$i]['bagSize'] * 16 * .85);
+                    $egs = ($extraCoffees[$i]['coffeeGPPP'] / ($extraCoffees[$i]['coffeePrice'] / $extraCoffees[$i]['bagSize'] * 16 * .85)) * 100;
                     $pendingCoffee = array(
                         'grower_id'         => $growerId,
                         'roaster_id'        => $roasterId,
