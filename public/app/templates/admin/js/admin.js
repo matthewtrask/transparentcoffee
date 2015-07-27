@@ -24,8 +24,8 @@ $(document).ready(function(){
             cache: false,
 			data: data,
 			success: function(data){
-                //window.location.reload();
-                document.getElementById("pendingReg").innerHTML = data;
+                window.location.reload();
+                //document.getElementById("pendingReg").innerHTML = data;
 				//console.log("It works");
 			}
 		});
@@ -34,14 +34,14 @@ $(document).ready(function(){
     $('#archiveForm').submit(function(){
         var archivedCoffeeIds = $('input:checked');
         var data = '';
-        for (var = i; i < archivedCoffeeIds.length; i++){
+        for (var i = 0; i < archivedCoffeeIds.length; i++){
             if(i == 0){
                 data += 'archive'
             }
             else {
                 data += '&archive'
             }
-            data += 1 + '=' + archivedCoffeeIds[i].name;
+            data += i + '=' + archivedCoffeeIds[i].name;
         }
 
         $.ajax({
@@ -50,9 +50,10 @@ $(document).ready(function(){
             async: true,
             cache: false,
             data: data,
-            success: function(data){
-                document.getElementById("archiveCoffee").innerHTML = data;
-                console.log("this works");
+            success: function(){
+                window.location.reload();
+                //document.getElementById("archiveCoffee").innerHTML = data;
+                //console.log("this works");
             }
         });
     });
@@ -60,14 +61,14 @@ $(document).ready(function(){
     $('#activeForm').submit(function(){
         var activeCoffeeIds = $('input:checked');
         var data = '';
-        for (var = i; i < activeCoffeeIds.length; i++){
+        for (var i = 0; i < activeCoffeeIds.length; i++){
             if (i == 0){
                 data += 'active'
             }
             else {
                 data += '&active'
             }
-            data +=1 + '=' + activeCoffeeIds[i].name;
+            data += i + '=' + activeCoffeeIds[i].name;
         }
         $.ajax({
            url: '/activeAjax',
@@ -75,9 +76,10 @@ $(document).ready(function(){
             async: true,
             cache: false,
             data: data,
-            success: function(data){
-                document.getElementById('activeCoffee').innerHTML - data;
-                console.log('this works');
+            success: function(){
+                window.location.reload();
+                //document.getElementById('activeCoffee').innerHTML = data;
+                //console.log('this works');
             }
         });
     });

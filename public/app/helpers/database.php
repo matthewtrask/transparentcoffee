@@ -98,14 +98,14 @@ class Database extends PDO{
 	 * @param  string $table table name
 	 * @param  array $data  array of columns and values
 	 */
-	public function insert($table, $data){
+	public function insert($table, $data , $ignore = NULL){
 
 		ksort($data);
 
 		$fieldNames = implode(',', array_keys($data));
 		$fieldValues = ':'.implode(', :', array_keys($data));
 
-		$stmt = $this->prepare("INSERT INTO $table ($fieldNames) VALUES ($fieldValues)");
+		$stmt = $this->prepare("INSERT " . ((isset($ignore)) ? 'IGNORE ' : '') . "INTO $table ($fieldNames) VALUES ($fieldValues)");
 
 		foreach($data as $key => $value){
 			$stmt->bindValue(":$key", $value);

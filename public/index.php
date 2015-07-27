@@ -87,6 +87,8 @@ Router::any('admin/login', '\controllers\admin\auth@login');
 Router::any('logout', '\controllers\admin\auth@logout');
 Router::any('admin/pending', '\controllers\admin\admin@pending');
 Router::any('pendingAjax', '\controllers\admin\admin@pendingAjax');
+Router::any('archiveAjax', '\controllers\admin\admin@archiveAjax');
+Router::any('activeAjax', '\controllers\admin\admin@activeAjax');
 Router::any('gppProof', '\controllers\admin\admin@gppProof');
 
 Router::any('admin/users', '\controllers\admin\users@index');

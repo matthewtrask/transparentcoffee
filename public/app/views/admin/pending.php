@@ -38,7 +38,7 @@
                                 echo "<td class='formRow'>".$ttcPending->last_name."</td>";
                                 echo "<td class='formRow'>".$ttcPending->email."</td>";
 								echo "<td class='formRow'>".$ttcPending->roaster_name."</td>";
-                                echo "<td class='formRow'><a target='_blank' href=".$ttcPending->url."/>".$ttcPending->url."</a></td>";
+                                echo "<td class='formRow'><a target='_blank' href=".$ttcPending->roaster_url."/>".$ttcPending->roaster_url."</a></td>";
                                 echo "<td class='formRow'>".$ttcPending->roaster_description."</td>";
 								echo "<td class='formRow'><img style='height: 100px; width: 75px; margin: 0 auto;' src='$ttcPending->roaster_logo'/></td>";
 								echo "<td class='formRow'>".$ttcPending->coffee_name."</td>";
@@ -102,7 +102,7 @@
 						echo "<td class='formRow'>".$ttcActive->last_name."</td>";
 						echo "<td class='formRow'>".$ttcActive->email."</td>";
 						echo "<td class='formRow'>".$ttcActive->roaster_name;"</td>";
-                        echo "<td class='formRow'><a target='_blank' href=".$ttcActive->url."/>Here</a></td>";
+                        echo "<td class='formRow'><a target='_blank' href=".$ttcActive->roaster_url."/>$ttcActive->roaster_url</a></td>";
                         echo "<td class='formRow'>".$ttcActive->roaster_description."</td>";
 						echo "<td class='formRow'><img style='height: 100px; width: 75px; margin: 0 auto;' src='$ttcActive->roaster_logo'/></td>";
 						echo "<td class='formRow'>".$ttcActive->coffee_name."</td>";
@@ -112,7 +112,7 @@
 						echo "<td class='formRow'>".$ttcActive->bag_size."</td>";
 						echo "<td class='formRow'>".$ttcActive->gppp."</td>";
 						echo "<td class='formRow'>".round($ttcActive->egs, 1)."%</td>";
-						echo "<td class='formRow'><a target='_blank' href=".$ttcActive->url."/>Here</a></td>";
+						echo "<td class='formRow'><a target='_blank' href=".$ttcActive->url."/>$ttcActive->url</a></td>";
 						echo "<td class='formRow'>".$ttcActive->farm_name."</td>";
 						echo "<td class='formRow'>".$ttcActive->farm_region."</td>";
 						echo "<td class='formRow'>".$ttcActive->farm_country."</td>";
@@ -162,17 +162,17 @@
 						echo "<td class='formRow'>".$ttcArchive->last_name."</td>";
 						echo "<td class='formRow'>".$ttcArchive->email."</td>";
 						echo "<td class='formRow'>".$ttcArchive->roaster_name."</td>";
-                        echo "<td class='formRow'><a target='_blank' href=".$ttcArchive->url."/>Here</a></td>";
+                        echo "<td class='formRow'><a target='_blank' href=".$ttcArchive->roaster_url."/>$ttcArchive->roaster_url</a></td>";
                         echo "<td class='formRow'>".$ttcArchive->roaster_description."</td>";
 						echo "<td class='formRow'><img style='height: 100px; width: 75px; margin: 0 auto;' src='$ttcArchive->roaster_logo'/></td>";
 						echo "<td class='formRow'>".$ttcArchive->coffee_name."</td>";
-						echo "<td class='formRow'>".$ttcArchive->coffee_description."</td>";
+						echo "<td class='formRow'>".$ttcArchive->description."</td>";
 						echo "<td class='formRow'>".$ttcArchive->retail_price."</td>";
 						echo "<td class='formRow'>".$ttcArchive->currency."</td>";
 						echo "<td class='formRow'>".$ttcArchive->bag_size."</td>";
 						echo "<td class='formRow'>".$ttcArchive->gppp."</td>";
 						echo "<td class='formRow'>".round($ttcArchive->egs, 1)."%</td>";
-						echo "<td class='formRow'><a target='_blank' href=".$ttcArchive->url."/>Here</a></td>";
+						echo "<td class='formRow'><a target='_blank' href=".$ttcArchive->url."/>$ttcArchive->url</a></td>";
 						echo "<td class='formRow'>".$ttcArchive->farm_name."</td>";
 						echo "<td class='formRow'>".$ttcArchive->farm_region."</td>";
 						echo "<td class='formRow'>".$ttcArchive->farm_country."</td>";
@@ -189,8 +189,11 @@
 </div>
 <script>
     function myFunction() {
-        //do stuff
     }
+	function activeFunction() {
+	}
+	function archiveFunction() {
+	}
 </script>
 
 

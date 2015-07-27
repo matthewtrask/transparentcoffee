@@ -49,7 +49,7 @@
                     <label for="firstName" class="inline">Your First Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="firstName" class="regInput" type="text" placeholder="Your First Name" for="firstName" id="firstName" required pattern="alpha">
+                    <input name="firstName" class="regInput" type="text" placeholder="Your First Name" for="firstName" id="firstName" required>
                     <small class="error">Please enter a valid first name</small>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     <label for="lastName" class="inline">Your Last Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="lastName" class="regInput" type="text" placeholder="Your Last Name" for="lastName" id="lastName" required pattern="alpha">
+                    <input name="lastName" class="regInput" type="text" placeholder="Your Last Name" for="lastName" id="lastName" required>
                     <small class="error">Please enter a valid last name</small>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                     <label for="roasterName" class="inline">Roaster Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="roasterName" class="regInput" type="text" placeholder="Roaster Name" for="roasterName" id="roasterName" required pattern="alpha_numeric">
+                    <input name="roasterName" class="regInput" type="text" placeholder="Roaster Name" for="roasterName" id="roasterName" required>
                     <small class="error">Please enter a valid roaster name</small>
                 </div>
             </div>
@@ -102,7 +102,8 @@
                     <label for="roasterImage" class="inline">Roaster Logo:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
+                    <input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage" required>
+                    <small class="error">Please attach a valid roaster logo</small>
                 </div>
             </div><hr />
             <div class="row">
@@ -111,7 +112,7 @@
                     <label for="coffeeName" class="inline">Coffee Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeName" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName" id="coffeeName" required pattern="alpha_numeric">
+                    <input name="coffeeName" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName" id="coffeeName" required>
                     <small class="error">Please enter a valid coffee name</small>
                 </div>
             </div>
@@ -174,7 +175,7 @@
                     <label for="farmName" class="inline">Farm Name:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="farmName" class="regInput" type="text" placeholder="Farm Name" for="farmName" id="farmName" required pattern="alpha_numeric">
+                    <input name="farmName" class="regInput" type="text" placeholder="Farm Name" for="farmName" id="farmName" required>
                     <small class="error">Please enter a valid farm name for this coffee</small>
                 </div>
             </div>
@@ -183,7 +184,7 @@
                     <label for="farmLocation" class="inline">Farm Location - Country:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="farmLocation" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation" id="farmLocation" required pattern="alpha">
+                    <input name="farmLocation" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation" id="farmLocation" required>
                     <small class="error">Please enter a valid country that this farm is located in</small>
                 </div>
             </div>

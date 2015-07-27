@@ -78,7 +78,7 @@ class Admin extends \core\controller
 	public function activeAjax(){
 
 		foreach($_POST as $activeCoffeeId){
-			$this->_adminModel->activeCoffee($activeCoffeeId);
+			$this->_ttcModel->activeCoffee($activeCoffeeId);
 		}
 
 		header('Location: /admin/pending');

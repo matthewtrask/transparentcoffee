@@ -335,7 +335,7 @@ class ttc extends \core\controller {
                 <label for="coffeeName-<?php echo $number?>" class="inline">Coffee Name:</label>
             </div>
             <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeeName-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $number?>" id="coffeeName-<?php echo $number?>" required pattern="alpha_numeric">
+                <input name="coffeeName-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $number?>" id="coffeeName-<?php echo $number?>" required>
                 <small class="error">Please enter a valid coffee name</small>
             </div>
         </div>
@@ -398,7 +398,7 @@ class ttc extends \core\controller {
                 <label for="farmName-<?php echo $number?>" class="inline">Farm Name:</label>
             </div>
             <div class="small-9 medium-9 large-9 columns">
-                <input name="farmName-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $number?>" id="farmName-<?php echo $number?>" required pattern="alpha_numeric">
+                <input name="farmName-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $number?>" id="farmName-<?php echo $number?>" required>
                 <small class="error">Please enter a valid farm name for this coffee</small>
             </div>
         </div>
@@ -407,7 +407,7 @@ class ttc extends \core\controller {
                 <label for="farmLocation-<?php echo $number?>" class="inline">Farm Location - Country:</label>
             </div>
             <div class="small-9 medium-9 large-9 columns">
-                <input name="farmLocation-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation-<?php echo $number?>" id="farmLocation-<?php echo $number?>" required pattern="alpha">
+                <input name="farmLocation-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation-<?php echo $number?>" id="farmLocation-<?php echo $number?>" required>
                 <small class="error">Please enter a valid country that this farm is located in</small>
             </div>
         </div>
