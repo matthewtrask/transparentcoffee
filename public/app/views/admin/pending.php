@@ -67,7 +67,7 @@
 	</div>
 	<div class="small-12 medium-12 large-12 columns">
 		<h2 id="current">Active Roasters</h2>
-		<form onsubmit="activeFunction(); return false;">
+		<form onsubmit="activeFunction(); return false;" id="archiveForm">
 			<table>
 				<thead>
 					<tr>
@@ -128,7 +128,7 @@
 
 	<div class="small-12 medium-12 large-12 columns">
 		<h2 id="archive">Archived Registrations</h2>
-		<form onsubmit="archiveFunction(); return false;">
+		<form onsubmit="archiveFunction(); return false;" id="activeForm">
 			<table>
 				<thead>
 					<tr>
