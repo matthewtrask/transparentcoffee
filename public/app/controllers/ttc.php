@@ -335,7 +335,7 @@ class ttc extends \core\controller {
                 <label for="coffeeName-<?php echo $number?>" class="inline">Coffee Name:</label>
             </div>
             <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeeName-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $number?>" id="coffeeName-<?php echo $number?>" required pattern="alpha">
+                <input name="coffeeName-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $number?>" id="coffeeName-<?php echo $number?>" required pattern="alpha_numeric">
                 <small class="error">Please enter a valid coffee name</small>
             </div>
         </div>
@@ -398,7 +398,7 @@ class ttc extends \core\controller {
                 <label for="farmName-<?php echo $number?>" class="inline">Farm Name:</label>
             </div>
             <div class="small-9 medium-9 large-9 columns">
-                <input name="farmName-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $number?>" id="farmName-<?php echo $number?>" required pattern="alpha">
+                <input name="farmName-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $number?>" id="farmName-<?php echo $number?>" required pattern="alpha_numeric">
                 <small class="error">Please enter a valid farm name for this coffee</small>
             </div>
         </div>
@@ -491,11 +491,23 @@ class ttc extends \core\controller {
         $email = $_POST['submitEmail'];
         $roaster = $_POST['roasterName'];
         $roasterDescription = $_POST['roasterDescription'];
+        if ( $parts = parse_url($_POST["roasterWebsite"]) ) {
+            if ( !isset($parts["scheme"]) )
+            {
+                $_POST["roasterWebsite"] = "http://" . $_POST["roasterWebsite"];
+            }
+        }
 		$roasterURL = $_POST['roasterURL'];
         $coffeeName = $_POST['coffeeName'];
         $coffeeDescription = $_POST['coffeeDescription'];
         $coffeePrice = $_POST['coffeePrice'];
         $coffeeCurrency = $_POST['coffeeCurrency'];
+        if ( $parts = parse_url($_POST["coffeeWebsite"]) ) {
+            if ( !isset($parts["scheme"]) )
+            {
+                $_POST["coffeeWebsite"] = "http://" . $_POST["coffeeWebsite"];
+            }
+        }
         $coffeeWebsite = $_POST['coffeeWebsite'];
         $bagSize = $_POST['coffeeBagSize'];
         $coffeeGPPP = $_POST['coffeeGPPP'];
@@ -506,6 +518,12 @@ class ttc extends \core\controller {
                 $extraCoffees[$i]['coffeeDescription'] = filter_var($_POST["coffeeDescription-$i"], FILTER_SANITIZE_STRING);
                 $extraCoffees[$i]['coffeePrice']       = filter_var($_POST["coffeePrice-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $extraCoffees[$i]['coffeeCurrency']    = filter_var($_POST["coffeeCurrency-$i"], FILTER_SANITIZE_STRING);
+                if ( $parts = parse_url($_POST["coffeeWebsite-$i"]) ) {
+                    if ( !isset($parts["scheme"]) )
+                    {
+                        $_POST["coffeeWebsite-$i"] = "http://" . $_POST["coffeeWebsite-$i"];
+                    }
+                }
                 $extraCoffees[$i]['coffeeWebsite']     = filter_var($_POST["coffeeWebsite-$i"], FILTER_VALIDATE_URL);
                 $extraCoffees[$i]['bagSize']           = filter_var($_POST["coffeeBagSize-$i"], FILTER_SANITIZE_NUMBER_INT);
                 $extraCoffees[$i]['coffeeGPPP']        = filter_var($_POST["coffeeGPPP-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);

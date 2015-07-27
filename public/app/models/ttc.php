@@ -49,10 +49,14 @@ class ttc extends model
         $this->_db->insert(PREFIX.'grower_pending', $pendingGrower);
     }
     public function approveCoffee($pendingCoffeeId){
+
         $pendingCoffee = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE coffee_id = '.$pendingCoffeeId)[0];
         unset($pendingCoffee['coffee_id']);
         $pendingRoasterId = $pendingCoffee['roaster_id'];
         $pendingGrowerId  = $pendingCoffee['grower_id'];
+
+        //stop roaster from getting deleted before all its coffees have been approved
+        $roasterCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE roaster_id = '.$pendingRoasterId);
 
         $pendingGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower_pending WHERE grower_id = '.$pendingGrowerId)[0];
         unset($pendingGrower['grower_id']);
@@ -65,8 +69,10 @@ class ttc extends model
         unset($pendingRoaster['roaster_id']);
         $this->_db->insert(PREFIX."roaster", $pendingRoaster);
         $officialRoasterId = $this->_db->lastInsertId();
-        $roasterData = array('roaster_id' => $pendingRoasterId);
-        $this->_db->delete(PREFIX."roaster_pending", $roasterData);
+        if (count($roasterCount) == 1) {
+            $roasterData = array('roaster_id' => $pendingRoasterId);
+            $this->_db->delete(PREFIX . "roaster_pending", $roasterData);
+        }
 
         $pendingCoffee['grower_id']  = $officialGrowerId;
         $pendingCoffee['roaster_id'] = $officialRoasterId;

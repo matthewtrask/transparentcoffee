@@ -57,7 +57,6 @@ class Admin extends \core\controller
 
     public function pendingAjax()
     {
-    	print_r($_POST);
 
 
         foreach ($_POST as $approvedCoffeeId) {
