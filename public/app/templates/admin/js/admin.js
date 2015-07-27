@@ -29,5 +29,56 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+    $('#archiveForm').submit(function(){
+        var archivedCoffeeIds = $('input:checked');
+        var data = '';
+        for (var = i; i < archivedCoffeeIds.length; i++){
+            if(i == 0){
+                data += 'archive'
+            }
+            else {
+                data += '&archive'
+            }
+            data += 1 + '=' + archivedCoffeeIds[i].name;
+        }
+
+        $.ajax({
+            url: "/archiveAjax",
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data,
+            success: function(data){
+                document.getElementById("archiveCoffee").innerHTML = data;
+                console.log("this works");
+            }
+        });
+    });
+
+    $('#activeForm').submit(function(){
+        var activeCoffeeIds = $('input:checked');
+        var data = '';
+        for (var = i; i < activeCoffeeIds.length; i++){
+            if (i == 0){
+                data += 'active'
+            }
+            else {
+                data += '&active'
+            }
+            data +=1 + '=' + activeCoffeeIds[i].name;
+        }
+        $.ajax({
+           url: '/activeAjax',
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data,
+            success: function(data){
+                document.getElementById('activeCoffee').innerHTML - data;
+                console.log('this works');
+            }
+        });
+    });
 });
 

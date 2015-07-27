@@ -57,11 +57,8 @@ class Admin extends \core\controller
 
     public function pendingAjax()
     {
-    	
-
 
         foreach ($_POST as $approvedCoffeeId) {
-            print_r($approvedCoffeeId);exit;
             $this->_ttcModel->approveCoffee($approvedCoffeeId);
         }
 
@@ -69,7 +66,12 @@ class Admin extends \core\controller
         header('Location: /admin/pending');
     }
 
+	public function archiveAjax(){
 
+		foreach($_POST as $archivedCoffeeId){
+			$this->_ttcModel->archiveCoffee($archivedCoffeeId);
+		}
+	}
 
     public function gppProof()
     {
