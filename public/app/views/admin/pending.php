@@ -35,7 +35,7 @@
 								echo "<tbody>";
 								echo "<tr>";
 								echo "<td class='formRow'><input type='checkbox' name=".$ttcPending->coffee_id." class='approve'>";
-								echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='pending-view-".$ttcPending->coffee_id."' name='archive-".$ttcPending->coffee_id."'>>Update</a></td>";
+								echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='pending-view-".$ttcPending->coffee_id."' name='archive-".$ttcPending->coffee_id."'>Update</a></td>";
 								echo "<td class='formRow'>".$ttcPending->first_name."</td>";
                                 echo "<td class='formRow'>".$ttcPending->last_name."</td>";
                                 echo "<td class='formRow'>".$ttcPending->email."</td>";
@@ -62,7 +62,7 @@
 					</table>
 					<!-- <input id="submitButton" type="submit" value="Submit" class="button expand white-button"> -->
 				<input id="pendingReg" type="submit" value="Approve" class="button success approve">
-				<input id="rejected" type="submit" value="Rejected" class="button alert">
+				<input id="reject" type="submit" value="Reject" class="button alert">
 			</form><hr />
 		</div>
 	</div>
@@ -229,40 +229,42 @@
 								</div>
 								<div class="row">
 									<h3 class="sub-header">Roaster</h3>
+									<div class="small-4 small-offset-4 columns">
+										<a href="" class="button alert pending-roaster-btn" name="<?php echo $ttcPending->coffee_id?>">Choose Existing Roaster</a>
+									</div>
+								</div>
+								<div id="pending-roaster-section-<?php echo $ttcPending->coffee_id?>">
 									<div class="row">
-										<div class="small-4 small-offset-4 columns">
-											<a href="" class="button alert">Choose Existing Roaster</a>
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterName" class="inline">Roaster Name:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterName" class="regInput" type="text" value="<?php echo $ttcPending->roaster_name?>" for="roasterName" id="roasterName">
 										</div>
 									</div>
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterName" class="inline">Roaster Name:</label>
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterDescription" class="inline">Roaster Description:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<textarea name="roasterDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcPending->roaster_description?></textarea>
+										</div>
 									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterName" class="regInput" type="text" value="<?php echo $ttcPending->roaster_name?>" for="roasterName" id="roasterName">
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterURL" class="inline">Roaster Website:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterURL" class="regInput" type="text" value="<?php echo $ttcPending->roaster_url?>" for="roasterURL" id="roasterURL">
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterDescription" class="inline">Roaster Description:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<textarea name="roasterDescription" value="<?php echo $ttcPending->roaster_description?>" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterURL" class="inline">Roaster Website:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterURL" class="regInput" type="text" value="<?php echo $ttcPending->roaster_url?>" for="roasterURL" id="roasterURL">
-									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterImage" class="inline">Roaster Logo:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterImage" class="inline">Roaster Logo:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
+										</div>
 									</div>
 								</div><hr />
 								<div class="row">
@@ -279,7 +281,7 @@
 										<label for="coffeeDescription" class="inline">Coffee Description:</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
-										<textarea name="coffeeDescription" value="<?php echo $ttcPending->description?>" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
+										<textarea name="coffeeDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcPending->description?></textarea>
 									</div>
 								</div>
 								<div class="row">
@@ -420,40 +422,42 @@
 								</div>
 								<div class="row">
 									<h3 class="sub-header">Roaster</h3>
+									<div class="small-4 small-offset-4 columns">
+										<a href="" class="button alert archive-roaster-btn" name="<?php echo $ttcArchive->coffee_id?>">Choose Existing Roaster</a>
+									</div>
+								</div>
+								<div id="archive-roaster-section-<?php echo $ttcArchive->coffee_id?>" class="row">
 									<div class="row">
-										<div class="small-4 small-offset-4 columns">
-											<a href="" class="button alert">Choose Existing Roaster</a>
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterName" class="inline">Roaster Name:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterName" class="regInput" type="text" value="<?php echo $ttcArchive->roaster_name?>" for="roasterName" id="roasterName">
 										</div>
 									</div>
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterName" class="inline">Roaster Name:</label>
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterDescription" class="inline">Roaster Description:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<textarea name="roasterDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcArchive->roaster_description?></textarea>
+										</div>
 									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterName" class="regInput" type="text" value="<?php echo $ttcArchive->roaster_name?>" for="roasterName" id="roasterName">
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterURL" class="inline">Roaster Website:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterURL" class="regInput" type="text" value="<?php echo $ttcArchive->roaster_url?>" for="roasterURL" id="roasterURL">
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterDescription" class="inline">Roaster Description:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<textarea name="roasterDescription" value="<?php echo $ttcArchive->roaster_description?>" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterURL" class="inline">Roaster Website:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterURL" class="regInput" type="text" value="<?php echo $ttcArchive->roaster_url?>" for="roasterURL" id="roasterURL">
-									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterImage" class="inline">Roaster Logo:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterImage" class="inline">Roaster Logo:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
+										</div>
 									</div>
 								</div><hr />
 								<div class="row">
@@ -470,7 +474,7 @@
 										<label for="coffeeDescription" class="inline">Coffee Description:</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
-										<textarea name="coffeeDescription" value="<?php echo $ttcArchive->description?>" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
+										<textarea name="coffeeDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcArchive->description?></textarea>
 									</div>
 								</div>
 								<div class="row">
@@ -611,40 +615,42 @@
 								</div>
 								<div class="row">
 									<h3 class="sub-header">Roaster</h3>
+									<div class="small-4 small-offset-4 columns">
+										<a href="" class="button alert active-roaster-btn" name="<?php echo $ttcActive->coffee_id?>">Choose Existing Roaster</a>
+									</div>
+								</div>
+								<div id="active-roaster-section-<?php echo $ttcActive->coffee_id?>" class="row">
 									<div class="row">
-										<div class="small-4 small-offset-4 columns">
-											<a href="" class="button alert">Choose Existing Roaster</a>
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterName" class="inline">Roaster Name:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterName" class="regInput" type="text" value="<?php echo $ttcActive->roaster_name?>" for="roasterName" id="roasterName">
 										</div>
 									</div>
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterName" class="inline">Roaster Name:</label>
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterDescription" class="inline">Roaster Description:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<textarea name="roasterDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcActive->roaster_description?></textarea>
+										</div>
 									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterName" class="regInput" type="text" value="<?php echo $ttcActive->roaster_name?>" for="roasterName" id="roasterName">
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterURL" class="inline">Roaster Website:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterURL" class="regInput" type="text" value="<?php echo $ttcActive->roaster_url?>" for="roasterURL" id="roasterURL">
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterDescription" class="inline">Roaster Description:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<textarea name="roasterDescription" value="<?php echo $ttcActive->roaster_description?>" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterURL" class="inline">Roaster Website:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterURL" class="regInput" type="text" value="<?php echo $ttcActive->roaster_url?>" for="roasterURL" id="roasterURL">
-									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="roasterImage" class="inline">Roaster Logo:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
+									<div class="row">
+										<div class="small-3 medium-3 large-3 columns">
+											<label for="roasterImage" class="inline">Roaster Logo:</label>
+										</div>
+										<div class="small-9 medium-9 large-9 columns">
+											<input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
+										</div>
 									</div>
 								</div><hr />
 								<div class="row">
@@ -661,7 +667,7 @@
 										<label for="coffeeDescription" class="inline">Coffee Description:</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
-										<textarea name="coffeeDescription" value="<?php echo $ttcActive->description?>" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
+										<textarea name="coffeeDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcActive->description?></textarea>
 									</div>
 								</div>
 								<div class="row">

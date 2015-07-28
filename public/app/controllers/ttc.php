@@ -580,8 +580,10 @@ class ttc extends \core\controller {
             'roaster_description' => $cleanRoasterDesc,
 			'roaster_url'		  => $cleanRoasterURL
         );
-        $this->_model->insertPendingRoaster($pendingRoaster);
-        $roasterId = $this->_model->getLastId();
+        $roasterId = $this->_model->insertPendingRoaster($pendingRoaster);
+        if (!$roasterId) {
+            $roasterId = $this->_model->getPendingRoasterId($cleanRoaster);
+        }
 
         $egs = ($cleanCoffeeGPPP / ($cleanCoffeePrice / $cleanBagSize * 16 * .85)) * 100;
         $pendingCoffee = array(

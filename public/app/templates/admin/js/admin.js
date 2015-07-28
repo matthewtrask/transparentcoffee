@@ -132,5 +132,44 @@ $(document).ready(function(){
             }
         });
     });
+    $('.pending-roaster-btn').click(function(event) {
+        event.preventDefault();
+        var id = this.name;
+        $.ajax({
+            url: '/roasterAjax',
+            type: "POST",
+            async: true,
+            cache: false,
+            success: function(data){
+                document.getElementById('pending-roaster-section-' + id).innerHTML = data;
+            }
+        });
+    });
+    $('.archive-roaster-btn').click(function(event) {
+        event.preventDefault();
+        var id = this.name;
+        $.ajax({
+            url: '/roasterAjax',
+            type: "POST",
+            async: true,
+            cache: false,
+            success: function(data){
+                document.getElementById('archive-roaster-section-' + id).innerHTML = data;
+            }
+        });
+    });
+    $('.active-roaster-btn').click(function(event) {
+        event.preventDefault();
+        var id = this.name;
+        $.ajax({
+            url: '/roasterAjax',
+            type: "POST",
+            async: true,
+            cache: false,
+            success: function(data){
+                document.getElementById('active-roaster-section-' + id).innerHTML = data;
+            }
+        });
+    });
 });
 

@@ -42,11 +42,19 @@ class ttc extends model
     }
 
     public function insertPendingRoaster($pendingRoaster){
-        $this->_db->insert(PREFIX."roaster_pending", $pendingRoaster);
+        return $this->_db->insert(PREFIX."roaster_pending", $pendingRoaster, true);
     }
 
     public function insertPendingGrower($pendingGrower){
         $this->_db->insert(PREFIX.'grower_pending', $pendingGrower);
+    }
+    public function getPendingRoasterId($roasterName) {
+        $result = (array) $this->_db->select("SELECT roaster_id FROM ".PREFIX."roaster_pending WHERE roaster_name = '" . $roasterName . "'")[0];
+        return $result['roaster_id'];
+    }
+    public function getRoasterName($officialRoasterId) {
+        $result = (array) $this->_db->select("SELECT roaster_name FROM ".PREFIX."roaster WHERE roaster_id = '" . $officialRoasterId . "'")[0];
+        return $result['roaster_name'];
     }
     public function approveCoffee($pendingCoffeeId){
 
@@ -157,10 +165,16 @@ class ttc extends model
      * @param $grower array of new grower info (minus grower id)
      */
     public function pendingUpdate($coffeeId, $contact, $roaster, $coffee, $grower) {
+        $coffeeWhere = array(
+            'coffee_id' => $coffeeId
+        );
+        $this->_db->update(PREFIX."coffee_pending", $coffee, $coffeeWhere);
+
         $result = (array) $this->_db->select('SELECT grower_id, roaster_id FROM '.PREFIX.'coffee_pending WHERE coffee_id = '.$coffeeId)[0];
         $growerId = $result['grower_id'];
         $roasterId = $result['roaster_id'];
         $result = (array) $this->_db->select('SELECT contact_id FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$roasterId)[0];
+        var_dump($result);
         $contactId = $result['contact_id'];
 
         $contactWhere = array(
@@ -172,11 +186,6 @@ class ttc extends model
             'grower_id' => $growerId
         );
         $this->_db->update(PREFIX."grower_pending", $grower, $growerWhere);
-
-        $coffeeWhere = array(
-            'coffee_id' => $coffeeId
-        );
-        $this->_db->update(PREFIX."coffee_pending", $coffee, $coffeeWhere);
 
         if (isset($roaster)) {
             $roasterWhere = array(
