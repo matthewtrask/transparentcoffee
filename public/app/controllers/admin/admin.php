@@ -53,8 +53,6 @@ class Admin extends \core\controller
 	
 	}
 
-
-
     public function pendingAjax()
 	{
 
@@ -83,6 +81,134 @@ class Admin extends \core\controller
 
 		header('Location: /admin/pending');
 	}
+
+	public function submitUpdate() {
+		if($_FILES['greenPPP']['size'] > 0)
+		{
+			$fileName = rand(1000,100000)."-".$_FILES['greenPPP']['name'];
+			$tmpName  = $_FILES['greenPPP']['tmp_name'];
+			$fileSize = $_FILES['greenPPP']['size'];
+			$fileType = $_FILES['greenPPP']['type'];
+			$fileUploadPath = $_SERVER['DOCUMENT_ROOT'] . "/app/uploads/";
+
+			move_uploaded_file($tmpName, $fileUploadPath.$fileName);
+
+			$fileName = addslashes($fileName);
+		}
+		else
+		{
+			$fileName = NULL;
+			$fileSize = NULL;
+			$fileType = NULL;
+		}
+		if ($_FILES['roasterImage']['name'] != '') {
+			$allowed_filetypes = array('.jpg', '.jpeg', '.png', '.gif');
+			$max_filesize = 10485760;
+			$upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
+
+			$imageName = $_FILES['roasterImage']['name'];
+			$ext = substr($imageName, strpos($imageName, '.'), strlen($imageName) - 1);
+
+			if (!in_array($ext, $allowed_filetypes))
+				die('The file you attempted to upload is not allowed.');
+
+			if (filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
+				die('The file you attempted to upload is too large.');
+
+			if (!is_writable($upload_path))
+				die('You cannot upload to the specified directory, please CHMOD it to 777.');
+
+			if (move_uploaded_file($_FILES['roasterImage']['tmp_name'], $upload_path . '/' . $imageName)) {
+				$data = file_get_contents($upload_path . '/' . $imageName);
+				$roasterImage = 'data:image/' . substr($ext, 1) . ';base64, ' . base64_encode($data);
+				unlink($upload_path . '/' . $imageName);
+			} else {
+				echo 'There was an error during the file upload.  Please try again.';
+			}
+		}
+		else {
+			$roasterImage = NULL;
+		}
+
+		$firstName = $_POST['firstName'];
+		$lastName = $_POST['lastName'];
+		$email = $_POST['submitEmail'];
+		$roaster = $_POST['roasterName'];
+		$roasterDescription = $_POST['roasterDescription'];
+		if ( $parts = parse_url($_POST["roasterWebsite"]) ) {
+			if ( !isset($parts["scheme"]) )
+			{
+				$_POST["roasterWebsite"] = "http://" . $_POST["roasterWebsite"];
+			}
+		}
+		$roasterURL = $_POST['roasterURL'];
+		$coffeeName = $_POST['coffeeName'];
+		$coffeeDescription = $_POST['coffeeDescription'];
+		$coffeePrice = $_POST['coffeePrice'];
+		$coffeeCurrency = $_POST['coffeeCurrency'];
+		if ( $parts = parse_url($_POST["coffeeWebsite"]) ) {
+			if ( !isset($parts["scheme"]) )
+			{
+				$_POST["coffeeWebsite"] = "http://" . $_POST["coffeeWebsite"];
+			}
+		}
+		$coffeeWebsite = $_POST['coffeeWebsite'];
+		$bagSize = $_POST['coffeeBagSize'];
+		$coffeeGPPP = $_POST['coffeeGPPP'];
+        $coffeeEGS = $_POST['coffeeEGS'];
+		$farmName = $_POST['farmName'];
+		$farmLocation = $_POST['farmLocation'];
+		$farmRegion = $_POST['farmRegion'];
+
+		$contact = array (
+			'first_name' => filter_var($firstName, FILTER_SANITIZE_STRING),
+			'last_name'  => filter_var($lastName, FILTER_SANITIZE_STRING),
+			'email'      => filter_var($email, FILTER_SANITIZE_EMAIL)
+		);
+
+		$roaster = array (
+			'roaster_name' 		  => filter_var($roaster, FILTER_SANITIZE_STRING),
+			'roaster_description' => filter_var($roasterDescription, FILTER_SANITIZE_STRING),
+			'roaster_url'         => filter_var($roasterURL, FILTER_SANITIZE_URL)
+		);
+		if (isset($roasterImage)) {
+			$roaster['roaster_logo'] = $roasterImage;
+		}
+
+		$coffee = array (
+			'coffee_name'  => filter_var($coffeeName, FILTER_SANITIZE_STRING),
+			'description'  => filter_var($coffeeDescription, FILTER_SANITIZE_STRING),
+			'retail_price' => filter_var($coffeePrice, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
+			'currency' 	   => filter_var($coffeeCurrency, FILTER_SANITIZE_STRING),
+			'bag_size' 	   => filter_var($bagSize, FILTER_SANITIZE_NUMBER_INT),
+			'gppp'         => filter_var($coffeeGPPP, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ),
+            'egs'          => filter_var($coffeeEGS, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ),
+			'url'          => filter_var($coffeeWebsite, FILTER_VALIDATE_URL),
+		);
+        if (isset($fileName)) {
+            $coffee['file_name'] = $fileName;
+            $coffee['file_type'] = $fileType;
+            $coffee['file_size'] = $fileSize;
+        }
+
+		$grower = array (
+			'farm_name'    => filter_var($farmName, FILTER_SANITIZE_STRING),
+			'farm_country' => filter_var($farmLocation, FILTER_SANITIZE_STRING),
+			'farm_region'  => filter_var($farmRegion, FILTER_SANITIZE_STRING)
+		);
+        if ($_POST['updateType'] == 'pending') {
+            $this->_ttcModel->pendingUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
+        }
+        else if ($_POST['updateType'] == 'active') {
+            $this->_ttcModel->activeUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
+        }
+        else if ($_POST['updateType'] == 'archive') {
+            $this->_ttcModel->archiveUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
+        }
+
+        header('Location: admin/pending');
+    }
+
 
     public function gppProof()
     {

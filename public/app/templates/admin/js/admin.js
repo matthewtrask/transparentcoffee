@@ -1,4 +1,14 @@
 $(document).ready(function(){
+    $(document).foundation();
+    //$('#archiveUpdateForm').foundation('reveal', 'open', {
+    //    //root_element: 'archiveUpdateForm'
+    //});
+    //$('a.reveal-link').click( function() {
+    //    $(document).foundation();
+    //});
+    //$('.update-btn').click(function() {
+    //    $(document).foundation();
+    //});
 	//Attach click handler to the approve button
 	$('#pendingForm').submit( function(){
         // assign variable to the attribute to the tr
@@ -80,6 +90,45 @@ $(document).ready(function(){
                 window.location.reload();
                 //document.getElementById('activeCoffee').innerHTML = data;
                 //console.log('this works');
+            }
+        });
+    });
+    $('.pending-submit').click(function() {
+        var id = this.name;
+        var data = $('#pendingUpdateForm-' + id).serialize();
+        $.ajax({
+            url: '/submitUpdate',
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data,
+            success: function(){
+            }
+        });
+    });
+    $('.archive-submit').click(function() {
+        var id = this.name;
+        var data = $("#archiveUpdateForm-" + id).serialize();
+        $.ajax({
+            url: '/submitUpdate',
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data,
+            success: function(){
+            }
+        });
+    });
+    $('.active-submit').click(function() {
+        var id = this.name;
+        var data = $('#activeUpdateForm-' + id).serialize();
+        $.ajax({
+            url: '/submitUpdate',
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data,
+            success: function(){
             }
         });
     });

@@ -148,6 +148,118 @@ class ttc extends model
         $this->_db->delete(PREFIX."coffee_archive", $coffeeData);
     }
 
+
+    /**
+     * @param $coffeeId the id of coffee to be updated
+     * @param $contact array of new contact info (minus contact id)
+     * @param $roaster array of new roaster info (minus roaster and contact id), will be NULL if an existing roaster was chosen
+     * @param $coffee array of new coffee info (minus coffee and grower id, might have a new roaster id)
+     * @param $grower array of new grower info (minus grower id)
+     */
+    public function pendingUpdate($coffeeId, $contact, $roaster, $coffee, $grower) {
+        $result = (array) $this->_db->select('SELECT grower_id, roaster_id FROM '.PREFIX.'coffee_pending WHERE coffee_id = '.$coffeeId)[0];
+        $growerId = $result['grower_id'];
+        $roasterId = $result['roaster_id'];
+        $result = (array) $this->_db->select('SELECT contact_id FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$roasterId)[0];
+        $contactId = $result['contact_id'];
+
+        $contactWhere = array(
+            'contact_id' => $contactId
+        );
+        $this->_db->update(PREFIX."contact", $contact, $contactWhere);
+
+        $growerWhere = array(
+            'grower_id' => $growerId
+        );
+        $this->_db->update(PREFIX."grower_pending", $grower, $growerWhere);
+
+        $coffeeWhere = array(
+            'coffee_id' => $coffeeId
+        );
+        $this->_db->update(PREFIX."coffee_pending", $coffee, $coffeeWhere);
+
+        if (isset($roaster)) {
+            $roasterWhere = array(
+                'roaster_id' => $roasterId
+            );
+            $this->_db->update(PREFIX."roaster_pending", $roaster, $roasterWhere);
+        }
+    }
+
+    /**
+     * @param $coffeeId the id of coffee to be updated
+     * @param $contact array of new contact info (minus contact id)
+     * @param $roaster array of new roaster info (minus roaster and contact id), will be NULL if an existing roaster was chosen
+     * @param $coffee array of new coffee info (minus coffee and grower id, might have a new roaster id)
+     * @param $grower array of new grower info (minus grower id)
+     */
+    public function archiveUpdate($coffeeId, $contact, $roaster, $coffee, $grower) {
+        $result = (array) $this->_db->select('SELECT grower_id, roaster_id FROM '.PREFIX.'coffee_archive WHERE coffee_id = '.$coffeeId)[0];
+        $growerId = $result['grower_id'];
+        $roasterId = $result['roaster_id'];
+        $result = (array) $this->_db->select('SELECT contact_id FROM '.PREFIX.'roaster_archive WHERE roaster_id = '.$roasterId)[0];
+        $contactId = $result['contact_id'];
+
+        $contactWhere = array(
+            'contact_id' => $contactId
+        );
+        $this->_db->update(PREFIX."contact", $contact, $contactWhere);
+
+        $growerWhere = array(
+            'grower_id' => $growerId
+        );
+        $this->_db->update(PREFIX."grower_archive", $grower, $growerWhere);
+
+        $coffeeWhere = array(
+            'coffee_id' => $coffeeId
+        );
+        $this->_db->update(PREFIX."coffee_archive", $coffee, $coffeeWhere);
+
+        if (isset($roaster)) {
+            $roasterWhere = array(
+                'roaster_id' => $roasterId
+            );
+            $this->_db->update(PREFIX."roaster_archive", $roaster, $roasterWhere);
+        }
+    }
+
+    /**
+     * @param $coffeeId the id of coffee to be updated
+     * @param $contact array of new contact info (minus contact id)
+     * @param $roaster array of new roaster info (minus roaster and contact id), will be NULL if an existing roaster was chosen
+     * @param $coffee array of new coffee info (minus coffee and grower id, might have a new roaster id)
+     * @param $grower array of new grower info (minus grower id)
+     */
+    public function activeUpdate($coffeeId, $contact, $roaster, $coffee, $grower) {
+        $result = (array) $this->_db->select('SELECT grower_id, roaster_id FROM '.PREFIX.'coffee WHERE coffee_id = '.$coffeeId)[0];
+        $growerId = $result['grower_id'];
+        $roasterId = $result['roaster_id'];
+        $result = (array) $this->_db->select('SELECT contact_id FROM '.PREFIX.'roaster WHERE roaster_id = '.$roasterId)[0];
+        $contactId = $result['contact_id'];
+
+        $contactWhere = array(
+            'contact_id' => $contactId
+        );
+        $this->_db->update(PREFIX."contact", $contact, $contactWhere);
+
+        $growerWhere = array(
+            'grower_id' => $growerId
+        );
+        $this->_db->update(PREFIX."grower", $grower, $growerWhere);
+
+        $coffeeWhere = array(
+            'coffee_id' => $coffeeId
+        );
+        $this->_db->update(PREFIX."coffee", $coffee, $coffeeWhere);
+
+        if (isset($roaster)) {
+            $roasterWhere = array(
+                'roaster_id' => $roasterId
+            );
+            $this->_db->update(PREFIX."roaster", $roaster, $roasterWhere);
+        }
+    }
+
      public function getLastId() {
          return $this->_db->lastInsertId();
      }

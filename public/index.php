@@ -89,6 +89,7 @@ Router::any('admin/pending', '\controllers\admin\admin@pending');
 Router::any('pendingAjax', '\controllers\admin\admin@pendingAjax');
 Router::any('archiveAjax', '\controllers\admin\admin@archiveAjax');
 Router::any('activeAjax', '\controllers\admin\admin@activeAjax');
+Router::any('submitUpdate', '\controllers\admin\admin@submitUpdate');
 Router::any('gppProof', '\controllers\admin\admin@gppProof');
 
 Router::any('admin/users', '\controllers\admin\users@index');
