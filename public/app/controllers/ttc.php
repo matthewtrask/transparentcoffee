@@ -440,7 +440,7 @@ class ttc extends \core\controller {
                     <a name="<?php echo $number + 1?>" class="button secondary tiny extra-coffee">Add Another Coffee</a>
                 </div>
             </div>
-        <?
+        <?php
     }
 
     public function submitRegister() {
