@@ -10,7 +10,7 @@
 						<li><a href='<?php echo DIR;?>admin/cats' class='button'>Categories</a></li>
 						<li><a href='<?php echo DIR;?>admin/posts' class='button'>Posts</a></li>
 						<li><a href='<?php echo DIR;?>admin/users' class='button'>Users</a></li> 
-						<li><a href='<?php echo DIR;?>admin/pending' class="button">Registrations</a></li>
+						<li><a href='<?php echo DIR;?>admin/pending' class="button">Coffees</a></li>
 					</ul>
 				</div>
 

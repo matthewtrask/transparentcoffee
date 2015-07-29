@@ -316,7 +316,7 @@ class ttc extends \core\controller {
 		View::rendertemplate('footer');
 	}
 
-    public function registrationinfo() {
+    public function registrationInfo() {
         $data['title'] = 'Registration Info';
 
         View::rendertemplate('header', $data);

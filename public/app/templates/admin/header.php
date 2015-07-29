@@ -38,11 +38,11 @@
       <ul>
         <li class="show-for-small-only"><a href="home"><i class="fa fa-home"></i></a></li>
         <li><a href="/admin">Home</a></li>
-        <li><a href="admin/posts">Posts</a></li>
-        <li><a href="admin/cats">Categories</a></li>
-        <li><a href="admin/users">Users</a></li>
-        <li><a href="/admin/pending">Registrations</a></li>
-        <li><a href="logout">Logout</a></li>
+        <li><a href="/admin/posts">Posts</a></li>
+        <li><a href="/admin/cats">Categories</a></li>
+        <li><a href="/admin/users">Users</a></li>
+        <li><a href="/admin/pending">Coffees</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
     </section>
   </nav>
