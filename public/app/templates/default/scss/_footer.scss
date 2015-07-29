@@ -1,0 +1,63 @@
+$primary-color: #000;
+$socialBGColor: #fff;
+$footerHeight: 160px;
+$aColor: #fff;
+$aHover: #808080;
+$socialIcons: #D1D1D1;
+
+.ttcFooter {
+  background-color: $primary-color;
+  height: $footerHeight;
+  overflow: hidden;
+}
+
+.ttcFooter {
+  ul li {
+    list-style: none;
+  }
+  li a {
+    color: $aColor;
+  }
+  li a:hover {
+    color: $aHover;
+  }
+  .row {
+    height: 150px !important;
+  }
+  .socialIcons{
+    margin-top: 20px;
+      ul {
+        display: inline;
+        text-align: center;
+        li {
+          display: inline;
+          margin-top: 40px;
+          i {
+            background-color: $socialBGColor;
+            color: #d1d1d1;
+            height: 50px;
+            width: 50px;
+            padding-top: 10px;
+            border-radius: 25px;
+          }
+          i:hover {
+            background-color: #d1d1d1;
+            color: $socialBGColor;
+            height: 50px;
+            width: 50px;
+            padding-top: 10px;
+            border-radius: 25px;
+          }
+        }
+      }
+
+  }
+  .powered a {
+    color: $aColor;
+  }
+  .copyright p{
+    float: right;
+    color: $aColor;
+  }
+}
+

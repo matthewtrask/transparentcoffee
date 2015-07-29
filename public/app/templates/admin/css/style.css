@@ -1,0 +1,91 @@
+/* Your styles here */
+.admin, .cats, .posts, .users, .approval {
+	margin-top: 100px;
+}
+
+#adminNav {
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 8px 6px -6px #999;
+	color: #020202;
+}
+
+section.top-bar-section {
+    display: inline-block;
+    color: #000;
+}
+
+.top-bar {
+	height: 63px;
+}
+
+.admin ul li {
+	display: inline-block;
+}
+
+.admin .button {
+	min-width: 200px;
+}
+
+.top-bar-section ul li {
+    float: left;
+}
+
+section.top-bar-section li a {
+	color: #000;
+}
+
+section.top-bar-section ul li a:hover  {
+	color: #D8A560;
+	background-color: #fff;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    padding: 0px 21px;
+    line-height: 63px;
+    background: #FFF none repeat scroll 0% 0%;
+}
+
+.login {
+	margin:auto;
+	width:400px;
+}
+
+.valign-middle {
+    display: table;
+}
+
+.valign-middle .columns {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.valign-middle .columns,
+.valign-middle [class*="column"] + [class*="column"]:last-child {
+    float: none;
+}
+
+p#alertCSV {
+	width: 60%;
+}
+
+#pendingReg {
+	margin-top: 100px;
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+button.button.registration {
+	margin-right: 10px;
+	width: 200px;
+}
+
+div.nicEdit-Pane form div input#href {
+	width: 200px;
+	height: 30px;
+}

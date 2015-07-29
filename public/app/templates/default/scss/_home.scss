@@ -1,0 +1,394 @@
+@import "../../../../bower_components/foundation/scss/foundation/components/global";
+
+@font-face {
+  font-family: RalewayExtraLight;
+  font-style: normal;
+  src: url('../font/Raleway-ExtraLight.ttf');
+}
+@font-face {
+  font-family: RalewayLight;
+  font-style: normal;
+  src: url('../font/Raleway-Light.ttf');
+}
+@font-face {
+  font-family: RalewayRegular;
+  font-style: normal;
+  src: url('../font/Raleway-Regular.ttf');
+}
+.container a {
+  color: #055fc5;
+}
+.container a:hover,
+.container a:focus {
+  color: #36ba36 }
+.post h2 a {
+  color: black !important;
+}
+.post h2 a:hover {
+  color: black !important;
+}
+
+.img-overlay-2 {
+  background-color: black;
+  img {
+    opacity: .5;
+  }
+}
+#coffee-icon {
+  margin-top: -20px;
+  text-align: center;
+}
+.slide--has-caption {
+  position: relative;
+}
+.slide-title {
+  color: white;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: RalewayLight;
+}
+.slide-caption {
+  position: absolute;
+  color:white;
+  font-family: RalewayLight;
+  .sub-title {
+    font-family: RalewayRegular;
+  }
+}
+.slick-dots {
+  margin-left: 0;
+}
+
+.white-button {
+  color: black !important;
+  background-color: #FCFCFC !important;
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2) !important;
+  -webkit-transition-duration: 0.2s !important;
+  -moz-transition-duration: 0.2s !important;
+  transition-duration: 0.2s !important;
+  .fa-angle-right {
+    padding-left: 10px;
+    font-size: 13px;
+  }
+}
+.white-button:hover {
+  background-color: #F0F0F0 !important;
+}
+.white-button:active {
+  background-color: #E8E8E8 !important;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+#home-bottom-logo {
+  width: 10%;
+  margin-left: 45%;
+  text-align: center;
+}
+.full-row {
+  background-color: #F4F4F4;
+}
+.slick-row {
+  width: 70vw !important;
+  margin-left: 15vw;
+}
+.slick-custom {
+  .featured-position {
+//    position: absolute !important;
+  }
+  .featured-wrapper {
+    width: 30vw !important;
+    height: 30vw !important;
+    margin-top: 2vw !important;
+    margin-bottom: 2vw !important;
+    margin-left: 20vw !important;
+//    right: 20vw !important;
+//    margin-right: 35vw !important;
+    background-color: white;
+    position: relative !important;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute !important;
+      padding: 2vw !important;
+      top: 50% !important;
+      left: 50% !important;
+      -ms-transform: translate(-50%, -50%) !important;
+      -webkit-transform: translate(-50%, -50%) !important;
+      -moz-transform: translate(-50%, -50%) !important;
+      -o-transform: translate(-50%, -50%) !important;
+      transform: translate(-50%, -50%) !important;
+//      border-radius: 10px !important;
+//      -moz-border-radius: 10px !important;
+//      -webkit-border-radius: 10px !important;
+    }
+    -webkit-box-shadow: 0px 10px 18px 0px rgba(195,195,195,1);
+    -moz-box-shadow: 0px 10px 18px 0px rgba(195,195,195,1);
+    box-shadow: 0px 10px 18px 0px rgba(195,195,195,1);
+  }
+  .slick-list {
+    padding: 0 0 !important;
+  }
+}
+.slick-prev:before, .slick-next:before {
+  color: darkgrey !important;
+}
+.slick-prev, .slick-next {
+  color: darkgrey !important;
+}
+.slick-prev:hover, .slick-next:hover {
+  color: darkslategray !important;
+}
+
+@media #{$large-up} {
+  .slide-title {
+    top: 30px;
+    font-size: 50px;
+  }
+  .slide-caption {
+    width: 40%;
+    top: 150px;
+    left: 50px;
+    font-size: 18px;
+    .sub-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .button {
+      margin-top: 10px;
+    }
+  }
+  .featured-wrapper {
+    border: 8px solid darkgrey;
+  }
+}
+@media #{$medium-only} {
+  .slide-title {
+    top: 20px;
+    font-size: 40px;
+  }
+  .slide-caption {
+    width: 60%;
+    top: 100px;
+    left: 40px;
+    font-size: 15px;
+    .sub-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .button {
+      margin-top: 5px;
+    }
+  }
+  .featured-wrapper {
+      border: 7px solid darkgrey;
+  }
+
+}
+@media #{$small-only} {
+  .slide-title {
+    top: 15px;
+    font-size: 28px;
+  }
+  .slide-caption {
+    width: 60%;
+    top: 75px;
+    left: 30px;
+    font-size: 12px;
+    .sub-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .button {
+      font-size: 12px !important;
+      margin-top: 5px;
+      padding: rem-calc(10) !important;
+      .fa-angle-right {
+        padding-left: 8px;
+        font-size: 12px;
+      }
+    }
+  }
+  .featured-wrapper {
+    border: 6px solid darkgrey;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .slide-title {
+    top: 10px !important;
+    font-size: 24px !important;
+  }
+  .slide-caption {
+    width: 60% !important;
+    top: 45px !important;
+    left: 20px !important;
+    font-size: 8px !important;
+    .sub-title {
+      font-size: 12px !important;
+      margin-bottom: 5px !important;
+    }
+    .button {
+      font-size: 8px !important;
+      margin-top: 4px !important;
+      padding: rem-calc(8) !important;
+      .fa-angle-right {
+        padding-left: 6px !important;
+        font-size: 8px !important;
+      }
+    }
+  }
+  .featured-wrapper {
+    border: 5px solid darkgrey;
+  }
+}
+//GLOBAL STYLES
+@media #{$xxlarge-up} {
+  .page-header {
+    font-size: 45px;
+  }
+  .sub-header {
+    font-size: 40px;
+  }
+  .image-text {
+    top: 300px;
+    font-siz5: 85px;
+  }
+  .light-font-bigger {
+    font-size: 30px;
+  }
+  .light-font-smaller {
+    font-size: 22px;
+  }
+}
+@media #{$xlarge-only} {
+  .page-header {
+    font-size: 40px;
+  }
+  .sub-header {
+    font-size: 36px;
+  }
+  .image-text {
+    top: 240px;
+    font-size: 80px;
+  }
+  .light-font-bigger {
+    font-size: 28px;
+  }
+  .light-font-smaller {
+    font-size: 20px;
+  }
+}
+@media #{$large-only} {
+  .page-header {
+    font-size: 36px;
+  }
+  .sub-header {
+    font-size: 32px;
+  }
+  .image-text {
+    top: 195px;
+    font-size: 72px;
+  }
+  .light-font-bigger {
+    font-size: 26px;
+  }
+  .light-font-smaller {
+    font-size: 18px;
+  }
+}
+@media #{$medium-only} {
+  .page-header {
+    font-size: 28px;
+  }
+  .sub-header {
+    font-size: 24px;
+  }
+  .image-text {
+    top: 150px;
+    font-size: 50px;
+  }
+  .light-font-bigger {
+    font-size: 22px;
+  }
+  .light-font-smaller {
+    font-size: 16px;
+  }
+}
+@media #{$small-only} {
+  .page-header {
+    font-size: 22px;
+  }
+  .sub-header {
+    font-size: 18px;
+  }
+  .image-text {
+    top: 120px;
+    font-size: 32px;
+  }
+  .light-font-bigger {
+    font-size: 16px;
+  }
+  .light-font-smaller {
+    font-size: 14px;
+  }
+}
+.img-overlay {
+  background-color: black;
+  img {
+    opacity: .4;
+  }
+}
+//extra-small screens
+@media only screen and (max-width: 450px) {
+  .image-text {
+    top: 90px !important;
+    font-size: 26px;
+  }
+  .light-font-bigger {
+    font-size: 14px !important;
+  }
+  .light-font-smaller {
+    font-size: 12px !important;
+  }
+  .sub-header {
+    font-size: 16px;
+  }
+  .featured-wrapper {
+    margin-left: 16vw !important;
+  }
+}
+.page-header, .sub-header {
+  font-family: RalewayRegular !important;
+}
+#text-wrapper {
+  opacity: 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+.image-text {
+  color: white !important;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center !important;
+  font-family: RalewayExtraLight;
+}
+.light-font-bigger {
+  font-family: RalewayLight;
+}
+.light-font-smaller {
+  font-family: RalewayLight;
+}
+#registrationForm {
+  h3 {
+    margin-left: 1.5%;
+  }
+}
