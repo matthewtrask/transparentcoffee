@@ -1,4 +1,6 @@
 .DS_STORE
 
+app/core/config.php
+
 /errorlog.html
 errorlog.html
