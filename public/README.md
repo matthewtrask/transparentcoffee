@@ -1,1 +1,0 @@
-#Transparent Coffee Trade

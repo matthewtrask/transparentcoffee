@@ -1,31 +1,6 @@
-public/app/core/config.php
+.DS_STORE
 
-.idea
+/errorlog.html
+errorlog.html
 
-.vagrant/machines/default/virtualbox/action_provision
-
-.vagrant/machines/default/virtualbox/id
-
-.vagrant/machines/default/virtualbox/action_set_name
-
-.vagrant/machines/default/virtualbox/index_uuid
-
-.vagrant/machines/default/virtualbox/private_key
-
-.vagrant/machines/default/virtualbox/synced_folders
-
-node_modules/
-
-node_modules/gulp-minify-css/node_modules/.bin/cleancss
-
-node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/.bin/dateformat
-
-node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/chalk/node_modules/.bin/has-ansi
-
-node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/chalk/node_modules/.bin/strip-ansi
-
-node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/chalk/node_modules/.bin/supports-color
-
-node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/dateformat/node_modules/meow/node_modules/.bin/indent-string
-
-node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/dateformat/node_modules/meow/node_modules/indent-string/node_modules/.bin/repeating
+app/core/config.php
