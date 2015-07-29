@@ -320,7 +320,7 @@ class ttc extends \core\controller {
         $data['title'] = 'Registration Info';
 
         View::rendertemplate('header', $data);
-        View::rendertemplate('registrationinfo');
+        View::rendertemplate('registrationInfo');
         View::rendertemplate('footer');
     }
 
