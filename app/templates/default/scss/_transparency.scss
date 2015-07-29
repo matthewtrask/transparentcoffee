@@ -1,12 +1,15 @@
-.transparency {  
-  ul.reasons {
-    li{
-      margin-left: 40px;
+ul.reasons {
+  list-style: none;
+  li{
+    list-style: none;
+    margin-left: 90px;
+    :before {
+      content: "-";
     }
   }
+}
 
-  img#SEGImg {
-    height: 75%;
-    width: 75%;
-  }
+img#SEGImg {
+  height: 75%;
+  width: 75%;
 }
