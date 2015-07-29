@@ -1,11 +1,11 @@
 <?php
 namespace Models;
 
-use Core\Model;
+use core\model;
 
 require $_SERVER['DOCUMENT_ROOT'] . '/app/library/TTCoffee.php';
 
-class ttc extends \Core\Model
+class ttc extends \core\model
 {
     public function __construct(){
         parent::__construct();
