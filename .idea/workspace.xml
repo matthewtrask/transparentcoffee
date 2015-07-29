@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7d76756-fbe0-4ddd-81f4-c9063dec7f62" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ttc_2015-07-26.sql" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/scss/_transparency.scss" afterPath="$PROJECT_DIR$/app/templates/default/scss/_transparency.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/admin/admin.php" afterPath="$PROJECT_DIR$/app/controllers/admin/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/admin/admin.php" afterPath="$PROJECT_DIR$/app/views/admin/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/adminfooter.php" afterPath="$PROJECT_DIR$/app/templates/default/adminfooter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/adminheader.php" afterPath="$PROJECT_DIR$/app/templates/default/adminheader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/config.php" afterPath="$PROJECT_DIR$/app/core/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/admin/footer.php" afterPath="$PROJECT_DIR$/app/templates/admin/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/blog/post.php" afterPath="$PROJECT_DIR$/app/views/blog/post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/scrpi.php" afterPath="$PROJECT_DIR$/app/templates/default/scrpi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/default/thankyou.php" afterPath="$PROJECT_DIR$/app/templates/default/thankyou.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/ttc.php" afterPath="$PROJECT_DIR$/app/controllers/ttc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ttc.php" afterPath="$PROJECT_DIR$/app/models/ttc.php" />
-    </list>
+    <list default="true" id="e7d76756-fbe0-4ddd-81f4-c9063dec7f62" name="Default" comment="" />
     <ignored path="transparentcoffee.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -42,9 +27,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1438183753000" expanded="true" signature="19:443" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,17 +35,17 @@
       <file leaf-file-name="_transparency.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/default/scss/_transparency.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminfooter.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adminfooter.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/default/adminfooter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -72,23 +55,9 @@
       <file leaf-file-name="adminheader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/default/adminheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ttc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/ttc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1438183822000" expanded="true" signature="278:314" placeholder="SELECT * FRO..." />
-                <marker date="1438183822000" expanded="true" signature="461:815" placeholder="SELECT * FRO..." />
-                <marker date="1438183822000" expanded="true" signature="1380:1411" placeholder="SELECT * FRO..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -96,7 +65,7 @@
       <file leaf-file-name="scrpi.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/default/scrpi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -106,7 +75,7 @@
       <file leaf-file-name="thankyou.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/default/thankyou.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -116,9 +85,23 @@
       <file leaf-file-name="ttc-7-28.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ttc-7-28.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ttc.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/ttc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1438184050000" expanded="true" signature="278:314" placeholder="SELECT * FRO..." />
+                <marker date="1438184050000" expanded="true" signature="461:815" placeholder="SELECT * FRO..." />
+                <marker date="1438184050000" expanded="true" signature="1380:1411" placeholder="SELECT * FRO..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,12 +109,12 @@
       <file leaf-file-name="ttc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/ttc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="272.875">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1438183822000" expanded="true" signature="4113:4189" placeholder="..." />
-                <marker date="1438183822000" expanded="true" signature="6977:6997" placeholder="..." />
-                <marker date="1438183822000" expanded="true" signature="10038:10058" placeholder="..." />
+                <marker date="1438184050000" expanded="true" signature="4113:4189" placeholder="..." />
+                <marker date="1438184050000" expanded="true" signature="6977:6997" placeholder="..." />
+                <marker date="1438184050000" expanded="true" signature="10038:10058" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -238,6 +221,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,136 +231,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scss" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="transparentcoffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -498,9 +355,87 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/default/scss/_transparency.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/default/adminfooter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/default/adminheader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ttc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1438183753000" expanded="true" signature="19:443" placeholder="&lt;IfModule mod_rewrite.c&gt;" />
+            <marker date="1438184050000" expanded="true" signature="278:314" placeholder="SELECT * FRO..." />
+            <marker date="1438184050000" expanded="true" signature="461:815" placeholder="SELECT * FRO..." />
+            <marker date="1438184050000" expanded="true" signature="1380:1411" placeholder="SELECT * FRO..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/default/scrpi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/default/thankyou.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ttc-7-28.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ttc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1438184050000" expanded="true" signature="4113:4189" placeholder="..." />
+            <marker date="1438184050000" expanded="true" signature="6977:6997" placeholder="..." />
+            <marker date="1438184050000" expanded="true" signature="10038:10058" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -528,30 +463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ttc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="272.875">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1438183822000" expanded="true" signature="4113:4189" placeholder="..." />
-            <marker date="1438183822000" expanded="true" signature="6977:6997" placeholder="..." />
-            <marker date="1438183822000" expanded="true" signature="10038:10058" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ttc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1438183822000" expanded="true" signature="278:314" placeholder="SELECT * FRO..." />
-            <marker date="1438183822000" expanded="true" signature="461:815" placeholder="SELECT * FRO..." />
-            <marker date="1438183822000" expanded="true" signature="1380:1411" placeholder="SELECT * FRO..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/default/scss/_transparency.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -573,6 +484,30 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ttc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1438184050000" expanded="true" signature="4113:4189" placeholder="..." />
+            <marker date="1438184050000" expanded="true" signature="6977:6997" placeholder="..." />
+            <marker date="1438184050000" expanded="true" signature="10038:10058" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ttc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1438184050000" expanded="true" signature="278:314" placeholder="SELECT * FRO..." />
+            <marker date="1438184050000" expanded="true" signature="461:815" placeholder="SELECT * FRO..." />
+            <marker date="1438184050000" expanded="true" signature="1380:1411" placeholder="SELECT * FRO..." />
+          </folding>
         </state>
       </provider>
     </entry>
