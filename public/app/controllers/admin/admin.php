@@ -285,7 +285,7 @@ class Admin extends \core\controller
 
 		$mail = new \helpers\phpmailer\mail();
 		$mail->setFrom('team@transparenttradecoffee.com');
-		$mail->addAddress($line3;;
+		$mail->addAddress($line3);
 		$mail->addReplyTo('team@transparenttradecoffee.com', 'Transparent Trade Coffee');
 		$mail->isHTML(true);
 		$mail->subject('See your coffee listing!');
