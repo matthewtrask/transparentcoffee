@@ -91,6 +91,9 @@ Router::any('archiveAjax', '\controllers\admin\admin@archiveAjax');
 Router::any('activeAjax', '\controllers\admin\admin@activeAjax');
 Router::any('submitUpdate', '\controllers\admin\admin@submitUpdate');
 Router::any('roasterAjax', '\controllers\admin\admin@roasterAjax');
+Router::any('pendingEmail', '\controllers\admin\admin@pendingEmail');
+Router::any('activeEmail', '\controllers\admin\admin@activeEmail');
+Router::any('archiveEmail', '\controllers\admin\admin@archiveEmail');
 Router::any('gppProof', '\controllers\admin\admin@gppProof');
 
 Router::any('admin/users', '\controllers\admin\users@index');
