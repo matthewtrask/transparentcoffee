@@ -146,7 +146,13 @@
 .slick-prev:hover, .slick-next:hover {
   color: darkslategray !important;
 }
-
+.post {
+  .content {
+    img {
+      margin: 0 auto; 
+    }
+  }
+}
 @media #{$large-up} {
   .slide-title {
     top: 30px;

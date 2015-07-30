@@ -56,7 +56,7 @@
 //                      echo "<p><img src='".DIR."$row->postImg' class='img-responsive'></p>";
 //                  echo "</div>";
 
-                    echo "<div class='col-md-9'>";
+                    echo "<div class='small-12 columns>";
                         echo "<p>Posted on ".date('jS M Y H:i:s', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p>";
                         echo "<div class='content'>".stripslashes($row->postDesc)."</div>";
                         echo "<p><a href='".DIR."$row->postSlug' class='btn btn-primary btn-sm'>Read More</a></p>";
