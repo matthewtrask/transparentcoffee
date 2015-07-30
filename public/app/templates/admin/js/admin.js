@@ -171,5 +171,22 @@ $(document).ready(function(){
             }
         });
     });
+
+    $(".activeForm").submit(function(){
+        var activeCoffeeEmail = $('.activeEmail:checked');
+        console.log('it works');
+        data = activeCoffeeEmail;
+        $.ajax({
+            url: '/activeEmailAjax',
+            type: 'POST',
+            async: true,
+            cache: false,
+            data: data,
+            success: function(){
+                //window.location.reload();
+                console.log(data);
+            }
+        });
+    });
 });
 
