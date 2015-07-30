@@ -392,3 +392,37 @@
     margin-left: 1.5%;
   }
 }
+
+#insights {
+  div.post {
+    div.col-md-9 {
+      div.content {
+        span {
+         span {
+            img {
+            margin-left: 5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.post {
+  div.col-md-9 {
+    div.content {
+      span {
+        span {
+          img {
+          margin-left: 5%;
+          }
+        }
+      }
+    }
+    p {
+    margin-top: 2%;
+    margin-left: 5%;
+    }
+  }
+}

@@ -63,6 +63,3 @@
 </div>
 
 
-<div class="row">
-  <?php print_r($_POST['name']);?>
-</div>
