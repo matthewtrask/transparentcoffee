@@ -16,30 +16,30 @@
 
 			</div>
 			<div class="row">
-				<div class="col-md-2">
+				<!-- <div class="col-md-2">
 					<h4>Export to Excel</h4>
 					<input type="checkbox" for="export"><label>Export To Excel</label>
 					<p id='alertCSV' data-alert class="alert-box alert round"><em>As of right now, this is a total dump of the database. Later will be added date range functionality</em></p>
-				</div>
+				</div> -->
 				<div class="col-md-2">
 					<h4>Number of registered companies</h4>
 					<table>
 						<thead>
-							<th>Total</th>
-							<th>Year To Date</th>
-							<th>Last Month</th>
 							<th>Pending</th>
 							<th>Approved</th>
-							<th>Rejected</th>
+							<th>Archive</th>
 						</thead>
 						<tbody>
 							<tr>
-								<td>12</td>
-								<td>12</td>
-								<td>5</td>
-								<td>6</td>
-								<td>5</td>
-								<td>2</td>
+								<td><?php foreach($data['pendingCoffee'] as $pendingCoffee){
+									echo $pendingCoffee->total_count;
+								}?></td>
+								<td><?php foreach($data['approvedCoffee'] as $approvedCoffee){
+									echo $approvedCoffee->total_count;
+								}?></td>
+								<td><?php foreach($data['archivedCoffee'] as $archivedCoffee){
+									echo $archivedCoffee->total_count;
+								}?></td>
 							</tr>
 						</tbody>
 					</table>

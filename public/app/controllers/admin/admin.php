@@ -30,6 +30,15 @@ class Admin extends \core\controller
 		$data['title'] = 'Admin';
 
 		//$pending = $this->_adminModel->getPending();
+		$allCoffee = $this->_adminModel->getCoffeeCount();
+		$approvedCoffee = $this->_adminModel->getApprovedCoffee();
+		$pendingCoffee = $this->_adminModel->getPendingCoffee();
+		$archivedCoffee = $this->_adminModel->getArchiveCoffee();
+
+		$data['allCoffee'] = $allCoffee;
+		$data['approvedCoffee'] = $approvedCoffee;
+		$data['pendingCoffee'] = $pendingCoffee;
+		$data['archivedCoffee'] = $archivedCoffee;
 
 		View::renderadmintemplate('header', $data);
 		View::render('admin/admin', $data);
