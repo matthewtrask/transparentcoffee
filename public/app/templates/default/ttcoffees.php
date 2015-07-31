@@ -25,11 +25,11 @@
 
 <div class="row">
   <div class="small-12 medium-12 large-12 column">
-    <p style="margin-top: 20px;">The following roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
+    <p style="margin-top: 20px;" class="light-font-smaller">The following roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
         We encourage you to consider the green prices paid to growers <b>(GPP)</b>, and/or the effective grower share <b>(EGS)</b> when making your purchase decisions.
         When you are satisfied with the economic treatment of the coffee farmer, click on the listing to go to the roaster's on-line store to learn more and to make your coffee purchase.
         <b>If you don’t see coffees from your favorite roaster listed here, please encourage them to <a class="hyperlink" href="register">register today.</b></a></p>
-      <br><p>
+      <br><p class="light-font-smaller">
           <i>* GPP = Green Price Per Pound</i>  <small><a href="#" data-reveal-id="gpp-view">Learn More</a></small><br>
           <i>* EGS = Effective Grower Share</i>  <small><a href="#" data-reveal-id="egs-view">Learn More</a></small
       </p>
@@ -69,7 +69,7 @@
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
-<div class="show-for-medium-down">
+<div class="show-for-medium-down" style="font-family: RalewayLight;">
     <form id="mobile-menu-form">
         <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
@@ -120,7 +120,7 @@
     </form>
 </div>
 <div class="row" style="margin-top: 20px">
-    <div class="hide-for-small hide-for-medium large-3 columns">
+    <div class="hide-for-small hide-for-medium large-3 columns" style="font-family: RalewayLight;">
         <div id="menu" class="menu">
           <p class="text-center">Filter By</p><hr/>
             <form id="menu-form">

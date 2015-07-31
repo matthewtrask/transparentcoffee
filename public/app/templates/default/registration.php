@@ -221,8 +221,8 @@
                 </div>
             </div>
             <hr/>
-            <div class="small-offset-2 small-8 medium-8 large-8 columns">
-                <input id="registrationSubmit" type="submit" value="Submit" class="button expand white-button">
+            <div class="small-offset-4 small-4 columns">
+                <input id="registrationSubmit" type="submit" value="Submit" class="button expand my-button">
             </div>
         </form>
     </div>

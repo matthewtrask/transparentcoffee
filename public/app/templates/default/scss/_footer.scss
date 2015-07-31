@@ -61,3 +61,49 @@ $socialIcons: #D1D1D1;
   }
 }
 
+@media #{$small-only} {
+  .powered {
+    font-size: 12px !important;
+  }
+  .copyright p {
+    font-size: 12px !important;
+  }
+}
+//extra-small screens
+@media only screen and (max-width: 450px) {
+  .ttcFooter {
+    height: 110px;
+  }
+  .footer-link {
+    li {
+      font-size: 10px !important;
+    }
+  }
+  .socialIcons {
+    margin-top: 5px !important;
+    ul li {
+      i {
+        font-size: 20px !important;
+      }
+      i {
+        height: 40px !important;
+        width: 40px !important;
+        padding-top: 10px !important;
+        border-radius: 20px !important;
+      }
+      i:hover {
+        height: 25px;
+        width: 25px;
+        padding-top: 8px;
+        border-radius: 15px;
+      }
+    }
+  }
+  .powered {
+    font-size: 8px !important;
+  }
+  .copyright p {
+    font-size: 8px !important;
+  }
+}
+

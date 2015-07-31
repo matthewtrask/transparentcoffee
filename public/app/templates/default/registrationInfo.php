@@ -82,7 +82,7 @@
             team@transparenttradecoffee.org
         </p>
         <div class="small-4 small-offset-4 columns">
-            <a href="register" class="button expand info">Complete Online<br>Registration Form</a>
+            <a href="register" class="button expand info my-button">Complete Online<br>Registration Form</a>
         </div>
     </div>
 </div>
