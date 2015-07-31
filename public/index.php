@@ -87,6 +87,7 @@ Router::any('admin/login', '\controllers\admin\auth@login');
 Router::any('logout', '\controllers\admin\auth@logout');
 Router::any('admin/pending', '\controllers\admin\admin@pending');
 Router::any('pendingAjax', '\controllers\admin\admin@pendingAjax');
+Router::any('rejectAjax', '\controllers\admin\admin@rejectAjax');
 Router::any('archiveAjax', '\controllers\admin\admin@archiveAjax');
 Router::any('activeAjax', '\controllers\admin\admin@activeAjax');
 Router::any('submitUpdate', '\controllers\admin\admin@submitUpdate');

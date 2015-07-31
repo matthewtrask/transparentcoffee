@@ -543,7 +543,7 @@ select {
     font-size: 40px; }
   .image-text {
     top: 300px;
-    font-siz5: 85px; }
+    font-size: 85px; }
   .light-font-bigger {
     font-size: 30px !important; }
   .light-font-smaller {
@@ -648,7 +648,7 @@ select {
 
 #registrationForm h3 {
   margin-left: 1.5%; }
-  
+
 #insights div.post div.col-md-9 div.content span span img {
   margin-left: 5%; }
 
@@ -658,7 +658,6 @@ select {
 .post div.col-md-9 p {
   margin-top: 2%;
   margin-left: 5%; }
-
 
 .transparency ul.reasons li {
   margin-left: 40px; }

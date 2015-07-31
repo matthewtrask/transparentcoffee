@@ -93,6 +93,72 @@ class ttc extends \core\model
         $this->_db->delete(PREFIX."coffee_pending", $coffeeData);
     }
 
+    public function rejectCoffee($pendingCoffeeId){
+
+        $pendingCoffee = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE coffee_id = '.$pendingCoffeeId)[0];
+        unset($pendingCoffee['coffee_id']);
+        $pendingRoasterId = $pendingCoffee['roaster_id'];
+        $pendingGrowerId  = $pendingCoffee['grower_id'];
+
+        //stop roaster from getting deleted before all its coffees have been approved
+        $roasterCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE roaster_id = '.$pendingRoasterId);
+
+        $pendingGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower_pending WHERE grower_id = '.$pendingGrowerId)[0];
+        unset($pendingGrower['grower_id']);
+        $this->_db->insert(PREFIX.'grower', $pendingGrower);
+        $officialGrowerId = $this->_db->lastInsertId();
+        $pendingGrower['grower_id'] = $officialGrowerId;
+        $this->_db->insert(PREFIX.'grower_archive', $pendingGrower);
+        $growerData = array('grower_id' => $pendingGrowerId);
+        $this->_db->delete(PREFIX."grower_pending", $growerData);
+
+        $pendingRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$pendingRoasterId)[0];
+        unset($pendingRoaster['roaster_id']);
+        $this->_db->insert(PREFIX."roaster", $pendingRoaster, true);
+        $officialRoasterId = $this->_db->lastInsertId();
+        if ($officialRoasterId == 0) {
+            $officialRoaster = (array) $this->_db->select("SELECT * FROM ".PREFIX."roaster WHERE roaster_name = '".$pendingRoaster['roaster_name'] . "'")[0];
+            $officialRoasterId = $officialRoaster['roaster_id'];
+            $pendingRoaster['roaster_id'] = $officialRoasterId;
+            $this->_db->insert(PREFIX.'roaster_archive', $pendingRoaster);
+
+            $pendingCoffee['grower_id']  = $officialGrowerId;
+            $pendingCoffee['roaster_id'] = $officialRoasterId;
+            $this->_db->insert(PREFIX."coffee", $pendingCoffee);
+            $officialCoffeeId = $this->_db->lastInsertId();
+            $pendingCoffee['coffee_id'] = $officialCoffeeId;
+
+            $growerData = array('grower_id' => $officialGrowerId);
+            $this->_db->delete(PREFIX."grower", $growerData);
+        }
+        else {
+            $pendingRoaster['roaster_id'] = $officialRoasterId;
+            $this->_db->insert(PREFIX . 'roaster_archive', $pendingRoaster);
+
+            $pendingCoffee['grower_id']  = $officialGrowerId;
+            $pendingCoffee['roaster_id'] = $officialRoasterId;
+            $this->_db->insert(PREFIX."coffee", $pendingCoffee);
+            $officialCoffeeId = $this->_db->lastInsertId();
+            $pendingCoffee['coffee_id'] = $officialCoffeeId;
+
+            $growerData = array('grower_id' => $officialGrowerId);
+            $this->_db->delete(PREFIX."grower", $growerData);
+
+            $roasterData = array('roaster_id' => $officialRoasterId);
+            $this->_db->delete(PREFIX . "roaster", $roasterData);
+        }
+        if (count($roasterCount) == 1) {
+            $roasterData = array('roaster_id' => $pendingRoasterId);
+            $this->_db->delete(PREFIX . "roaster_pending", $roasterData);
+        }
+
+        $this->_db->insert(PREFIX.'coffee_archive', $pendingCoffee);
+        $coffeeData = array('coffee_id' => $officialCoffeeId);
+        $this->_db->delete(PREFIX."coffee", $coffeeData);
+        $coffeeData = array('coffee_id' => $pendingCoffeeId);
+        $this->_db->delete(PREFIX."coffee_pending", $coffeeData);
+    }
+
     public function archiveCoffee($activeCoffeeId){
 
         $activeCoffee = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee WHERE coffee_id = '.$activeCoffeeId)[0];
@@ -229,6 +295,7 @@ class ttc extends \core\model
                 'roaster_id' => $roasterId
             );
             $this->_db->update(PREFIX."roaster_archive", $roaster, $roasterWhere);
+            $this->_db->update(PREFIX."roaster", $roaster, $roasterWhere);
         }
     }
 
@@ -266,6 +333,7 @@ class ttc extends \core\model
                 'roaster_id' => $roasterId
             );
             $this->_db->update(PREFIX."roaster", $roaster, $roasterWhere);
+            $this->_db->update(PREFIX."roaster_archive", $roaster, $roasterWhere);
         }
     }
 

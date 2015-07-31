@@ -40,8 +40,8 @@ use \helpers\phpmailer\mail;
 								echo "<tbody>";
 								echo "<tr>";
 								echo "<td class='formRow'><input type='checkbox' name=".$ttcPending->coffee_id." class='approve'>";
-								echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='pending-email-".$ttcPending->coffee_id."' name='archive-".$ttcPending->coffee_id."'>Email</a></td>";
-								echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='pending-view-".$ttcPending->coffee_id."' name='archive-".$ttcPending->coffee_id."'>Update</a></td>";
+								echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='pending-email-".$ttcPending->coffee_id."' name='pending-".$ttcPending->coffee_id."'>Email</a></td>";
+								echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='pending-view-".$ttcPending->coffee_id."' name='pending-".$ttcPending->coffee_id."'>Update</a></td>";
 								echo "<td class='formRow'>".$ttcPending->first_name."</td>";
                                 echo "<td class='formRow'>".$ttcPending->last_name."</td>";
                                 echo "<td class='formRow'>".$ttcPending->email."</td>";
@@ -211,14 +211,15 @@ use \helpers\phpmailer\mail;
 				<h2 id="modalTitle">Emailing <?php echo $ttcPending->roaster_name?></h2>
 					<form method="POST" action="/pendingEmail">
 						<div class="small-10 small-offset-1 columns">
-							<h2 id="modalTitle">Emailing <?php echo $ttcPending->roaster_name?></h2>
-							<h4>Congratulations! Based on the information you have submitted, Transparent Trade Coffee has approved your submission and will be featured on our website.</h4>
-							<p><b>Please take a minute to review the information that you have submitted so that all the details are correct!</b></p>
-							<p><b>Contact Email</b>: <?php echo $ttcPending->email?></p>
+							<h4>Dear <?php echo $ttcPending->roaster_name?>,</h4><br>
+							<p>Thank you for registering your coffee with Transparent Trade Coffee.</p>
+							<p>The following coffee has been approved by our team; however, before we post to our site we
+									require you to preview your posting to ensure all details are correct.</p>
+							<p><b><u>Please take a moment to review and confirm that the information below is correct.</u></b></p>
 							<p><b>Roaster Name</b>: <?php echo $ttcPending->roaster_name?></p>
 							<p><b>Roaster Description</b>: <?php echo $ttcPending->roaster_description?></p>
 							<p><b>Roaster Website</b>: <?php echo $ttcPending->roaster_url?></p>
-							<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='<?php echo $ttcActive->roaster_logo ?>'/></p>
+							<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='<?php echo $ttcPending->roaster_logo ?>'/></p>
 							<p><b>Coffee Name</b>: <?php echo $ttcPending->coffee_name ?></p>
 							<p><b>Coffee Description</b>: <?php echo $ttcPending->description?></p>
 							<p><b>Retail Price</b>: <?php echo $ttcPending->retail_price?></p>
@@ -230,27 +231,64 @@ use \helpers\phpmailer\mail;
 							<p><b>Farm Name</b>: <?php echo $ttcPending->farm_name?></p>
 							<p><b>Farm Region</b>: <?php echo $ttcPending->farm_region?></p>
 							<p><b>Farm Country</b>: <?php echo $ttcPending->farm_country?></p>
-							<p>If everything looks right, please reply back with a simple confirm so that way we can post your coffee as soon as possible!</p>"><br>
-							<input name="title" value="<h2 id="modalTitle">Emailing <?php echo $ttcPending->roaster_name?></h2>">
-							<input name="line1" value="<h4>Congratulations! Based on the information you have submitted, Transparent Trade Coffee has approved your submission and will be featured on our website.</h4>">
-							<input name="line2" value="<p><b>Please take a minute to review the information that you have submitted so that all the details are correct!</b></p>">
-							<input name="line3" value="<p>Contact Email: <?php echo $ttcPending->email?></p>">
-							<input name="line4" value="<p><b>Roaster Name</b>: <?php echo $ttcPending->roaster_name?></p>">
-							<input name="line5" value="<p><b>Roaster Description</b>: <?php echo $ttcPending->roaster_description?></p>">
-							<input name="line6" value="<p><b>Roaster Website</b>: <?php echo $ttcPending->roaster_url?></p>">
-							<input name="line7" value="<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='<?php echo $ttcActive->roaster_logo ?>'/></p>">
-							<input name="line8" value="<p><b>Coffee Name</b>: <?php echo $ttcPending->coffee_name ?></p>">
-							<input name="line9" value="<p><b>Coffee Description</b>: <?php echo $ttcPending->description?></p>">
-							<input name="line10" value="<p><b>Retail Price</b>: <?php echo $ttcPending->retail_price?></p>">
-							<input name="line11" value="<p><b>Retail Currency</b>: <?php echo $ttcPending->currency?></p>">
-							<input name="line12" value="<p><b>Bag Size (ounces)</b>: <?php echo $ttcPending->bag_size?></p>">
-							<input name="line13" value="<p><b>Green Price Per Pound</b>: <?php echo $ttcPending->gppp?></p>">
-							<input name="line14" value="<p><b>EGS</b>: <?php echo round($ttcPending->egs, 1)?>%</p>">
-							<input name="line15" value="<p><b>Coffee Website</b>: <?php echo $ttcPending->url?></p>">
-							<input name="line16" value="<p><b>Farm Name</b>: <?php echo $ttcPending->farm_name?></p>">
-							<input name="line17" value="<p><b>Farm Region</b>: <?php echo $ttcPending->farm_region?></p>">
-							<input name="line18" value="<p><b>Farm Country</b>: <?php echo $ttcPending->farm_country?></p>">
-							<input name="line19" value="<p>If everything looks right, please reply back with a simple confirm so that way we can post your coffee as soon as possible!</p>"><br>
+							<p><b><u>Is all of the information above CORRECT?</u></b> Please reply to this email with a simple “approve”
+								response to publish your coffees to the TT Coffee site.</p>
+							<p><b><u>Would you like to make an EDIT to the information above?</u></b> Please reply to this email with a note detailing the edits that should be made.</p>
+							<p>Once your coffee listing is confirmed, our team will post to TT Coffee within 48 hours and also share
+								the news about your listing via our social media accounts (Twitter and Facebook).</p>
+							<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please
+								email team@transparenttradecoffee.org.</p>
+							<p>The TT Coffee Team</p>
+							<input type="hidden" name="address" value='<?php echo $ttcPending->email?></h2>'>
+							<input type="hidden" name="html" value="<h4>Dear <?php echo $ttcPending->roaster_name?>,</h4><br>
+							<p>Thank you for registering your coffee with Transparent Trade Coffee.</p>
+							<p>The following coffee has been approved by our team; however, before we post to our site we
+									require you to preview your posting to ensure all details are correct.</p>
+							<p><b><u>Please take a moment to review and confirm that the information below is correct.</u></b></p>
+							<p><b>Roaster Name</b>: <?php echo $ttcPending->roaster_name?></p>
+							<p><b>Roaster Description</b>: <?php echo $ttcPending->roaster_description?></p>
+							<p><b>Roaster Website</b>: <?php echo $ttcPending->roaster_url?></p>
+							<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='<?php echo $ttcPending->roaster_logo ?>'/></p>
+							<p><b>Coffee Name</b>: <?php echo $ttcPending->coffee_name ?></p>
+							<p><b>Coffee Description</b>: <?php echo $ttcPending->description?></p>
+							<p><b>Retail Price</b>: <?php echo $ttcPending->retail_price?></p>
+							<p><b>Retail Currency</b>: <?php echo $ttcPending->currency?></p>
+							<p><b>Bag Size (ounces)</b>: <?php echo $ttcPending->bag_size?></p>
+							<p><b>Green Price Per Pound</b>: <?php echo $ttcPending->gppp?></p>
+							<p><b>EGS</b>: <?php echo round($ttcPending->egs, 1)?>%</p>
+							<p><b>Coffee Website</b>: <?php echo $ttcPending->url?></p>
+							<p><b>Farm Name</b>: <?php echo $ttcPending->farm_name?></p>
+							<p><b>Farm Region</b>: <?php echo $ttcPending->farm_region?></p>
+							<p><b>Farm Country</b>: <?php echo $ttcPending->farm_country?></p>
+							<p><b><u>Is all of the information above CORRECT?</u></b> Please reply to this email with a simple “approve”
+								response to publish your coffees to the TT Coffee site.</p>
+							<p><b><u>Would you like to make an EDIT to the information above?</u></b> Please reply to this email with a note detailing the edits that should be made.</p>
+							<p>Once your coffee listing is confirmed, our team will post to TT Coffee within 48 hours and also share
+								the news about your listing via our social media accounts (Twitter and Facebook).</p>
+							<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please
+								email team@transparenttradecoffee.org.</p>
+							<p>The TT Coffee Team</p>">
+<!--							<input type="hidden" name="title" value="<h2 id='modalTitle'>Emailing --><?php //echo $ttcPending->roaster_name?><!--</h2>">-->
+<!--							<input type="hidden" name="address" value='--><?php //echo $ttcPending->email?><!--</h2>'>-->
+<!--							<input type="hidden" name="line1" value="<h4>Congratulations! Based on the information you have submitted, Transparent Trade Coffee has approved your submission and will be featured on our website.</h4>">-->
+<!--							<input type="hidden" name="line2" value="<p><b>Please take a minute to review the information that you have submitted so that all the details are correct!</b></p>">-->
+<!--							<input type="hidden" name="line3" value="<p>Contact Email: --><?php //echo $ttcPending->email?><!--</p>">-->
+<!--							<input type="hidden" name="line4" value="<p><b>Roaster Name</b>: --><?php //echo $ttcPending->roaster_name?><!--</p>">-->
+<!--							<input type="hidden" name="line5" value="<p><b>Roaster Description</b>: --><?php //echo $ttcPending->roaster_description?><!--</p>">-->
+<!--							<input type="hidden" name="line6" value="<p><b>Roaster Website</b>: --><?php //echo $ttcPending->roaster_url?><!--</p>">-->
+<!--							<input type="hidden" name="line7" value="<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='--><?php //echo $ttcActive->roaster_logo ?><!--'/></p>">-->
+<!--							<input type="hidden" name="line8" value="<p><b>Coffee Name</b>: --><?php //echo $ttcPending->coffee_name ?><!--</p>">-->
+<!--							<input type="hidden" name="line9" value="<p><b>Coffee Description</b>: --><?php //echo $ttcPending->description?><!--</p>">-->
+<!--							<input type="hidden" name="line10" value="<p><b>Retail Price</b>: --><?php //echo $ttcPending->retail_price?><!--</p>">-->
+<!--							<input type="hidden" name="line11" value="<p><b>Retail Currency</b>: --><?php //echo $ttcPending->currency?><!--</p>">-->
+<!--							<input type="hidden" name="line12" value="<p><b>Bag Size (ounces)</b>: --><?php //echo $ttcPending->bag_size?><!--</p>">-->
+<!--							<input type="hidden" name="line13" value="<p><b>Green Price Per Pound</b>: --><?php //echo $ttcPending->gppp?><!--</p>">-->
+<!--							<input type="hidden" name="line14" value="<p><b>EGS</b>: --><?php //echo round($ttcPending->egs, 1)?><!--%</p>">-->
+<!--							<input type="hidden" name="line15" value="<p><b>Coffee Website</b>: --><?php //echo $ttcPending->url?><!--</p>">-->
+<!--							<input type="hidden" name="line16" value="<p><b>Farm Name</b>: --><?php //echo $ttcPending->farm_name?><!--</p>">-->
+<!--							<input type="hidden" name="line17" value="<p><b>Farm Region</b>: --><?php //echo $ttcPending->farm_region?><!--</p>">-->
+<!--							<input type="hidden" name="line18" value="<p><b>Farm Country</b>: --><?php //echo $ttcPending->farm_country?><!--</p>">-->
+<!--							<input type="hidden" name="line19" value="<p>If everything looks right, please reply back with a simple confirm so that way we can post your coffee as soon as possible!</p>"><br>-->
 							<input type="submit" value="Send" name="<?php echo $ttcPending->coffee_id?>" class="button success pending-email">
 
 						</div>
@@ -458,46 +496,25 @@ use \helpers\phpmailer\mail;
 			<div class="row">
 				<form method="POST" action="/archiveEmail">
 					<div class="small-10 small-offset-1 columns">
-						<h2 id="modalTitle"><?php echo $ttcArchive->roaster_name?></h2>
-						<h4>Congratulations! Based on the information you have submitted, Transparent Trade Coffee has approved your submission and will be featured on our website.</h4><br>
-						<p><b>Please take a minute to review the information that you have submitted so that all the details are correct!</b></p><br>
-						<p><b>Contact Email</b>: <?php echo $ttcArchive->email?></p>
-						<p><b>Roaster Name</b>: <?php echo $ttcArchive->roaster_name?></p>
-						<p><b>Roaster Description</b>: <?php echo $ttcArchive->roaster_description?></p>
-						<p><b>Roaster Website</b>: <?php echo $ttcArchive->roaster_url?></p>
-						<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='<?php echo $ttcArchive->roaster_logo ?>'/></p>
-						<p><b>Coffee Name</b>: <?php echo $ttcArchive->coffee_name ?></p>
-						<p><b>Coffee Description</b>: <?php echo $ttcArchive->description?></p>
-						<p><b>Retail Price</b>: <?php echo $ttcArchive->retail_price?></p>
-						<p><b>Retail Currency</b>: <?php echo $ttcArchive->currency?></p>
-						<p><b>Bag Size (ounces)</b>: <?php echo $ttcArchive->bag_size?></p>
-						<p><b>Green Price Per Pound</b>: <?php echo $ttcArchive->gppp?></p>
-						<p><b>EGS</b>: <?php echo round($ttcArchive->egs, 1)?>%</p>
-						<p><b>Coffee Website</b>: <?php echo $ttcArchive->url?></p>
-						<p><b>Farm Name</b>: <?php echo $ttcArchive->farm_name?></p>
-						<p><b>Farm Region</b>: <?php echo $ttcArchive->farm_region?></p>
-						<p><b>Farm Country</b>: <?php echo $ttcArchive->farm_country?></p>
-						<p><b>If everything looks right, please reply back with a simple confirm so that way we can post your coffee as soon as possible!</b></p>
-						<input class="hide-for-medium-up hide-for-small-only" name="title" value='<h2 id="modalTitle"><?php echo $ttcArchive->roaster_name?></h2>'>
-						<input class="hide-for-medium-up hide-for-small-only" name="line1" value="<h4>Congratulations! Based on the information you have submitted, Transparent Trade Coffee has approved your submission and will be featured on our website.</h4>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line2" value="<p><b>Please take a minute to review the information that you have submitted so that all the details are correct!</b></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line3" value="<p><b>Contact Email</b>: <?php echo $ttcArchive->email?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line4" value="<p><b>Roaster Name</b>: <?php echo $ttcArchive->roaster_name?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line5" value="<p><b>Roaster Description</b>: <?php echo $ttcArchive->roaster_description?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line6" value="<p><b>Roaster Website</b>: <?php echo $ttcArchive->roaster_url?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line7" value="<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='<?php echo $ttcArchive->roaster_logo ?>'/></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line8" value="<p><b>Coffee Name</b>: <?php echo $ttcArchive->coffee_name ?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line9" value="<p><b>Coffee Description</b>: <?php echo $ttcArchive->description?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line10" value="<p><b>Retail Price</b>: <?php echo $ttcArchive->retail_price?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line11" value="<p><b>Retail Currency</b>: <?php echo $ttcArchive->currency?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line12" value="<p><b>Bag Size (ounces)</b>: <?php echo $ttcArchive->bag_size?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line13" value="<p><b>Green Price Per Pound</b>: <?php echo $ttcArchive->gppp?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line14" value="<p><b>EGS</b>: <?php echo round($ttcArchive->egs, 1)?>%</p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line15" value="<p><b>Coffee Website</b>: <?php echo $ttcArchive->url?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line16" value="<p><b>Farm Name</b>: <?php echo $ttcArchive->farm_name?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line17" value="<p><b>Farm Region</b>: <?php echo $ttcArchive->farm_region?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line18" value="<p><b>Farm Country</b>: <?php echo $ttcArchive->farm_country?></p>">
-						<input class="hide-for-medium-up hide-for-small-only" name="line19" value="<p>If everything looks right, please reply back with a simple confirm so that way we can post your coffee as soon as possible!</p>">
+						<h4><?php echo $ttcArchive->roaster_name?>,</h4><br>
+						<p>We have reviewed the online coffee store link provided and it appears that it is no longer valid or that the registered coffee is no longer available.</p><br>
+						<p>The following coffee has been removed from our website and archived:</p>
+						<p><b><?php echo $ttcArchive->coffee_name ?></b></p>
+						<p><u>If the coffee is still available</u>; please reply to this message with an updated website link along with any other listing change information.</p>
+						<p><u>No longer available</u>? You are welcome to register other coffees, please visit our registration page to get started.</p>
+						<a>http://transparenttradecoffee.com/register</a>
+						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p>
+						<p>The TT Coffee Team</p>
+						<input type="hidden" name="address" value='<?php echo $ttcArchive->email?></h2>'>
+						<input type="hidden" name="html" value="<h4><?php echo $ttcArchive->roaster_name?>,</h4><br>
+						<p>We have reviewed the online coffee store link provided and it appears that it is no longer valid or that the registered coffee is no longer available.</p><br>
+						<p>The following coffee has been removed from our website and archived:</p>
+						<p><b><?php echo $ttcArchive->coffee_name ?></b></p>
+						<p><u>If the coffee is still available</u>; please reply to this message with an updated website link along with any other listing change information.</p>
+						<p><u>No longer available</u>? You are welcome to register other coffees, please visit our registration page to get started.</p>
+						<a>http://transparenttradecoffee.com/register</a>
+						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p>
+						<p>The TT Coffee Team</p>">
 					</div>
 					<input type="submit" value="Email" name="<?php echo $ttcArchive->coffee_id?>" class="button success archive-email">
 
@@ -705,26 +722,29 @@ use \helpers\phpmailer\mail;
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
 					<form method="POST" action="/activeEmail">
-						<h2 id="modalTitle">Emailing <?php echo $ttcActive->roaster_name?></h2>
-						<h4>Transparent Trade Coffee has now official posted your roaster and coffee information on our website.</h4><br>
-						<p>You can now view it at our <a href='http://transparenttradecoffee.com/ttcoffees'>website</a> today!</p><br>
-						<p>Feel free to tweet or share this with your network, we know we will!</p><br>
-						<p>Contact Email: <?php echo $ttcActive->email?></p><br>
-						<input class="hide-for-small-only hide-for-medium-up" name="title" value='<h2 id="modalTitle">Emailing <?php echo $ttcActive->roaster_name?></h2>'>
-						<input class="hide-for-small-only hide-for-medium-up" name="field1" value="<h4>Transparent Trade Coffee has now official posted your roaster and coffee information on our website.</h4>">
-						<input class="hide-for-small-only hide-for-medium-up" name="field2" value="<p>You can now view it at our <a href='http://transparenttradecoffee.com/ttcoffees'>website</a> today!</p>">
-						<input class="hide-for-small-only hide-for-medium-up" name="field3" value="<p>Feel free to tweet or share this with your network, we know we will!</p>">
-						<input class="hide-for-small-only hide-for-medium-up" name="field4" value="<p>Contact Email: <?php echo $ttcActive->email?></p>">
+						<h4><?php echo $ttcActive->roaster_name?>,</h4>
+						<p>Thank you for reviewing and approving your preview listings.</p>
+						<p>The following coffee has been posted to our website:</p>
+						<p><b><?php echo $ttcActive->coffee_name?></b></p>
+						<p>Our team will post to TT Coffee within 48 hours and also share the news about your listing via our
+							social media accounts (Twitter and Facebook).</p>
+						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p>
+						<p>The TT Coffee Team</p>
+						<input type="hidden" name="address" value='<?php echo $ttcActive->email?></h2>'>
+						<input type="hidden" name="html" value="<h4><?php echo $ttcActive->roaster_name?>,</h4>
+						<p>Thank you for reviewing and approving your preview listings.</p>
+						<p>The following coffee has been posted to our website:</p>
+						<p><b><?php echo $ttcActive->coffee_name?></b></p>
+						<p>Our team will post to TT Coffee within 48 hours and also share the news about your listing via our
+							social media accounts (Twitter and Facebook).</p>
+						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p>
+						<p>The TT Coffee Team</p>">
 						<input type="submit" value="Email" name="Email" class="button success active-email">
 					</form>
 				</div>
 			</div>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
-		<div id="active-view-<?php echo $ttcActive->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-			<div class="row">
-				<div class="small-10 small-offset-1 columns">
-					<div class="small-10 small-offset-1 columns">
 		<div id="active-view-<?php echo $ttcActive->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
