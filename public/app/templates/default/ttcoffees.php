@@ -69,7 +69,7 @@
     </div>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
-<div class="show-for-medium-down" style="font-family: RalewayLight;">
+<div class="show-for-medium-down">
     <form id="mobile-menu-form">
         <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
@@ -120,7 +120,7 @@
     </form>
 </div>
 <div class="row" style="margin-top: 20px">
-    <div class="hide-for-small hide-for-medium large-3 columns" style="font-family: RalewayLight;">
+    <div class="hide-for-small hide-for-medium large-3 columns">
         <div id="menu" class="menu">
           <p class="text-center">Filter By</p><hr/>
             <form id="menu-form">

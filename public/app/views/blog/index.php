@@ -9,7 +9,7 @@
     </div>
 </div>
 <div class="row" style="margin-top: 40px;">
-	<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+	<div class="small-10 small-offset-1 large-12 large-offset-0 columns">
 		<p class='light-font-smaller'>Our team of researchers share their analysis and other interesting insights about coffee
 
 			markets, roasters, producers and more.  Visit often and feel free to share with those in
@@ -18,7 +18,7 @@
 	</div>
 </div>
 <div class='row' style="margin-top: 20px">
-	<div class='small-12 medium-12 large-12 columns'>
+	<div class='small-10 small-offset-1 large-12 large-offset-0 columns'>
 
 		<?php
 		if($data['posts']){

@@ -344,3 +344,24 @@ $(document).on('click', '.extra-coffee', function(event){
         }
     });
 });
+$(document).on('click', '.remove-coffee', function(event){
+    var number = this.name;
+    $.ajax({
+        //url: "removeCoffeeAjax",
+        //type: "POST",
+        async: true,
+        cache: false,
+        //data: data, // all data will be passed here
+        success: function() {
+            document.getElementById("coffee-" + number).remove();
+            document.getElementById("extra-coffee").name = number;
+            if (number > 2) {
+                document.getElementById("remove-coffee").name = number - 1;
+                document.getElementById("remove-coffee").innerHTML = 'Remove Coffee #' + (number - 1);
+            }
+            else {
+                document.getElementById("remove-coffee").remove();
+            }
+        }
+    });
+});

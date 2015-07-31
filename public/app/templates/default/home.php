@@ -42,7 +42,7 @@
     </div>
 </div>
 <div class="row">
-    <div class='small-12 medium-12 large-12 columns' id="insights">
+    <div class='small-10 small-offset-1 columns' id="insights">
         <?php
         if($data['posts']){
             foreach($data['posts'] as $row){

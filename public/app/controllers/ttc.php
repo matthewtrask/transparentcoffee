@@ -329,117 +329,122 @@ class ttc extends \core\controller {
 
         $number = $_POST['number'];
         ?>
-        <div class="row">
-            <h3 class="sub-header">Coffee #<?php echo $number?></h3>
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="coffeeName-<?php echo $number?>" class="inline">Coffee Name:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeeName-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $number?>" id="coffeeName-<?php echo $number?>" required>
-                <small class="error">Please enter a valid coffee name</small>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="coffeeDescription-<?php echo $number?>" class="inline">Coffee Description:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <textarea name="coffeeDescription-<?php echo $number?>" placeholder="Enter a short description about your coffee (Maximum of 140 characters)" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="coffeePrice-<?php echo $number?>" class="inline">Retail Price:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeePrice-<?php echo $number?>" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice-<?php echo $number?>" id="coffeePrice-<?php echo $number?>" required pattern="number">
-                <small class="error">Please enter a valid retail price for this coffee</small>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="coffeeCurrency-<?php echo $number?>" class="inline">Currency:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeeCurrency-<?php echo $number?>" class="regInput" type="text" placeholder="Currency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency-<?php echo $number?>" id="coffeeCurrency-<?php echo $number?>" required pattern="alpha">
-                <small class="error">Please enter a valid currency type for this coffee</small>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="coffeeBagSize-<?php echo $number?>" class="inline">Coffee Bag Size (oz):</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeeBagSize-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Bag Size (oz)" for="coffeeBagSize-<?php echo $number?>" id="coffeeBagSize-<?php echo $number?>" required pattern="number">
-                <small class="error">Please enter a valid bag size (in ounces) for this coffee</small>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="coffeeGPPP-<?php echo $number?>" class="inline">Coffee Green Price Per Pound Paid:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeeGPPP-<?php echo $number?>" class="regInput" type="text" placeholder="Amount (in USD) that Farmer receives per pound" for="coffeeGPPP-<?php echo $number?>" id="coffeeGPPP-<?php echo $number?>" required pattern="number">
-                <small class="error">Please enter a valid green price per pound paid for this coffee</small>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="coffeeWebsite-<?php echo $number?>" class="inline">Coffee Website:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <input name="coffeeWebsite-<?php echo $number?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite-<?php echo $number?>" id="coffeeWebsite-<?php echo $number?>" pattern="domain">
-                <small class="error">Please enter a website link for this coffee</small>
-            </div>
-        </div>
-        <div class="row">
-            <h3 class="sub-header">Farm #<?php echo $number?></h3>
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="farmName-<?php echo $number?>" class="inline">Farm Name:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <input name="farmName-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $number?>" id="farmName-<?php echo $number?>" required>
-                <small class="error">Please enter a valid farm name for this coffee</small>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="farmLocation-<?php echo $number?>" class="inline">Farm Location - Country:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <input name="farmLocation-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation-<?php echo $number?>" id="farmLocation-<?php echo $number?>" required>
-                <small class="error">Please enter a valid country that this farm is located in</small>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-3 medium-3 large-3 columns">
-                <label for="farmRegion-<?php echo $number?>" class="inline">Farm Region:</label>
-            </div>
-            <div class="small-9 medium-9 large-9 columns">
-                <select name="farmRegion-<?php echo $number?>" class="regInput" id="farmRegion-<?php echo $number?>" required>
-                    <option>South America</option>
-                    <option>Central America</option>
-                    <option>Africa</option>
-                    <option>Middle East</option>
-                    <option>Pacific</option>
-                    <option>Other</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-5 medium-5 large-5 columns">
-                <label for="greenPPP-<?php echo $number?>" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
-            </div>
-            <div class="small-7 medium-7 large-7 columns">
-                <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-                <input name="greenPPP-<?php echo $number?>" class="regInput" type="file" placeholder="greenPPP" for="greenPPP-<?php echo $number?>" id="greenPPP-<?php echo $number?>">
-            </div>
-        </div>
-            <div class="row" id="previous-coffee-button">
-                <div class="small-12 small-text-center columns">
-                    <a name="<?php echo $number + 1?>" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+        <div id="coffee-<?php echo $number?>">
+            <div class="row">
+                <h3 class="sub-header">Coffee #<?php echo $number?></h3>
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeName-<?php echo $number?>" class="inline">Coffee Name:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeName-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $number?>" id="coffeeName-<?php echo $number?>" required>
+                    <small class="error">Please enter a valid coffee name</small>
                 </div>
             </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeDescription-<?php echo $number?>" class="inline">Coffee Description:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <textarea name="coffeeDescription-<?php echo $number?>" placeholder="Enter a short description about your coffee (Maximum of 140 characters)" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeePrice-<?php echo $number?>" class="inline">Retail Price:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeePrice-<?php echo $number?>" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice-<?php echo $number?>" id="coffeePrice-<?php echo $number?>" required pattern="number">
+                    <small class="error">Please enter a valid retail price for this coffee</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeCurrency-<?php echo $number?>" class="inline">Currency:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeCurrency-<?php echo $number?>" class="regInput" type="text" placeholder="Currency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency-<?php echo $number?>" id="coffeeCurrency-<?php echo $number?>" required pattern="alpha">
+                    <small class="error">Please enter a valid currency type for this coffee</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeBagSize-<?php echo $number?>" class="inline">Coffee Bag Size (oz):</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeBagSize-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Bag Size (oz)" for="coffeeBagSize-<?php echo $number?>" id="coffeeBagSize-<?php echo $number?>" required pattern="number">
+                    <small class="error">Please enter a valid bag size (in ounces) for this coffee</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeGPPP-<?php echo $number?>" class="inline">Coffee Green Price Per Pound Paid:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeGPPP-<?php echo $number?>" class="regInput" type="text" placeholder="Amount (in USD) that Farmer receives per pound" for="coffeeGPPP-<?php echo $number?>" id="coffeeGPPP-<?php echo $number?>" required pattern="number">
+                    <small class="error">Please enter a valid green price per pound paid for this coffee</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="coffeeWebsite-<?php echo $number?>" class="inline">Coffee Website:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="coffeeWebsite-<?php echo $number?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite-<?php echo $number?>" id="coffeeWebsite-<?php echo $number?>" pattern="domain">
+                    <small class="error">Please enter a website link for this coffee</small>
+                </div>
+            </div>
+            <div class="row">
+                <h3 class="sub-header">Farm #<?php echo $number?></h3>
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="farmName-<?php echo $number?>" class="inline">Farm Name:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="farmName-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $number?>" id="farmName-<?php echo $number?>" required>
+                    <small class="error">Please enter a valid farm name for this coffee</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="farmLocation-<?php echo $number?>" class="inline">Farm Location - Country:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <input name="farmLocation-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation-<?php echo $number?>" id="farmLocation-<?php echo $number?>" required>
+                    <small class="error">Please enter a valid country that this farm is located in</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 medium-3 large-3 columns">
+                    <label for="farmRegion-<?php echo $number?>" class="inline">Farm Region:</label>
+                </div>
+                <div class="small-9 medium-9 large-9 columns">
+                    <select name="farmRegion-<?php echo $number?>" class="regInput" id="farmRegion-<?php echo $number?>" required>
+                        <option>South America</option>
+                        <option>Central America</option>
+                        <option>Africa</option>
+                        <option>Middle East</option>
+                        <option>Pacific</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-5 medium-5 large-5 columns">
+                    <label for="greenPPP-<?php echo $number?>" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
+                </div>
+                <div class="small-7 medium-7 large-7 columns">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                    <input name="greenPPP-<?php echo $number?>" class="regInput" type="file" placeholder="greenPPP" for="greenPPP-<?php echo $number?>" id="greenPPP-<?php echo $number?>">
+                </div>
+            </div>
+        </div>
+        <div class="row" id="previous-coffee-button">
+            <div class="small-3 small-offset-3 small-text-center columns">
+                <a id="extra-coffee" name="<?php echo $number + 1?>" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+            </div>
+            <div class="small-3 small-text-center end columns">
+                <a id="remove-coffee" name="<?php echo $number?>" class="button secondary tiny remove-coffee">Remove Coffee #<?php echo $number?></a>
+            </div>
+        </div>
         <?php
     }
 
