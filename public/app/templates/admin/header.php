@@ -21,7 +21,7 @@
 			'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
       '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
 			helpers\url::admin_template_path() . 'css/style.css',
-            helpers\url::admin_template_path() . 'css/style.css',
+      helpers\url::admin_template_path() . 'css/main.css',
 		))
 	?>
 
