@@ -80,7 +80,7 @@ Router::any('roasters', '\controllers\ttc@roasters');
 Router::any('contact', '\controllers\ttc@contact');
 Router::any('ttcoffeesAjax', '\controllers\ttc@ttcoffeesAjax');
 Router::any('extraCoffeeAjax', '\controllers\ttc@extraCoffeeAjax');
-Router::POST('contact', '\controllers\ttc@contact');
+Router::any('sendContact', '\controllers\ttc@sendContact');
 
 Router::any('admin', '\controllers\admin\admin@index');
 Router::any('admin/login', '\controllers\admin\auth@login');

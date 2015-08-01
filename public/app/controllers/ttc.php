@@ -695,8 +695,16 @@ class ttc extends \core\controller {
 
 	public function contact() {
 
-        // FIX THIS
 		$data['title'] = 'Contact';
+
+		View::rendertemplate('header', $data);
+		View::rendertemplate('contact', $data);
+		View::rendertemplate('footer');
+
+	}
+
+    public function sendContact() {
+
 
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -706,21 +714,35 @@ class ttc extends \core\controller {
         $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
         $cleanMsg = filter_var($message, FILTER_SANITIZE_STRING);
 
-		$mail = new \helpers\phpmailer\mail();
-		$mail->setFrom($cleanEmail);
-        $mail->addAddress('bgoebel@emory.edu');
-		$mail->subject('A message for TTC');
-		$mail->body($cleanName ."<br>". $cleanEmail ."<br>". $cleanMsg);
+        $mail = new \PHPMailer();
+        $mail->From = $cleanEmail;
+        $mail->addAddress('team@transparenttradecoffee.com');
+        $mail->addReplyTo($cleanEmail, $cleanName);
+        $mail->isHTML(true);
+        $mail->Subject = 'A message for TTC from ' . $cleanName;
+        $mail->Body = $cleanMsg . "<br>This message is from $cleanName($cleanEmail)";
+        $mail->AltBody = 'Please use an HTML viewer for this email';
 
         if(!empty($cleanName) && !empty($cleanEmail) && !empty($cleanMsg)){
-            $mail->send();
-        } else {
-            //echo "<div class='alert'>Sorry, there was an error, please try again in just a few minutes</div>";
+            if (!$mail->send()) {
+                ?><div data-alert class="alert-box alert round" style="margin-top: 20px;">
+                    Something went wrong when sending your contact email. Please check your spelling and try again.
+                    <a href="#" class="close">&times;</a>
+                </div><?php
+            }
+            else {
+                ?><div data-alert class="alert-box success radius" style="margin-top: 20px;">
+                    Your message has been successfully sent. We will be in contact with you soon.
+                    <a href="#" class="close">&times;</a>
+                </div><?php
+            }
+        }
+        else {
+            ?><div data-alert class="alert-box alert round" style="margin-top: 20px;">
+                Something went wrong when sending your contact email. Please check your spelling and try again.
+                <a href="#" class="close">&times;</a>
+            </div><?php
         }
 
-		View::rendertemplate('header', $data);
-		View::rendertemplate('contact', $data);
-		View::rendertemplate('footer');
-
-	}
+    }
 }

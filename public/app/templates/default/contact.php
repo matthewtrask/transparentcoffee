@@ -9,6 +9,9 @@
     </div>
 </div>
 <div class="row">
+    <div id="alert-message" class="small-10 small-offset-1 columns"></div>
+</div>
+<div class="row">
     <h1 class="page-header text-center">Contact Us!</h1>
 </div>
 
@@ -21,7 +24,7 @@
 
 <div class="row">
     <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
-        <form action="" method="POST" data-abide class="custom light-font-bigger">
+        <form id="contactForm" action="" method="POST" data-abide class="custom light-font-bigger">
             <div class="row">
                 <div class="small-3 large-3 columns">
                     <label for="name" class="inline">Name:</label>
@@ -35,7 +38,7 @@
                     <label for="email" class="inline">Email</label>
                 </div>
                 <div class="small-9 large-9 centered columns input">
-                    <input name="email" class="formInput" type="text" placeholder="Email" for="eame" id="email" required>
+                    <input name="email" class="formInput" type="text" placeholder="Email" for="email" id="email" required>
                 </div>
             </div>
             <div class="row">
@@ -43,7 +46,7 @@
                     <label for="message" class="inline">Message:</label>
                 </div>
                 <div class="small-9 large-9 centered columns input">
-                    <textarea name="eessage" class="formInput" type="text" placeholder="Message" for="eessage" id="message" required></textarea>
+                    <textarea name="message" class="formInput" type="text" placeholder="Message" for="message" id="message" required></textarea>
                 </div>
             </div>
             <div class="row">

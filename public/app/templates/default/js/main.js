@@ -23,18 +23,21 @@ $(document).ready(function(){
     }
     flowText();
   $('#submitButton').click(function(e){
+      e.preventDefault();
+      var data = $('#contactForm').serialize();
      $.ajax({
-       url: 'http://192.168.33.10/contact',
+       url: 'sendContact',
        type: 'POST',
-       data: '#contactForm',
-       success: function(){
-         alert('Successfully sent!');
+       data: data,
+         async: true,
+         cache: false,
+       success: function(data){
+           document.getElementById('alert-message').innerHTML = data;
        },
-       error: function(){
-         alert('There was an error sending your information. Please try again.');
+       error: function(data){
+           document.getElementById('alert-message').innerHTML = data;
        }
      });
-     e.preventDefault();
   });
 
     $('.selectall').on('click', function() {
