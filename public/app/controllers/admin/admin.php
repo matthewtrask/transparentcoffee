@@ -3,9 +3,9 @@
 use \helpers\session;
 use \helpers\form;
 use	\helpers\url;
-use \helpers\phpmailer\mail;
 use \core\model;
 use	\core\view;
+require $_SERVER['DOCUMENT_ROOT'] . '/vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 
 class Admin extends \core\controller
 {
@@ -273,39 +273,24 @@ class Admin extends \core\controller
     }
 
 	public function pendingEmail(){
-//		$title = $_POST['title'];
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
 		$coffee  = $_POST['coffee'];
-//		$line1 = $_POST['line1'];
-//		$line2 = $_POST['line2'];
-//		$line3 = $_POST['line3'];
-//		$line4 = $_POST['line4'];
-//		$line5 = $_POST['line5'];
-//		$line6 = $_POST['line6'];
-//		$line7 = $_POST['line7'];
-//		$line8 = $_POST['line8'];
-//		$line9 = $_POST['line9'];
-//		$line10 = $_POST['line10'];
-//		$line11 = $_POST['line11'];
-//		$line12 = $_POST['line12'];
-//		$line13 = $_POST['line13'];
-//		$line14 = $_POST['line14'];
-//		$line15 = $_POST['line15'];
-//		$line16 = $_POST['line16'];
-//		$line17 = $_POST['line17'];
-//		$line18 = $_POST['line18'];
-//		$line19 = $_POST['line19'];
 
-		$mail = new \helpers\phpmailer\mail();
-		$mail->setFrom('team@transparenttradecoffee.com');
+		$mail = new \PHPMailer();
+		$mail->From = "team@transparenttradecoffee.com";
 		$mail->addAddress($address);
-		$mail->addReplyTo('team@transparenttradecoffee.com', 'Transparent Trade Coffee');
+		$mail->addReplyTo("team@transparenttradecoffee.com", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
-		$mail->subject("Registration Received > Please Confirm Details for $coffee");
-//		$mail->body($title."<br>".$line1."<br>".$line2."<br>".$line4."<br>".$line5."<br>".$line6."<br>".$line7."<br>".$line8."<br>".$line9."<br>".$line10."<br>".$line11."<br>".$line12."<br>".$line13."<br>".$line14."<br>".$line15."<br>".$line16."<br>".$line17."<br>".$line18."<br>".$line19);
-		$mail->body($html);
-		$mail->send();
+		$mail->Body = $html;
+		$mail->AltBody = 'Please use an HTML viewer for this email';
+		$mail->Subject = "Registration Received > Please Confirm Details for $coffee";
+		if (!$mail->send()) {
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		}
+		else {
+			echo '1';
+		}
 
 		header('Location: /admin/pending');
 
@@ -315,23 +300,21 @@ class Admin extends \core\controller
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
 		$coffee  = $_POST['coffee'];
-//		$title = $_POST['title'];
-//		$address = $_POST['address'];
-//		$line1 = $_POST['field1'];
-//		$line2 = $_POST['field2'];
-//		$line3 = $_POST['field3'];
-//		$line4 = $_POST['field4'];
 
-		$mail = new \helpers\phpmailer\mail();
-		$mail->setFrom('team@transparenttradecoffee.com');
+		$mail = new \PHPMailer();
+		$mail->From = "team@transparenttradecoffee.com";
 		$mail->addAddress($address);
-		$mail->addReplyTo('team@transparenttradecoffee.com', 'Transparent Trade Coffee');
+		$mail->addReplyTo("team@transparenttradecoffee.com", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
-		$mail->subject("Registration Posted > Congrats $coffee Now Online");
-//		$mail->body($title."<br>".$line1."<br>".$line2."<br>".$line3);
-		$mail->body($html);
-		$mail->send();
-
+		$mail->Body = $html;
+		$mail->AltBody = 'Please use an HTML viewer for this email';
+		$mail->Subject = "Registration Posted > Congrats $coffee Now Online";
+		if (!$mail->send()) {
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		}
+		else {
+			echo '1';
+		}
 
 		header('Location: /admin/pending');
 
@@ -341,55 +324,21 @@ class Admin extends \core\controller
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
 		$coffee  = $_POST['coffee'];
-//		$title = $_POST['title'];
-//		$address = $_POST['address'];
-//		$line1 = $_POST['line1'];
-//		$line2 = $_POST['line2'];
-//		$line3 = $_POST['line3'];
-//		$line4 = $_POST['line4'];
-//		$line5 = $_POST['line5'];
-//		$line6 = $_POST['line6'];
-//		$line7 = $_POST['line7'];
-//		$line8 = $_POST['line8'];
-//		$line9 = $_POST['line9'];
-//		$line10 = $_POST['line10'];
-//		$line11 = $_POST['line11'];
-//		$line12 = $_POST['line12'];
-//		$line13 = $_POST['line13'];
-//		$line14 = $_POST['line14'];
-//		$line15 = $_POST['line15'];
-//		$line16 = $_POST['line16'];
-//		$line17 = $_POST['line17'];
-//		$line18 = $_POST['line18'];
-//		$line19 = $_POST['line19'];
-
-		$mail = new \helpers\phpmailer\mail();
-		echo "<pre>";
-		var_dump($mail);
-//		$mail->isSMTP();
-//		$mail->SMTPAuth   = true;
-
-//		$mail->Host = 'smtp.gmail.com';
-//		$mail->Port = 587;
-//		$mail->Username = "jrector15@gmail.com";
-//		$mail->Password   = "200145942";
-//		$mail->SMTPSecure = 'tls';
-		$mail->setFrom("team@transparenttradecoffee.com");
+		
+		$mail = new \PHPMailer();
+		$mail->From = "team@transparenttradecoffee.com";
 		$mail->addAddress($address);
-		$mail->addReplyTo('team@transparenttradecoffee.com', 'Transparent Trade Coffee');
-//		$mail->addReplyTo("jrector15@gmail.com");
+		$mail->addReplyTo("team@transparenttradecoffee.com", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
-		$mail->subject("Coffee Archived > $coffee Removed from Site");
-//		$mail->body($title."<br>".$line1."<br>".$line2."<br>".$line4."<br>".$line5."<br>".$line6."<br>".$line7."<br>".$line8."<br>".$line9."<br>".$line10."<br>".$line11."<br>".$line12."<br>".$line13."<br>".$line14."<br>".$line15."<br>".$line16."<br>".$line17."<br>".$line18."<br>".$line19);
-		$mail->body($html);
-		var_dump($mail);
+		$mail->Body = $html;
+		$mail->AltBody = 'Please use an HTML viewer for this email';
+		$mail->Subject = "Coffee Archived > $coffee Removed from Site";
 		if (!$mail->send()) {
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 		}
 		else {
 			echo '1';
 		}
-		exit();
 
 		header('Location: /admin/pending');
 

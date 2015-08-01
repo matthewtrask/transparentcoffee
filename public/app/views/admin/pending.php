@@ -1,7 +1,6 @@
 <?php
 use \helpers\phpmailer\mail;
 ?>
-
 <div class='container'>
 		<div class='row fullWidth'>
 			<div class='small-12 medium-12 large-12 columns'>
@@ -142,7 +141,6 @@ use \helpers\phpmailer\mail;
 
 	<div class="small-12 medium-12 large-12 columns">
 		<h2 id="archive">Archived Coffees</h2>
-
 		<form onsubmit="archiveFunction(); return false;" id="activeForm" class="activeForm">
 			<table>
 				<thead>
@@ -203,8 +201,6 @@ use \helpers\phpmailer\mail;
 			</table>
 			<input id="activeCoffee" type="submit" value="Submit" class="button success">
 		</form>
-	</div>
-
 		<?php foreach($data['ttcPending'] as $ttcPending) : ?>
 		<div id="pending-email-<?php echo $ttcPending->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<div class="row">
@@ -298,7 +294,7 @@ use \helpers\phpmailer\mail;
 			</div>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
-		<?php endforeach ?>
+		<?php endforeach; ?>
 		<?php foreach($data['ttcPending'] as $ttcPending) : ?>
 	<div id="pending-view-<?php echo $ttcPending->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 		<div class="row">
@@ -519,13 +515,10 @@ use \helpers\phpmailer\mail;
 						<p>The TT Coffee Team</p>">
 					</div>
 					<input type="submit" value="Email" name="<?php echo $ttcArchive->coffee_id?>" class="button success archive-email">
-
-
 				</form>
 			</div>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
-
 		<div id="archive-view-<?php echo $ttcArchive->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
@@ -719,7 +712,6 @@ use \helpers\phpmailer\mail;
 		</div>
 		<?php endforeach; ?>
 		<?php foreach($data['ttcActive'] as $ttcActive) : ?>
-
 		<div id="active-email-<?php echo $ttcActive->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
@@ -752,7 +744,6 @@ use \helpers\phpmailer\mail;
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
 					<h2 id="modalTitle">Updating <?php echo $ttcActive->coffee_name?></h2>
-
 					<div class="row">
 						<div class="small-10 small-offset-1 small-centered columns light-font-smaller">
 							<form id="activeUpdateForm-<?php echo $ttcActive->coffee_id?>" action="/submitUpdate" method="POST" enctype="multipart/form-data">
@@ -942,7 +933,6 @@ use \helpers\phpmailer\mail;
 		</div>
 		<?php endforeach; ?>
 	</div>
-</div>
 <script>
     function myFunction() {
     }
@@ -951,6 +941,3 @@ use \helpers\phpmailer\mail;
 	function archiveFunction() {
 	}
 </script>
-
-
-
