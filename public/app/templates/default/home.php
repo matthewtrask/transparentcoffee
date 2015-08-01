@@ -62,7 +62,7 @@
                     echo "<h3 class='sub-header'><a href='".DIR."$row->postSlug'>$row->postTitle</a></h3>\n";
                     echo "<div class='light-font-bigger'><p>Posted on ".date('jS M Y', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p></div>";
                         echo "<div class='content light-font-smaller'>".stripslashes($row->postDesc)."</div>";
-                        echo "<div class='small-6 medium-4 large-2 small-offset-3 medium-offset-4 large-offset-5 columns'><p><a href='".DIR."$row->postSlug' class='transparent-button button expand'>Read More</a></p></div>";
+                        echo "<div class='small-6 medium-4 small-offset-3 medium-offset-4 columns'><p><a href='".DIR."$row->postSlug' class='transparent-button button expand'>Read More</a></p></div>";
                     echo "</div>";
 
 

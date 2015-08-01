@@ -239,7 +239,8 @@ use \helpers\phpmailer\mail;
 							<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please
 								email team@transparenttradecoffee.org.</p>
 							<p>The TT Coffee Team</p>
-							<input type="hidden" name="address" value='<?php echo $ttcPending->email?></h2>'>
+							<input type="hidden" name="address" value='<?php echo $ttcPending->email?>'>
+							<input type="hidden" name="coffee" value='<?php echo $ttcPending->coffee_name?>'>
 							<input type="hidden" name="html" value="<h4>Dear <?php echo $ttcPending->roaster_name?>,</h4><br>
 							<p>Thank you for registering your coffee with Transparent Trade Coffee.</p>
 							<p>The following coffee has been approved by our team; however, before we post to our site we
@@ -505,7 +506,8 @@ use \helpers\phpmailer\mail;
 						<a>http://transparenttradecoffee.com/register</a>
 						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p>
 						<p>The TT Coffee Team</p>
-						<input type="hidden" name="address" value='<?php echo $ttcArchive->email?></h2>'>
+						<input type="hidden" name="address" value='<?php echo $ttcArchive->email?>'>
+						<input type="hidden" name="coffee" value='<?php echo $ttcArchive->coffee_name?>'>
 						<input type="hidden" name="html" value="<h4><?php echo $ttcArchive->roaster_name?>,</h4><br>
 						<p>We have reviewed the online coffee store link provided and it appears that it is no longer valid or that the registered coffee is no longer available.</p><br>
 						<p>The following coffee has been removed from our website and archived:</p>
@@ -730,7 +732,8 @@ use \helpers\phpmailer\mail;
 							social media accounts (Twitter and Facebook).</p>
 						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p>
 						<p>The TT Coffee Team</p>
-						<input type="hidden" name="address" value='<?php echo $ttcActive->email?></h2>'>
+						<input type="hidden" name="address" value='<?php echo $ttcActive->email?>'>
+						<input type="hidden" name="coffee" value='<?php echo $ttcActive->coffee_name?>'>
 						<input type="hidden" name="html" value="<h4><?php echo $ttcActive->roaster_name?>,</h4>
 						<p>Thank you for reviewing and approving your preview listings.</p>
 						<p>The following coffee has been posted to our website:</p>

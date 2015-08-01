@@ -89,7 +89,8 @@
                     <input id="centralAmer" type="checkbox" name="region[]" value="Central America"> Central America<br />
                     <input id="Africa" type="checkbox" name="region[]" value="Africa"> Africa<br />
                     <input id="MidEast" type="checkbox" name="region[]" value="Middle East"> Middle East<br />
-                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"> Pacific
+                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"> Pacific<br/>
+                    <input id="Other" type="checkbox" name="region[]" value="Other"> Other
                 </div>
             </dd>
             <dd class="accordion-navigation">
@@ -142,7 +143,8 @@
                             <input id="centralAmer" class='region' type="checkbox" name="region[]" value="Central America"> <span class='region'>Central America</span><br />
                             <input id="Africa" class='region' type="checkbox" name="region[]" value="Africa"> <span class='region'>Africa</span><br />
                             <input id="MidEast" class='region' type="checkbox" name="region[]" value="Middle East"> <span class='region'>Middle East</span><br />
-                            <input id="Pacific" class='region' type="checkbox" name="region[]" value="Pacific"> <span class='region'>Pacific</span>
+                            <input id="Pacific" class='region' type="checkbox" name="region[]" value="Pacific"> <span class='region'>Pacific</span><br/>
+                            <input id="Other" class='region' type="checkbox" name="region[]" value="Other"> <span class='region'>Other</span>
                         </div>
                     </dd>
                     </dl>

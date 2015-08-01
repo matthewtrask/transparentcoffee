@@ -276,6 +276,7 @@ class Admin extends \core\controller
 //		$title = $_POST['title'];
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
+		$coffee  = $_POST['coffee'];
 //		$line1 = $_POST['line1'];
 //		$line2 = $_POST['line2'];
 //		$line3 = $_POST['line3'];
@@ -301,7 +302,7 @@ class Admin extends \core\controller
 		$mail->addAddress($address);
 		$mail->addReplyTo('team@transparenttradecoffee.com', 'Transparent Trade Coffee');
 		$mail->isHTML(true);
-		$mail->subject('Preview your coffee listing for Transparent Trade Coffee');
+		$mail->subject("Registration Received > Please Confirm Details for $coffee");
 //		$mail->body($title."<br>".$line1."<br>".$line2."<br>".$line4."<br>".$line5."<br>".$line6."<br>".$line7."<br>".$line8."<br>".$line9."<br>".$line10."<br>".$line11."<br>".$line12."<br>".$line13."<br>".$line14."<br>".$line15."<br>".$line16."<br>".$line17."<br>".$line18."<br>".$line19);
 		$mail->body($html);
 		$mail->send();
@@ -313,6 +314,7 @@ class Admin extends \core\controller
 	public function activeEmail(){
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
+		$coffee  = $_POST['coffee'];
 //		$title = $_POST['title'];
 //		$address = $_POST['address'];
 //		$line1 = $_POST['field1'];
@@ -325,7 +327,7 @@ class Admin extends \core\controller
 		$mail->addAddress($address);
 		$mail->addReplyTo('team@transparenttradecoffee.com', 'Transparent Trade Coffee');
 		$mail->isHTML(true);
-		$mail->subject('Your coffee has been posted!');
+		$mail->subject("Registration Posted > Congrats $coffee Now Online");
 //		$mail->body($title."<br>".$line1."<br>".$line2."<br>".$line3);
 		$mail->body($html);
 		$mail->send();
@@ -338,6 +340,7 @@ class Admin extends \core\controller
 	public function archiveEmail(){
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
+		$coffee  = $_POST['coffee'];
 //		$title = $_POST['title'];
 //		$address = $_POST['address'];
 //		$line1 = $_POST['line1'];
@@ -361,15 +364,32 @@ class Admin extends \core\controller
 //		$line19 = $_POST['line19'];
 
 		$mail = new \helpers\phpmailer\mail();
-		$mail->From = "from@192.168.33.10";
-//		$mail->setFrom('jrec15@uga.edu');
+		echo "<pre>";
+		var_dump($mail);
+//		$mail->isSMTP();
+//		$mail->SMTPAuth   = true;
+
+//		$mail->Host = 'smtp.gmail.com';
+//		$mail->Port = 587;
+//		$mail->Username = "jrector15@gmail.com";
+//		$mail->Password   = "200145942";
+//		$mail->SMTPSecure = 'tls';
+		$mail->setFrom("team@transparenttradecoffee.com");
 		$mail->addAddress($address);
-		$mail->addReplyTo('jrector15@gmail.com', 'Transparent Trade Coffee');
+		$mail->addReplyTo('team@transparenttradecoffee.com', 'Transparent Trade Coffee');
+//		$mail->addReplyTo("jrector15@gmail.com");
 		$mail->isHTML(true);
-		$mail->subject('Your coffee has been removed and archived');
+		$mail->subject("Coffee Archived > $coffee Removed from Site");
 //		$mail->body($title."<br>".$line1."<br>".$line2."<br>".$line4."<br>".$line5."<br>".$line6."<br>".$line7."<br>".$line8."<br>".$line9."<br>".$line10."<br>".$line11."<br>".$line12."<br>".$line13."<br>".$line14."<br>".$line15."<br>".$line16."<br>".$line17."<br>".$line18."<br>".$line19);
 		$mail->body($html);
-		$mail->send();
+		var_dump($mail);
+		if (!$mail->send()) {
+			echo 'Mailer Error: ' . $mail->ErrorInfo;
+		}
+		else {
+			echo '1';
+		}
+		exit();
 
 		header('Location: /admin/pending');
 

@@ -1268,6 +1268,14 @@ div.fb-like.fb_iframe_widget {
 #roasters-text {
   margin-top: 20px; }
 
+@media only screen and (max-width: 40em) and (min-width: 451px) {
+  #roasters-table th, #roasters-table td {
+    font-size: 11px !important; } }
+
+@media only screen and (max-width: 450px) {
+  #roasters-table th, #roasters-table td {
+    font-size: 8px !important; } }
+
 @media only screen and (min-width: 64.063em) {
   #seg-header {
     margin-top: -60px !important;
