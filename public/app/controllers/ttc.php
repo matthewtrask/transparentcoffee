@@ -157,7 +157,7 @@ class ttc extends \core\controller {
         switch($_POST['sort']) {
             case 'Default':
                 break;
-            case 'GPPP':
+            case 'GPP':
                 if ($_POST['arrow'] == 'down') {
                     $ttcoffees = $this->quicksort($ttcoffees, 'gppp', 'down');
                 }
