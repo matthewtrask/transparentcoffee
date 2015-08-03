@@ -92,7 +92,7 @@
                     <label for="roasterURL" class="inline">Roaster Website:</label>
                 </div>
                 <div class="small-8 medium-9 large-9 columns">
-                    <input name="roasterURL" class="regInput" type="text" placeholder="Roaster Website Home URL" for="roasterURL" id="roasterURL" required pattern="domain">
+                    <input name="roasterURL" class="regInput" type="text" placeholder="Roaster Website Home URL" for="roasterURL" id="roasterURL" required>
                     <small class="error">Please enter a valid roaster website</small>
                 </div>
             </div>
@@ -165,7 +165,7 @@
                         <label for="coffeeWebsite" class="inline">Coffee Website:</label>
                     </div>
                     <div class="small-8 medium-9 large-9 columns">
-                        <input name="coffeeWebsite" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite" id="coffeeWebsite" pattern="domain">
+                        <input name="coffeeWebsite" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite" id="coffeeWebsite">
                         <small class="error">Please enter a website link for this coffee</small>
                     </div>
                 </div>
