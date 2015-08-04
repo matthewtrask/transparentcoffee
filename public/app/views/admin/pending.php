@@ -215,7 +215,7 @@ use \helpers\phpmailer\mail;
 							<p><b>Roaster Name</b>: <?php echo $ttcPending->roaster_name?></p>
 							<p><b>Roaster Description</b>: <?php echo $ttcPending->roaster_description?></p>
 							<p><b>Roaster Website</b>: <?php echo $ttcPending->roaster_url?></p>
-							<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='<?php echo $ttcPending->roaster_logo ?>'/></p>
+							<p><b>Roaster Image</b>:<br><img src='<?php echo $ttcPending->roaster_logo ?>'/></p>
 							<p><b>Coffee Name</b>: <?php echo $ttcPending->coffee_name ?></p>
 							<p><b>Coffee Description</b>: <?php echo $ttcPending->description?></p>
 							<p><b>Retail Price</b>: <?php echo $ttcPending->retail_price?></p>
@@ -227,7 +227,7 @@ use \helpers\phpmailer\mail;
 							<p><b>Farm Name</b>: <?php echo $ttcPending->farm_name?></p>
 							<p><b>Farm Region</b>: <?php echo $ttcPending->farm_region?></p>
 							<p><b>Farm Country</b>: <?php echo $ttcPending->farm_country?></p>
-							<p><b><u>Is all of the information above CORRECT?</u></b> Please reply to this email with a simple “approve”
+							<p><b><u>Is all of the information above CORRECT?</u></b> Please reply to this email with a simple approve
 								response to publish your coffees to the TT Coffee site.</p>
 							<p><b><u>Would you like to make an EDIT to the information above?</u></b> Please reply to this email with a note detailing the edits that should be made.</p>
 							<p>Once your coffee listing is confirmed, our team will post to TT Coffee within 48 hours and also share
@@ -237,6 +237,8 @@ use \helpers\phpmailer\mail;
 							<p>The TT Coffee Team</p>
 							<input type="hidden" name="address" value='<?php echo $ttcPending->email?>'>
 							<input type="hidden" name="coffee" value='<?php echo $ttcPending->coffee_name?>'>
+							<input type="hidden" name="roaster_image" value='<?php echo $ttcPending->roaster_logo ?>'>
+							<input type="hidden" name="roaster_name" value='<?php echo $ttcPending->roaster_name ?>'>
 							<input type="hidden" name="html" value="<h4>Dear <?php echo $ttcPending->roaster_name?>,</h4><br>
 							<p>Thank you for registering your coffee with Transparent Trade Coffee.</p>
 							<p>The following coffee has been approved by our team; however, before we post to our site we
@@ -245,7 +247,8 @@ use \helpers\phpmailer\mail;
 							<p><b>Roaster Name</b>: <?php echo $ttcPending->roaster_name?></p>
 							<p><b>Roaster Description</b>: <?php echo $ttcPending->roaster_description?></p>
 							<p><b>Roaster Website</b>: <?php echo $ttcPending->roaster_url?></p>
-							<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='<?php echo $ttcPending->roaster_logo ?>'/></p>
+							<p><b>Roaster Logo</b>:<br>
+							<img src='<?php echo $ttcPending->roaster_name?>'/></p>
 							<p><b>Coffee Name</b>: <?php echo $ttcPending->coffee_name ?></p>
 							<p><b>Coffee Description</b>: <?php echo $ttcPending->description?></p>
 							<p><b>Retail Price</b>: <?php echo $ttcPending->retail_price?></p>
@@ -257,7 +260,7 @@ use \helpers\phpmailer\mail;
 							<p><b>Farm Name</b>: <?php echo $ttcPending->farm_name?></p>
 							<p><b>Farm Region</b>: <?php echo $ttcPending->farm_region?></p>
 							<p><b>Farm Country</b>: <?php echo $ttcPending->farm_country?></p>
-							<p><b><u>Is all of the information above CORRECT?</u></b> Please reply to this email with a simple “approve”
+							<p><b><u>Is all of the information above CORRECT?</u></b> Please reply to this email with a simple approve
 								response to publish your coffees to the TT Coffee site.</p>
 							<p><b><u>Would you like to make an EDIT to the information above?</u></b> Please reply to this email with a note detailing the edits that should be made.</p>
 							<p>Once your coffee listing is confirmed, our team will post to TT Coffee within 48 hours and also share

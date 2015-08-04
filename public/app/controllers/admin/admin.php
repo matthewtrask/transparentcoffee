@@ -276,15 +276,23 @@ class Admin extends \core\controller
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
 		$coffee  = $_POST['coffee'];
+		$roasterName = $_POST['roaster_name'];
+		$roasterImage = $_POST['roaster_image'];
+		$pos = strpos($roasterImage, ';');
+		$type = explode(':', substr($roasterImage, 0, $pos))[1];
+//		$ext = explode('/', $type)[1];
+		$img = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $roasterImage));
 
 		$mail = new \PHPMailer();
 		$mail->From = "team@transparenttradecoffee.com";
-		$mail->addAddress($address);
+		$mail->FromName = "TT Coffee Team";
+		$mail->addAddress('jrector15@gmail.com');
 		$mail->addReplyTo("team@transparenttradecoffee.org", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
 		$mail->Body = $html;
 		$mail->AltBody = 'Please use an HTML viewer for this email';
-		$mail->Subject = "Registration Received > Please Confirm Details for $coffee";
+		$mail->Subject = "TT Coffee Registration Received > Please Confirm Details for $coffee";
+		$mail->addStringEmbeddedImage($img, $roasterName, "base64", $type);
 		if (!$mail->send()) {
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 		}
@@ -303,12 +311,13 @@ class Admin extends \core\controller
 
 		$mail = new \PHPMailer();
 		$mail->From = "team@transparenttradecoffee.org";
+		$mail->FromName = "TT Coffee Team";
 		$mail->addAddress($address);
 		$mail->addReplyTo("team@transparenttradecoffee.org", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
 		$mail->Body = $html;
 		$mail->AltBody = 'Please use an HTML viewer for this email';
-		$mail->Subject = "Registration Posted > Congrats $coffee Now Online";
+		$mail->Subject = "TT Coffee Registration Posted > Congrats $coffee Now Online";
 		if (!$mail->send()) {
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 		}
@@ -327,12 +336,13 @@ class Admin extends \core\controller
 		
 		$mail = new \PHPMailer();
 		$mail->From = "team@transparenttradecoffee.com";
+		$mail->FromName = "TT Coffee Team";
 		$mail->addAddress($address);
 		$mail->addReplyTo("team@transparenttradecoffee.org", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
 		$mail->Body = $html;
 		$mail->AltBody = 'Please use an HTML viewer for this email';
-		$mail->Subject = "Coffee Archived > $coffee Removed from Site";
+		$mail->Subject = "TT Coffee Archived > $coffee Removed from Site";
 		if (!$mail->send()) {
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 		}

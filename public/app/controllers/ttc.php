@@ -389,7 +389,7 @@ class ttc extends \core\controller {
                     <label for="coffeeWebsite-<?php echo $number?>" class="inline">Coffee Website:</label>
                 </div>
                 <div class="small-9 medium-9 large-9 columns">
-                    <input name="coffeeWebsite-<?php echo $number?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite-<?php echo $number?>" id="coffeeWebsite-<?php echo $number?>" pattern="domain">
+                    <input name="coffeeWebsite-<?php echo $number?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite-<?php echo $number?>" id="coffeeWebsite-<?php echo $number?>">
                     <small class="error">Please enter a website link for this coffee</small>
                 </div>
             </div>
@@ -716,6 +716,7 @@ class ttc extends \core\controller {
 
         $mail = new \PHPMailer();
         $mail->From = $cleanEmail;
+        $mail->FromName = $cleanName;
         $mail->addAddress('team@transparenttradecoffee.org');
         $mail->addReplyTo($cleanEmail, $cleanName);
         $mail->isHTML(true);
