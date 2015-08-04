@@ -215,7 +215,7 @@ use \helpers\phpmailer\mail;
 							<p><b>Roaster Name</b>: <?php echo $ttcPending->roaster_name?></p>
 							<p><b>Roaster Description</b>: <?php echo $ttcPending->roaster_description?></p>
 							<p><b>Roaster Website</b>: <?php echo $ttcPending->roaster_url?></p>
-							<p><b>Roaster Image</b>:<br><img src='<?php echo $ttcPending->roaster_logo ?>'/></p>
+							<p><b>Roaster Image</b>:<br><img style="max-width: 400px;" src='<?php echo $ttcPending->roaster_logo ?>'/></p>
 							<p><b>Coffee Name</b>: <?php echo $ttcPending->coffee_name ?></p>
 							<p><b>Coffee Description</b>: <?php echo $ttcPending->description?></p>
 							<p><b>Retail Price</b>: <?php echo $ttcPending->retail_price?></p>
@@ -248,7 +248,7 @@ use \helpers\phpmailer\mail;
 							<p><b>Roaster Description</b>: <?php echo $ttcPending->roaster_description?></p>
 							<p><b>Roaster Website</b>: <?php echo $ttcPending->roaster_url?></p>
 							<p><b>Roaster Logo</b>:<br>
-							<img src='<?php echo $ttcPending->roaster_name?>'/></p>
+							<img style='max-width: 400px;' src='cid:roaster_logo'/></p>
 							<p><b>Coffee Name</b>: <?php echo $ttcPending->coffee_name ?></p>
 							<p><b>Coffee Description</b>: <?php echo $ttcPending->description?></p>
 							<p><b>Retail Price</b>: <?php echo $ttcPending->retail_price?></p>
