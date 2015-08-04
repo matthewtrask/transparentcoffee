@@ -716,7 +716,7 @@ class ttc extends \core\controller {
 
         $mail = new \PHPMailer();
         $mail->From = $cleanEmail;
-        $mail->addAddress('team@transparenttradecoffee.com');
+        $mail->addAddress('team@transparenttradecoffee.org');
         $mail->addReplyTo($cleanEmail, $cleanName);
         $mail->isHTML(true);
         $mail->Subject = 'A message for TTC from ' . $cleanName;

@@ -280,7 +280,7 @@ class Admin extends \core\controller
 		$mail = new \PHPMailer();
 		$mail->From = "team@transparenttradecoffee.com";
 		$mail->addAddress($address);
-		$mail->addReplyTo("team@transparenttradecoffee.com", 'Transparent Trade Coffee');
+		$mail->addReplyTo("team@transparenttradecoffee.org", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
 		$mail->Body = $html;
 		$mail->AltBody = 'Please use an HTML viewer for this email';
@@ -302,9 +302,9 @@ class Admin extends \core\controller
 		$coffee  = $_POST['coffee'];
 
 		$mail = new \PHPMailer();
-		$mail->From = "team@transparenttradecoffee.com";
+		$mail->From = "team@transparenttradecoffee.org";
 		$mail->addAddress($address);
-		$mail->addReplyTo("team@transparenttradecoffee.com", 'Transparent Trade Coffee');
+		$mail->addReplyTo("team@transparenttradecoffee.org", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
 		$mail->Body = $html;
 		$mail->AltBody = 'Please use an HTML viewer for this email';
@@ -328,7 +328,7 @@ class Admin extends \core\controller
 		$mail = new \PHPMailer();
 		$mail->From = "team@transparenttradecoffee.com";
 		$mail->addAddress($address);
-		$mail->addReplyTo("team@transparenttradecoffee.com", 'Transparent Trade Coffee');
+		$mail->addReplyTo("team@transparenttradecoffee.org", 'Transparent Trade Coffee');
 		$mail->isHTML(true);
 		$mail->Body = $html;
 		$mail->AltBody = 'Please use an HTML viewer for this email';
