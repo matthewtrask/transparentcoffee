@@ -9,6 +9,7 @@ use \helpers\phpmailer\mail;
 				<form onsubmit="myFunction(); return false;" id="pendingForm">
 					<table>
 		 				<thead>
+							<tr>
 								<th>Approve</th>
 								<th>Email</th>
 								<th>Update</th>
@@ -141,6 +142,7 @@ use \helpers\phpmailer\mail;
 
 	<div class="small-12 medium-12 large-12 columns">
 		<h2 id="archive">Archived Coffees</h2>
+
 		<form onsubmit="archiveFunction(); return false;" id="activeForm" class="activeForm">
 			<table>
 				<thead>
@@ -201,6 +203,7 @@ use \helpers\phpmailer\mail;
 			</table>
 			<input id="activeCoffee" type="submit" value="Submit" class="button success">
 		</form>
+	</div>
 
 		<?php foreach($data['ttcPending'] as $ttcPending) : ?>
 		<div id="pending-email-<?php echo $ttcPending->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
@@ -256,198 +259,200 @@ use \helpers\phpmailer\mail;
 			</div>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
-		<div id="pending-view-<?php echo $ttcPending->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-			<div class="row">
-				<div class="small-10 small-offset-1 columns">
-					<h2 id="modalTitle">Updating <?php echo $ttcPending->coffee_name?></h2>
-					<div class="row">
-						<div class="small-10 small-offset-1 small-centered columns light-font-smaller">
-							<form id="pendingUpdateForm-<?php echo $ttcPending->coffee_id?>" action="/submitUpdate" method="POST" enctype="multipart/form-data">
-								<input name="updateType" type="hidden" value="pending">
-								<input name="coffeeId" type="hidden" value="<?php echo $ttcPending->coffee_id?>">
+		<?php endforeach ?>
+		<?php foreach($data['ttcPending'] as $ttcPending) : ?>
+	<div id="pending-view-<?php echo $ttcPending->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+		<div class="row">
+			<div class="small-10 small-offset-1 columns">
+				<h2 id="modalTitle">Updating <?php echo $ttcPending->coffee_name?></h2>
+				<div class="row">
+					<div class="small-10 small-offset-1 small-centered columns light-font-smaller">
+						<form id="pendingUpdateForm-<?php echo $ttcPending->coffee_id?>" action="/submitUpdate" method="POST" enctype="multipart/form-data">
+							<input name="updateType" type="hidden" value="pending">
+							<input name="coffeeId" type="hidden" value="<?php echo $ttcPending->coffee_id?>">
+							<div class="row">
+								<h3 class="sub-header">Contact</h3>
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="firstName" class="inline">Your First Name:</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="firstName" class="regInput" type="text" value="<?php echo $ttcPending->first_name?>" for="firstName" id="firstName">
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="lastName" class="inline">Your Last Name:</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="lastName" class="regInput" type="text" value="<?php echo $ttcPending->last_name?>" for="lastName" id="lastName">
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="submitEmail" class="inline">Your Email:</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="submitEmail" class="regInput" type="text" value="<?php echo $ttcPending->email?>" for="submitEmail" id="submitEmail">
+								</div>
+							</div>
+							<div class="row">
+								<h3 class="sub-header">Roaster</h3>
+								<div class="small-4 small-offset-4 columns">
+									<a href="" class="button alert pending-roaster-btn" name="<?php echo $ttcPending->coffee_id?>">Choose Existing Roaster</a>
+								</div>
+							</div>
+							<div id="pending-roaster-section-<?php echo $ttcPending->coffee_id?>">
 								<div class="row">
-									<h3 class="sub-header">Contact</h3>
 									<div class="small-3 medium-3 large-3 columns">
-										<label for="firstName" class="inline">Your First Name:</label>
+										<label for="roasterName" class="inline">Roaster Name:</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
-										<input name="firstName" class="regInput" type="text" value="<?php echo $ttcPending->first_name?>" for="firstName" id="firstName">
-									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="lastName" class="inline">Your Last Name:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="lastName" class="regInput" type="text" value="<?php echo $ttcPending->last_name?>" for="lastName" id="lastName">
-									</div>
-								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="submitEmail" class="inline">Your Email:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="submitEmail" class="regInput" type="text" value="<?php echo $ttcPending->email?>" for="submitEmail" id="submitEmail">
-									</div>
-								</div>
-								<div class="row">
-									<h3 class="sub-header">Roaster</h3>
-									<div class="small-4 small-offset-4 columns">
-										<a href="" class="button alert pending-roaster-btn" name="<?php echo $ttcPending->coffee_id?>">Choose Existing Roaster</a>
-									</div>
-								</div>
-								<div id="pending-roaster-section-<?php echo $ttcPending->coffee_id?>">
-									<div class="row">
-										<div class="small-3 medium-3 large-3 columns">
-											<label for="roasterName" class="inline">Roaster Name:</label>
-										</div>
-										<div class="small-9 medium-9 large-9 columns">
-											<input name="roasterName" class="regInput" type="text" value="<?php echo $ttcPending->roaster_name?>" for="roasterName" id="roasterName">
-										</div>
-									</div>
-									<div class="row">
-										<div class="small-3 medium-3 large-3 columns">
-											<label for="roasterDescription" class="inline">Roaster Description:</label>
-										</div>
-										<div class="small-9 medium-9 large-9 columns">
-											<textarea name="roasterDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcPending->roaster_description?></textarea>
-										</div>
-									</div>
-									<div class="row">
-										<div class="small-3 medium-3 large-3 columns">
-											<label for="roasterURL" class="inline">Roaster Website:</label>
-										</div>
-										<div class="small-9 medium-9 large-9 columns">
-											<input name="roasterURL" class="regInput" type="text" value="<?php echo $ttcPending->roaster_url?>" for="roasterURL" id="roasterURL">
-										</div>
-									</div>
-									<div class="row">
-										<div class="small-3 medium-3 large-3 columns">
-											<label for="roasterImage" class="inline">Roaster Logo:</label>
-										</div>
-										<div class="small-9 medium-9 large-9 columns">
-											<input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
-										</div>
-									</div>
-								</div><hr />
-								<div class="row">
-									<h3 class="sub-header">Coffee #1</h3>
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeName" class="inline">Coffee Name:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="coffeeName" class="regInput" type="text" value="<?php echo $ttcPending->coffee_name?>" for="coffeeName" id="coffeeName">
+										<input name="roasterName" class="regInput" type="text" value="<?php echo $ttcPending->roaster_name?>" for="roasterName" id="roasterName">
 									</div>
 								</div>
 								<div class="row">
 									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeDescription" class="inline">Coffee Description:</label>
+										<label for="roasterDescription" class="inline">Roaster Description:</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
-										<textarea name="coffeeDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcPending->description?></textarea>
+										<textarea name="roasterDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcPending->roaster_description?></textarea>
 									</div>
 								</div>
 								<div class="row">
 									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeePrice" class="inline">Retail Price:</label>
+										<label for="roasterURL" class="inline">Roaster Website:</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
-										<input name="coffeePrice" class="regInput" type="text" value="<?php echo $ttcPending->retail_price?>" for="coffeePrice" id="coffeePrice">
+										<input name="roasterURL" class="regInput" type="text" value="<?php echo $ttcPending->roaster_url?>" for="roasterURL" id="roasterURL">
 									</div>
 								</div>
 								<div class="row">
 									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeCurrency" class="inline">Currency:</label>
+										<label for="roasterImage" class="inline">Roaster Logo:</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
-										<input name="coffeeCurrency" class="regInput" type="text" value="<?php echo $ttcPending->currency?>" for="coffeeCurrency" id="coffeeCurrency">
+										<input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
 									</div>
 								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeBagSize" class="inline">Coffee Bag Size (oz):</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="coffeeBagSize" class="regInput" type="text" value="<?php echo $ttcPending->bag_size?>" for="coffeeBagSize" id="coffeeBagSize">
-									</div>
+							</div><hr />
+							<div class="row">
+								<h3 class="sub-header">Coffee #1</h3>
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="coffeeName" class="inline">Coffee Name:</label>
 								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeGPPP" class="inline">Coffee Green Price Per Pound Paid:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="coffeeGPPP" class="regInput" type="text" value="<?php echo $ttcPending->gppp?>" for="coffeeGPPP" id="coffeeGPPP">
-									</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="coffeeName" class="regInput" type="text" value="<?php echo $ttcPending->coffee_name?>" for="coffeeName" id="coffeeName">
 								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeEGS" class="inline">Effective Grower Share (0-100, without % sign)</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="coffeeEGS" class="regInput" type="text" value="<?php echo $ttcPending->egs?>%" for="coffeeEGS" id="coffeeEGS">
-									</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="coffeeDescription" class="inline">Coffee Description:</label>
 								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeWebsite" class="inline">Coffee Website:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="coffeeWebsite" class="regInput" type="text" value="<?php echo $ttcPending->url?>" for="coffeeWebsite" id="coffeeWebsite">
-									</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<textarea name="coffeeDescription" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";><?php echo $ttcPending->description?></textarea>
 								</div>
-								<div class="row">
-									<h3 class="sub-header">Farm #1</h3>
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="farmName" class="inline">Farm Name:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="farmName" class="regInput" type="text" value="<?php echo $ttcPending->farm_name?>" for="farmName" id="farmName">
-									</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="coffeePrice" class="inline">Retail Price:</label>
 								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="farmLocation" class="inline">Farm Location - Country:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<input name="farmLocation" class="regInput" type="text" value="<?php echo $ttcPending->farm_country?>" for="farmLocation" id="farmLocation">
-									</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="coffeePrice" class="regInput" type="text" value="<?php echo $ttcPending->retail_price?>" for="coffeePrice" id="coffeePrice">
 								</div>
-								<div class="row">
-									<div class="small-3 medium-3 large-3 columns">
-										<label for="farmRegion" class="inline">Farm Region:</label>
-									</div>
-									<div class="small-9 medium-9 large-9 columns">
-										<select name="farmRegion" class="regInput" id="farmRegion">
-											<option <?php echo ($ttcPending->farm_region == 'South America')?("selected"):('');?> >South America</option>
-											<option <?php echo ($ttcPending->farm_region == 'Central America')?("selected"):('');?> >Central America</option>
-											<option <?php echo ($ttcPending->farm_region == 'Africa')?("selected"):('');?> >Africa</option>
-											<option <?php echo ($ttcPending->farm_region == 'Middle East')?("selected"):('');?> >Middle East</option>
-											<option <?php echo ($ttcPending->farm_region == 'Pacific')?("selected"):('');?> >Pacific</option>
-											<option <?php echo ($ttcPending->farm_region == 'Other')?("selected"):('');?> >Other</option>
-										</select>
-									</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="coffeeCurrency" class="inline">Currency:</label>
 								</div>
-								<div class="row">
-									<div class="small-5 medium-5 large-5 columns">
-										<label for="greenPPP" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
-									</div>
-									<div class="small-7 medium-7 large-7 columns">
-										<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-										<input name="greenPPP" class="regInput" type="file" value="greenPPP" for="greenPPP" id="greenPPP">
-									</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="coffeeCurrency" class="regInput" type="text" value="<?php echo $ttcPending->currency?>" for="coffeeCurrency" id="coffeeCurrency">
 								</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="coffeeBagSize" class="inline">Coffee Bag Size (oz):</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="coffeeBagSize" class="regInput" type="text" value="<?php echo $ttcPending->bag_size?>" for="coffeeBagSize" id="coffeeBagSize">
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="coffeeGPPP" class="inline">Coffee Green Price Per Pound Paid:</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="coffeeGPPP" class="regInput" type="text" value="<?php echo $ttcPending->gppp?>" for="coffeeGPPP" id="coffeeGPPP">
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="coffeeEGS" class="inline">Effective Grower Share (0-100, without % sign)</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="coffeeEGS" class="regInput" type="text" value="<?php echo $ttcPending->egs?>%" for="coffeeEGS" id="coffeeEGS">
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="coffeeWebsite" class="inline">Coffee Website:</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="coffeeWebsite" class="regInput" type="text" value="<?php echo $ttcPending->url?>" for="coffeeWebsite" id="coffeeWebsite">
+								</div>
+							</div>
+							<div class="row">
+								<h3 class="sub-header">Farm #1</h3>
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="farmName" class="inline">Farm Name:</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="farmName" class="regInput" type="text" value="<?php echo $ttcPending->farm_name?>" for="farmName" id="farmName">
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="farmLocation" class="inline">Farm Location - Country:</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<input name="farmLocation" class="regInput" type="text" value="<?php echo $ttcPending->farm_country?>" for="farmLocation" id="farmLocation">
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-3 medium-3 large-3 columns">
+									<label for="farmRegion" class="inline">Farm Region:</label>
+								</div>
+								<div class="small-9 medium-9 large-9 columns">
+									<select name="farmRegion" class="regInput" id="farmRegion">
+										<option <?php echo ($ttcPending->farm_region == 'South America')?("selected"):('');?> >South America</option>
+										<option <?php echo ($ttcPending->farm_region == 'Central America')?("selected"):('');?> >Central America</option>
+										<option <?php echo ($ttcPending->farm_region == 'Africa')?("selected"):('');?> >Africa</option>
+										<option <?php echo ($ttcPending->farm_region == 'Middle East')?("selected"):('');?> >Middle East</option>
+										<option <?php echo ($ttcPending->farm_region == 'Pacific')?("selected"):('');?> >Pacific</option>
+										<option <?php echo ($ttcPending->farm_region == 'Other')?("selected"):('');?> >Other</option>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="small-5 medium-5 large-5 columns">
+									<label for="greenPPP" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
+								</div>
+								<div class="small-7 medium-7 large-7 columns">
+									<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+									<input name="greenPPP" class="regInput" type="file" value="greenPPP" for="greenPPP" id="greenPPP">
+								</div>
+							</div>
 
-								<div class="small-offset-5 small-2 columns">
-									<input type="submit" value="Save" name="<?php echo $ttcPending->coffee_id?>" class="button success pending-submit">
-								</div>
-							</form>
-						</div>
+							<div class="small-offset-5 small-2 columns">
+								<input type="submit" value="Save" name="<?php echo $ttcPending->coffee_id?>" class="button success pending-submit">
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
-			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
-		<?php endforeach; ?>
+		<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+	</div>
+	<?php endforeach; ?>
 		<?php foreach($data['ttcArchive'] as $ttcArchive) : ?>
 		<div id="archive-email-<?php echo $ttcArchive->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<div class="row">
@@ -496,11 +501,12 @@ use \helpers\phpmailer\mail;
 					</div>
 					<input type="submit" value="Email" name="<?php echo $ttcArchive->coffee_id?>" class="button success archive-email">
 
-					
+
 				</form>
 			</div>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
+
 		<div id="archive-view-<?php echo $ttcArchive->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
@@ -694,6 +700,7 @@ use \helpers\phpmailer\mail;
 		</div>
 		<?php endforeach; ?>
 		<?php foreach($data['ttcActive'] as $ttcActive) : ?>
+
 		<div id="active-email-<?php echo $ttcActive->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
@@ -718,6 +725,11 @@ use \helpers\phpmailer\mail;
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
 					<div class="small-10 small-offset-1 columns">
+		<div id="active-view-<?php echo $ttcActive->coffee_id?>" class="reveal-modal backend-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+			<div class="row">
+				<div class="small-10 small-offset-1 columns">
+					<h2 id="modalTitle">Updating <?php echo $ttcActive->coffee_name?></h2>
+
 					<div class="row">
 						<div class="small-10 small-offset-1 small-centered columns light-font-smaller">
 							<form id="activeUpdateForm-<?php echo $ttcActive->coffee_id?>" action="/submitUpdate" method="POST" enctype="multipart/form-data">
@@ -916,7 +928,6 @@ use \helpers\phpmailer\mail;
 	function archiveFunction() {
 	}
 </script>
-
 
 
 
