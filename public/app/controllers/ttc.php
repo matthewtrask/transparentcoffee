@@ -714,7 +714,6 @@ class ttc extends \core\controller {
         $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
         $cleanMsg = filter_var($message, FILTER_SANITIZE_STRING);
 
-<<<<<<< HEAD
         $mail = new \PHPMailer();
         $mail->From = $cleanEmail;
         $mail->addAddress('team@transparenttradecoffee.com');
@@ -723,13 +722,6 @@ class ttc extends \core\controller {
         $mail->Subject = 'A message for TTC from ' . $cleanName;
         $mail->Body = $cleanMsg . "<br>This message is from $cleanName($cleanEmail)";
         $mail->AltBody = 'Please use an HTML viewer for this email';
-=======
-		$mail = new \helpers\phpmailer\mail();
-		$mail->setFrom($cleanEmail);
-        $mail->addAddress('team@transparenttradecoffee.com');
-		$mail->subject('A message for TTC');
-		$mail->body($cleanName ."<br>". $cleanEmail ."<br>". $cleanMsg);
->>>>>>> admin-ajax
 
         if(!empty($cleanName) && !empty($cleanEmail) && !empty($cleanMsg)){
             if (!$mail->send()) {
