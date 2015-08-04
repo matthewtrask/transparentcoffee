@@ -703,7 +703,7 @@ class ttc extends \core\controller {
 
 		$mail = new \helpers\phpmailer\mail();
 		$mail->setFrom($cleanEmail);
-        $mail->addAddress('bgoebel@emory.edu');
+        $mail->addAddress('team@transparenttradecoffee.com');
 		$mail->subject('A message for TTC');
 		$mail->body($cleanName ."<br>". $cleanEmail ."<br>". $cleanMsg);
 
