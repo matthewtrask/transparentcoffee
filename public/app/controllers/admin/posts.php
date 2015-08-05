@@ -133,7 +133,9 @@ class Posts extends \core\controller {
 					'catID'    => $catID
 				);
 
-				$data['postImg'] = $_SESSION['image_name'];
+				if (isset($_SESSION['image_name'])) {
+					$data['postImg'] = $_SESSION['image_name'];
+				}
 
 
 				$where = array('postID' => $id);
