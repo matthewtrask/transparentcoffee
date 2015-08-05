@@ -81,6 +81,8 @@ Router::any('contact', '\controllers\ttc@contact');
 Router::any('ttcoffeesAjax', '\controllers\ttc@ttcoffeesAjax');
 Router::any('extraCoffeeAjax', '\controllers\ttc@extraCoffeeAjax');
 Router::any('sendContact', '\controllers\ttc@sendContact');
+Router::any('bloguploads', '\uploads\blog');
+
 
 Router::any('admin', '\controllers\admin\admin@index');
 Router::any('admin/login', '\controllers\admin\auth@login');

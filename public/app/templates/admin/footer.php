@@ -14,6 +14,7 @@ helpers\assets::js(array(
 ?>
 <script src="/bower_components/foundation/js/foundation.min.js"></script>
 <script src="/bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+<script id="facebook-jssdk" src="//connect.facebook.net/en_US/all.js"></script>
 <?php echo $data['js'];?>
 </body>
 </html>

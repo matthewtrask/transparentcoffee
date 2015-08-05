@@ -29,6 +29,21 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
+
+  <?php if (isset($data['post'])) : ?>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@_TTcoffee">
+    <meta name="twitter:title" content="<?php echo $data['post'][0]->postTitle . " | Transparent Trade Coffee";?>">
+    <meta name="twitter:creator" content="@_TTcoffee">
+    <-- Twitter Summary card images must be at least 120x120px -->
+    <meta name="twitter:image" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/app/uploads/blog/' . $data['post'][0]->postImg; ?>">
+
+    <meta property="og:title" content="<?php echo $data['post'][0]->postTitle . " | Transparent Trade Coffee";?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/app/uploads/blog/' . $data['post'][0]->postImg; ?>" />
+    <meta property="og:url" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
+<!--  <meta property="og:description" content="" />-->
+  <?php endif; ?>
 <!--  <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">-->
     <script src="/bower_components/modernizr/modernizr.js"></script>
 

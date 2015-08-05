@@ -36,10 +36,8 @@
 		}
 		?>
 		<hr/><p><em>Share on your favorite social media!</em></p>
-<!--		<a href="https://www.facebook.com/sharer/sharer.php?u=http://transparenttradecoffee.com/specialty-coffee-retail-price-index-2015-q2" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>-->
-<!--		<a class="btn" target="_blank" href="http://www.facebook.com/sharer.php?s=100&amp;p[title]=--><?php //echo urlencode($data['post'][0]->$postTitle);?><!--&amp;p[url]=--><?php //echo urlencode($_SERVER['REQUEST_URI']); ?><!--&amp;p[images][0]=--><?php //echo urlencode(YOUR_LINK_THUMBNAIL); ?><!--">share on facebook</a>-->
-		<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FTransparenttradecoffee.com%2Finsights&t=Insights%20of%20Transparent%20Trade%20Coffee" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
-  			<a href="https://twitter.com/intent/tweet?source=http%3A%2F%2FTransparenttradecoffee.com%2Finsights&text=Insights%20of%20Transparent%20Trade%20Coffee:%20http%3A%2F%2FTransparenttradecoffee.com%2Finsights&via=_ttcoffee" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-2x"></i></a>
-  			<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2FTransparenttradecoffee.com%2Finsights&title=Insights%20of%20Transparent%20Trade%20Coffee&summary=&source=http%3A%2F%2FTransparenttradecoffee.com%2Finsights" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);?>" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+  			<a href="https://twitter.com/share" data-url="<?php echo urlencode($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);?>" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-2x"></i></a>
+  			<a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);?>" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
 	</div>
 </div>

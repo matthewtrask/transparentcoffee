@@ -1,4 +1,5 @@
-<div class="row posts">		
+<?php session_start(); ?>
+<div class="row posts">
 	<div class="small-12 medium-12 large-12 columns">
 		<ul class="breadcrumbs">
 			<li><a href='<?php echo DIR;?>admin'>Admin</a></li>
@@ -15,7 +16,6 @@
 		<p>Title<br><input type='text' name='postTitle' value='<?php echo $data['row'][0]->postTitle;?>'></p>
 		<p>Description<br><textarea name='postDesc' rows='10' class='col-md-12'><?php echo stripslashes($data['row'][0]->postDesc);?></textarea></p>
 		<p>Content<br><textarea name='postCont' rows='10' class='col-md-12'><?php echo stripslashes($data['row'][0]->postCont);?></textarea></p>
-		<p>Image<br><input type='file' name='image' value=''></p>
 
 		<p>Category<br>
 			<select name='catID'>
@@ -38,6 +38,11 @@
 		</form>
 
 		<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-		<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+		<script type="text/javascript">bkLib.onDomLoaded( function() {
+				nicEditors.allTextAreas({
+					uploadURI : "/app/controllers/nicUpload.php"
+				});
+			});
+		</script>
 	</div>
 </div>

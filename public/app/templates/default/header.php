@@ -29,6 +29,34 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <?php if (isset($data['post'])) : ?>
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@_TTcoffee">
+        <meta name="twitter:title" content="<?php echo $data['post'][0]->postTitle . " | Transparent Trade Coffee";?>">
+        <meta name="twitter:creator" content="@_TTcoffee">
+        <meta name="twitter:description" content="testing a description">
+        <meta name="twitter:image" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/app/uploads/blog/' . $data['post'][0]->postImg; ?>">
+
+        <meta property="og:title" content="<?php echo $data['post'][0]->postTitle;?>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/app/uploads/blog/' . $data['post'][0]->postImg; ?>" />
+        <meta property="og:url" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
+        <!--  <meta property="og:description" content="" />-->
+    <?php endif; ?>
+    <?php if(!isset($data['post'])) :?>
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@_TTcoffee">
+        <meta name="twitter:title" content="Transparent Trade Coffee">
+        <meta name="twitter:creator" content="@_TTcoffee">
+        <meta name="twitter:description" content="Where specialty coffee consumers and direct trade roasters come together to share information and insights about the economic treatment of coffee growers.">
+        <meta name="twitter:image" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/app/templates/default/img/apple-touch-icon-180x180.png';?>">
+
+        <meta property="og:title" content="Transparent Trade Coffee" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Where specialty coffee consumers and direct trade roasters come together to share information and insights about the economic treatment of coffee growers."/>
+        <meta property="og:image" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/app/templates/default/img/apple-touch-icon-180x180.png';?>" />
+        <meta property="og:url" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
+    <?php endif;?>
   <link rel="author" href="humans.txt" />
   <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
   <script src="/bower_components/modernizr/modernizr.js"></script>
@@ -53,32 +81,42 @@
         echo '<body class="overflow-body">';
     }
 ?>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));
-  </script>
+<!--<div id="fb-root"></div>-->
+<!--<script>-->
+<!--//    window.fbAsyncInit = function() {-->
+<!--//        FB.init({-->
+<!--//            appId      : '140567202947112',-->
+<!--//            xfbml      : true,-->
+<!--//            version    : 'v2.4'-->
+<!--//        });-->
+<!--//    };-->
+<!---->
+<!--    (function(d, s, id){-->
+<!--        var js, fjs = d.getElementsByTagName(s)[0];-->
+<!--        if (d.getElementById(id)) {return;}-->
+<!--        js = d.createElement(s); js.id = id;-->
+<!--        js.src = "//connect.facebook.net/en_US/sdk.js";-->
+<!--        fjs.parentNode.insertBefore(js, fjs);-->
+<!--    }(document, 'script', 'facebook-jssdk'));-->
+<!--</script>-->
+<!--<script>-->
+<!--  window.twttr = (function(d, s, id) {-->
+<!--  var js, fjs = d.getElementsByTagName(s)[0],-->
+<!--    t = window.twttr || {};-->
+<!--  if (d.getElementById(id)) return t;-->
+<!--  js = d.createElement(s);-->
+<!--  js.id = id;-->
+<!--  js.src = "https://platform.twitter.com/widgets.js";-->
+<!--  fjs.parentNode.insertBefore(js, fjs);-->
+<!---->
+<!--  t._e = [];-->
+<!--  t.ready = function(f) {-->
+<!--    t._e.push(f);-->
+<!--  };-->
+<!---->
+<!--  return t;-->
+<!--}(document, "script", "twitter-wjs"));-->
+<!--//  </script>-->
 <div class="fixed">
     <nav class="top-bar" data-topbar role="navigation" id="nav">
         <ul class="title-area">

@@ -159,7 +159,7 @@
                     <div style="margin-bottom: 10px; margin-top: 5px;"><b>Effective Grower Share</b></div>
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
-                            <div class="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <div class="slider-egs" class="noUiSlider" style="margin-top: 25px; margin-bottom: 20px;"></div>
                             <input class="egs-lower" type="hidden" name="egs-lower">
                             <input class="egs-upper" type="hidden" name="egs-upper">
                         </div>

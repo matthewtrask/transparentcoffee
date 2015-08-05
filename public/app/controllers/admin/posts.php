@@ -76,14 +76,10 @@ class Posts extends \core\controller {
 					'catID'    => $catID
 				);
 
-				if($_FILES['image']['size'] > 0){
-					$file = 'images/'.$_FILES['image']['name'];
-					move_uploaded_file($_FILES['image']['tmp_name'], $file);
-					$data['postImg'] = $file;
-				}
+				$data['postImg'] = $_SESSION['image_name'];
 
 				$this->_model->insert_post($data);
-
+				unset($_SESSION['image_name']);
 				Session::set('message','Post added');
 				Url::redirect('admin/posts');
 
@@ -137,15 +133,13 @@ class Posts extends \core\controller {
 					'catID'    => $catID
 				);
 
-				if($_FILES['image']['size'] > 0){
-					$file = 'images/'.$_FILES['image']['name'];
-					move_uploaded_file($_FILES['image']['tmp_name'], $file);
-					$data['postImg'] = $file;
-				}
+				$data['postImg'] = $_SESSION['image_name'];
+
 
 				$where = array('postID' => $id);
 
 				$this->_model->update_post($data,$where);
+				unset($_SESSION['image_name']);
 
 				Session::set('message','Post Updated');
 				Url::redirect('admin/posts');
