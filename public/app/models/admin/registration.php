@@ -59,4 +59,20 @@ class Registration extends \core\model {
         }
     }
 
+    public function getCoffeeCount(){
+        return $this->_db->select('select count(*) AS "total_count" from '.PREFIX.'all_roasters;');
+    }
+
+    public function getApprovedCoffee(){
+        return $this->_db->select('select count(coffee_name) AS "total_count" from '.PREFIX.'coffee;');
+    }
+
+    public function getPendingCoffee(){
+        return $this->_db->select('select count(coffee_name) AS "total_count" from '.PREFIX.'coffee_pending;');
+    }
+
+    public function getArchiveCoffee(){
+        return $this->_db->select('select count(coffee_name) AS "total_count" from '.PREFIX.'coffee_archive');
+    }
+
 }
