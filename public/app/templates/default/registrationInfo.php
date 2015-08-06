@@ -9,7 +9,7 @@
 <div class="img-overlay-2">
     <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
-    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
+    [<?php echo helpers\url::template_path() . 'img/red-beans-slim.jpg'?>, (large)]
     "/>
     <noscript><img src="<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>"></noscript>
     <div class="text-wrapper">
@@ -81,8 +81,9 @@
 
             team@transparenttradecoffee.org
         </p>
+        <h3 class="sub-header">Register Now</h3>
         <div class="small-4 small-offset-4 columns">
-            <a href="register" class="button expand info">Complete Online<br>Registration Form</a>
+            <a href="register" class="button expand info my-button">Register</a>
         </div>
     </div>
 </div>

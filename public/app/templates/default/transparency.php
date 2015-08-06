@@ -9,15 +9,15 @@
 <div class="img-overlay">
     <img data-interchange="[<?php echo helpers\url::template_path() . 'img/transparency-half.jpg'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/transparency.jpg'?>, (medium)],
-    [<?php echo helpers\url::template_path() . 'img/transparency.jpg'?>, (large)]
+    [<?php echo helpers\url::template_path() . 'img/transparency-slim.jpg'?>, (large)]
     "/>
     <noscript><img src="<?php echo helpers\url::template_path() . 'img/transparency.png'?>"></noscript>
     <div class="text-wrapper">
         <div class="hide-for-small-down">
-            <h1 style="margin-top: -40px;" class="image-text">Transparency</h1>
+            <h1 style="margin-top: -5px;" class="image-text">Transparency</h1>
         </div>
         <div class="show-for-small-down">
-            <h1 style="margin-top: -20px;" class="image-text">Transparency</h1>
+            <h1 style="margin-top: 0px;" class="image-text">Transparency</h1>
         </div>
     </div>
 </div>

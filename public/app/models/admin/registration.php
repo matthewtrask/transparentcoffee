@@ -12,7 +12,7 @@ class Registration extends \core\model {
     }
 
     public function getPendingFileInfo($pendingCoffeeId) {
-        return $this->_db->select('SELECT file_name, file_type, file_size, gppp_confirmation
+        return $this->_db->select('SELECT file_name, file_type, file_size
                                    FROM '.PREFIX.'coffee_pending
                                    WHERE coffee_id = ' . $pendingCoffeeId)[0];
     }

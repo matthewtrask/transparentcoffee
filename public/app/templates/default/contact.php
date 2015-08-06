@@ -1,12 +1,15 @@
 <div class="img-overlay-2">
     <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
-    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
+    [<?php echo helpers\url::template_path() . 'img/red-beans-slim.jpg'?>, (large)]
     "/>
     <noscript><img src="<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>"></noscript>
     <div class="text-wrapper">
         <h2 class="image-text">Contact</h2>
     </div>
+</div>
+<div class="row">
+    <div id="alert-message" class="small-10 small-offset-1 columns"></div>
 </div>
 <div class="row">
     <h1 class="page-header text-center">Contact Us!</h1>
@@ -20,11 +23,8 @@
 
 
 <div class="row">
-    <div class="small-3 medium-3 large-3 columns">
-
-    </div>
-    <div class="small-6 medium-6 large-6 small-centered medium-centered large-centered columns">
-        <form action="" method="POST" data-abide class="custom light-font-bigger">
+    <div class="small-10 small-offset-1 medium-8 medium-offset-2 columns">
+        <form id="contactForm" action="" method="POST" data-abide class="custom light-font-bigger">
             <div class="row">
                 <div class="small-3 large-3 columns">
                     <label for="name" class="inline">Name:</label>
@@ -38,7 +38,7 @@
                     <label for="email" class="inline">Email</label>
                 </div>
                 <div class="small-9 large-9 centered columns input">
-                    <input name="email" class="formInput" type="text" placeholder="Email" for="eame" id="email" required>
+                    <input name="email" class="formInput" type="text" placeholder="Email" for="email" id="email" required>
                 </div>
             </div>
             <div class="row">
@@ -46,19 +46,20 @@
                     <label for="message" class="inline">Message:</label>
                 </div>
                 <div class="small-9 large-9 centered columns input">
-                    <textarea name="eessage" class="formInput" type="text" placeholder="Message" for="eessage" id="message" required></textarea>
+                    <textarea name="message" class="formInput" type="text" placeholder="Message" for="message" id="message" required></textarea>
                 </div>
             </div>
             <div class="row">
-                <div class="small-12 large-12 centered columns">
-                    <input id="submitButton" type="submit" value="Submit" class="button expand white-button">
+                <div class="small-6 small-offset-3 columns">
+                    <input id="submitButton" type="submit" value="Submit" class="button expand my-button">
                 </div>
             </div>
         </form>
-        <p>Stay in touch via Social Media.  Keep up with the latest news on Transparent Trade Coffee on <a target="_blank" href="https://www.facebook.com/transparentTrdCoffee">Facebook</a> and <a href="https://twitter.com/_ttcoffee" target="_blank">Twitter</a></p>
     </div>
-    <div class="small-3 medium-3 large-3 columns">
-
+</div>
+<div class="row">
+    <div class="small-10 small-offset-1 columns">
+        <p class="light-font-smaller">Stay in touch via Social Media.  Keep up with the latest news on Transparent Trade Coffee on <a target="_blank" href="https://www.facebook.com/transparentTrdCoffee">Facebook</a> and <a href="https://twitter.com/_ttcoffee" target="_blank">Twitter</a></p>
     </div>
 </div>
 

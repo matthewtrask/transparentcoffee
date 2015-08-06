@@ -15,7 +15,7 @@ $(document).ready(function(){
         //$("input:checkbox[name=type]:checked").each(function(){
         //    yourArray.push($(this).val());
         //});
-		var approvedCoffeeIds = $('input:checked');
+		var approvedCoffeeIds = $('#pendingForm input:checked');
         var data = '';
         for (var i = 0; i < approvedCoffeeIds.length; i++) {
             if (i == 0) {
@@ -40,9 +40,36 @@ $(document).ready(function(){
 			}
 		});
 	});
+    $('#reject').click( function(event) {
+        event.preventDefault();
+        var rejectedCoffeeIds = $('#pendingForm input:checked');
+        var data = '';
+        for (var i = 0; i < rejectedCoffeeIds.length; i++) {
+            if (i == 0) {
+                data += 'reject'
+            }
+            else {
+                data += '&reject'
+            }
+            data += i + '=' + rejectedCoffeeIds[i].name;
+        }
+
+        $.ajax({
+            url: "/rejectAjax",
+            type: "POST",
+            async: true,
+            cache: false,
+            data: data,
+            success: function(data){
+                window.location.reload();
+                //document.getElementById("pendingReg").innerHTML = data;
+                //console.log("It works");
+            }
+        });
+    });
 
     $('#archiveForm').submit(function(){
-        var archivedCoffeeIds = $('input:checked');
+        var archivedCoffeeIds = $('#archiveForm input:checked');
         var data = '';
         for (var i = 0; i < archivedCoffeeIds.length; i++){
             if(i == 0){
@@ -69,7 +96,7 @@ $(document).ready(function(){
     });
 
     $('#activeForm').submit(function(){
-        var activeCoffeeIds = $('input:checked');
+        var activeCoffeeIds = $('#activeForm input:checked');
         var data = '';
         for (var i = 0; i < activeCoffeeIds.length; i++){
             if (i == 0){
@@ -168,23 +195,6 @@ $(document).ready(function(){
             cache: false,
             success: function(data){
                 document.getElementById('active-roaster-section-' + id).innerHTML = data;
-            }
-        });
-    });
-
-    $(".activeForm").submit(function(){
-        var activeCoffeeEmail = $('.activeEmail:checked');
-        console.log('it works');
-        data = activeCoffeeEmail;
-        $.ajax({
-            url: '/activeEmailAjax',
-            type: 'POST',
-            async: true,
-            cache: false,
-            data: data,
-            success: function(){
-                //window.location.reload();
-                console.log(data);
             }
         });
     });

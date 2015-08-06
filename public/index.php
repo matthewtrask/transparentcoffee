@@ -80,13 +80,16 @@ Router::any('roasters', '\controllers\ttc@roasters');
 Router::any('contact', '\controllers\ttc@contact');
 Router::any('ttcoffeesAjax', '\controllers\ttc@ttcoffeesAjax');
 Router::any('extraCoffeeAjax', '\controllers\ttc@extraCoffeeAjax');
-Router::POST('contact', '\controllers\ttc@contact');
+Router::any('sendContact', '\controllers\ttc@sendContact');
+Router::any('bloguploads', '\uploads\blog');
+
 
 Router::any('admin', '\controllers\admin\admin@index');
 Router::any('admin/login', '\controllers\admin\auth@login');
 Router::any('logout', '\controllers\admin\auth@logout');
 Router::any('admin/pending', '\controllers\admin\admin@pending');
 Router::any('pendingAjax', '\controllers\admin\admin@pendingAjax');
+Router::any('rejectAjax', '\controllers\admin\admin@rejectAjax');
 Router::any('archiveAjax', '\controllers\admin\admin@archiveAjax');
 Router::any('activeAjax', '\controllers\admin\admin@activeAjax');
 Router::any('submitUpdate', '\controllers\admin\admin@submitUpdate');

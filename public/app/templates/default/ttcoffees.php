@@ -8,7 +8,11 @@
 ?>
 <div class="ttcoffees">
 <div class="img-overlay">
-    <img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>">
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets-slim.jpg'?>, (large)]
+    "/>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>"></noscript>
     <div class="text-wrapper">
         <h1 class="ttcoffee-header image-text">Transparently Traded Coffees</h1>
     </div>
@@ -25,11 +29,11 @@
 
 <div class="row">
   <div class="small-12 medium-12 large-12 column">
-    <p style="margin-top: 20px;">The following roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
+    <p style="margin-top: 20px;" class="light-font-smaller">The following roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
         We encourage you to consider the green prices paid to growers <b>(GPP)</b>, and/or the effective grower share <b>(EGS)</b> when making your purchase decisions.
         When you are satisfied with the economic treatment of the coffee farmer, click on the listing to go to the roaster's on-line store to learn more and to make your coffee purchase.
         <b>If you don’t see coffees from your favorite roaster listed here, please encourage them to <a class="hyperlink" href="register">register today.</b></a></p>
-      <br><p>
+      <br><p class="light-font-smaller">
           <i>* GPP = Green Price Per Pound</i>  <small><a href="#" data-reveal-id="gpp-view">Learn More</a></small><br>
           <i>* EGS = Effective Grower Share</i>  <small><a href="#" data-reveal-id="egs-view">Learn More</a></small
       </p>
@@ -89,7 +93,8 @@
                     <input id="centralAmer" type="checkbox" name="region[]" value="Central America"> Central America<br />
                     <input id="Africa" type="checkbox" name="region[]" value="Africa"> Africa<br />
                     <input id="MidEast" type="checkbox" name="region[]" value="Middle East"> Middle East<br />
-                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"> Pacific
+                    <input id="Pacific" type="checkbox" name="region[]" value="Pacific"> Pacific<br/>
+                    <input id="Other" type="checkbox" name="region[]" value="Other"> Other
                 </div>
             </dd>
             <dd class="accordion-navigation">
@@ -142,7 +147,8 @@
                             <input id="centralAmer" class='region' type="checkbox" name="region[]" value="Central America"> <span class='region'>Central America</span><br />
                             <input id="Africa" class='region' type="checkbox" name="region[]" value="Africa"> <span class='region'>Africa</span><br />
                             <input id="MidEast" class='region' type="checkbox" name="region[]" value="Middle East"> <span class='region'>Middle East</span><br />
-                            <input id="Pacific" class='region' type="checkbox" name="region[]" value="Pacific"> <span class='region'>Pacific</span>
+                            <input id="Pacific" class='region' type="checkbox" name="region[]" value="Pacific"> <span class='region'>Pacific</span><br/>
+                            <input id="Other" class='region' type="checkbox" name="region[]" value="Other"> <span class='region'>Other</span>
                         </div>
                     </dd>
                     </dl>
@@ -157,7 +163,7 @@
                     <div style="margin-bottom: 10px; margin-top: 5px;"><b>Effective Grower Share</b></div>
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
-                            <div class="slider-egs" class="noUiSlider" style="margin-top: 25px;"></div>
+                            <div class="slider-egs" class="noUiSlider" style="margin-top: 25px; margin-bottom: 20px;"></div>
                             <input class="egs-lower" type="hidden" name="egs-lower">
                             <input class="egs-upper" type="hidden" name="egs-upper">
                         </div>
