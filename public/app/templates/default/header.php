@@ -34,7 +34,7 @@
         <meta name="twitter:site" content="@_TTcoffee">
         <meta name="twitter:title" content="<?php echo $data['post'][0]->postTitle . " | Transparent Trade Coffee";?>">
         <meta name="twitter:creator" content="@_TTcoffee">
-        <meta name="twitter:description" content="testing a description">
+        <meta name="twitter:description" content="Where specialty coffee consumers and direct trade roasters come together to share information and insights about the economic treatment of coffee growers.">
         <meta name="twitter:image" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . '/app/uploads/blog/' . $data['post'][0]->postImg; ?>">
 
         <meta property="og:title" content="<?php echo $data['post'][0]->postTitle;?>" />
