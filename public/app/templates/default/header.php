@@ -121,11 +121,11 @@
     <nav class="top-bar" data-topbar role="navigation" id="nav">
         <ul class="title-area">
             <li class="name"><!-- Leave this empty --></li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            <li class="toggle-topbar menu-icon"><a href="home"><span><img id="header-logo-mobile" src="apple-touch-icon-180x180.png"/></span></a></li>
         </ul>
         <section class="top-bar-section">
             <ul>
-                <li class="show-for-small-only"><a href="home"><i class="fa fa-home"></i></a></li>
+                <li class="show-for-small-only"><a href="home">HOME</a></li>
                 <li class="has-dropdown">
                     <a class="dropdown-link" href="#">ABOUT</a>
                     <ul id="nav-dropdown" class="dropdown">
