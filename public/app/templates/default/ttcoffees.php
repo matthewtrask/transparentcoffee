@@ -8,7 +8,11 @@
 ?>
 <div class="ttcoffees">
 <div class="img-overlay">
-    <img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>">
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets-slim.jpg'?>, (large)]
+    "/>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>"></noscript>
     <div class="text-wrapper">
         <h1 class="ttcoffee-header image-text">Transparently Traded Coffees</h1>
     </div>
