@@ -58,15 +58,14 @@
         <meta property="og:url" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
     <?php endif;?>
   <link rel="author" href="humans.txt" />
-  <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
-  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.min.css">
+  <script src="/bower_components/modernizr/modernizr.min.js"></script>
 	<!-- CSS -->
 	<?php
 		helpers\assets::css(array(
 			//'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
             '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
-            "//cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css",
-			helpers\url::template_path() . 'css/main.css',
+			helpers\url::template_path() . 'css/main.min.css',
             helpers\url::template_path() . 'css/jquery.nouislider.min.css'
 		))
 	?>
