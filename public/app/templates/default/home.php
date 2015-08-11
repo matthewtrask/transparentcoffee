@@ -1,9 +1,9 @@
 <div class="img-overlay">
-    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/beans-in-hand-fourth.jpg'?>, (small)],
-    [<?php echo helpers\url::template_path() . 'img/beans-in-hand-half.jpg'?>, (medium)],
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/beans-in-hand-mobile.png'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/beans-in-hand-fourth.jpg'?>, (medium)],
     [<?php echo helpers\url::template_path() . 'img/beans-in-hand-slim.jpg'?>, (large)]
     "/>
-    <noscript><img src="<?php echo helpers\url::template_path() . 'img/beans-in-hand-half.jpg'?>"></noscript>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/beans-in-hand-fourth.jpg'?>"></noscript>
     <div class="text-wrapper">
         <h1 class="image-text">Transparent Trade Coffee</h1>
     </div>
@@ -75,5 +75,5 @@
 </div>
 <div class="row">
     <a href="#"><img id="home-bottom-logo" src="<?php echo helpers\url::template_path() .
-            'img/Transparent-Trade-Tan-Large-08-10.png'?>"/></a>
+            'img/ttc-bottom-page.png'?>"/></a>
 </div>

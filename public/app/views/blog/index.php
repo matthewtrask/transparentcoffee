@@ -1,5 +1,5 @@
 <div class="img-overlay-2">
-    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/farm2-half.png'?>, (small)],
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/farm2-mobile.png'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/farm2-half.png'?>, (medium)],
     [<?php echo helpers\url::template_path() . 'img/farm2-slim.png'?>, (large)]
     "/>
