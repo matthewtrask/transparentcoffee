@@ -59,18 +59,19 @@
     <?php endif;?>
   <link rel="author" href="humans.txt" />
   <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.min.css">
-  <script src="/bower_components/modernizr/modernizr.min.js"></script>
-	<!-- CSS -->
-	<?php
-		helpers\assets::css(array(
-			//'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
-            '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
-			helpers\url::template_path() . 'css/main.min.css',
-            helpers\url::template_path() . 'css/jquery.nouislider.min.css'
-		))
-	?>
+    <!-- CSS -->
+    <?php
+    helpers\assets::css(array(
+        //'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
+        '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
+        helpers\url::template_path() . 'css/main.min.css',
+        helpers\url::template_path() . 'css/jquery.nouislider.min.css'
+    ))
+    ?>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
+<!--  <script src="/bower_components/modernizr/modernizr.min.js"></script>-->
+
 
 </head><?php
     if ($data['title'] == 'Transparent Coffees') {
