@@ -42,7 +42,7 @@
     </div>
 </div>
 <div class="row">
-    <div class='small-10 small-offset-1 columns' id="insights">
+    <div class='small-12 medium-10 medium-offset-1 columns' id="insights">
         <?php
         if($data['posts']){
             foreach($data['posts'] as $row){
@@ -62,7 +62,7 @@
                     echo "<h3 class='sub-header'><a href='".DIR."$row->postSlug'>$row->postTitle</a></h3>\n";
                     echo "<div class='light-font-bigger'><p>Posted on ".date('jS M Y', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p></div>";
                         echo "<div class='content light-font-smaller'>".stripslashes($row->postDesc)."</div>";
-                        echo "<div class='small-6 medium-4 small-offset-3 medium-offset-4 columns'><p><a href='".DIR."$row->postSlug' class='flat-white-btn button expand'>Read More</a></p></div>";
+                        echo "<div class='small-8 medium-4 small-offset-2 medium-offset-4 columns'><p><a href='".DIR."$row->postSlug' class='flat-white-btn button expand'>Read More</a></p></div>";
                     echo "</div>";
 
 

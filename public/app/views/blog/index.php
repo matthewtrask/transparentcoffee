@@ -35,7 +35,7 @@
 //					echo "<div class='col-md-9'>";
 						echo "<p>Posted on ".date('jS M Y H:i', strtotime($row->postDate))." in <a href='".DIR."category/$row->catSlug'>$row->catTitle</a></p>";
 						echo "<div class='content'>".stripslashes($row->postDesc)."</div>";
-						echo "<div class='small-6 medium-4 large-2 small-offset-3 medium-offset-4 large-offset-5 columns'><p><a href='".DIR."$row->postSlug' style='margin-top: 20px' class='button expand flat-white-btn' id='insightButton'>Read More</a></p></div>";
+						echo "<div class='small-8 medium-4 large-2 small-offset-2 medium-offset-4 large-offset-5 columns'><p><a href='".DIR."$row->postSlug' style='margin-top: 20px' class='button expand flat-white-btn' id='insightButton'>Read More</a></p></div>";
 //					echo "</div>";
 				echo "</div>";
 

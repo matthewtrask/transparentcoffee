@@ -438,10 +438,10 @@ class ttc extends \core\controller {
             </div>
         </div>
         <div class="row" id="previous-coffee-button">
-            <div class="small-4 small-offset-2 small-text-center columns">
+            <div class="small-4 small-offset-1 medium-offset-2 small-text-center columns">
                 <a id="extra-coffee" name="<?php echo $number + 1?>" class="button flat-grey-btn tiny extra-coffee">Add Another Coffee</a>
             </div>
-            <div class="small-4 small-text-center end columns">
+            <div class="small-4 small-offset-2 medium-offset-0 small-text-center end columns">
                 <a id="remove-coffee" name="<?php echo $number?>" class="button flat-grey-btn tiny remove-coffee">Remove Coffee #<?php echo $number?></a>
             </div>
         </div>

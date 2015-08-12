@@ -222,7 +222,7 @@
                 </div>
             </div>
             <hr/>
-            <div class="small-offset-4 small-4 columns">
+            <div class="small-6 small-offset-3 medium-offset-4 medium-4 columns">
                 <input id="registrationSubmit" type="submit" value="Submit" class="button expand flat-white-btn">
             </div>
         </form>
