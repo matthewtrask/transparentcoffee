@@ -83,7 +83,7 @@
         </p>
         <h3 class="sub-header">Register Now</h3>
         <div class="small-4 small-offset-4 columns">
-            <a href="register" class="button expand info my-button">Register</a>
+            <a href="register" class="button expand flat-white-btn">Register</a>
         </div>
     </div>
 </div>

@@ -217,13 +217,13 @@
             <div id="extra-coffees">
                 <div class="row" id="previous-coffee-button">
                     <div class="small-12 small-text-center columns">
-                        <a name="2" id="extra-coffee" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+                        <a name="2" id="extra-coffee" class="button flat-grey-btn tiny extra-coffee">Add Another Coffee</a>
                     </div>
                 </div>
             </div>
             <hr/>
             <div class="small-offset-4 small-4 columns">
-                <input id="registrationSubmit" type="submit" value="Submit" class="button expand my-button">
+                <input id="registrationSubmit" type="submit" value="Submit" class="button expand flat-white-btn">
             </div>
         </form>
     </div>

@@ -255,13 +255,13 @@ class ttc extends \core\controller {
                                     echo '</div>';
                                 echo '</div>';
                                 echo '<div class="row">';
-                                    echo '<div class="small-offset-1 small-6 medium-offset-3 medium-5 columns text-center">';
+                                    echo '<div class="small-offset-1 small-10 medium-offset-1 medium-10 large-offset-2 large-8 columns text-center">';
                                         echo '<div class="row">';
-                                            echo '<div class="small-2 medium-2 columns">';
+                                            echo '<div class="small-6 medium-6 columns">';
                                                 echo "<div class='square'>$" . number_format($ttcoffee->gppp, 2) . '</div>';
                                                 echo "<div class='abbreviation'>GPP</div>";
                                             echo '</div>';
-                                            echo '<div class="small-2 medium-2 columns">';
+                                            echo '<div class="small-6 medium-6 columns">';
                                                 echo "<div class='circle'>" . round($ttcoffee->egs, 1) . "%</div>";
                                                 echo "<div class='abbreviation'>EGS</div>";
                                             echo '</div>';
@@ -438,11 +438,11 @@ class ttc extends \core\controller {
             </div>
         </div>
         <div class="row" id="previous-coffee-button">
-            <div class="small-3 small-offset-3 small-text-center columns">
-                <a id="extra-coffee" name="<?php echo $number + 1?>" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+            <div class="small-4 small-offset-2 small-text-center columns">
+                <a id="extra-coffee" name="<?php echo $number + 1?>" class="button flat-grey-btn tiny extra-coffee">Add Another Coffee</a>
             </div>
-            <div class="small-3 small-text-center end columns">
-                <a id="remove-coffee" name="<?php echo $number?>" class="button secondary tiny remove-coffee">Remove Coffee #<?php echo $number?></a>
+            <div class="small-4 small-text-center end columns">
+                <a id="remove-coffee" name="<?php echo $number?>" class="button flat-grey-btn tiny remove-coffee">Remove Coffee #<?php echo $number?></a>
             </div>
         </div>
         <?php

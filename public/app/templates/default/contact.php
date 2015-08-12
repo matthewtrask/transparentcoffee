@@ -50,8 +50,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="small-6 small-offset-3 columns">
-                    <input id="submitButton" type="submit" value="Submit" class="button expand my-button">
+                <div class="small-6 small-offset-3 medium-5 medium-offset-3 columns">
+                    <input id="submitButton" type="submit" value="Submit" class="button expand flat-white-btn">
                 </div>
             </div>
         </form>
