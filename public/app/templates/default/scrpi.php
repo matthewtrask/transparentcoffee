@@ -1,5 +1,9 @@
 <div class="img-overlay">
-    <img src="<?php echo helpers\url::template_path() . 'img/Baskets.jpg'?>">
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/Baskets-mobile.png'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets-half.png'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets-slim.png'?>, (large)]
+    "/>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/Baskets-half.png'?>"></noscript>
     <div class="text-wrapper">
         <h1 class="scrpi-header image-text">Specialty Coffee Retail Price Index</h1>
     </div>

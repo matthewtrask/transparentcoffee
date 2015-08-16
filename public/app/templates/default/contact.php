@@ -1,7 +1,7 @@
 <div class="img-overlay-2">
-    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-quarter.jpg'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
-    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
+    [<?php echo helpers\url::template_path() . 'img/red-beans-slim.jpg'?>, (large)]
     "/>
     <noscript><img src="<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>"></noscript>
     <div class="text-wrapper">
@@ -50,8 +50,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="small-6 small-offset-3 columns">
-                    <input id="submitButton" type="submit" value="Submit" class="button expand my-button">
+                <div class="small-6 small-offset-3 medium-5 medium-offset-3 columns">
+                    <input id="submitButton" type="submit" value="Submit" class="button expand flat-white-btn">
                 </div>
             </div>
         </form>

@@ -7,11 +7,11 @@
  */
 ?>
 <div class="img-overlay">
-    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/transparency-half.jpg'?>, (small)],
-    [<?php echo helpers\url::template_path() . 'img/transparency.jpg'?>, (medium)],
-    [<?php echo helpers\url::template_path() . 'img/transparency.jpg'?>, (large)]
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/transparency-mobile.png'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/transparency-half.jpg'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/transparency-slim.jpg'?>, (large)]
     "/>
-    <noscript><img src="<?php echo helpers\url::template_path() . 'img/transparency.png'?>"></noscript>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/transparency-half.jpg'?>"></noscript>
     <div class="text-wrapper">
         <h1 id="seg-header" class="image-text">Powered by<br>Social Enterprise @ Goizueta</h1>
     </div>

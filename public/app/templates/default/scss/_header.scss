@@ -40,6 +40,11 @@ html,body
   margin-bottom: 5px;
   width: 40px;
 }
+#header-logo-mobile {
+  margin-top: -3px;
+  //margin-bottom: 5px;
+  width: 40px;
+}
 
 @media #{$medium-only} {
   .top-bar-section ul li a {

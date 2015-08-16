@@ -8,7 +8,11 @@
 ?>
 <div class="ttcoffees">
 <div class="img-overlay">
-    <img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>">
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/Baskets-mobile.png'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets-half.png'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets-slim.png'?>, (large)]
+    "/>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/Baskets-slim.png'?>"></noscript>
     <div class="text-wrapper">
         <h1 class="ttcoffee-header image-text">Transparently Traded Coffees</h1>
     </div>
@@ -254,18 +258,18 @@
                         </div>
                         <div class="small-12 medium-6 columns">
                             <div class="row">
-                                <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>" target="_blank"><img class='quick-view-logo' src='<?php echo $ttcoffee->roaster_logo ?>'/></a></div>
+                                <div class="show-for-medium-up medium-12 large-offset-2 large-8 columns"><a href="<?php echo $ttcoffee->url?>" target="_blank"><img class='quick-view-logo' src='<?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
                             <div class="row">
-                                <div class="small-offset-1 small-6 medium-offset-3 medium-5 columns text-center">
+                                <div class="small-offset-1 small-10 medium-offset-1 medium-10 large-offset-2 large-8 columns text-center">
                                     <div class="row">
-                                        <div class="small-2 medium-2 columns">
+                                        <div class="small-6 medium-6 columns">
                                             <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
                                             <div class="abbreviation">GPP</div>
                                         </div>
-                                        <div class="small-2 medium-2 columns">
+                                        <div class="small-6 medium-6 columns">
                                             <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
-                                            <div class="abbreviation">EGS</div>
+                                            <div class="abbreviation" style="margin-left: 0;">EGS</div>
                                         </div>
                                     </div>
                                 </div>

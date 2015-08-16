@@ -7,9 +7,9 @@
  */
 ?>
 <div class="img-overlay-2">
-    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-quarter.jpg'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
-    [<?php echo helpers\url::template_path() . 'img/red-beans-cropped.jpg'?>, (large)]
+    [<?php echo helpers\url::template_path() . 'img/red-beans-slim.jpg'?>, (large)]
     "/>
     <noscript><img src="<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>"></noscript>
     <div class="text-wrapper">
@@ -217,13 +217,13 @@
             <div id="extra-coffees">
                 <div class="row" id="previous-coffee-button">
                     <div class="small-12 small-text-center columns">
-                        <a name="2" id="extra-coffee" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+                        <a name="2" id="extra-coffee" class="button flat-grey-btn tiny extra-coffee">Add Another Coffee</a>
                     </div>
                 </div>
             </div>
             <hr/>
-            <div class="small-offset-4 small-4 columns">
-                <input id="registrationSubmit" type="submit" value="Submit" class="button expand my-button">
+            <div class="small-6 small-offset-3 medium-offset-4 medium-4 columns">
+                <input id="registrationSubmit" type="submit" value="Submit" class="button expand flat-white-btn">
             </div>
         </form>
     </div>
