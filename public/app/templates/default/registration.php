@@ -129,7 +129,7 @@
                         <label for="coffeePrice" class="inline">Retail Price:</label>
                     </div>
                     <div class="small-8 medium-9 large-9 columns">
-                        <input name="coffeePrice" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice" id="coffeePrice" required pattern="number">
+                        <input name="coffeePrice" class="regInput" type="text" pattern="[$]{4,}" placeholder="Retail Price" for="coffeePrice" id="coffeePrice" required pattern="number">
                         <small class="error">Please enter a valid retail price for this coffee</small>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                         <label for="coffeeGPPP" class="inline">Coffee Green Price Per Pound Paid:</label>
                     </div>
                     <div class="small-8 medium-9 large-9 columns">
-                        <input name="coffeeGPPP" class="regInput" type="text" placeholder="Amount (in USD) that Farmer receives per pound" for="coffeeGPPP" id="coffeeGPPP" required pattern="number">
+                        <input name="coffeeGPPP" class="regInput" type="text" pattern="[$]{4,}" placeholder="Amount (in USD) that Farmer receives per pound" for="coffeeGPPP" id="coffeeGPPP" required pattern="number">
                         <small class="error">Please enter a valid green price per pound paid for this coffee</small>
                     </div>
                 </div>
