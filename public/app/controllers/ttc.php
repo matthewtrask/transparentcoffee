@@ -432,7 +432,6 @@ class ttc extends \core\controller {
                     <label for="greenPPP-<?php echo $number?>" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
                 </div>
                 <div class="small-7 medium-7 large-7 columns">
-                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                     <input name="greenPPP-<?php echo $number?>" class="regInput" type="file" placeholder="greenPPP" for="greenPPP-<?php echo $number?>" id="greenPPP-<?php echo $number?>">
                 </div>
             </div>
@@ -468,17 +467,16 @@ class ttc extends \core\controller {
             $fileType = NULL;
         }
         $allowed_filetypes = array('.jpg','.jpeg','.png','.gif');
-        $max_filesize = 10485760;
+//        $max_filesize = 10485760;
         $upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
-
         $imageName = $_FILES['roasterImage']['name'];
         $ext = substr($imageName, strpos($imageName,'.'), strlen($imageName)-1);
 
         if(!in_array($ext,$allowed_filetypes))
             die('The file you attempted to upload is not allowed.');
 
-        if(filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
-            die('The file you attempted to upload is too large.');
+//        if(filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
+//            die('The file you attempted to upload is too large.');
 
         if(!is_writable($upload_path))
             die('You cannot upload to the specified directory, please CHMOD it to 777.');

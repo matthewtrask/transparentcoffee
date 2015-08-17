@@ -208,7 +208,6 @@
                         <label for="greenPPP" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
                     </div>
                     <div class="small-7 medium-7 large-7 columns">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                         <input name="greenPPP" class="regInput" type="file" placeholder="greenPPP" for="greenPPP" id="greenPPP">
                     </div>
                 </div>
