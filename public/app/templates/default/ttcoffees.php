@@ -32,7 +32,7 @@
     <p style="margin-top: 20px;" class="light-font-smaller">TTC registered roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
         We encourage you to consider the green prices paid to growers <b>(GPP*)</b>, and/or the effective grower share <b>(EGS*)</b> when making your coffee purchase decisions.
         When you are satisfied with the economic treatment of the coffee grower, click on the listing to go directly to the roaster's on-line store to learn more and to make your coffee purchase.
-        <b>If you don’t see any coffees from your favorite roasters listed here, please encourage them to <a class="hyperlink" href="registerinfo">register today.</b></a></p>
+        <b>If you don’t see any coffees from your favorite roasters, please encourage them to <a class="hyperlink" href="registrationinfo">register today.</b></a></p>
       <br><p class="light-font-smaller">
           <i>* GPP = Green Price Per Pound</i>  <small><a href="#" data-reveal-id="gpp-view">Learn More</a></small><br>
           <i>* EGS = Effective Grower Share</i>  <small><a href="#" data-reveal-id="egs-view">Learn More</a></small

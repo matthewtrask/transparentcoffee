@@ -208,7 +208,7 @@ class ttc extends \core\controller {
                                             echo number_format($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
                                         }
                                         echo ' per ' . $ttcoffee->bag_size . 'oz</li>';
-                                    echo "<li><em>Green Price:</em> $" . round($ttcoffee->gppp, 2) . " per pound</li>";
+                                    echo "<li><em>Green Price:</em> $" . number_format($ttcoffee->gppp, 2) . " per pound</li>";
                                 echo '</ul>';
                             echo '</div>';
                             echo '<div class="small-4 medium-3 large-3 columns">';

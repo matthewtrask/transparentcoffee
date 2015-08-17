@@ -8,25 +8,26 @@
         <h2 class="image-text">Insights</h2>
     </div>
 </div>
+<div class="insights">
 <div class="row" style="margin-top: 40px;">
 	<div class="small-10 small-offset-1 large-12 large-offset-0 columns">
-		<p class='light-font-smaller'>Our team of researchers share their analysis and other interesting insights about coffee
+		<p class='light-font-smaller'>Our team of researchers regularly share their analysis and other interesting insights about specialty coffee
 
-			markets, roasters, producers and more.  Visit often and feel free to share with those in
+			markets, roasters, growers and more.  Visit often and feel free to share TTC Insights with others in
 
 			your networks.</p>
 	</div>
 </div>
-<div class='row' style="margin-top: 20px">
+<div class='row' style="">
 	<div class='small-10 small-offset-1 large-12 large-offset-0 columns'>
 
 		<?php
 		if($data['posts']){
 			foreach($data['posts'] as $row){
 
-				echo "<div class='post'>\n";
+				echo "<div class='post'>";
 
-				echo "<h2><a href='".DIR."$row->postSlug'>$row->postTitle</a></h2>\n";
+				echo "<div class='row'><h2><a href='".DIR."$row->postSlug'>$row->postTitle</a></h2></div>\n";
 				echo "<div class='row'>";
 //					echo "<div class='col-md-3'>";
 						//echo "<p><img src='".DIR."$row->postImg' class='img-responsive'></p>";
@@ -39,7 +40,8 @@
 //					echo "</div>";
 				echo "</div>";
 
-				echo "</div>\n";
+				echo "</div>";
+
 			}
 		}
 		?>
@@ -61,3 +63,4 @@
 
 <div class='clearfix'></div>
 <?php echo $data['page_links']; ?>
+</div>
