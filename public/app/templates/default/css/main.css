@@ -294,6 +294,12 @@ select {
 .post h3 a:hover, .post h2 a:hover {
   color: black !important; }
 
+.home-post h3 a, .home-post h2 a {
+  color: black !important; }
+
+.home-post h3 a:hover, .home-post h2 a:hover {
+  color: black !important; }
+
 .img-overlay-2 {
   background-color: black; }
   .img-overlay-2 img {

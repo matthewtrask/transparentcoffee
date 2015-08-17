@@ -47,7 +47,7 @@
         if($data['posts']){
             foreach($data['posts'] as $row){
 
-                echo "<div class='post home-post'>\n";
+                echo "<div style='margin-top: 20px;' class='home-post'>\n";
                     echo '<div class="row">';
                         echo '<div class="small-offset-1 small-10 columns" style="text-align: center;">';
                             echo "<h1 class='page-header'><b>Current TTC Insight</b></h1>";
