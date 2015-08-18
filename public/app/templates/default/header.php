@@ -70,7 +70,6 @@
     ?>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
-<!--  <script src="/bower_components/modernizr/modernizr.min.js"></script>-->
 
 
 </head><?php

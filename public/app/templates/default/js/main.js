@@ -23,6 +23,7 @@ $(document).ready(function(){
     }
     flowText();
   $('#submitButton').click(function(e){
+      $(document).foundation('alert','events');
       e.preventDefault();
       var data = $('#contactForm').serialize();
      $.ajax({
@@ -33,10 +34,12 @@ $(document).ready(function(){
          cache: false,
        success: function(data){
            document.getElementById('alert-message').innerHTML = data;
+           $(document).foundation('alert','events');
        },
        error: function(data){
            document.getElementById('alert-message').innerHTML = data;
-       }
+          $(document).foundation('alert','events');
+        }
      });
   });
 
