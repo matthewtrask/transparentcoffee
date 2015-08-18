@@ -27,6 +27,13 @@
 .post h3 a:hover, .post h2 a:hover {
   color: black !important;
 }
+.home-post h3 a, .home-post h2 a {
+  color: black !important;
+}
+.home-post h3 a:hover, .home-post h2 a:hover {
+  color: black !important;
+}
+
 
 .img-overlay-2 {
   background-color: black;
@@ -99,9 +106,9 @@
   background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
   background-color:#768d87;
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-  border-radius:3px;
+  -moz-border-radius:3px !important;
+  -webkit-border-radius:3px !important;
+  border-radius:3px !important;
   border:1px solid darkslategrey !important;
   display:inline-block;
   cursor:pointer;
@@ -129,9 +136,9 @@
   -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff !important;
   box-shadow:inset 0px 1px 0px 0px #ffffff !important;
   background-color: transparent !important;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
+  -moz-border-radius:6px !important;
+  -webkit-border-radius:6px !important;
+  border-radius:6px !important;
   border:2px solid #666666 !important;
   display:inline-block;
   cursor:pointer;
@@ -153,7 +160,55 @@
   top:1px !important;
 }
 
+.flat-white-btn {
+  display: inline-block !important;
+  color: #666 !important;
+  background-color: white !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  //font-size: 12px;
+  //padding: 10px 30px;
+  border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -webkit-border-radius: 5px !important;
+  border: 1px solid rgba(0,0,0,0.5) !important;
+  border-bottom-width: 3px !important;
+}
 
+.flat-white-btn:hover {
+  background-color: #FCFCFC !important;
+  border-color: rgba(0,0,0,0.6) !important;
+}
+
+.flat-white-btn:active {
+  background-color: #FAFAFA !important;
+  border-color: rgba(0,0,0,.9) !important;
+}
+
+.flat-grey-btn {
+  display: inline-block !important;
+  color: #666 !important;
+  background-color: #eee !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  //font-size: 12px;
+  //padding: 10px 30px;
+  border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -webkit-border-radius: 5px !important;
+  border: 1px solid rgba(0,0,0,0.3) !important;
+  border-bottom-width: 3px !important;
+}
+
+.flat-grey-btn:hover {
+  background-color: #e3e3e3 !important;
+  border-color: rgba(0,0,0,0.5) !important;
+}
+
+.flat-grey-btn:active {
+  background-color: #CCC !important;
+  border-color: rgba(0,0,0,0.9) !important;
+}
 
 #home-bottom-logo {
   width: 10%;

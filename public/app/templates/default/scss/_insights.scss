@@ -6,3 +6,74 @@ div.fb-like.fb_iframe_widget {
 #insightButton {
   //background-color:
 }
+
+
+@media #{$large-up} {
+  .post {
+    width: 110% !important;
+    //height: 50% !important;
+    position: relative;
+    padding: 5% 5% 0 5%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    left: -5%;
+    top: -5%;
+    background-color: #F5F5F5 !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important;
+  }
+}
+
+@media #{$medium-only} {
+  .post {
+    width: 115% !important;
+    //height: 50% !important;
+    position: relative;
+    padding: 8% 8% 0 8%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    left: -8%;
+    top: -8%;
+    background-color: #F5F5F5 !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important;
+  }
+}
+
+@media #{$small-only} {
+  .post {
+    width: 120% !important;
+    //height: 50% !important;
+    position: relative;
+    padding: 10% 10% 0 10%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    left: -10%;
+    top: -10%;
+    background-color: #F5F5F5 !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .post {
+    width: 120% !important;
+    //height: 50% !important;
+    position: relative;
+    padding: 15% 15% 0 15%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-left: 6% !important;
+    margin-right: 6% !important;
+    left: -15%;
+    top: -15%;
+    background-color: #F5F5F5 !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important;
+  }
+}

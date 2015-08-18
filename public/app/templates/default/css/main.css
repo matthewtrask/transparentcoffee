@@ -294,6 +294,12 @@ select {
 .post h3 a:hover, .post h2 a:hover {
   color: black !important; }
 
+.home-post h3 a, .home-post h2 a {
+  color: black !important; }
+
+.home-post h3 a:hover, .home-post h2 a:hover {
+  color: black !important; }
+
 .img-overlay-2 {
   background-color: black; }
   .img-overlay-2 img {
@@ -361,9 +367,9 @@ select {
   background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
   background-color: #768d87;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -moz-border-radius: 3px !important;
+  -webkit-border-radius: 3px !important;
+  border-radius: 3px !important;
   border: 1px solid darkslategrey !important;
   display: inline-block;
   cursor: pointer;
@@ -391,9 +397,9 @@ select {
   -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff !important;
   box-shadow: inset 0px 1px 0px 0px #ffffff !important;
   background-color: transparent !important;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
+  -moz-border-radius: 6px !important;
+  -webkit-border-radius: 6px !important;
+  border-radius: 6px !important;
   border: 2px solid #666666 !important;
   display: inline-block;
   cursor: pointer;
@@ -409,6 +415,46 @@ select {
 .transparent-button:active {
   position: relative !important;
   top: 1px !important; }
+
+.flat-white-btn {
+  display: inline-block !important;
+  color: #666 !important;
+  background-color: white !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -webkit-border-radius: 5px !important;
+  border: 1px solid rgba(0, 0, 0, 0.5) !important;
+  border-bottom-width: 3px !important; }
+
+.flat-white-btn:hover {
+  background-color: #FCFCFC !important;
+  border-color: rgba(0, 0, 0, 0.6) !important; }
+
+.flat-white-btn:active {
+  background-color: #FAFAFA !important;
+  border-color: rgba(0, 0, 0, 0.9) !important; }
+
+.flat-grey-btn {
+  display: inline-block !important;
+  color: #666 !important;
+  background-color: #eee !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -webkit-border-radius: 5px !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  border-bottom-width: 3px !important; }
+
+.flat-grey-btn:hover {
+  background-color: #e3e3e3 !important;
+  border-color: rgba(0, 0, 0, 0.5) !important; }
+
+.flat-grey-btn:active {
+  background-color: #CCC !important;
+  border-color: rgba(0, 0, 0, 0.9) !important; }
 
 #home-bottom-logo {
   width: 10%;
@@ -920,7 +966,9 @@ div.ttcoffee:not(:hover) {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px; }
 
 .website-link a {
   color: #2A5DB0; }
@@ -949,20 +997,24 @@ div.ttcoffee:not(:hover) {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  font-size: 28px;
+  font-size: 26px;
   width: 95px;
   height: 95px;
   line-height: 95px;
-  white-space: nowrap; }
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto; }
 
 .square {
   margin-top: 5px;
   border: 3px solid black;
-  font-size: 28px;
+  font-size: 26px;
   width: 90px;
   height: 90px;
   line-height: 90px;
-  white-space: nowrap; }
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto; }
 
 #slider-egs {
   margin-bottom: 10px; }
@@ -988,7 +1040,8 @@ div.ttcoffee:not(:hover) {
   background: #B0B0B0 none repeat scroll 0% 0% !important; }
 
 .abbreviation {
-  margin-left: 30px !important; }
+  margin-left: auto !important;
+  margin-right: auto !important; }
 
 @media only screen and (min-width: 40.063em) {
   .dropdown-btn {
@@ -1031,16 +1084,14 @@ div.ttcoffee:not(:hover) {
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
   .circle {
     font-size: 16px !important;
-    width: 55px !important;
-    height: 55px !important;
-    line-height: 55px !important; }
+    width: 70px !important;
+    height: 70px !important;
+    line-height: 70px !important; }
   .square {
     font-size: 16px !important;
-    width: 50px !important;
-    height: 50px !important;
-    line-height: 50px !important; }
-  .abbreviation {
-    margin-left: 8px !important; }
+    width: 65px !important;
+    height: 65px !important;
+    line-height: 65px !important; }
   .dropdown-ul {
     width: 135px !important; }
     .dropdown-ul li {
@@ -1183,6 +1234,64 @@ div.ttcoffee:not(:hover) {
 div.fb-like.fb_iframe_widget {
   margin-left: 25px;
   margin-bottom: 20px; }
+
+@media only screen and (min-width: 64.063em) {
+  .post {
+    width: 110% !important;
+    position: relative;
+    padding: 5% 5% 0 5%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    left: -5%;
+    top: -5%;
+    background-color: #F5F5F5 !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important; } }
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .post {
+    width: 115% !important;
+    position: relative;
+    padding: 8% 8% 0 8%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    left: -8%;
+    top: -8%;
+    background-color: #F5F5F5 !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important; } }
+
+@media only screen and (max-width: 40em) {
+  .post {
+    width: 120% !important;
+    position: relative;
+    padding: 10% 10% 0 10%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    left: -10%;
+    top: -10%;
+    background-color: #F5F5F5 !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important; } }
+
+@media only screen and (max-width: 450px) {
+  .post {
+    width: 120% !important;
+    position: relative;
+    padding: 15% 15% 0 15%;
+    margin-bottom: 80px;
+    margin-top: 20px;
+    margin-left: 6% !important;
+    margin-right: 6% !important;
+    left: -15%;
+    top: -15%;
+    background-color: #F5F5F5 !important;
+    border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    -webkit-border-radius: 2px !important; } }
 
 .ttcFooter {
   font-family: RalewayLight;

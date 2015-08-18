@@ -58,20 +58,20 @@
         <meta property="og:url" content="<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
     <?php endif;?>
   <link rel="author" href="humans.txt" />
-  <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">
-  <script src="/bower_components/modernizr/modernizr.js"></script>
-	<!-- CSS -->
-	<?php
-		helpers\assets::css(array(
-			//'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
-            '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
-            "//cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css",
-			helpers\url::template_path() . 'css/main.css',
-            helpers\url::template_path() . 'css/jquery.nouislider.min.css'
-		))
-	?>
+  <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.min.css">
+    <!-- CSS -->
+    <?php
+    helpers\assets::css(array(
+        //'//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
+        '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
+        helpers\url::template_path() . 'css/main.min.css',
+        helpers\url::template_path() . 'css/jquery.nouislider.min.css'
+    ))
+    ?>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/bower_components/slick-1.5.0/slick/slick-theme.css"/>
+<!--  <script src="/bower_components/modernizr/modernizr.min.js"></script>-->
+
 
 </head><?php
     if ($data['title'] == 'Transparent Coffees') {
@@ -136,7 +136,7 @@
                 <li><a href="transparentcoffees">TT COFFEES</a></li>
                 <li><a href="registrationinfo">REGISTER</a></li>
                 <li id="li-header-logo"><a href="home"><img id="header-logo" src="<?php echo helpers\url::template_path() .
-                    'img/Transparent%20Trade%20White-08-09.png'?>"/></a></li>
+                    'img/ttc-header-logo.png'?>"/></a></li>
                 <li><a href="insights">INSIGHTS</a></li>
                 <li class="has-dropdown">
                     <a class="dropdown-link" href="#">SCRPI</a>

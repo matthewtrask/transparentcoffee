@@ -208,7 +208,7 @@ class ttc extends \core\controller {
                                             echo number_format($ttcoffee->retail_price, 2) . ' (' . $ttcoffee->currency . ')';
                                         }
                                         echo ' per ' . $ttcoffee->bag_size . 'oz</li>';
-                                    echo "<li><em>Green Price:</em> $" . round($ttcoffee->gppp, 2) . " per pound</li>";
+                                    echo "<li><em>Green Price:</em> $" . number_format($ttcoffee->gppp, 2) . " per pound</li>";
                                 echo '</ul>';
                             echo '</div>';
                             echo '<div class="small-4 medium-3 large-3 columns">';
@@ -255,13 +255,13 @@ class ttc extends \core\controller {
                                     echo '</div>';
                                 echo '</div>';
                                 echo '<div class="row">';
-                                    echo '<div class="small-offset-1 small-6 medium-offset-3 medium-5 columns text-center">';
+                                    echo '<div class="small-offset-1 small-10 medium-offset-1 medium-10 large-offset-2 large-8 columns text-center">';
                                         echo '<div class="row">';
-                                            echo '<div class="small-2 medium-2 columns">';
+                                            echo '<div class="small-6 medium-6 columns">';
                                                 echo "<div class='square'>$" . number_format($ttcoffee->gppp, 2) . '</div>';
                                                 echo "<div class='abbreviation'>GPP</div>";
                                             echo '</div>';
-                                            echo '<div class="small-2 medium-2 columns">';
+                                            echo '<div class="small-6 medium-6 columns">';
                                                 echo "<div class='circle'>" . round($ttcoffee->egs, 1) . "%</div>";
                                                 echo "<div class='abbreviation'>EGS</div>";
                                             echo '</div>';
@@ -432,17 +432,16 @@ class ttc extends \core\controller {
                     <label for="greenPPP-<?php echo $number?>" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
                 </div>
                 <div class="small-7 medium-7 large-7 columns">
-                    <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                     <input name="greenPPP-<?php echo $number?>" class="regInput" type="file" placeholder="greenPPP" for="greenPPP-<?php echo $number?>" id="greenPPP-<?php echo $number?>">
                 </div>
             </div>
         </div>
         <div class="row" id="previous-coffee-button">
-            <div class="small-3 small-offset-3 small-text-center columns">
-                <a id="extra-coffee" name="<?php echo $number + 1?>" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+            <div class="small-4 small-offset-1 medium-offset-2 small-text-center columns">
+                <a id="extra-coffee" name="<?php echo $number + 1?>" class="button flat-grey-btn tiny extra-coffee">Add Another Coffee</a>
             </div>
-            <div class="small-3 small-text-center end columns">
-                <a id="remove-coffee" name="<?php echo $number?>" class="button secondary tiny remove-coffee">Remove Coffee #<?php echo $number?></a>
+            <div class="small-4 small-offset-2 medium-offset-0 small-text-center end columns">
+                <a id="remove-coffee" name="<?php echo $number?>" class="button flat-grey-btn tiny remove-coffee">Remove Coffee #<?php echo $number?></a>
             </div>
         </div>
         <?php
@@ -468,17 +467,16 @@ class ttc extends \core\controller {
             $fileType = NULL;
         }
         $allowed_filetypes = array('.jpg','.jpeg','.png','.gif');
-        $max_filesize = 10485760;
+//        $max_filesize = 10485760;
         $upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
-
         $imageName = $_FILES['roasterImage']['name'];
         $ext = substr($imageName, strpos($imageName,'.'), strlen($imageName)-1);
 
         if(!in_array($ext,$allowed_filetypes))
             die('The file you attempted to upload is not allowed.');
 
-        if(filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
-            die('The file you attempted to upload is too large.');
+//        if(filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
+//            die('The file you attempted to upload is too large.');
 
         if(!is_writable($upload_path))
             die('You cannot upload to the specified directory, please CHMOD it to 777.');

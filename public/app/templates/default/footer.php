@@ -34,20 +34,17 @@
 <?php
 helpers\assets::js(array(
     helpers\url::template_path() . 'js/jquery.js',
-    helpers\url::template_path() . '//cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js',
-    helpers\url::template_path() . 'js/main.js',
+    helpers\url::template_path() . 'js/main.min.js',
     helpers\url::template_path() . 'js/jquery.nouislider.all.min.js',
     helpers\url::template_path() . 'js/zepto.min.js',
-    helpers\url::template_path() . 'js/jquery.liblink.js',
-    helpers\url::template_path() . 'js/flowtype.js',
+    helpers\url::template_path() . 'js/jquery.liblink.min.js',
+    helpers\url::template_path() . 'js/flowtype.min.js',
 ))
 ?>
 <script src="/bower_components/foundation/js/foundation.min.js"></script>
-<script src="/bower_components/foundation/js/foundation/foundation.accordion.js"></script>
-<script src="/bower_components/foundation/js/foundation/foundation.reveal.js"></script>
-<script src="/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="/bower_components/fastclick/lib/fastclick.min.js"></script>
 <script type="text/javascript" src="/bower_components/slick-1.5.0/slick/slick.min.js"></script>
-<script type="text/javascript" src="/app/templates/default/js/slick.js"></script>
+<script type="text/javascript" src="/app/templates/default/js/slick.min.js"></script>
 
 <script>
     $("#swap").on("replace", function() {

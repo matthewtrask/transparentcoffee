@@ -7,7 +7,7 @@
  */
 ?>
 <div class="img-overlay-2">
-    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (small)],
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-quarter.jpg'?>, (small)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-cropped-half.jpg'?>, (medium)],
     [<?php echo helpers\url::template_path() . 'img/red-beans-slim.jpg'?>, (large)]
     "/>
@@ -92,7 +92,7 @@
                     <label for="roasterURL" class="inline">Roaster Website:</label>
                 </div>
                 <div class="small-8 medium-9 large-9 columns">
-                    <input name="roasterURL" class="regInput" type="text" placeholder="Roaster Website Home URL" for="roasterURL" id="roasterURL" required>
+                    <input name="roasterURL" class="regInput" type="text" placeholder="Roaster Website Home URL" for="roasterURL" id="roasterURL">
                     <small class="error">Please enter a valid roaster website</small>
                 </div>
             </div>
@@ -101,10 +101,19 @@
                     <label for="roasterImage" class="inline">Roaster Logo:</label>
                 </div>
                 <div class="small-8 medium-9 large-9 columns">
-                    <input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage" required>
+                    <input name="roasterImage" class="regInput" type="file" for="roasterImage"  id="roasterImage">
                     <small class="error">Please attach a valid roaster logo</small>
                 </div>
-            </div><hr />
+                <div class="small-12 columns" style="margin-top: -15px;">
+                    &nbsp;&nbsp;<small><i>*Note: Description, website, and logo are not required for roasters who have previously registered coffees with us.</i></small>
+                </div>
+            </div>
+<!--            <div class="row">-->
+<!--                <div class="small-12 columns">-->
+<!--                    <small><i>*Note: A logo is not required for roasters who have previously registered coffees with us.</i></small>-->
+<!--                </div>-->
+<!--            </div>-->
+            <hr />
             <div id="coffee-1">
                 <div class="row">
                     <h3 class="sub-header">Coffee #1</h3>
@@ -125,12 +134,17 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="small-4 medium-3 large-3 columns">
+                    <div class="small-2 medium-2 large-2 columns">
                         <label for="coffeePrice" class="inline">Retail Price:</label>
+                    </div>
+                    <div class="small-2 medium-1 columns">
+                        <div class="small-offset-11 columns">
+                            <label class="inline">$</label>
+                        </div>
                     </div>
                     <div class="small-8 medium-9 large-9 columns">
                         <input name="coffeePrice" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice" id="coffeePrice" required pattern="number">
-                        <small class="error">Please enter a valid retail price for this coffee</small>
+                        <small class="error">Please enter a valid retail price amount without any currency signs</small>
                     </div>
                 </div>
                 <div class="row">
@@ -152,12 +166,17 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="small-4 medium-3 large-3 columns">
-                        <label for="coffeeGPPP" class="inline">Coffee Green Price Per Pound Paid:</label>
+                    <div class="small-2 columns">
+                        <label for="coffeeGPPP" class="inline">Green Price Per Pound Paid:</label>
+                    </div>
+                    <div class="small-2 medium-1 columns">
+                        <div class="small-offset-11 columns">
+                            <label class="inline">$</label>
+                        </div>
                     </div>
                     <div class="small-8 medium-9 large-9 columns">
                         <input name="coffeeGPPP" class="regInput" type="text" placeholder="Amount (in USD) that Farmer receives per pound" for="coffeeGPPP" id="coffeeGPPP" required pattern="number">
-                        <small class="error">Please enter a valid green price per pound paid for this coffee</small>
+                        <small class="error">Please enter a valid green price per pound paid for this coffee without any currency signs</small>
                     </div>
                 </div>
                 <div class="row">
@@ -208,7 +227,6 @@
                         <label for="greenPPP" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
                     </div>
                     <div class="small-7 medium-7 large-7 columns">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                         <input name="greenPPP" class="regInput" type="file" placeholder="greenPPP" for="greenPPP" id="greenPPP">
                     </div>
                 </div>
@@ -217,13 +235,13 @@
             <div id="extra-coffees">
                 <div class="row" id="previous-coffee-button">
                     <div class="small-12 small-text-center columns">
-                        <a name="2" id="extra-coffee" class="button secondary tiny extra-coffee">Add Another Coffee</a>
+                        <a name="2" id="extra-coffee" class="button flat-grey-btn tiny extra-coffee">Add Another Coffee</a>
                     </div>
                 </div>
             </div>
             <hr/>
-            <div class="small-offset-4 small-4 columns">
-                <input id="registrationSubmit" type="submit" value="Submit" class="button expand my-button">
+            <div class="small-6 small-offset-3 medium-offset-4 medium-4 columns">
+                <input id="registrationSubmit" type="submit" value="Submit" class="button expand flat-white-btn">
             </div>
         </form>
     </div>

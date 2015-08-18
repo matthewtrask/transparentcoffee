@@ -8,11 +8,11 @@
 ?>
 <div class="ttcoffees">
 <div class="img-overlay">
-    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>, (small)],
-    [<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>, (medium)],
-    [<?php echo helpers\url::template_path() . 'img/Baskets-slim.jpg'?>, (large)]
+    <img data-interchange="[<?php echo helpers\url::template_path() . 'img/Baskets-mobile.png'?>, (small)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets-half.png'?>, (medium)],
+    [<?php echo helpers\url::template_path() . 'img/Baskets-slim.png'?>, (large)]
     "/>
-    <noscript><img src="<?php echo helpers\url::template_path() . 'img/Baskets_small.jpg'?>"></noscript>
+    <noscript><img src="<?php echo helpers\url::template_path() . 'img/Baskets-slim.png'?>"></noscript>
     <div class="text-wrapper">
         <h1 class="ttcoffee-header image-text">Transparently Traded Coffees</h1>
     </div>
@@ -29,10 +29,10 @@
 
 <div class="row">
   <div class="small-12 medium-12 large-12 column">
-    <p style="margin-top: 20px;" class="light-font-smaller">The following roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
-        We encourage you to consider the green prices paid to growers <b>(GPP)</b>, and/or the effective grower share <b>(EGS)</b> when making your purchase decisions.
-        When you are satisfied with the economic treatment of the coffee farmer, click on the listing to go to the roaster's on-line store to learn more and to make your coffee purchase.
-        <b>If you don’t see coffees from your favorite roaster listed here, please encourage them to <a class="hyperlink" href="register">register today.</b></a></p>
+    <p style="margin-top: 20px;" class="light-font-smaller">TTC registered roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
+        We encourage you to consider the green prices paid to growers <b>(GPP*)</b>, and/or the effective grower share <b>(EGS*)</b> when making your coffee purchase decisions.
+        When you are satisfied with the economic treatment of the coffee grower, click on the listing to go directly to the roaster's on-line store to learn more and to make your coffee purchase.
+        <b>If you don’t see any coffees from your favorite roasters, please encourage them to <a class="hyperlink" href="registrationinfo">register today.</b></a></p>
       <br><p class="light-font-smaller">
           <i>* GPP = Green Price Per Pound</i>  <small><a href="#" data-reveal-id="gpp-view">Learn More</a></small><br>
           <i>* EGS = Effective Grower Share</i>  <small><a href="#" data-reveal-id="egs-view">Learn More</a></small
@@ -258,18 +258,18 @@
                         </div>
                         <div class="small-12 medium-6 columns">
                             <div class="row">
-                                <div class="show-for-medium-up medium-offset-2 medium-8 columns"><a href="<?php echo $ttcoffee->url?>" target="_blank"><img class='quick-view-logo' src='<?php echo $ttcoffee->roaster_logo ?>'/></a></div>
+                                <div class="show-for-medium-up medium-12 large-offset-2 large-8 columns"><a href="<?php echo $ttcoffee->url?>" target="_blank"><img class='quick-view-logo' src='<?php echo $ttcoffee->roaster_logo ?>'/></a></div>
                             </div>
                             <div class="row">
-                                <div class="small-offset-1 small-6 medium-offset-3 medium-5 columns text-center">
+                                <div class="small-offset-1 small-10 medium-offset-1 medium-10 large-offset-2 large-8 columns text-center">
                                     <div class="row">
-                                        <div class="small-2 medium-2 columns">
+                                        <div class="small-6 medium-6 columns">
                                             <div class="square">$<?php echo number_format($ttcoffee->gppp, 2)?></div>
                                             <div class="abbreviation">GPP</div>
                                         </div>
-                                        <div class="small-2 medium-2 columns">
+                                        <div class="small-6 medium-6 columns">
                                             <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
-                                            <div class="abbreviation">EGS</div>
+                                            <div class="abbreviation" style="margin-left: 0;">EGS</div>
                                         </div>
                                     </div>
                                 </div>
