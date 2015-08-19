@@ -79,6 +79,13 @@
                     <small class="error">Please enter a valid roaster name</small>
                 </div>
             </div>
+            <br>
+            <div class="row">
+                <div class="small-12 columns">
+                <h6 class="light-font-smaller">If this is your first time registering, please also provide the following:</h6>
+                </div>
+            </div>
+            <br>
             <div class="row">
                 <div class="small-4 medium-3 large-3 columns">
                     <label for="roasterDescription" class="inline">Roaster Description:</label>
