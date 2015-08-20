@@ -56,6 +56,18 @@ class ttc extends \core\model
         $result = (array) $this->_db->select("SELECT roaster_name FROM ".PREFIX."roaster WHERE roaster_id = '" . $officialRoasterId . "'")[0];
         return $result['roaster_name'];
     }
+    public function getPendingRoasterIdFromCoffeeId($coffeeId) {
+        $result = (array) $this->_db->select("SELECT roaster_id FROM ".PREFIX."coffee_pending WHERE coffee_id = '" . $coffeeId. "'")[0];
+        return $result['roaster_id'];
+    }
+    public function getActiveRoasterIdFromCoffeeId($coffeeId) {
+        $result = (array) $this->_db->select("SELECT roaster_id FROM ".PREFIX."coffee WHERE coffee_id = '" . $coffeeId. "'")[0];
+        return $result['roaster_id'];
+    }
+    public function getArchiveRoasterIdFromCoffeeId($coffeeId) {
+        $result = (array) $this->_db->select("SELECT roaster_id FROM ".PREFIX."coffee_archive WHERE coffee_id = '" . $coffeeId. "'")[0];
+        return $result['roaster_id'];
+    }
     public function approveCoffee($pendingCoffeeId){
 
         $pendingCoffee = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE coffee_id = '.$pendingCoffeeId)[0];
@@ -66,12 +78,17 @@ class ttc extends \core\model
         //stop roaster from getting deleted before all its coffees have been approved
         $roasterCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE roaster_id = '.$pendingRoasterId);
 
+        //stop grower from getting deleted before all its coffees have been approved
+        $growerCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE grower_id = '.$pendingGrowerId);
+
         $pendingGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower_pending WHERE grower_id = '.$pendingGrowerId)[0];
         unset($pendingGrower['grower_id']);
         $this->_db->insert(PREFIX.'grower', $pendingGrower);
         $officialGrowerId = $this->_db->lastInsertId();
-        $growerData = array('grower_id' => $pendingGrowerId);
-        $this->_db->delete(PREFIX."grower_pending", $growerData);
+        if (count($growerCount) == 1) {
+            $growerData = array('grower_id' => $pendingGrowerId);
+            $this->_db->delete(PREFIX . "grower_pending", $growerData);
+        }
 
         $pendingRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$pendingRoasterId)[0];
         unset($pendingRoaster['roaster_id']);
@@ -103,14 +120,24 @@ class ttc extends \core\model
         //stop roaster from getting deleted before all its coffees have been approved
         $roasterCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE roaster_id = '.$pendingRoasterId);
 
+        //stop grower from getting deleted before all its coffees have been approved
+        $growerCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE grower_id = '.$pendingGrowerId);
+
+
         $pendingGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower_pending WHERE grower_id = '.$pendingGrowerId)[0];
         unset($pendingGrower['grower_id']);
         $this->_db->insert(PREFIX.'grower', $pendingGrower);
         $officialGrowerId = $this->_db->lastInsertId();
         $pendingGrower['grower_id'] = $officialGrowerId;
         $this->_db->insert(PREFIX.'grower_archive', $pendingGrower);
-        $growerData = array('grower_id' => $pendingGrowerId);
-        $this->_db->delete(PREFIX."grower_pending", $growerData);
+        if (count($growerCount) == 1) {
+            $growerData = array('grower_id' => $pendingGrowerId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
+            $this->_db->delete(PREFIX . "grower_pending", $growerData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
+        }
 
         $pendingRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$pendingRoasterId)[0];
         unset($pendingRoaster['roaster_id']);
@@ -120,7 +147,7 @@ class ttc extends \core\model
             $officialRoaster = (array) $this->_db->select("SELECT * FROM ".PREFIX."roaster WHERE roaster_name = '".$pendingRoaster['roaster_name'] . "'")[0];
             $officialRoasterId = $officialRoaster['roaster_id'];
             $pendingRoaster['roaster_id'] = $officialRoasterId;
-            $this->_db->insert(PREFIX.'roaster_archive', $pendingRoaster);
+            $this->_db->insert(PREFIX.'roaster_archive', $pendingRoaster, true);
 
             $pendingCoffee['grower_id']  = $officialGrowerId;
             $pendingCoffee['roaster_id'] = $officialRoasterId;
@@ -129,11 +156,15 @@ class ttc extends \core\model
             $pendingCoffee['coffee_id'] = $officialCoffeeId;
 
             $growerData = array('grower_id' => $officialGrowerId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX."grower", $growerData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
         else {
             $pendingRoaster['roaster_id'] = $officialRoasterId;
-            $this->_db->insert(PREFIX . 'roaster_archive', $pendingRoaster);
+            $this->_db->insert(PREFIX . 'roaster_archive', $pendingRoaster, true);
 
             $pendingCoffee['grower_id']  = $officialGrowerId;
             $pendingCoffee['roaster_id'] = $officialRoasterId;
@@ -142,14 +173,26 @@ class ttc extends \core\model
             $pendingCoffee['coffee_id'] = $officialCoffeeId;
 
             $growerData = array('grower_id' => $officialGrowerId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX."grower", $growerData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
 
             $roasterData = array('roaster_id' => $officialRoasterId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX . "roaster", $roasterData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
         if (count($roasterCount) == 1) {
             $roasterData = array('roaster_id' => $pendingRoasterId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX . "roaster_pending", $roasterData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
 
         $this->_db->insert(PREFIX.'coffee_archive', $pendingCoffee);
@@ -171,11 +214,20 @@ class ttc extends \core\model
         //stop roaster from being inserted to active if it's already there
         $archiveRoasterCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_archive WHERE roaster_id = '.$activeRoasterId);
 
+        //stop grower from leaving active before all its coffees have been approved
+        $activeGrowerCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee WHERE grower_id = '.$activeGrowerId);
+
+        //stop grower from being inserted to active if it's already there
+        $archiveGrowerCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_archive WHERE grower_id = '.$activeGrowerId);
 
         $activeGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower WHERE grower_id = '.$activeGrowerId)[0];
-        $this->_db->insert(PREFIX.'grower_archive', $activeGrower);
-        $growerData = array('grower_id' => $activeGrowerId);
-        $this->_db->delete(PREFIX."grower", $growerData);
+        if ((count($archiveGrowerCount) == 0)||(!isset($archiveGrowerCount))) {
+            $this->_db->insert(PREFIX . 'grower_archive', $activeGrower);
+        }
+        if ($activeGrowerCount == 1) {
+            $growerData = array('grower_id' => $activeGrowerId);
+            $this->_db->delete(PREFIX . "grower", $growerData);
+        }
 
         $activeRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster WHERE roaster_id = '.$activeRoasterId)[0];
         if ((count($archiveRoasterCount) == 0)||(!isset($archiveRoasterCount))) {
@@ -203,10 +255,20 @@ class ttc extends \core\model
         //stop roaster from being inserted to active if it's already there
         $activeRoasterCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee WHERE roaster_id = '.$archiveRoasterId);
 
+        //stop grower from leaving archive before all its coffees have been approved
+        $archiveGrowerCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_archive WHERE grower_id = '.$archiveGrowerId);
+
+        //stop grower from being inserted to active if it's already there
+        $activeGrowerCount = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee WHERE grower_id = '.$archiveGrowerId);
+
         $archiveGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower_archive WHERE grower_id = '.$archiveGrowerId)[0];
-        $this->_db->insert(PREFIX.'grower', $archiveGrower);
-        $growerData = array('grower_id' => $archiveGrowerId);
-        $this->_db->delete(PREFIX."grower_archive", $growerData);
+        if ((count($activeGrowerCount) == 0)||(!isset($activeGrowerCount))) {
+            $this->_db->insert(PREFIX . 'grower', $archiveGrower);
+        }
+        if (count($archiveGrowerCount) == 1) {
+            $growerData = array('grower_id' => $archiveGrowerId);
+            $this->_db->delete(PREFIX . "grower_archive", $growerData);
+        }
 
         $archiveRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_archive WHERE roaster_id = '.$archiveRoasterId)[0];
         if ((count($activeRoasterCount) == 0)||(!isset($activeRoasterCount))) {
@@ -236,12 +298,20 @@ class ttc extends \core\model
         );
         $this->_db->update(PREFIX."coffee_pending", $coffee, $coffeeWhere);
 
-        $result = (array) $this->_db->select('SELECT grower_id, roaster_id FROM '.PREFIX.'coffee_pending WHERE coffee_id = '.$coffeeId)[0];
-        $growerId = $result['grower_id'];
-        $roasterId = $result['roaster_id'];
-        $result = (array) $this->_db->select('SELECT contact_id FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$roasterId)[0];
-        var_dump($result);
-        $contactId = $result['contact_id'];
+        if (isset($roaster)) {
+            $result = (array)$this->_db->select('SELECT grower_id, roaster_id FROM ' . PREFIX . 'coffee_pending WHERE coffee_id = ' . $coffeeId)[0];
+            $growerId = $result['grower_id'];
+            $roasterId = $result['roaster_id'];
+            $result = (array)$this->_db->select('SELECT contact_id FROM ' . PREFIX . 'roaster_pending WHERE roaster_id = ' . $roasterId)[0];
+            $contactId = $result['contact_id'];
+        }
+        else {
+            $result = (array)$this->_db->select('SELECT grower_id FROM ' . PREFIX . 'coffee_pending WHERE coffee_id = ' . $coffeeId)[0];
+            $growerId = $result['grower_id'];
+            $roasterId = $coffee['roaster_id'];
+            $result = (array)$this->_db->select('SELECT contact_id FROM ' . PREFIX . 'roaster_pending WHERE roaster_id = ' . $roasterId)[0];
+            $contactId = $result['contact_id'];
+        }
 
         $contactWhere = array(
             'contact_id' => $contactId
@@ -269,11 +339,20 @@ class ttc extends \core\model
      * @param $grower array of new grower info (minus grower id)
      */
     public function archiveUpdate($coffeeId, $contact, $roaster, $coffee, $grower) {
-        $result = (array) $this->_db->select('SELECT grower_id, roaster_id FROM '.PREFIX.'coffee_archive WHERE coffee_id = '.$coffeeId)[0];
-        $growerId = $result['grower_id'];
-        $roasterId = $result['roaster_id'];
-        $result = (array) $this->_db->select('SELECT contact_id FROM '.PREFIX.'roaster_archive WHERE roaster_id = '.$roasterId)[0];
-        $contactId = $result['contact_id'];
+        if (isset($roaster)) {
+            $result = (array)$this->_db->select('SELECT grower_id, roaster_id FROM ' . PREFIX . 'coffee_archive WHERE coffee_id = ' . $coffeeId)[0];
+            $growerId = $result['grower_id'];
+            $roasterId = $result['roaster_id'];
+            $result = (array)$this->_db->select('SELECT contact_id FROM ' . PREFIX . 'roaster_archive WHERE roaster_id = ' . $roasterId)[0];
+            $contactId = $result['contact_id'];
+        }
+        else {
+            $result = (array)$this->_db->select('SELECT grower_id FROM ' . PREFIX . 'coffee_archive WHERE coffee_id = ' . $coffeeId)[0];
+            $growerId = $result['grower_id'];
+            $roasterId = $coffee['roaster_id'];
+            $result = (array)$this->_db->select('SELECT contact_id FROM ' . PREFIX . 'roaster_archive WHERE roaster_id = ' . $roasterId)[0];
+            $contactId = $result['contact_id'];
+        }
 
         $contactWhere = array(
             'contact_id' => $contactId
@@ -307,11 +386,20 @@ class ttc extends \core\model
      * @param $grower array of new grower info (minus grower id)
      */
     public function activeUpdate($coffeeId, $contact, $roaster, $coffee, $grower) {
-        $result = (array) $this->_db->select('SELECT grower_id, roaster_id FROM '.PREFIX.'coffee WHERE coffee_id = '.$coffeeId)[0];
-        $growerId = $result['grower_id'];
-        $roasterId = $result['roaster_id'];
-        $result = (array) $this->_db->select('SELECT contact_id FROM '.PREFIX.'roaster WHERE roaster_id = '.$roasterId)[0];
-        $contactId = $result['contact_id'];
+        if (isset($roaster)) {
+            $result = (array)$this->_db->select('SELECT grower_id, roaster_id FROM ' . PREFIX . 'coffee WHERE coffee_id = ' . $coffeeId)[0];
+            $growerId = $result['grower_id'];
+            $roasterId = $result['roaster_id'];
+            $result = (array)$this->_db->select('SELECT contact_id FROM ' . PREFIX . 'roaster WHERE roaster_id = ' . $roasterId)[0];
+            $contactId = $result['contact_id'];
+        }
+        else {
+            $result = (array)$this->_db->select('SELECT grower_id FROM ' . PREFIX . 'coffee WHERE coffee_id = ' . $coffeeId)[0];
+            $growerId = $result['grower_id'];
+            $roasterId = $coffee['roaster_id'];
+            $result = (array)$this->_db->select('SELECT contact_id FROM ' . PREFIX . 'roaster WHERE roaster_id = ' . $roasterId)[0];
+            $contactId = $result['contact_id'];
+        }
 
         $contactWhere = array(
             'contact_id' => $contactId

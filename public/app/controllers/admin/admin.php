@@ -128,13 +128,13 @@ class Admin extends \core\controller
 			$upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
 
 			$imageName = $_FILES['roasterImage']['name'];
-			$ext = substr($imageName, strpos($imageName, '.'), strlen($imageName) - 1);
+			$ext = pathinfo($imageName, PATHINFO_EXTENSION);
 
 			if (!in_array($ext, $allowed_filetypes))
 				die('The file you attempted to upload is not allowed.');
 
-			if (filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
-				die('The file you attempted to upload is too large.');
+//			if (filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
+//				die('The file you attempted to upload is too large.');
 
 			if (!is_writable($upload_path))
 				die('You cannot upload to the specified directory, please CHMOD it to 777.');
@@ -156,29 +156,36 @@ class Admin extends \core\controller
 		$email = $_POST['submitEmail'];
         if ($_POST['roasterName']) {
             $roaster = $_POST['roasterName'];
-            $roasterDescription = $_POST['roasterDescription'];
+			if (isset($roasterDescription)) {
+				$roasterDescription = $_POST['roasterDescription'];
+			} else { $roasterDescription = NULL;}
             if ($parts = parse_url($_POST["roasterWebsite"])) {
                 if (!isset($parts["scheme"])) {
                     $_POST["roasterWebsite"] = "http://" . $_POST["roasterWebsite"];
                 }
             }
-            $roasterURL = $_POST['roasterURL'];
+			if (isset($roasterURL)) {
+				$roasterURL = $_POST['roasterURL'];
+			} else {$roasterURL = NULL;}
             $existingRoaster = NULL;
         }
         else {
             $existingRoaster = $_POST['existingRoaster'];
         }
 		$coffeeName = $_POST['coffeeName'];
-		$coffeeDescription = $_POST['coffeeDescription'];
+		if (isset($_POST['coffeeDescription'])) {
+			$coffeeDescription = $_POST['coffeeDescription'];
+		} else {$coffeeDescription = NULL;}
 		$coffeePrice = $_POST['coffeePrice'];
 		$coffeeCurrency = $_POST['coffeeCurrency'];
-		if ( $parts = parse_url($_POST["coffeeWebsite"]) ) {
-			if ( !isset($parts["scheme"]) )
-			{
-				$_POST["coffeeWebsite"] = "http://" . $_POST["coffeeWebsite"];
+		if (isset($_POST["coffeeWebsite"])) {
+			if ($parts = parse_url($_POST["coffeeWebsite"])) {
+				if (!isset($parts["scheme"])) {
+					$_POST["coffeeWebsite"] = "http://" . $_POST["coffeeWebsite"];
+				}
 			}
-		}
-		$coffeeWebsite = $_POST['coffeeWebsite'];
+			$coffeeWebsite = $_POST['coffeeWebsite'];
+		} else {$coffeeWebsite = NULL;}
 		$bagSize = $_POST['coffeeBagSize'];
 		$coffeeGPPP = $_POST['coffeeGPPP'];
         $coffeeEGS = $_POST['coffeeEGS'];
@@ -194,8 +201,8 @@ class Admin extends \core\controller
         if (!isset($existingRoaster)) {
             $roaster = array(
                 'roaster_name' => filter_var($roaster, FILTER_SANITIZE_STRING),
-                'roaster_description' => filter_var($roasterDescription, FILTER_SANITIZE_STRING),
-                'roaster_url' => filter_var($roasterURL, FILTER_SANITIZE_URL)
+                'roaster_description' => filter_var($roasterDescription, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE),
+                'roaster_url' => filter_var($roasterURL, FILTER_SANITIZE_URL, FILTER_NULL_ON_FAILURE)
             );
             if (isset($roasterImage)) {
                 $roaster['roaster_logo'] = $roasterImage;
@@ -207,13 +214,13 @@ class Admin extends \core\controller
 
 		$coffee = array (
 			'coffee_name'  => filter_var($coffeeName, FILTER_SANITIZE_STRING),
-			'description'  => filter_var($coffeeDescription, FILTER_SANITIZE_STRING),
+			'description'  => filter_var($coffeeDescription, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE ),
 			'retail_price' => filter_var($coffeePrice, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
 			'currency' 	   => filter_var($coffeeCurrency, FILTER_SANITIZE_STRING),
 			'bag_size' 	   => filter_var($bagSize, FILTER_SANITIZE_NUMBER_INT),
 			'gppp'         => filter_var($coffeeGPPP, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ),
             'egs'          => filter_var($coffeeEGS, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ),
-			'url'          => filter_var($coffeeWebsite, FILTER_VALIDATE_URL),
+			'url'          => filter_var($coffeeWebsite, FILTER_VALIDATE_URL, FILTER_NULL_ON_FAILURE),
 		);
         if (isset($fileName)) {
             $coffee['file_name'] = $fileName;
@@ -221,7 +228,7 @@ class Admin extends \core\controller
             $coffee['file_size'] = $fileSize;
         }
         if (isset($existingRoaster)) {
-            $oldRoasterId = $coffee['roaster_id'];
+			$oldRoasterId = $this->_ttcModel->getPendingRoasterIdFromCoffeeId($_POST['coffeeId']);
             $coffee['roaster_id'] = $existingRoaster;
         }
 
@@ -232,7 +239,8 @@ class Admin extends \core\controller
 		);
         if ($_POST['updateType'] == 'pending') {
             if (isset($existingRoaster)) {
-                $newRoasterId = $this->_adminModel->copyPendingRoaster($existingRoaster, 'pending');
+				$this->_adminModel->removePendingRoaster($oldRoasterId);
+				$newRoasterId = $this->_adminModel->copyPendingRoaster($existingRoaster, 'pending');
                 if ($newRoasterId) {
                     $coffee['roaster_id'] = $newRoasterId;
                 }
@@ -242,19 +250,20 @@ class Admin extends \core\controller
                 }
             }
             $this->_ttcModel->pendingUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
-            if (isset($existingRoaster)) {
-                $this->_adminModel->removePendingRoaster($oldRoasterId);
-            }
         }
         else if ($_POST['updateType'] == 'active') {
             if (isset($existingRoaster)) {
-                $this->_adminModel->copyPendingRoaster($existingRoaster, 'active');
+				$oldRoasterId = $this->_ttcModel->getActiveRoasterIdFromCoffeeId($_POST['coffeeId']);
+				$this->_adminModel->removeActiveRoaster($oldRoasterId);
+				$this->_adminModel->copyPendingRoaster($existingRoaster, 'active');
             }
             $this->_ttcModel->activeUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
         }
         else if ($_POST['updateType'] == 'archive') {
             if (isset($existingRoaster)) {
-                $this->_adminModel->copyPendingRoaster($existingRoaster, 'archive');
+				$oldRoasterId = $this->_ttcModel->getArchiveRoasterIdFromCoffeeId($_POST['coffeeId']);
+				$this->_adminModel->removeArchiveRoaster($oldRoasterId);
+				$this->_adminModel->copyPendingRoaster($existingRoaster, 'archive');
             }
             $this->_ttcModel->archiveUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
         }

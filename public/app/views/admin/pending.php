@@ -12,9 +12,6 @@ use \helpers\phpmailer\mail;
 								<th>Approve</th>
 								<th>Email</th>
 								<th>Update</th>
-								<th>First Name</th>
-                                <th>Last Name</th>
-								<th>Email</th>
 								<th>Roaster Name</th>
                                 <th>Roaster Website</th>
 								<th>Roaster Description</th>
@@ -31,6 +28,9 @@ use \helpers\phpmailer\mail;
 								<th>Farm Region</th>
 								<th>Farm Country</th>
 								<th>GPP Proof</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Email</th>
 							</tr>
 						</thead>
 						<?php 
@@ -41,9 +41,6 @@ use \helpers\phpmailer\mail;
 								echo "<td class='formRow'><input type='checkbox' name=".$ttcPending->coffee_id." class='approve'>";
 								echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='pending-email-".$ttcPending->coffee_id."' name='pending-".$ttcPending->coffee_id."'>Email</a></td>";
 								echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='pending-view-".$ttcPending->coffee_id."' name='pending-".$ttcPending->coffee_id."'>Update</a></td>";
-								echo "<td class='formRow'>".$ttcPending->first_name."</td>";
-                                echo "<td class='formRow'>".$ttcPending->last_name."</td>";
-                                echo "<td class='formRow'>".$ttcPending->email."</td>";
 								echo "<td class='formRow'>".$ttcPending->roaster_name."</td>";
                                 echo "<td class='formRow'><a target='_blank' href=".$ttcPending->roaster_url."/>".$ttcPending->roaster_url."</a></td>";
                                 echo "<td class='formRow'>".$ttcPending->roaster_description."</td>";
@@ -60,6 +57,9 @@ use \helpers\phpmailer\mail;
 								echo "<td class='formRow'>".$ttcPending->farm_region."</td>";
 								echo "<td class='formRow'>".$ttcPending->farm_country."</td>";
 								echo "<td class='formRow'><a href='/gppProof?id=".$ttcPending->coffee_id."'>".explode('-',$ttcPending->file_name)[1]."</a></td>";
+								echo "<td class='formRow'>".$ttcPending->first_name."</td>";
+								echo "<td class='formRow'>".$ttcPending->last_name."</td>";
+								echo "<td class='formRow'>".$ttcPending->email."</td>";
 								echo "</tr>";
 								echo "</tbody>";
 						}
@@ -80,9 +80,6 @@ use \helpers\phpmailer\mail;
 						<th>Archive</th>
 						<th>Email</th>
 						<th>Update</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
 						<th>Roaster Name</th>
 						<th>Roaster Website</th>
 						<th>Roaster Description</th>
@@ -99,6 +96,9 @@ use \helpers\phpmailer\mail;
 						<th>Farm Region</th>
 						<th>Farm Country</th>
 						<th>GPPP Proof</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -108,9 +108,6 @@ use \helpers\phpmailer\mail;
 						echo "<td class='formRow'><input type='checkbox' name=".$ttcActive->coffee_id." class='archive'>";
 						echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='active-email-".$ttcActive->coffee_id."' name='active-".$ttcActive->coffee_id."'>Email</a></td>";
 						echo "<td class='formRow'><a href='' class='button tiny secondary update-btn' data-reveal-id='active-view-".$ttcActive->coffee_id."' name='active-".$ttcActive->coffee_id."'>Update</a></td>";
-						echo "<td class='formRow'>".$ttcActive->first_name."</td>";
-						echo "<td class='formRow'>".$ttcActive->last_name."</td>";
-						echo "<td class='formRow'>".$ttcActive->email."</td>";
 						echo "<td class='formRow'>".$ttcActive->roaster_name;"</td>";
                         echo "<td class='formRow'><a target='_blank' href=".$ttcActive->roaster_url."/>$ttcActive->roaster_url</a></td>";
                         echo "<td class='formRow'>".$ttcActive->roaster_description."</td>";
@@ -127,6 +124,9 @@ use \helpers\phpmailer\mail;
 						echo "<td class='formRow'>".$ttcActive->farm_region."</td>";
 						echo "<td class='formRow'>".$ttcActive->farm_country."</td>";
 						echo "<td class='formRow'><a href='/gppProof?id=".$ttcActive->coffee_id."'>".explode('-',$ttcActive->file_name)[1]."</a></td>";
+						echo "<td class='formRow'>".$ttcActive->first_name."</td>";
+						echo "<td class='formRow'>".$ttcActive->last_name."</td>";
+						echo "<td class='formRow'>".$ttcActive->email."</td>";
 						echo "</tr>";
 						?>
 
@@ -148,9 +148,6 @@ use \helpers\phpmailer\mail;
 						<th>Unarchive</th>
 						<th>Email</th>
 						<th>Update</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
 						<th>Roaster Name</th>
 						<th>Roaster Website</th>
 						<th>Roaster Description</th>
@@ -167,6 +164,9 @@ use \helpers\phpmailer\mail;
 						<th>Farm Region</th>
 						<th>Farm Country</th>
 						<th>GPPP Proof</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -175,9 +175,6 @@ use \helpers\phpmailer\mail;
 						echo "<td class='formRow'><input type='checkbox' name=".$ttcArchive->coffee_id." class='active'>";
 						echo "<td class='formRow'><a href='#' class='button tiny secondary update-btn' data-reveal-id='archive-email-".$ttcArchive->coffee_id."' name='email-".$ttcArchive->coffee_id."'>Email</a></td>";
 						echo "<td class='formRow'><a href='#' class='button tiny secondary update-btn' data-reveal-id='archive-view-".$ttcArchive->coffee_id."' name='archive-".$ttcArchive->coffee_id."'>Update</a></td>";
-						echo "<td class='formRow'>".$ttcArchive->first_name."</td>";
-						echo "<td class='formRow'>".$ttcArchive->last_name."</td>";
-						echo "<td class='formRow'>".$ttcArchive->email."</td>";
 						echo "<td class='formRow'>".$ttcArchive->roaster_name."</td>";
                         echo "<td class='formRow'><a target='_blank' href=".$ttcArchive->roaster_url."/>$ttcArchive->roaster_url</a></td>";
                         echo "<td class='formRow'>".$ttcArchive->roaster_description."</td>";
@@ -194,6 +191,9 @@ use \helpers\phpmailer\mail;
 						echo "<td class='formRow'>".$ttcArchive->farm_region."</td>";
 						echo "<td class='formRow'>".$ttcArchive->farm_country."</td>";
 						echo "<td class='formRow'><a href='/gppProof?id=".$ttcArchive->coffee_id."'>".explode('-',$ttcArchive->file_name)[1]."</a></td>";
+						echo "<td class='formRow'>".$ttcArchive->first_name."</td>";
+						echo "<td class='formRow'>".$ttcArchive->last_name."</td>";
+						echo "<td class='formRow'>".$ttcArchive->email."</td>";
 						echo "</tr>";
 					}
 					?>
@@ -268,33 +268,10 @@ use \helpers\phpmailer\mail;
 							<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please
 								email team@transparenttradecoffee.org.</p>
 							<p>The TT Coffee Team</p>">
-<!--							<input type="hidden" name="title" value="<h2 id='modalTitle'>Emailing --><?php //echo $ttcPending->roaster_name?><!--</h2>">-->
-<!--							<input type="hidden" name="address" value='--><?php //echo $ttcPending->email?><!--</h2>'>-->
-<!--							<input type="hidden" name="line1" value="<h4>Congratulations! Based on the information you have submitted, Transparent Trade Coffee has approved your submission and will be featured on our website.</h4>">-->
-<!--							<input type="hidden" name="line2" value="<p><b>Please take a minute to review the information that you have submitted so that all the details are correct!</b></p>">-->
-<!--							<input type="hidden" name="line3" value="<p>Contact Email: --><?php //echo $ttcPending->email?><!--</p>">-->
-<!--							<input type="hidden" name="line4" value="<p><b>Roaster Name</b>: --><?php //echo $ttcPending->roaster_name?><!--</p>">-->
-<!--							<input type="hidden" name="line5" value="<p><b>Roaster Description</b>: --><?php //echo $ttcPending->roaster_description?><!--</p>">-->
-<!--							<input type="hidden" name="line6" value="<p><b>Roaster Website</b>: --><?php //echo $ttcPending->roaster_url?><!--</p>">-->
-<!--							<input type="hidden" name="line7" value="<p><b>Roaster Image</b>: <img style='height: 100px; width: 75px; margin: 0 auto;' src='--><?php //echo $ttcActive->roaster_logo ?><!--'/></p>">-->
-<!--							<input type="hidden" name="line8" value="<p><b>Coffee Name</b>: --><?php //echo $ttcPending->coffee_name ?><!--</p>">-->
-<!--							<input type="hidden" name="line9" value="<p><b>Coffee Description</b>: --><?php //echo $ttcPending->description?><!--</p>">-->
-<!--							<input type="hidden" name="line10" value="<p><b>Retail Price</b>: --><?php //echo $ttcPending->retail_price?><!--</p>">-->
-<!--							<input type="hidden" name="line11" value="<p><b>Retail Currency</b>: --><?php //echo $ttcPending->currency?><!--</p>">-->
-<!--							<input type="hidden" name="line12" value="<p><b>Bag Size (ounces)</b>: --><?php //echo $ttcPending->bag_size?><!--</p>">-->
-<!--							<input type="hidden" name="line13" value="<p><b>Green Price Per Pound</b>: --><?php //echo $ttcPending->gppp?><!--</p>">-->
-<!--							<input type="hidden" name="line14" value="<p><b>EGS</b>: --><?php //echo round($ttcPending->egs, 1)?><!--%</p>">-->
-<!--							<input type="hidden" name="line15" value="<p><b>Coffee Website</b>: --><?php //echo $ttcPending->url?><!--</p>">-->
-<!--							<input type="hidden" name="line16" value="<p><b>Farm Name</b>: --><?php //echo $ttcPending->farm_name?><!--</p>">-->
-<!--							<input type="hidden" name="line17" value="<p><b>Farm Region</b>: --><?php //echo $ttcPending->farm_region?><!--</p>">-->
-<!--							<input type="hidden" name="line18" value="<p><b>Farm Country</b>: --><?php //echo $ttcPending->farm_country?><!--</p>">-->
-<!--							<input type="hidden" name="line19" value="<p>If everything looks right, please reply back with a simple confirm so that way we can post your coffee as soon as possible!</p>"><br>-->
 							<input type="submit" value="Send" name="<?php echo $ttcPending->coffee_id?>" class="button success pending-email">
-
 						</div>
 					</form>
 				</div>
-			</div>
 			<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 		</div>
 		<?php endforeach; ?>
@@ -475,7 +452,6 @@ use \helpers\phpmailer\mail;
 									<label for="greenPPP" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
 								</div>
 								<div class="small-7 medium-7 large-7 columns">
-									<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 									<input name="greenPPP" class="regInput" type="file" value="greenPPP" for="greenPPP" id="greenPPP">
 								</div>
 							</div>
@@ -698,7 +674,6 @@ use \helpers\phpmailer\mail;
 										<label for="greenPPP" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
 									</div>
 									<div class="small-7 medium-7 large-7 columns">
-										<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 										<input name="greenPPP" class="regInput" type="file" value="greenPPP" for="greenPPP" id="greenPPP">
 									</div>
 								</div>
@@ -919,7 +894,6 @@ use \helpers\phpmailer\mail;
 										<label for="greenPPP" class="inline">Proof of Green Price Per Pound paid to farm or cooperative</label>
 									</div>
 									<div class="small-7 medium-7 large-7 columns">
-										<input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 										<input name="greenPPP" class="regInput" type="file" value="greenPPP" for="greenPPP" id="greenPPP">
 									</div>
 								</div>

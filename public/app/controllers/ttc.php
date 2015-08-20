@@ -466,68 +466,100 @@ class ttc extends \core\controller {
             $fileSize = NULL;
             $fileType = NULL;
         }
-        $allowed_filetypes = array('.jpg','.jpeg','.png','.gif');
+        if($_FILES['roasterImage']['size'] > 0) {
+            $allowed_filetypes = array('.jpg', '.jpeg', '.png', '.gif');
 //        $max_filesize = 10485760;
-        $upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
-        $imageName = $_FILES['roasterImage']['name'];
-        $ext = substr($imageName, strpos($imageName,'.'), strlen($imageName)-1);
+            $upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
+            $imageName = $_FILES['roasterImage']['name'];
+            $ext = pathinfo($imageName, PATHINFO_EXTENSION);
 
-        if(!in_array($ext,$allowed_filetypes))
-            die('The file you attempted to upload is not allowed.');
+            if (!in_array($ext, $allowed_filetypes))
+                die('The file you attempted to upload is not allowed.');
 
 //        if(filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
 //            die('The file you attempted to upload is too large.');
 
-        if(!is_writable($upload_path))
-            die('You cannot upload to the specified directory, please CHMOD it to 777.');
+            if (!is_writable($upload_path))
+                die('You cannot upload to the specified directory, please CHMOD it to 777.');
 
-        if(move_uploaded_file($_FILES['roasterImage']['tmp_name'],$upload_path . '/' . $imageName)) {
-            $data = file_get_contents($upload_path . '/' . $imageName);
-            $roasterImage = 'data:image/' . substr($ext, 1) . ';base64, ' . base64_encode($data);
-            unlink($upload_path . '/' . $imageName);
-        } else {
-            echo 'There was an error during the file upload.  Please try again.';
+            if (move_uploaded_file($_FILES['roasterImage']['tmp_name'], $upload_path . '/' . $imageName)) {
+                $data = file_get_contents($upload_path . '/' . $imageName);
+                $roasterImage = 'data:image/' . substr($ext, 1) . ';base64, ' . base64_encode($data);
+                unlink($upload_path . '/' . $imageName);
+            } else {
+                echo 'There was an error during the file upload.  Please try again.';
+            }
+        }
+        else {
+            $roasterImage = NULL;
         }
 
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
         $email = $_POST['submitEmail'];
         $roaster = $_POST['roasterName'];
-        $roasterDescription = $_POST['roasterDescription'];
-        if ( $parts = parse_url($_POST["roasterWebsite"]) ) {
-            if ( !isset($parts["scheme"]) )
-            {
-                $_POST["roasterWebsite"] = "http://" . $_POST["roasterWebsite"];
-            }
+        if (isset($_POST['roasterDescription'])) {
+            $roasterDescription = $_POST['roasterDescription'];
         }
-		$roasterURL = $_POST['roasterURL'];
+        else {
+            $roasterDescription = NULL;
+        }
+        if (isset($_POST['roasterWebsite'])) {
+            if ($parts = parse_url($_POST["roasterWebsite"])) {
+                if (!isset($parts["scheme"])) {
+                    $_POST["roasterWebsite"] = "http://" . $_POST["roasterWebsite"];
+                }
+            }
+            $roasterURL = $_POST['roasterURL'];
+        }
+        else {
+            $roasterURL = NULL;
+        }
         $coffeeName = $_POST['coffeeName'];
-        $coffeeDescription = $_POST['coffeeDescription'];
+        if (isset($_POST['coffeeDescription'])) {
+            $coffeeDescription = $_POST['coffeeDescription'];
+        }
+        else {
+            $coffeeDescription = NULL;
+        }
         $coffeePrice = $_POST['coffeePrice'];
         $coffeeCurrency = $_POST['coffeeCurrency'];
-        if ( $parts = parse_url($_POST["coffeeWebsite"]) ) {
-            if ( !isset($parts["scheme"]) )
-            {
-                $_POST["coffeeWebsite"] = "http://" . $_POST["coffeeWebsite"];
+        if (isset($_POST["coffeeWebsite"])) {
+            if ($parts = parse_url($_POST["coffeeWebsite"])) {
+                if (!isset($parts["scheme"])) {
+                    $_POST["coffeeWebsite"] = "http://" . $_POST["coffeeWebsite"];
+                }
             }
+            $coffeeWebsite = $_POST['coffeeWebsite'];
         }
-        $coffeeWebsite = $_POST['coffeeWebsite'];
+        else {
+            $coffeeWebsite = NULL;
+        }
         $bagSize = $_POST['coffeeBagSize'];
         $coffeeGPPP = $_POST['coffeeGPPP'];
         $extraCoffees = array();
         for ($i = 2; $i > 0; $i++) {
             if (isset($_POST["coffeeName-$i"])) {
                 $extraCoffees[$i]['coffeeName']        = filter_var($_POST["coffeeName-$i"], FILTER_SANITIZE_STRING);
-                $extraCoffees[$i]['coffeeDescription'] = filter_var($_POST["coffeeDescription-$i"], FILTER_SANITIZE_STRING);
+                if (isset($_POST['coffeeDescription'])) {
+                    $extraCoffees[$i]['coffeeDescription'] = filter_var($_POST["coffeeDescription-$i"], FILTER_SANITIZE_STRING);
+                }
+                else {
+                    $extraCoffees[$i]['coffeeDescription'] = NULL;
+                }
                 $extraCoffees[$i]['coffeePrice']       = filter_var($_POST["coffeePrice-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $extraCoffees[$i]['coffeeCurrency']    = filter_var($_POST["coffeeCurrency-$i"], FILTER_SANITIZE_STRING);
-                if ( $parts = parse_url($_POST["coffeeWebsite-$i"]) ) {
-                    if ( !isset($parts["scheme"]) )
-                    {
-                        $_POST["coffeeWebsite-$i"] = "http://" . $_POST["coffeeWebsite-$i"];
+                if (isset($_POST["coffeeWebsite"])) {
+                    if ($parts = parse_url($_POST["coffeeWebsite-$i"])) {
+                        if (!isset($parts["scheme"])) {
+                            $_POST["coffeeWebsite-$i"] = "http://" . $_POST["coffeeWebsite-$i"];
+                        }
                     }
+                    $extraCoffees[$i]['coffeeWebsite'] = filter_var($_POST["coffeeWebsite-$i"], FILTER_VALIDATE_URL);
                 }
-                $extraCoffees[$i]['coffeeWebsite']     = filter_var($_POST["coffeeWebsite-$i"], FILTER_VALIDATE_URL);
+                else {
+                    $extraCoffees[$i]['coffeeWebsite'] = NULL;
+                }
                 $extraCoffees[$i]['bagSize']           = filter_var($_POST["coffeeBagSize-$i"], FILTER_SANITIZE_NUMBER_INT);
                 $extraCoffees[$i]['coffeeGPPP']        = filter_var($_POST["coffeeGPPP-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $extraCoffees[$i]['farmName']          = filter_var($_POST["farmName-$i"], FILTER_SANITIZE_STRING);
@@ -547,15 +579,35 @@ class ttc extends \core\controller {
         $cleanLastName = filter_var($lastName, FILTER_SANITIZE_STRING);
         $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
         $cleanRoaster = filter_var($roaster, FILTER_SANITIZE_STRING);
-        $cleanRoasterDesc = filter_var($roasterDescription, FILTER_SANITIZE_STRING);
-		$cleanRoasterURL = filter_var($roasterURL, FILTER_SANITIZE_URL);
+        if (isset($roasterDescription)) {
+            $cleanRoasterDesc = filter_var($roasterDescription, FILTER_SANITIZE_STRING);
+        }
+        else {
+            $cleanRoasterDesc = NULL;
+        }
+        if (isset($roasterURL)) {
+            $cleanRoasterURL = filter_var($roasterURL, FILTER_SANITIZE_URL);
+        }
+        else {
+            $cleanRoasterURL = NULL;
+        }
         $cleanCoffeeName = filter_var($coffeeName, FILTER_SANITIZE_STRING);
-        $cleanCoffeeDesc = filter_var($coffeeDescription, FILTER_SANITIZE_STRING);
+        if (isset($coffeeDescription)) {
+            $cleanCoffeeDesc = filter_var($coffeeDescription, FILTER_SANITIZE_STRING);
+        }
+        else {
+            $cleanCoffeeDesc = NULL;
+        }
         $cleanCoffeePrice = filter_var($coffeePrice, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $cleanCoffeeCurrency = filter_var($coffeeCurrency, FILTER_SANITIZE_STRING);
         $cleanBagSize = filter_var($bagSize, FILTER_SANITIZE_NUMBER_INT);
         $cleanCoffeeGPPP = filter_var($coffeeGPPP, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
-        $cleanCoffeeWebsite = filter_var($coffeeWebsite, FILTER_VALIDATE_URL);
+        if (isset($coffeeWebsite)) {
+            $cleanCoffeeWebsite = filter_var($coffeeWebsite, FILTER_VALIDATE_URL);
+        }
+        else {
+            $cleanCoffeeWebsite = NULL;
+        }
         $cleanFarmName = filter_var($farmName, FILTER_SANITIZE_STRING);
         $cleanFarmLocation = filter_var($farmLocation, FILTER_SANITIZE_STRING);
         $cleanFarmRegion = filter_var($farmRegion, FILTER_SANITIZE_STRING);
