@@ -36,6 +36,18 @@ class Registration extends \core\model {
                             UNION SELECT roaster_id, roaster_name FROM '.PREFIX.'roaster_archive');
     }
 
+    public function getPendingRoasterCount($roasterId) {
+        return (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE roaster_id = ' . $roasterId);
+    }
+
+    public function getActiveRoasterCount($roasterId) {
+        return (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee WHERE roaster_id = ' . $roasterId);
+    }
+
+    public function getArchiveRoasterCount($roasterId) {
+        return (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_archive WHERE roaster_id = ' . $roasterId);
+    }
+
     public function removePendingRoaster($roasterId) {
         $where = array (
           'roaster_id' => $roasterId

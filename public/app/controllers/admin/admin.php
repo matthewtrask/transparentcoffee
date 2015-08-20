@@ -239,6 +239,7 @@ class Admin extends \core\controller
 		);
         if ($_POST['updateType'] == 'pending') {
             if (isset($existingRoaster)) {
+				$pendingCoffeesWithSameRoaster = $this->_adminModel->getPendingRoasterCount($oldRoasterId);
 				$this->_adminModel->removePendingRoaster($oldRoasterId);
 				$newRoasterId = $this->_adminModel->copyPendingRoaster($existingRoaster, 'pending');
                 if ($newRoasterId) {
@@ -250,22 +251,40 @@ class Admin extends \core\controller
                 }
             }
             $this->_ttcModel->pendingUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
+			//updates all coffees to have the newly switched to roaster
+			if ($existingRoaster) {
+				foreach ($pendingCoffeesWithSameRoaster as $pendingCoffee) {
+					$this->_ttcModel->updateRoasterIdForCoffee($pendingCoffee->coffee_id, $coffee['roaster_id'], 'pending');
+				}
+			}
         }
         else if ($_POST['updateType'] == 'active') {
             if (isset($existingRoaster)) {
 				$oldRoasterId = $this->_ttcModel->getActiveRoasterIdFromCoffeeId($_POST['coffeeId']);
+				$activeCoffeesWithSameRoaster = $this->_adminModel->getActiveRoasterCount($oldRoasterId);
 				$this->_adminModel->removeActiveRoaster($oldRoasterId);
 				$this->_adminModel->copyPendingRoaster($existingRoaster, 'active');
             }
             $this->_ttcModel->activeUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
+			if ($existingRoaster) {
+				foreach ($activeCoffeesWithSameRoaster as $pendingCoffee) {
+					$this->_ttcModel->updateRoasterIdForCoffee($pendingCoffee->coffee_id, $coffee['roaster_id'], 'active');
+				}
+			}
         }
         else if ($_POST['updateType'] == 'archive') {
             if (isset($existingRoaster)) {
 				$oldRoasterId = $this->_ttcModel->getArchiveRoasterIdFromCoffeeId($_POST['coffeeId']);
+				$archiveCoffeesWithSameRoaster = $this->_adminModel->getArchiveRoasterCount($oldRoasterId);
 				$this->_adminModel->removeArchiveRoaster($oldRoasterId);
 				$this->_adminModel->copyPendingRoaster($existingRoaster, 'archive');
             }
             $this->_ttcModel->archiveUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
+			if ($existingRoaster) {
+				foreach ($archiveCoffeesWithSameRoaster as $pendingCoffee) {
+					$this->_ttcModel->updateRoasterIdForCoffee($pendingCoffee->coffee_id, $coffee['roaster_id'], 'archive');
+				}
+			}
         }
 
         header('Location: admin/pending');

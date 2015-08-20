@@ -243,6 +243,25 @@ class ttc extends \core\model
         $this->_db->delete(PREFIX."coffee", $coffeeData);
     }
 
+    public function updateRoasterIdForCoffee($coffeeId, $newRoasterId, $table) {
+        $update = array(
+            'roaster_id' => $newRoasterId
+        );
+        $where = array(
+            'coffee_id' => $coffeeId
+        );
+
+        if ($table == 'pending') {
+            $this->_db->update(PREFIX . "coffee_pending", $update, $where);
+        }
+        else if ($table == 'active') {
+            $this->_db->update(PREFIX . "coffee", $update, $where);
+        }
+        else if ($table == 'archive') {
+            $this->_db->update(PREFIX . "coffee_archive", $update, $where);
+        }
+    }
+
     public function activeCoffee($archiveCoffeeId){
 
         $archiveCoffee = (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_archive WHERE coffee_id = '.$archiveCoffeeId)[0];
