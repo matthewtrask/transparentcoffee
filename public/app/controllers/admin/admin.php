@@ -123,7 +123,7 @@ class Admin extends \core\controller
 			$fileType = NULL;
 		}
 		if (($_FILES['roasterImage']['name'] != '')&&(isset($_FILES['roasterImage']['name']))) {
-			$allowed_filetypes = array('.jpg', '.jpeg', '.png', '.gif');
+			$allowed_filetypes = array('jpg', 'jpeg', 'png', 'gif');
 			$max_filesize = 10485760;
 			$upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
 

@@ -467,7 +467,7 @@ class ttc extends \core\controller {
             $fileType = NULL;
         }
         if($_FILES['roasterImage']['size'] > 0) {
-            $allowed_filetypes = array('.jpg', '.jpeg', '.png', '.gif');
+            $allowed_filetypes = array('jpg', 'jpeg', 'png', 'gif');
 //        $max_filesize = 10485760;
             $upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
             $imageName = $_FILES['roasterImage']['name'];
