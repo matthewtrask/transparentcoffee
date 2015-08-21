@@ -116,7 +116,7 @@ Router::any('admin/cats/delete/(:num)', '\controllers\admin\cats@delete');
 
 Router::any('insights', '\controllers\blog@index');
 Router::any('category/(:any)', '\controllers\blog@cat');
-// Router::any('(:any)', '\controllers\blog@post');
+Router::any('(:any)', '\controllers\blog@post');
 
 //if no route found
 Router::error('\core\error@index');
