@@ -332,91 +332,106 @@ class ttc extends \core\controller {
         <div id="coffee-<?php echo $number?>">
             <div class="row">
                 <h3 class="sub-header">Coffee #<?php echo $number?></h3>
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-4 medium-3 large-3 columns">
                     <label for="coffeeName-<?php echo $number?>" class="inline">Coffee Name:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-8 medium-9 large-9 columns">
                     <input name="coffeeName-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Name" for="coffeeName-<?php echo $number?>" id="coffeeName-<?php echo $number?>" required>
                     <small class="error">Please enter a valid coffee name</small>
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-4 medium-3 large-3 columns">
                     <label for="coffeeDescription-<?php echo $number?>" class="inline">Coffee Description:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-8 medium-9 large-9 columns">
                     <textarea name="coffeeDescription-<?php echo $number?>" placeholder="Enter a short description about your coffee (Maximum of 140 characters)" maxlength="140" onKeyDown="charLimit(this.form.limitedtextarea,this.form.countdown,140)" rows="5";></textarea>
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-2 medium-2 large-2 columns">
                     <label for="coffeePrice-<?php echo $number?>" class="inline">Retail Price:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-2 medium-1 columns">
+                    <div class="small-offset-11 columns">
+                        <label class="inline">$</label>
+                    </div>
+                </div>
+                <div class="small-8 medium-9 large-9 columns">
                     <input name="coffeePrice-<?php echo $number?>" class="regInput" type="text" placeholder="Retail Price" for="coffeePrice-<?php echo $number?>" id="coffeePrice-<?php echo $number?>" required pattern="number">
-                    <small class="error">Please enter a valid retail price for this coffee</small>
+                    <small class="error">Please enter a valid retail price for this coffee without any currency signs</small>
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-4 medium-3 large-3 columns">
                     <label for="coffeeCurrency-<?php echo $number?>" class="inline">Currency:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-8 medium-9 large-9 columns">
                     <input name="coffeeCurrency-<?php echo $number?>" class="regInput" type="text" placeholder="Currency the retail price is in (USD, CDN, etc.)" for="coffeeCurrency-<?php echo $number?>" id="coffeeCurrency-<?php echo $number?>" required pattern="alpha">
                     <small class="error">Please enter a valid currency type for this coffee</small>
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-4 medium-3 large-3 columns">
                     <label for="coffeeBagSize-<?php echo $number?>" class="inline">Coffee Bag Size (oz):</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-5 medium-6 large-6 columns">
                     <input name="coffeeBagSize-<?php echo $number?>" class="regInput" type="text" placeholder="Coffee Bag Size (oz)" for="coffeeBagSize-<?php echo $number?>" id="coffeeBagSize-<?php echo $number?>" required pattern="number">
                     <small class="error">Please enter a valid bag size (in ounces) for this coffee</small>
                 </div>
+                <div class="small-3 medium-3 columns">
+                    <div class="columns text-left">
+                        <label class="inline">ounces</label>
+                    </div>
+                </div>
             </div>
             <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-2 columns">
                     <label for="coffeeGPPP-<?php echo $number?>" class="inline">Coffee Green Price Per Pound Paid:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-2 medium-1 columns">
+                    <div class="small-offset-11 columns">
+                        <label class="inline">$</label>
+                    </div>
+                </div>
+                <div class="small-8 medium-9 large-9 columns">
                     <input name="coffeeGPPP-<?php echo $number?>" class="regInput" type="text" placeholder="Amount (in USD) that Farmer receives per pound" for="coffeeGPPP-<?php echo $number?>" id="coffeeGPPP-<?php echo $number?>" required pattern="number">
-                    <small class="error">Please enter a valid green price per pound paid for this coffee</small>
+                    <small class="error">>Please enter a valid green price per pound paid for this coffee without any currency signs</small>
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-4 medium-3 large-3 columns">
                     <label for="coffeeWebsite-<?php echo $number?>" class="inline">Coffee Website:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-8 medium-9 large-9 columns">
                     <input name="coffeeWebsite-<?php echo $number?>" class="regInput" type="text" placeholder="Web page address where coffee is listed for sale" for="coffeeWebsite-<?php echo $number?>" id="coffeeWebsite-<?php echo $number?>">
                     <small class="error">Please enter a website link for this coffee</small>
                 </div>
             </div>
             <div class="row">
                 <h3 class="sub-header">Farm #<?php echo $number?></h3>
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-4 medium-3 large-3 columns">
                     <label for="farmName-<?php echo $number?>" class="inline">Farm Name:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-8 medium-9 large-9 columns">
                     <input name="farmName-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Name" for="farmName-<?php echo $number?>" id="farmName-<?php echo $number?>" required>
                     <small class="error">Please enter a valid farm name for this coffee</small>
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-4 medium-3 large-3 columns">
                     <label for="farmLocation-<?php echo $number?>" class="inline">Farm Location - Country:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-8 medium-9 large-9 columns">
                     <input name="farmLocation-<?php echo $number?>" class="regInput" type="text" placeholder="Farm Location - Country" for="farmLocation-<?php echo $number?>" id="farmLocation-<?php echo $number?>" required>
                     <small class="error">Please enter a valid country that this farm is located in</small>
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 medium-3 large-3 columns">
+                <div class="small-4 medium-3 large-3 columns">
                     <label for="farmRegion-<?php echo $number?>" class="inline">Farm Region:</label>
                 </div>
-                <div class="small-9 medium-9 large-9 columns">
+                <div class="small-8 medium-9 large-9 columns">
                     <select name="farmRegion-<?php echo $number?>" class="regInput" id="farmRegion-<?php echo $number?>" required>
                         <option>South America</option>
                         <option>Central America</option>
@@ -507,7 +522,7 @@ class ttc extends \core\controller {
         if (isset($_POST['roasterWebsite'])) {
             if ($parts = parse_url($_POST["roasterWebsite"])) {
                 if (!isset($parts["scheme"])) {
-                    $_POST["roasterWebsite"] = "http://" . $_POST["roasterWebsite"];
+                    $roasterURL = "http://" . $_POST["roasterWebsite"];
                 }
             }
             $roasterURL = $_POST['roasterURL'];
@@ -555,7 +570,7 @@ class ttc extends \core\controller {
                             $_POST["coffeeWebsite-$i"] = "http://" . $_POST["coffeeWebsite-$i"];
                         }
                     }
-                    $extraCoffees[$i]['coffeeWebsite'] = filter_var($_POST["coffeeWebsite-$i"], FILTER_VALIDATE_URL);
+                    $extraCoffees[$i]['coffeeWebsite'] = filter_var($_POST["coffeeWebsite-$i"], FILTER_SANITIZE_STRING);
                 }
                 else {
                     $extraCoffees[$i]['coffeeWebsite'] = NULL;
@@ -586,7 +601,7 @@ class ttc extends \core\controller {
             $cleanRoasterDesc = NULL;
         }
         if (isset($roasterURL)) {
-            $cleanRoasterURL = filter_var($roasterURL, FILTER_SANITIZE_URL);
+            $cleanRoasterURL = filter_var($roasterURL, FILTER_SANITIZE_STRING);
         }
         else {
             $cleanRoasterURL = NULL;
@@ -603,7 +618,7 @@ class ttc extends \core\controller {
         $cleanBagSize = filter_var($bagSize, FILTER_SANITIZE_NUMBER_INT);
         $cleanCoffeeGPPP = filter_var($coffeeGPPP, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
         if (isset($coffeeWebsite)) {
-            $cleanCoffeeWebsite = filter_var($coffeeWebsite, FILTER_VALIDATE_URL);
+            $cleanCoffeeWebsite = filter_var($coffeeWebsite, FILTER_SANITIZE_STRING);
         }
         else {
             $cleanCoffeeWebsite = NULL;

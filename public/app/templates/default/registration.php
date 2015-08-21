@@ -167,9 +167,14 @@
                     <div class="small-4 medium-3 large-3 columns">
                         <label for="coffeeBagSize" class="inline">Coffee Bag Size (oz):</label>
                     </div>
-                    <div class="small-8 medium-9 large-9 columns">
+                    <div class="small-5 medium-6 large-6 columns">
                         <input name="coffeeBagSize" class="regInput" type="text" placeholder="Coffee Bag Size (oz)" for="coffeeBagSize" id="coffeeBagSize" required pattern="number">
                         <small class="error">Please enter a valid bag size (in ounces) for this coffee</small>
+                    </div>
+                    <div class="small-3 medium-3 columns">
+                        <div class="columns text-left">
+                            <label class="inline">ounces</label>
+                        </div>
                     </div>
                 </div>
                 <div class="row">

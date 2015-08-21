@@ -87,7 +87,11 @@ class ttc extends \core\model
         $officialGrowerId = $this->_db->lastInsertId();
         if (count($growerCount) == 1) {
             $growerData = array('grower_id' => $pendingGrowerId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX . "grower_pending", $growerData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
 
         $pendingRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_pending WHERE roaster_id = '.$pendingRoasterId)[0];
@@ -100,7 +104,11 @@ class ttc extends \core\model
         }
         if (count($roasterCount) == 1) {
             $roasterData = array('roaster_id' => $pendingRoasterId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX . "roaster_pending", $roasterData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
 
         $pendingCoffee['grower_id']  = $officialGrowerId;

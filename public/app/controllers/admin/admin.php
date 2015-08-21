@@ -161,7 +161,7 @@ class Admin extends \core\controller
 			} else { $roasterDescription = NULL;}
             if ($parts = parse_url($_POST["roasterWebsite"])) {
                 if (!isset($parts["scheme"])) {
-                    $_POST["roasterWebsite"] = "http://" . $_POST["roasterWebsite"];
+					$roasterURL = "http://" . $_POST["roasterWebsite"];
                 }
             }
 			if (isset($roasterURL)) {
@@ -202,7 +202,7 @@ class Admin extends \core\controller
             $roaster = array(
                 'roaster_name' => filter_var($roaster, FILTER_SANITIZE_STRING),
                 'roaster_description' => filter_var($roasterDescription, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE),
-                'roaster_url' => filter_var($roasterURL, FILTER_SANITIZE_URL, FILTER_NULL_ON_FAILURE)
+                'roaster_url' => filter_var($roasterURL, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE)
             );
             if (isset($roasterImage)) {
                 $roaster['roaster_logo'] = $roasterImage;
