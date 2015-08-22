@@ -124,27 +124,27 @@
         </ul>
         <section class="top-bar-section">
             <ul>
-                <li class="show-for-small-only"><a href="home">HOME</a></li>
+                <li class="show-for-small-only"><a href="/home">HOME</a></li>
                 <li class="has-dropdown">
-                    <a class="dropdown-link" href="#">ABOUT</a>
+                    <a class="dropdown-link" href="">ABOUT</a>
                     <ul id="nav-dropdown" class="dropdown">
-                        <li><a href="transparency">TRANSPARENCY</a></li>
-                        <li><a href="seg">SE@G</a></li>
+                        <li><a href="/transparency">TRANSPARENCY</a></li>
+                        <li><a href="/seg">SE@G</a></li>
                     </ul>
                 </li>
-                <li><a href="transparentcoffees">TT COFFEES</a></li>
-                <li><a href="registrationinfo">REGISTER</a></li>
+                <li><a href="/transparentcoffees">TT COFFEES</a></li>
+                <li><a href="/registrationinfo">REGISTER</a></li>
                 <li id="li-header-logo"><a href="home"><img id="header-logo" src="<?php echo helpers\url::template_path() .
                     'img/ttc-header-logo.png'?>"/></a></li>
-                <li><a href="insights">INSIGHTS</a></li>
+                <li><a href="/insights">INSIGHTS</a></li>
                 <li class="has-dropdown">
-                    <a class="dropdown-link" href="scrpi">SCRPI</a>
+                    <a class="dropdown-link" href="/scrpi">SCRPI</a>
                     <ul id="nav-dropdown" class="dropdown">
-                        <li class="hide-for-small-only"><a href="scrpi">SCRPI</a></li>
-                        <li><a href="roasters">INDEXED ROASTERS</a></li>
+                        <li class="hide-for-small-only"><a href="/scrpi">SCRPI</a></li>
+                        <li><a href="/roasters">INDEXED ROASTERS</a></li>
                     </ul>
                 </li>
-                <li><a href="contact">CONTACT</a></li>
+                <li><a href="/contact">CONTACT</a></li>
             </ul>
         </section>
     </nav>
