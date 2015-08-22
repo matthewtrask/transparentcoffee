@@ -138,9 +138,9 @@
                     'img/ttc-header-logo.png'?>"/></a></li>
                 <li><a href="insights">INSIGHTS</a></li>
                 <li class="has-dropdown">
-                    <a class="dropdown-link" href="#">SCRPI</a>
+                    <a class="dropdown-link" href="scrpi">SCRPI</a>
                     <ul id="nav-dropdown" class="dropdown">
-                        <li><a href="scrpi">SCRPI</a></li>
+                        <li class="hide-for-small-only"><a href="scrpi">SCRPI</a></li>
                         <li><a href="roasters">INDEXED ROASTERS</a></li>
                     </ul>
                 </li>
