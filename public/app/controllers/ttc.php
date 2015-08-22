@@ -779,8 +779,16 @@ class ttc extends \core\controller {
         $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
         $cleanMsg = filter_var($message, FILTER_SANITIZE_STRING);
 
-        $mail = new \PHPMailer();
-        $mail->From = $cleanEmail;
+        $mail = new \PHPMailer(true);
+        $mail->IsSMTP();
+        $mail->SMTPSecure = 'ssl';
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->Port = 465;
+        $mail->Username = "team@transparenttradecoffee.org";
+        $mail->Password = "Emory2015";
+
+        $mail->From = "from@transparenttradecoffee.org";
         $mail->FromName = $cleanName;
         $mail->addAddress('team@transparenttradecoffee.org');
         $mail->addReplyTo($cleanEmail, $cleanName);

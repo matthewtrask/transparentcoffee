@@ -156,7 +156,7 @@ class Admin extends \core\controller
 		$email = $_POST['submitEmail'];
         if ($_POST['roasterName']) {
             $roaster = $_POST['roasterName'];
-			if (isset($roasterDescription)) {
+			if (isset($_POST['roasterDescription'])) {
 				$roasterDescription = $_POST['roasterDescription'];
 			} else { $roasterDescription = NULL;}
             if ($parts = parse_url($_POST["roasterWebsite"])) {
@@ -318,7 +318,15 @@ class Admin extends \core\controller
 		$type = explode(':', substr($roasterImage, 0, $pos))[1];
 		$img = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $roasterImage));
 
-		$mail = new \PHPMailer();
+		$mail = new \PHPMailer(true);
+		$mail->IsSMTP();
+		$mail->SMTPSecure = 'ssl';
+		$mail->Host = "smtp.gmail.com";
+		$mail->SMTPAuth = true;
+		$mail->Port = 465;
+		$mail->Username = "team@transparenttradecoffee.org";
+		$mail->Password = "Emory2015";
+
 		$mail->From = "team@transparenttradecoffee.com";
 		$mail->FromName = "TT Coffee Team";
 		$mail->addAddress($address);
@@ -329,10 +337,7 @@ class Admin extends \core\controller
 		$mail->Subject = "TT Coffee Registration Received > Please Confirm Details for $coffee";
 		$mail->addStringEmbeddedImage($img, 'roaster_logo', '', 'base64', $type);
 		if (!$mail->send()) {
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		}
-		else {
-			echo '1';
+			echo "There was a problem with sending this email";
 		}
 
 		header('Location: /admin/pending');
@@ -344,7 +349,15 @@ class Admin extends \core\controller
 		$address = $_POST['address'];
 		$coffee  = $_POST['coffee'];
 
-		$mail = new \PHPMailer();
+		$mail = new \PHPMailer(true);
+		$mail->IsSMTP();
+		$mail->SMTPSecure = 'ssl';
+		$mail->Host = "smtp.gmail.com";
+		$mail->SMTPAuth = true;
+		$mail->Port = 465;
+		$mail->Username = "team@transparenttradecoffee.org";
+		$mail->Password = "Emory2015";
+
 		$mail->From = "team@transparenttradecoffee.org";
 		$mail->FromName = "TT Coffee Team";
 		$mail->addAddress($address);
@@ -354,10 +367,7 @@ class Admin extends \core\controller
 		$mail->AltBody = 'Please use an HTML viewer for this email';
 		$mail->Subject = "TT Coffee Registration Posted > Congrats $coffee Now Online";
 		if (!$mail->send()) {
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		}
-		else {
-			echo '1';
+			echo "There was a problem with sending this email";
 		}
 
 		header('Location: /admin/pending');
@@ -368,8 +378,16 @@ class Admin extends \core\controller
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
 		$coffee  = $_POST['coffee'];
-		
-		$mail = new \PHPMailer();
+
+		$mail = new \PHPMailer(true);
+		$mail->IsSMTP();
+		$mail->SMTPSecure = 'ssl';
+		$mail->Host = "smtp.gmail.com";
+		$mail->SMTPAuth = true;
+		$mail->Port = 465;
+		$mail->Username = "team@transparenttradecoffee.org";
+		$mail->Password = "Emory2015";
+
 		$mail->From = "team@transparenttradecoffee.com";
 		$mail->FromName = "TT Coffee Team";
 		$mail->addAddress($address);
@@ -379,10 +397,7 @@ class Admin extends \core\controller
 		$mail->AltBody = 'Please use an HTML viewer for this email';
 		$mail->Subject = "TT Coffee Archived > $coffee Removed from Site";
 		if (!$mail->send()) {
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		}
-		else {
-			echo '1';
+			echo "There was a problem with sending this email";
 		}
 
 		header('Location: /admin/pending');

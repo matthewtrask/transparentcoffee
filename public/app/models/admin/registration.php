@@ -64,7 +64,7 @@ class Registration extends \core\model {
         );
         $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
         $stmt->execute();
-        $this->_db->delete(PREFIX.'roaster_active', $where);
+        $this->_db->delete(PREFIX.'roaster', $where);
         $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
         $stmt->execute();
     }
