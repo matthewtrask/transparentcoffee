@@ -134,7 +134,7 @@
                 </li>
                 <li><a href="/transparentcoffees">TT COFFEES</a></li>
                 <li><a href="/registrationinfo">REGISTER</a></li>
-                <li id="li-header-logo"><a href="home"><img id="header-logo" src="<?php echo helpers\url::template_path() .
+                <li id="li-header-logo"><a href="/home"><img id="header-logo" src="<?php echo helpers\url::template_path() .
                     'img/ttc-header-logo.png'?>"/></a></li>
                 <li><a href="/insights">INSIGHTS</a></li>
                 <li class="has-dropdown">
