@@ -266,7 +266,7 @@ use \helpers\phpmailer\mail;
 							<p>Once your coffee listing is confirmed, our team will post to TT Coffee within 48 hours and also share
 								the news about your listing via our social media accounts (Twitter and Facebook).</p>
 							<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please
-								email team@transparenttradecoffee.org.</p>
+								email team@transparenttradecoffee.org.</p><br>
 							<p>The TT Coffee Team</p>">
 							<input type="submit" value="Send" name="<?php echo $ttcPending->coffee_id?>" class="button success pending-email">
 						</div>
@@ -473,7 +473,7 @@ use \helpers\phpmailer\mail;
 				<form method="POST" action="/archiveEmail">
 					<div class="small-10 small-offset-1 columns">
 						<h4><?php echo $ttcArchive->roaster_name?>,</h4><br>
-						<p>We have reviewed the online coffee store link provided and it appears that it is no longer valid or that the registered coffee is no longer available.</p><br>
+						<p>We have reviewed the online coffee store link provided and it appears that it is no longer valid or that the registered coffee is no longer available.</p>
 						<p>The following coffee has been removed from our website and archived:</p>
 						<p><b><?php echo $ttcArchive->coffee_name ?></b></p>
 						<p><u>If the coffee is still available</u>; please reply to this message with an updated website link along with any other listing change information.</p>
@@ -490,7 +490,7 @@ use \helpers\phpmailer\mail;
 						<p><u>If the coffee is still available</u>; please reply to this message with an updated website link along with any other listing change information.</p>
 						<p><u>No longer available</u>? You are welcome to register other coffees, please visit our registration page to get started.</p>
 						<a>http://transparenttradecoffee.com/register</a>
-						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p>
+						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p><br>
 						<p>The TT Coffee Team</p>">
 					</div>
 					<input type="submit" value="Email" name="<?php echo $ttcArchive->coffee_id?>" class="button success archive-email">
@@ -694,7 +694,7 @@ use \helpers\phpmailer\mail;
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
 					<form method="POST" action="/activeEmail">
-						<h4><?php echo $ttcActive->roaster_name?>,</h4>
+						<h4><?php echo $ttcActive->roaster_name?>,</h4><br>
 						<p>Thank you for reviewing and approving your preview listings.</p>
 						<p>The following coffee has been posted to our website:</p>
 						<p><b><?php echo $ttcActive->coffee_name?></b></p>
@@ -710,7 +710,7 @@ use \helpers\phpmailer\mail;
 						<p><b><?php echo $ttcActive->coffee_name?></b></p>
 						<p>Our team will post to TT Coffee within 48 hours and also share the news about your listing via our
 							social media accounts (Twitter and Facebook).</p>
-						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p>
+						<p>Thank you for registering your coffee with Transparent Trade.  If you have any questions, please email team@transparenttradecoffee.org.</p><br>
 						<p>The TT Coffee Team</p>">
 						<input type="submit" value="Email" name="Email" class="button success active-email">
 					</form>
