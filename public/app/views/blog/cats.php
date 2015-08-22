@@ -11,9 +11,9 @@
 
 <div class='row'>
 	<div style="margin-top: 40px; margin-bottom: 20px;" class="small-12 small-text-center">
-		<h2 class="sub-header"><?php echo $data['posts'][0]->catTitle?></h2>
+		<h1 style="font-family: RalewayRegular;"><?php echo $data['posts'][0]->catTitle?></h1>
 	</div>
-	<div class='small-12 medium-12 large-12 columns'>
+	<div class='small-10 small-offset-1 large-12 large-offset-0 columns'>
 
 		<?php
 		if($data['posts']){

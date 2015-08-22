@@ -120,7 +120,7 @@
     <nav class="top-bar" data-topbar role="navigation" id="nav">
         <ul class="title-area">
             <li class="name"><!-- Leave this empty --></li>
-            <li class="toggle-topbar menu-icon"><a href="home"><span><img id="header-logo-mobile" src="apple-touch-icon-180x180.png"/></span></a></li>
+            <li class="toggle-topbar menu-icon"><a href="home"><span><img id="header-logo-mobile" src="/apple-touch-icon-180x180.png"/></span></a></li>
         </ul>
         <section class="top-bar-section">
             <ul>
