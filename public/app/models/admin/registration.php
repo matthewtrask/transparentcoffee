@@ -36,11 +36,47 @@ class Registration extends \core\model {
                             UNION SELECT roaster_id, roaster_name FROM '.PREFIX.'roaster_archive');
     }
 
+    public function getPendingRoasterCount($roasterId) {
+        return (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_pending WHERE roaster_id = ' . $roasterId);
+    }
+
+    public function getActiveRoasterCount($roasterId) {
+        return (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee WHERE roaster_id = ' . $roasterId);
+    }
+
+    public function getArchiveRoasterCount($roasterId) {
+        return (array) $this->_db->select('SELECT * FROM '.PREFIX.'coffee_archive WHERE roaster_id = ' . $roasterId);
+    }
+
     public function removePendingRoaster($roasterId) {
         $where = array (
           'roaster_id' => $roasterId
         );
+        $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+        $stmt->execute();
         $this->_db->delete(PREFIX.'roaster_pending', $where);
+        $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+        $stmt->execute();
+    }
+    public function removeActiveRoaster($roasterId) {
+        $where = array (
+            'roaster_id' => $roasterId
+        );
+        $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+        $stmt->execute();
+        $this->_db->delete(PREFIX.'roaster', $where);
+        $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+        $stmt->execute();
+    }
+    public function removeArchiveRoaster($roasterId) {
+        $where = array (
+            'roaster_id' => $roasterId
+        );
+        $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+        $stmt->execute();
+        $this->_db->delete(PREFIX.'roaster_archive', $where);
+        $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+        $stmt->execute();
     }
 
     public function copyPendingRoaster($roasterId, $table) {
@@ -51,11 +87,13 @@ class Registration extends \core\model {
         }
         else if ($table == 'active') {
             $roaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_archive WHERE roaster_id = ' . $roasterId)[0];
-            return $this->_db->insert(PREFIX.'roaster', $roaster, true);
+            $this->_db->insert(PREFIX.'roaster', $roaster, true);
+            return $roasterId;
         }
         else if ($table == 'archive') {
             $roaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster WHERE roaster_id = ' . $roasterId)[0];
-            return $this->_db->insert(PREFIX.'roaster_archive', $roaster, true);
+            $this->_db->insert(PREFIX.'roaster_archive', $roaster, true);
+            return $roasterId;
         }
     }
 

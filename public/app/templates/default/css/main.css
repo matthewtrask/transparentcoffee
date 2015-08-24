@@ -845,6 +845,8 @@ div.ttcoffee {
   div.ttcoffee #TTCpanel h5 {
     font-size: 16px; }
   div.ttcoffee .thumbnail-wrapper {
+    position: relative;
+    left: 5%;
     display: table-cell;
     vertical-align: middle;
     height: 120px;
@@ -1139,6 +1141,7 @@ div.ttcoffee:not(:hover) {
       left: 5px;
       top: 0px; }
   .thumbnail-wrapper {
+    left: 3%;
     height: 110px !important;
     width: 150px !important; }
     .thumbnail-wrapper img {
@@ -1198,6 +1201,7 @@ div.ttcoffee:not(:hover) {
       left: 5px;
       top: 0px; }
   .thumbnail-wrapper {
+    left: 3% !important;
     height: 100px !important;
     width: 100px !important; }
     .thumbnail-wrapper img {

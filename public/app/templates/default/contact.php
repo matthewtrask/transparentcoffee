@@ -9,9 +9,6 @@
     </div>
 </div>
 <div class="row">
-    <div id="alert-message" class="small-10 small-offset-1 columns"></div>
-</div>
-<div class="row">
     <h1 class="page-header text-center">Contact Us!</h1>
 </div>
 
@@ -56,6 +53,9 @@
             </div>
         </form>
     </div>
+</div>
+<div class="row">
+    <div id="alert-message" class="small-10 small-offset-1 columns"></div>
 </div>
 <div class="row">
     <div class="small-10 small-offset-1 columns">

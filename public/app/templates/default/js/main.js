@@ -23,6 +23,7 @@ $(document).ready(function(){
     }
     flowText();
   $('#submitButton').click(function(e){
+      $(document).foundation('alert','events');
       e.preventDefault();
       var data = $('#contactForm').serialize();
      $.ajax({
@@ -33,10 +34,12 @@ $(document).ready(function(){
          cache: false,
        success: function(data){
            document.getElementById('alert-message').innerHTML = data;
+           $(document).foundation('alert','events');
        },
        error: function(data){
            document.getElementById('alert-message').innerHTML = data;
-       }
+          $(document).foundation('alert','events');
+        }
      });
   });
 
@@ -61,9 +64,9 @@ $(document).ready(function(){
         }
     });
     $('#header-logo').hover(function(){
-        this.src = "app/templates/default/img/Transparent-Trade-Tan-Large-08-10.png";
+        this.src = "/app/templates/default/img/ttc-bottom-page.png";
     }, function(){
-        this.src = "app/templates/default/img/Transparent%20Trade%20White-08-09.png";
+        this.src = "/app/templates/default/img/ttc-header-logo.png";
     });
     $('.panel-header').click(function() {
         if ($(this).children().eq(1).hasClass('fa-plus-circle')) {

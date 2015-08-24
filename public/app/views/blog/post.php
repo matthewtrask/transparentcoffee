@@ -18,7 +18,7 @@
 </div>
 
 <div class='row'  style="margin-bottom: 20px;">
-	<div class='small-12 medium-12 large-12 columns'>
+	<div class='small-12 medium-10 medium-offset-1 large-offset-0 large-12 columns'>
 
 		<?php
 		if($data['post']){

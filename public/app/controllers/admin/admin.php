@@ -123,18 +123,18 @@ class Admin extends \core\controller
 			$fileType = NULL;
 		}
 		if (($_FILES['roasterImage']['name'] != '')&&(isset($_FILES['roasterImage']['name']))) {
-			$allowed_filetypes = array('.jpg', '.jpeg', '.png', '.gif');
+			$allowed_filetypes = array('jpg', 'jpeg', 'png', 'gif');
 			$max_filesize = 10485760;
 			$upload_path = $_SERVER['DOCUMENT_ROOT'] . "/app/templates/default/img_tmp";
 
 			$imageName = $_FILES['roasterImage']['name'];
-			$ext = substr($imageName, strpos($imageName, '.'), strlen($imageName) - 1);
+			$ext = pathinfo($imageName, PATHINFO_EXTENSION);
 
 			if (!in_array($ext, $allowed_filetypes))
 				die('The file you attempted to upload is not allowed.');
 
-			if (filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
-				die('The file you attempted to upload is too large.');
+//			if (filesize($_FILES['roasterImage']['tmp_name']) > $max_filesize)
+//				die('The file you attempted to upload is too large.');
 
 			if (!is_writable($upload_path))
 				die('You cannot upload to the specified directory, please CHMOD it to 777.');
@@ -156,29 +156,36 @@ class Admin extends \core\controller
 		$email = $_POST['submitEmail'];
         if ($_POST['roasterName']) {
             $roaster = $_POST['roasterName'];
-            $roasterDescription = $_POST['roasterDescription'];
+			if (isset($_POST['roasterDescription'])) {
+				$roasterDescription = $_POST['roasterDescription'];
+			} else { $roasterDescription = NULL;}
             if ($parts = parse_url($_POST["roasterWebsite"])) {
                 if (!isset($parts["scheme"])) {
-                    $_POST["roasterWebsite"] = "http://" . $_POST["roasterWebsite"];
+					$roasterURL = "http://" . $_POST["roasterWebsite"];
                 }
             }
-            $roasterURL = $_POST['roasterURL'];
+			if (isset($roasterURL)) {
+				$roasterURL = $_POST['roasterURL'];
+			} else {$roasterURL = NULL;}
             $existingRoaster = NULL;
         }
         else {
             $existingRoaster = $_POST['existingRoaster'];
         }
 		$coffeeName = $_POST['coffeeName'];
-		$coffeeDescription = $_POST['coffeeDescription'];
+		if (isset($_POST['coffeeDescription'])) {
+			$coffeeDescription = $_POST['coffeeDescription'];
+		} else {$coffeeDescription = NULL;}
 		$coffeePrice = $_POST['coffeePrice'];
 		$coffeeCurrency = $_POST['coffeeCurrency'];
-		if ( $parts = parse_url($_POST["coffeeWebsite"]) ) {
-			if ( !isset($parts["scheme"]) )
-			{
-				$_POST["coffeeWebsite"] = "http://" . $_POST["coffeeWebsite"];
+		if (isset($_POST["coffeeWebsite"])) {
+			if ($parts = parse_url($_POST["coffeeWebsite"])) {
+				if (!isset($parts["scheme"])) {
+					$_POST["coffeeWebsite"] = "http://" . $_POST["coffeeWebsite"];
+				}
 			}
-		}
-		$coffeeWebsite = $_POST['coffeeWebsite'];
+			$coffeeWebsite = $_POST['coffeeWebsite'];
+		} else {$coffeeWebsite = NULL;}
 		$bagSize = $_POST['coffeeBagSize'];
 		$coffeeGPPP = $_POST['coffeeGPPP'];
         $coffeeEGS = $_POST['coffeeEGS'];
@@ -194,8 +201,8 @@ class Admin extends \core\controller
         if (!isset($existingRoaster)) {
             $roaster = array(
                 'roaster_name' => filter_var($roaster, FILTER_SANITIZE_STRING),
-                'roaster_description' => filter_var($roasterDescription, FILTER_SANITIZE_STRING),
-                'roaster_url' => filter_var($roasterURL, FILTER_SANITIZE_URL)
+                'roaster_description' => filter_var($roasterDescription, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE),
+                'roaster_url' => filter_var($roasterURL, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE)
             );
             if (isset($roasterImage)) {
                 $roaster['roaster_logo'] = $roasterImage;
@@ -207,13 +214,13 @@ class Admin extends \core\controller
 
 		$coffee = array (
 			'coffee_name'  => filter_var($coffeeName, FILTER_SANITIZE_STRING),
-			'description'  => filter_var($coffeeDescription, FILTER_SANITIZE_STRING),
+			'description'  => filter_var($coffeeDescription, FILTER_SANITIZE_STRING, FILTER_NULL_ON_FAILURE ),
 			'retail_price' => filter_var($coffeePrice, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION),
 			'currency' 	   => filter_var($coffeeCurrency, FILTER_SANITIZE_STRING),
 			'bag_size' 	   => filter_var($bagSize, FILTER_SANITIZE_NUMBER_INT),
 			'gppp'         => filter_var($coffeeGPPP, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ),
             'egs'          => filter_var($coffeeEGS, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION ),
-			'url'          => filter_var($coffeeWebsite, FILTER_VALIDATE_URL),
+			'url'          => filter_var($coffeeWebsite, FILTER_VALIDATE_URL, FILTER_NULL_ON_FAILURE),
 		);
         if (isset($fileName)) {
             $coffee['file_name'] = $fileName;
@@ -221,7 +228,7 @@ class Admin extends \core\controller
             $coffee['file_size'] = $fileSize;
         }
         if (isset($existingRoaster)) {
-            $oldRoasterId = $coffee['roaster_id'];
+			$oldRoasterId = $this->_ttcModel->getPendingRoasterIdFromCoffeeId($_POST['coffeeId']);
             $coffee['roaster_id'] = $existingRoaster;
         }
 
@@ -232,7 +239,9 @@ class Admin extends \core\controller
 		);
         if ($_POST['updateType'] == 'pending') {
             if (isset($existingRoaster)) {
-                $newRoasterId = $this->_adminModel->copyPendingRoaster($existingRoaster, 'pending');
+				$pendingCoffeesWithSameRoaster = $this->_adminModel->getPendingRoasterCount($oldRoasterId);
+				$this->_adminModel->removePendingRoaster($oldRoasterId);
+				$newRoasterId = $this->_adminModel->copyPendingRoaster($existingRoaster, 'pending');
                 if ($newRoasterId) {
                     $coffee['roaster_id'] = $newRoasterId;
                 }
@@ -242,21 +251,40 @@ class Admin extends \core\controller
                 }
             }
             $this->_ttcModel->pendingUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
-            if (isset($existingRoaster)) {
-                $this->_adminModel->removePendingRoaster($oldRoasterId);
-            }
+			//updates all coffees to have the newly switched to roaster
+			if ($existingRoaster) {
+				foreach ($pendingCoffeesWithSameRoaster as $pendingCoffee) {
+					$this->_ttcModel->updateRoasterIdForCoffee($pendingCoffee->coffee_id, $coffee['roaster_id'], 'pending');
+				}
+			}
         }
         else if ($_POST['updateType'] == 'active') {
             if (isset($existingRoaster)) {
-                $this->_adminModel->copyPendingRoaster($existingRoaster, 'active');
+				$oldRoasterId = $this->_ttcModel->getActiveRoasterIdFromCoffeeId($_POST['coffeeId']);
+				$activeCoffeesWithSameRoaster = $this->_adminModel->getActiveRoasterCount($oldRoasterId);
+				$this->_adminModel->removeActiveRoaster($oldRoasterId);
+				$this->_adminModel->copyPendingRoaster($existingRoaster, 'active');
             }
             $this->_ttcModel->activeUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
+			if ($existingRoaster) {
+				foreach ($activeCoffeesWithSameRoaster as $pendingCoffee) {
+					$this->_ttcModel->updateRoasterIdForCoffee($pendingCoffee->coffee_id, $coffee['roaster_id'], 'active');
+				}
+			}
         }
         else if ($_POST['updateType'] == 'archive') {
             if (isset($existingRoaster)) {
-                $this->_adminModel->copyPendingRoaster($existingRoaster, 'archive');
+				$oldRoasterId = $this->_ttcModel->getArchiveRoasterIdFromCoffeeId($_POST['coffeeId']);
+				$archiveCoffeesWithSameRoaster = $this->_adminModel->getArchiveRoasterCount($oldRoasterId);
+				$this->_adminModel->removeArchiveRoaster($oldRoasterId);
+				$this->_adminModel->copyPendingRoaster($existingRoaster, 'archive');
             }
             $this->_ttcModel->archiveUpdate($_POST['coffeeId'], $contact, $roaster, $coffee, $grower);
+			if ($existingRoaster) {
+				foreach ($archiveCoffeesWithSameRoaster as $pendingCoffee) {
+					$this->_ttcModel->updateRoasterIdForCoffee($pendingCoffee->coffee_id, $coffee['roaster_id'], 'archive');
+				}
+			}
         }
 
         header('Location: admin/pending');
@@ -290,7 +318,15 @@ class Admin extends \core\controller
 		$type = explode(':', substr($roasterImage, 0, $pos))[1];
 		$img = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $roasterImage));
 
-		$mail = new \PHPMailer();
+		$mail = new \PHPMailer(true);
+		$mail->IsSMTP();
+		$mail->SMTPSecure = 'ssl';
+		$mail->Host = "smtp.gmail.com";
+		$mail->SMTPAuth = true;
+		$mail->Port = 465;
+		$mail->Username = "team@transparenttradecoffee.org";
+		$mail->Password = "Emory2015";
+
 		$mail->From = "team@transparenttradecoffee.com";
 		$mail->FromName = "TT Coffee Team";
 		$mail->addAddress($address);
@@ -301,10 +337,7 @@ class Admin extends \core\controller
 		$mail->Subject = "TT Coffee Registration Received > Please Confirm Details for $coffee";
 		$mail->addStringEmbeddedImage($img, 'roaster_logo', '', 'base64', $type);
 		if (!$mail->send()) {
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		}
-		else {
-			echo '1';
+			echo "There was a problem with sending this email";
 		}
 
 		header('Location: /admin/pending');
@@ -316,7 +349,15 @@ class Admin extends \core\controller
 		$address = $_POST['address'];
 		$coffee  = $_POST['coffee'];
 
-		$mail = new \PHPMailer();
+		$mail = new \PHPMailer(true);
+		$mail->IsSMTP();
+		$mail->SMTPSecure = 'ssl';
+		$mail->Host = "smtp.gmail.com";
+		$mail->SMTPAuth = true;
+		$mail->Port = 465;
+		$mail->Username = "team@transparenttradecoffee.org";
+		$mail->Password = "Emory2015";
+
 		$mail->From = "team@transparenttradecoffee.org";
 		$mail->FromName = "TT Coffee Team";
 		$mail->addAddress($address);
@@ -326,10 +367,7 @@ class Admin extends \core\controller
 		$mail->AltBody = 'Please use an HTML viewer for this email';
 		$mail->Subject = "TT Coffee Registration Posted > Congrats $coffee Now Online";
 		if (!$mail->send()) {
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		}
-		else {
-			echo '1';
+			echo "There was a problem with sending this email";
 		}
 
 		header('Location: /admin/pending');
@@ -340,8 +378,16 @@ class Admin extends \core\controller
 		$html    = $_POST['html'];
 		$address = $_POST['address'];
 		$coffee  = $_POST['coffee'];
-		
-		$mail = new \PHPMailer();
+
+		$mail = new \PHPMailer(true);
+		$mail->IsSMTP();
+		$mail->SMTPSecure = 'ssl';
+		$mail->Host = "smtp.gmail.com";
+		$mail->SMTPAuth = true;
+		$mail->Port = 465;
+		$mail->Username = "team@transparenttradecoffee.org";
+		$mail->Password = "Emory2015";
+
 		$mail->From = "team@transparenttradecoffee.com";
 		$mail->FromName = "TT Coffee Team";
 		$mail->addAddress($address);
@@ -351,10 +397,7 @@ class Admin extends \core\controller
 		$mail->AltBody = 'Please use an HTML viewer for this email';
 		$mail->Subject = "TT Coffee Archived > $coffee Removed from Site";
 		if (!$mail->send()) {
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
-		}
-		else {
-			echo '1';
+			echo "There was a problem with sending this email";
 		}
 
 		header('Location: /admin/pending');
