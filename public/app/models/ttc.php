@@ -230,20 +230,36 @@ class ttc extends \core\model
 
         $activeGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower WHERE grower_id = '.$activeGrowerId)[0];
         if ((count($archiveGrowerCount) == 0)||(!isset($archiveGrowerCount))) {
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->insert(PREFIX . 'grower_archive', $activeGrower);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
         if ($activeGrowerCount == 1) {
             $growerData = array('grower_id' => $activeGrowerId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX . "grower", $growerData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
 
         $activeRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster WHERE roaster_id = '.$activeRoasterId)[0];
         if ((count($archiveRoasterCount) == 0)||(!isset($archiveRoasterCount))) {
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->insert(PREFIX . "roaster_archive", $activeRoaster);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
         if (count($activeRoasterCount) == 1) {
             $roasterData = array('roaster_id' => $activeRoasterId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX . "roaster", $roasterData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
 
         $this->_db->insert(PREFIX."coffee_archive", $activeCoffee);
@@ -290,20 +306,36 @@ class ttc extends \core\model
 
         $archiveGrower = (array) $this->_db->select('SELECT * FROM '.PREFIX.'grower_archive WHERE grower_id = '.$archiveGrowerId)[0];
         if ((count($activeGrowerCount) == 0)||(!isset($activeGrowerCount))) {
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->insert(PREFIX . 'grower', $archiveGrower);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
         if (count($archiveGrowerCount) == 1) {
             $growerData = array('grower_id' => $archiveGrowerId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX . "grower_archive", $growerData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
 
         $archiveRoaster = (array) $this->_db->select('SELECT * FROM '.PREFIX.'roaster_archive WHERE roaster_id = '.$archiveRoasterId)[0];
         if ((count($activeRoasterCount) == 0)||(!isset($activeRoasterCount))) {
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->insert(PREFIX . "roaster", $archiveRoaster);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
         if (count($archiveRoasterCount) == 1) {
             $roasterData = array('roaster_id' => $archiveRoasterId);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+            $stmt->execute();
             $this->_db->delete(PREFIX . "roaster_archive", $roasterData);
+            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+            $stmt->execute();
         }
 
         $this->_db->insert(PREFIX."coffee", $archiveCoffee);
