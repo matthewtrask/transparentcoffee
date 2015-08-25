@@ -236,7 +236,7 @@ class ttc extends \core\model
             $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
             $stmt->execute();
         }
-        if ($activeGrowerCount == 1) {
+        if (count($activeGrowerCount) == 1) {
             $growerData = array('grower_id' => $activeGrowerId);
             $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
             $stmt->execute();

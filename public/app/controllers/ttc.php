@@ -68,6 +68,7 @@ class ttc extends \core\controller {
         }
         if (isset($filterRoaster)) {
             $filterRoaster = array_unique($filterRoaster);
+            sort($filterRoaster);
         }
         $data['filter_roaster'] = $filterRoaster;
 		View::rendertemplate('header', $data);
@@ -519,12 +520,12 @@ class ttc extends \core\controller {
         else {
             $roasterDescription = NULL;
         }
-        if (isset($_POST['roasterWebsite'])) {
-            if ($parts = parse_url($_POST["roasterWebsite"])) {
-                if (!isset($parts["scheme"])) {
-                    $roasterURL = "http://" . $_POST["roasterWebsite"];
-                }
+        if ($parts = parse_url($_POST["roasterURL"])) {
+            if (!isset($parts["scheme"])) {
+                $roasterURL = "http://" . $_POST["roasterURL"];
             }
+        }
+        else if (isset($_POST['roasterURL'])) {
             $roasterURL = $_POST['roasterURL'];
         }
         else {
