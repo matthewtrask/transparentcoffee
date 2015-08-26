@@ -173,26 +173,50 @@ class ttc extends \core\model
         else {
             $pendingRoaster['roaster_id'] = $officialRoasterId;
             $this->_db->insert(PREFIX . 'roaster_archive', $pendingRoaster, true);
+            $archiveRoasterId = $this->_db->lastInsertId();
 
-            $pendingCoffee['grower_id']  = $officialGrowerId;
-            $pendingCoffee['roaster_id'] = $officialRoasterId;
-            $this->_db->insert(PREFIX."coffee", $pendingCoffee);
-            $officialCoffeeId = $this->_db->lastInsertId();
-            $pendingCoffee['coffee_id'] = $officialCoffeeId;
+            if (isset($archiveRoasterId) && ($archiveRoasterId != 0)) {
+                $pendingCoffee['grower_id'] = $officialGrowerId;
+                $pendingCoffee['roaster_id'] = $officialRoasterId;
+                $this->_db->insert(PREFIX . "coffee", $pendingCoffee);
+                $officialCoffeeId = $this->_db->lastInsertId();
+                $pendingCoffee['coffee_id'] = $officialCoffeeId;
 
-            $growerData = array('grower_id' => $officialGrowerId);
-            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
-            $stmt->execute();
-            $this->_db->delete(PREFIX."grower", $growerData);
-            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
-            $stmt->execute();
+                $growerData = array('grower_id' => $officialGrowerId);
+                $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+                $stmt->execute();
+                $this->_db->delete(PREFIX . "grower", $growerData);
+                $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+                $stmt->execute();
 
-            $roasterData = array('roaster_id' => $officialRoasterId);
-            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
-            $stmt->execute();
-            $this->_db->delete(PREFIX . "roaster", $roasterData);
-            $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
-            $stmt->execute();
+                $roasterData = array('roaster_id' => $officialRoasterId);
+                $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+                $stmt->execute();
+                $this->_db->delete(PREFIX . "roaster", $roasterData);
+                $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+                $stmt->execute();
+            }
+            else {
+                $pendingCoffee['grower_id'] = $officialGrowerId;
+                $pendingCoffee['roaster_id'] = $this->_db->select('SELECT roaster_id FROM '.PREFIX.'roaster_archive WHERE roaster_name = '.$pendingRoaster['roaster_name']);
+                $this->_db->insert(PREFIX . "coffee", $pendingCoffee);
+                $officialCoffeeId = $this->_db->lastInsertId();
+                $pendingCoffee['coffee_id'] = $officialCoffeeId;
+
+                $growerData = array('grower_id' => $officialGrowerId);
+                $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+                $stmt->execute();
+                $this->_db->delete(PREFIX . "grower", $growerData);
+                $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+                $stmt->execute();
+
+                $roasterData = array('roaster_id' => $officialRoasterId);
+                $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
+                $stmt->execute();
+                $this->_db->delete(PREFIX . "roaster", $roasterData);
+                $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
+                $stmt->execute();
+            }
         }
         if (count($roasterCount) == 1) {
             $roasterData = array('roaster_id' => $pendingRoasterId);
@@ -236,7 +260,7 @@ class ttc extends \core\model
             $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 1;');
             $stmt->execute();
         }
-        if ($activeGrowerCount == 1) {
+        if (count($activeGrowerCount) == 1) {
             $growerData = array('grower_id' => $activeGrowerId);
             $stmt = $this->_db->prepare('SET FOREIGN_KEY_CHECKS = 0;');
             $stmt->execute();

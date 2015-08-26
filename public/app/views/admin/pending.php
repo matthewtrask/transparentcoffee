@@ -227,8 +227,7 @@ use \helpers\phpmailer\mail;
 							<p><b>Farm Name</b>: <?php echo $ttcPending->farm_name?></p>
 							<p><b>Farm Region</b>: <?php echo $ttcPending->farm_region?></p>
 							<p><b>Farm Country</b>: <?php echo $ttcPending->farm_country?></p>
-							<p><b><u>Is all of the information above CORRECT?</u></b> Please reply to this email with a simple approve
-								response to publish your coffees to the TT Coffee site.</p>
+							<p><b><u>Is all of the information above CORRECT?</u></b> Please reply to this email with a simple response of "APPROVE" to publish your coffees to the TT Coffee site. </p>
 							<p><b><u>Would you like to make an EDIT to the information above?</u></b> Please reply to this email with a note detailing the edits that should be made.</p>
 							<p>Once your coffee listing is confirmed, our team will post to TT Coffee within 48 hours and also share
 								the news about your listing via our social media accounts (Twitter and Facebook).</p>

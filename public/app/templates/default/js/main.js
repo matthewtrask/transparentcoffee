@@ -125,7 +125,7 @@ $(document).ready(function(){
     });
     $(".slider-gppp").Link('upper').to("-inline-<div class='tooltip2'></div>", function ( value ) {
 
-        if (value == 4) {
+        if (value == 5) {
             $(this).html(
                 '<span>$' + Number(value).toString() + '+</span>'
             );

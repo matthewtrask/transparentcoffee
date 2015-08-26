@@ -27,7 +27,7 @@
 
 				echo "<div class='post'>";
 
-				echo "<div class='row'><h2><a href='".DIR."$row->postSlug'>$row->postTitle</a></h2></div>\n";
+				echo "<div class='row'><h2>$row->postTitle</h2></div>\n";
 				echo "<div class='row'>";
 //					echo "<div class='col-md-3'>";
 						//echo "<p><img src='".DIR."$row->postImg' class='img-responsive'></p>";

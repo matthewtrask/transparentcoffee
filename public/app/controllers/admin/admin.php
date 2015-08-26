@@ -159,14 +159,20 @@ class Admin extends \core\controller
 			if (isset($_POST['roasterDescription'])) {
 				$roasterDescription = $_POST['roasterDescription'];
 			} else { $roasterDescription = NULL;}
-            if ($parts = parse_url($_POST["roasterWebsite"])) {
+            if ($parts = parse_url($_POST["roasterURL"])) {
                 if (!isset($parts["scheme"])) {
-					$roasterURL = "http://" . $_POST["roasterWebsite"];
+					$roasterURL = "http://" . $_POST["roasterURL"];
                 }
+				else {
+					$roasterURL = $_POST['roasterURL'];
+				}
             }
-			if (isset($roasterURL)) {
+			else if (isset($_POST['roasterURL'])) {
 				$roasterURL = $_POST['roasterURL'];
-			} else {$roasterURL = NULL;}
+			}
+			else {
+				$roasterURL = NULL;
+			}
             $existingRoaster = NULL;
         }
         else {
