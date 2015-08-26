@@ -100,12 +100,20 @@ class ttc extends \core\controller {
         $egsUpper = $_POST['egs-upper'];
         foreach ($ttcoffees as $key => $ttcoffee) {
             if ($egsUpper == 60) {
-                if ($ttcoffee->egs < $egsLower) {
+                if ($egsLower == 15) {
+                    // do nothing
+                }
+                else if ($ttcoffee->egs < $egsLower) {
                     unset($ttcoffees[$key]);
                 }
             }
             else {
-                if (($ttcoffee->egs < $egsLower) || ($ttcoffee->egs > $egsUpper)) {
+                if ($egsLower == 15) {
+                    if ($ttcoffee->egs > $egsUpper) {
+                        unset($ttcoffees[$key]);
+                    }
+                }
+                else if (($ttcoffee->egs < $egsLower) || ($ttcoffee->egs > $egsUpper)) {
                     unset($ttcoffees[$key]);
                 }
             }
@@ -113,13 +121,21 @@ class ttc extends \core\controller {
         $gpppLower = $_POST['gppp-lower'];
         $gpppUpper = $_POST['gppp-upper'];
         foreach ($ttcoffees as $key => $ttcoffee) {
-            if ($gpppUpper == 4) {
-                if ($ttcoffee->gppp < $gpppLower) {
+            if ($gpppUpper == 5) {
+                if ($gpppLower == 2.5) {
+                    //do nothing
+                }
+                else if ($ttcoffee->gppp < $gpppLower) {
                     unset($ttcoffees[$key]);
                 }
             }
             else {
-                if (($ttcoffee->gppp < $gpppLower) || ($ttcoffee->gppp > $gpppUpper)) {
+                if ($gpppLower == 2.5) {
+                    if ($ttcoffee->gppp > $gpppUpper) {
+                        unset($ttcoffees[$key]);
+                    }
+                }
+                else if (($ttcoffee->gppp < $gpppLower) || ($ttcoffee->gppp > $gpppUpper)) {
                     unset($ttcoffees[$key]);
                 }
             }
