@@ -163,6 +163,9 @@ class Admin extends \core\controller
                 if (!isset($parts["scheme"])) {
 					$roasterURL = "http://" . $_POST["roasterURL"];
                 }
+				else {
+					$roasterURL = $_POST['roasterURL'];
+				}
             }
 			else if (isset($_POST['roasterURL'])) {
 				$roasterURL = $_POST['roasterURL'];
