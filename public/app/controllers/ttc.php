@@ -235,7 +235,7 @@ class ttc extends \core\controller {
                                 echo '</div>';
                                 echo '<div class="Percent">';
                                     echo '<div class="percent-abbrev rotate">EGS</div>';
-                                    echo "<h3>" . round($ttcoffee->egs, 1) . "%</h3>";
+                                    echo "<h3>" . number_format($ttcoffee->egs, 1) . "%</h3>";
                                 echo '</div>';
                             echo '</div>';
                         echo '</div>';
@@ -279,7 +279,7 @@ class ttc extends \core\controller {
                                                 echo "<div class='abbreviation'>GPP</div>";
                                             echo '</div>';
                                             echo '<div class="small-6 medium-6 columns">';
-                                                echo "<div class='circle'>" . round($ttcoffee->egs, 1) . "%</div>";
+                                                echo "<div class='circle'>" . number_format($ttcoffee->egs, 1) . "%</div>";
                                                 echo "<div class='abbreviation'>EGS</div>";
                                             echo '</div>';
                                         echo '</div>';
@@ -805,8 +805,8 @@ class ttc extends \core\controller {
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
         $mail->Port = 465;
-        $mail->Username = "team@transparenttradecoffee.org";
-        $mail->Password = "Emory2015";
+        $mail->Username = MAILER_NAME;
+        $mail->Password = MAILER_PASS;
 
         $mail->From = "from@transparenttradecoffee.org";
         $mail->FromName = $cleanName;
