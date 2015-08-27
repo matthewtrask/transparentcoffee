@@ -228,7 +228,7 @@
 <!--                            <div class="fill"></div>-->
                             <div class="Percent">
                                 <div class="percent-abbrev rotate">EGS</div>
-                                <h3><?php echo round($ttcoffee->egs, 1)?>%</h3>
+                                <h3><?php echo number_format($ttcoffee->egs, 1)?>%</h3>
                             </div>
                         </div>
                     </div>
@@ -268,7 +268,7 @@
                                             <div class="abbreviation">GPP</div>
                                         </div>
                                         <div class="small-6 medium-6 columns">
-                                            <div class="circle"><?php echo round($ttcoffee->egs, 1)?>%</div>
+                                            <div class="circle"><?php echo number_format($ttcoffee->egs, 1)?>%</div>
                                             <div class="abbreviation" style="margin-left: 0;">EGS</div>
                                         </div>
                                     </div>
