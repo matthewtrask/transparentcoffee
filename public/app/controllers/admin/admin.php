@@ -5,6 +5,7 @@ use \helpers\form;
 use	\helpers\url;
 use \core\model;
 use	\core\view;
+//require $_SERVER['DOCUMENT_ROOT'] . '/app/core/config.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 
 class Admin extends \core\controller
