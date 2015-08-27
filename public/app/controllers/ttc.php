@@ -805,8 +805,8 @@ class ttc extends \core\controller {
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
         $mail->Port = 465;
-        $mail->Username = "team@transparenttradecoffee.org";
-        $mail->Password = "Emory2015";
+        $mail->Username = MAILER_NAME;
+        $mail->Password = MAILER_PASS;
 
         $mail->From = "from@transparenttradecoffee.org";
         $mail->FromName = $cleanName;

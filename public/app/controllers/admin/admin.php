@@ -330,8 +330,8 @@ class Admin extends \core\controller
 		$mail->Host = "smtp.gmail.com";
 		$mail->SMTPAuth = true;
 		$mail->Port = 465;
-		$mail->Username = "team@transparenttradecoffee.org";
-		$mail->Password = "Emory2015";
+		$mail->Username = MAILER_NAME;
+		$mail->Password = MAILER_PASS;
 
 		$mail->From = "team@transparenttradecoffee.com";
 		$mail->FromName = "TT Coffee Team";
@@ -361,8 +361,8 @@ class Admin extends \core\controller
 		$mail->Host = "smtp.gmail.com";
 		$mail->SMTPAuth = true;
 		$mail->Port = 465;
-		$mail->Username = "team@transparenttradecoffee.org";
-		$mail->Password = "Emory2015";
+		$mail->Username = MAILER_NAME;
+		$mail->Password = MAILER_PASS;
 
 		$mail->From = "team@transparenttradecoffee.org";
 		$mail->FromName = "TT Coffee Team";
@@ -391,8 +391,8 @@ class Admin extends \core\controller
 		$mail->Host = "smtp.gmail.com";
 		$mail->SMTPAuth = true;
 		$mail->Port = 465;
-		$mail->Username = "team@transparenttradecoffee.org";
-		$mail->Password = "Emory2015";
+		$mail->Username = MAILER_NAME;
+		$mail->Password = MAILER_PASS;
 
 		$mail->From = "team@transparenttradecoffee.com";
 		$mail->FromName = "TT Coffee Team";
