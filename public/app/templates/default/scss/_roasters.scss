@@ -1,0 +1,23 @@
+.custom-table-cell {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+#roasters-text {
+  margin-top: 20px;
+}
+
+@media #{$small-only} and (min-width: 451px) {
+  #roasters-table {
+    th, td {
+      font-size: 11px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #roasters-table {
+    th, td {
+      font-size: 8px !important;
+    }
+  }
+}
