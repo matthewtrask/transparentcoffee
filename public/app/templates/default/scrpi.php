@@ -10,8 +10,8 @@
 </div>
 <div class="row">
     <div class="small-offset-1 small-10 large-12 large-offset-0 columns text-center">
-        <h1 class="page-header">Specialty Coffee Retail Price Index – 2015, Q2</h1>
-        <p>June 29, 2015</p>
+        <h1 class="page-header">Specialty Coffee Retail Price Index – 2015, Q3</h1>
+        <p>October 12, 2015</p>
     </div>
 </div>
 <div class="row">
@@ -22,9 +22,10 @@
 
 <div class="row">
     <div class="small-offset-1 small-10 large-12 large-offset-0 columns text-left">
-        <p class="light-font-smaller">In the second quarter of 2015, the Specialty Coffee Retail Price Index (SCRPI) rose by 1.5%.[1] The average price for roasted specialty coffee at the end of June, 2015 was $21.94 per pound. This breaks down into an average of $16.15 per pound for the lowest-priced coffees (-0.1%), and $27.73 for the highest-priced coffees (+2.5%) sold on the websites of the SCRPI roasters.</p>
-        <p class="light-font-smaller">The year-over-year increase in specialty coffee prices – from the second quarter of 2014 to the second quarter of 2015 – was 12.5%. This broke down into a 1.1% increase for the lowest-priced coffees, and a 20.9% increase for the highest-priced coffees.</p>
-        <p class="light-font-smaller">Note that the corresponding ICO Composite Price for green coffee fell to $1.25 per pound in June, 2015. Thus, while retail prices for specialty coffees continued to rise, commodity prices fell another 1.7% during the second quarter. Year-over-year, average retail prices for specialty coffees increased by 12.7%, while the ICO Composite Price fell by 17.8%</p>
+        <p class="light-font-smaller">In the third quarter of 2015, the SCRPI fell by 1.3%. The average price for roasted specialty coffee at the end of September, 2015 was $21.71 per pound. This breaks down into an average of $16.07 per pound for the lowest-priced coffees (-0.3%), and $27.35 for the highest-priced coffees (-1.9%) sold on the websites of the SCRPI roasters.</p>
+        <p class="light-font-smaller">The year-over-year increase in specialty coffee prices – from the third quarter of 2014 to the third quarter of 2015 – was 8.2%. This breaks down into a 0.4% decrease for the lowest-priced coffees, but a 13.9% increase for the highest-priced coffees.</p>
+        <p class="light-font-smaller">The corresponding ICO Composite Price for green coffee fell to $1.15 per pound in September 2015. Thus, as retail prices for specialty coffees fell by 1.3%, commodity prices fell by 7.9% during the third quarter. Year-over-year, as average retail prices for specialty coffees rose by 8.2%, the ICO Composite Price fell by 28.9%.</p>
+        <p class="light-font-smaller">* In 2014, Q3, the number of SCRPI roasters fell from 60 to 59, as Green Mountain Coffee was acquired by Keurig. In the first quarter of 2015, the number fell to 58 because the Supreme Bean website is under construction.</p>
     </div>
 </div>
 <div class="row">
