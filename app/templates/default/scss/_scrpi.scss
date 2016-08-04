@@ -1,0 +1,32 @@
+.panel-text {
+  p {
+    font-style: italic;
+  }
+  a p {
+    text-decoration: underline;
+  }
+}
+
+p.light-font-smaller {
+
+}
+@media #{$large-up} {
+  .scrpi-header {
+    font-size: 60px;
+  }
+}
+@media #{$medium-only} {
+  .scrpi-header {
+    font-size: 40px;
+  }
+}
+@media #{$small-only} {
+  .scrpi-header {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .scrpi-header {
+    font-size: 20px !important;
+  }
+}

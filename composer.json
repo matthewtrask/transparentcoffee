@@ -1,0 +1,36 @@
+{
+    "name": "Transparent Trade Coffee",
+    "type": "website",
+    "description": "Transparent Trade Coffee for Emory University",
+    "homepage": "https://github.com/rocketpastsix/transparentcoffee",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Trask",
+            "email": "mjftrask@gmail.com",
+            "homepage": "http://matthewtrask.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Justin Rector",
+            "email": "jrec15@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "phpmailer/phpmailer": "5.2.14",
+        "vlucas/phpdotenv": "*",
+        "guzzlehttp/guzzle": "*",
+        "robmorgan/phinx": "0.5.3",
+        "box/spout": "*"
+    },
+    "require-dev": {
+        "codeception/codeception": "*",
+        "fzaninotto/faker": "^1.6@dev"
+    },
+    "autoload": {
+        "psr-4": {"": "app/"}
+    },
+    "minimum-stability": "dev"
+}
