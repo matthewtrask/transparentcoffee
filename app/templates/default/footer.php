@@ -45,7 +45,7 @@ helpers\assets::js(array(
 <script src="/bower_components/fastclick/lib/fastclick.min.js"></script>
 <script type="text/javascript" src="/bower_components/slick-1.5.0/slick/slick.min.js"></script>
 <script type="text/javascript" src="/app/templates/default/js/slick.min.js"></script>
-<script src="/bower_components/modernizr/modernizr.min.js"></script>
+<script src="/bower_components/modernizr/modernizr.js"></script>
 
 
 <script>

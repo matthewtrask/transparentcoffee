@@ -7,12 +7,25 @@
 			<div class='row'>
 				<div class='medium-12 columns'>
 					<h1>Admin</h1>
-					<ul>
-						<li><a href='<?php echo DIR;?>admin/cats' class='button'>Categories</a></li>
-						<li><a href='<?php echo DIR;?>admin/posts' class='button'>Posts</a></li>
-						<li><a href='<?php echo DIR;?>admin/users' class='button'>Users</a></li> 
-						<li><a href='<?php echo DIR;?>admin/pending' class="button">Coffees</a></li>
-					</ul>
+					<div class="row">
+						<div class='medium-2 columns'>
+							<a href='<?php echo DIR;?>admin/cats' class='button'>Categories</a>
+						</div>
+						<div class='medium-2 columns'>
+							<a style="margin-left: 1%;" href='<?php echo DIR;?>admin/posts' class='button'>Insights</a>
+						</div>
+						<div class='medium-2 columns'>
+							<a style="margin-left: 1%;" href='<?php echo DIR;?>admin/users' class='button'>Users</a>
+						</div>
+						<div class='medium-2 columns'>
+							<a style="margin-left: 1%;" href='<?php echo DIR;?>admin/pending' class="button">Coffees</a>
+						</div>
+						<div class='medium-2 columns'>
+							<a style="margin-left: 1%;" href='<?php echo DIR;?>admin/scrpi' class="button">SCRPI</a>
+						</div>
+						<div class='medium-2 columns'>
+						</div>
+					</div>
 				</div>
 
 			</div>

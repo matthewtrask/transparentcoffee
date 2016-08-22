@@ -63,32 +63,7 @@ class Admin extends \core\controller
 
 	public function csvWriter()
 	{
-		$coffees = $this->_ttcModel->getTTCoffees();
 
-		$spreadsheet = new CSV;
-
-		$csv = [];
-
-		foreach($coffees as $key => $ttcoffee){
-//			var_dump($ttcoffee);
-
-			$csv = [
-				[
-					'Roaster Name',
-					'Farm Name',
-					'Farm Country',
-					'Farm Region'
-				],
-				[
-					'col1' => $ttcoffee->roaster_name,
-					'col2' => $ttcoffee->farm_name,
-					'col3' => $ttcoffee->farm_country,
-					'col4' => $ttcoffee->farm_region,
-				]
-			];
-		}
-
-		return $spreadsheet->fromArray($csv)->render('myfile.csv');
 
 
 	}

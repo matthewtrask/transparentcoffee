@@ -20,4 +20,6 @@ Options -Indexes
 
 	RewriteRule ^(.*)$ index.php?$1 [QSA,L]
 
+
+
 </IfModule>

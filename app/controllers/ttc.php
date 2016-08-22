@@ -37,7 +37,33 @@ class ttc extends \core\controller {
         $data['cats'] = $this->_modelblog->getcats();
 
         $roasters = $this->_model->getLogos();
+
+        $coffee = [
+            [
+                'roaster_url' => 'http://www.coffeehunterproject.com',
+                'roaster_logo' => '/app/templates/default/img/cafe-kreyol.png',
+            ],
+            [
+                'roaster_url' => 'http://counterculturecoffee.com',
+                'roaster_logo' => '/app/templates/default/img/CounterCultureLogo.jpg',
+            ],
+            [
+                'roaster_url' => 'http://birdrockcoffee.com',
+                'roaster_logo' => '/app/templates/default/img/birdrock.png',
+            ],
+            [
+                'roaster_url' => 'http://highergroundscofee.com',
+                'roaster_logo' => '/app/templates/default/img/Higher-Grounds-Logo.jpg',
+            ]
+        ];
+
+        $coffees = [];
+
+        $coffees[] = $coffee;
+
+
         $data['roasters'] = $roasters;
+        $data['coffees'] = $coffees;
         View::rendertemplate('header', $data);
         View::rendertemplate('home', $data);
 		View::rendertemplate('footer');

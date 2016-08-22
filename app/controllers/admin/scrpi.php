@@ -5,12 +5,22 @@ namespace controllers\admin;
 
 use core\controller;
 use core\View;
+use Exception;
 use helpers\Session;
 use helpers\Url;
 
 class scrpi extends controller
 {
     protected $_model;
+
+    protected $ext = [
+        'jpg',
+        'png',
+        'pdf',
+        'txt',
+        'doc',
+        'docx'
+    ];
 
     public function __construct()
     {
@@ -160,5 +170,26 @@ class scrpi extends controller
         $this->_model->deletePost(array('postID' => $id));
         Session::set('message','Post Deleted');
         Url::redirect('admin/scrpi');
+    }
+
+    public function upload()
+    {
+        if(isset($_FILES['doc'])){
+            $tempName = $_FILES['doc']['tmp_name'];
+
+
+            if($_FILES['doc']['size'] > (1024000)) {
+                throw new Exception('The file you tried to upload is too large.');
+            }
+
+            $info = new \SplFileInfo($_FILES['doc']);
+            $extension = $info->getExtension();
+
+            if(!in_array($extension, $this->ext)){
+                throw new Exception('You can not upload that type of file');
+            }
+
+            move_uploaded_file($_FILES['doc']['tmp_name'], __DIR__ . '/downloads/'.$tempName);
+        } 
     }
 }

@@ -9,8 +9,16 @@
 
         <?php echo \helpers\session::pull('message');?>
 
-        <p><a href='<?php echo DIR;?>admin/scrpi/add' class='button'>Add Scrpi Post</a></p>
-
+        <div class="row">
+            <div class="small-3 columns">
+                <p><a href='<?php echo DIR;?>admin/scrpi/add' class='button'>Add Scrpi Post</a></p>
+            </div>
+            <div class="small-3 columns">
+                <p><a href='#' data-reveal-id="docUpload" class='button'>Upload Scrpi Spanish</a></p>
+            </div>
+            <div class="small-6 columns">
+            </div>
+        </div>
         <table class='table table-striped table-hover table-bordered responsive'>
             <tr>
                 <th>Title</th>
@@ -42,4 +50,10 @@
         </div>
     </div>
 
+</div>
+
+<div id="docUpload" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle">Spanish SCRPI Post</h2>
+    <input type="file" name="doc" />
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>

@@ -73,10 +73,10 @@ use helpers\assets;
                 selector: '.edit',
                 plugins: ["image"],
                 file_browser_callback: function(field_name, url, type, win) {
-                    if(type=='image') $('#my_form input#image').click();
+                    if(type =='image') $('#my_form input#image').click();
                 },
                 relative_urls: false,
-                images_upload_url: 'postAcceptor.php'
+                images_upload_url: 'nicUpload.php'
 
             });
 
