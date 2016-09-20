@@ -31,9 +31,27 @@ class Registration extends \core\model {
                             INNER JOIN '.PREFIX.'contact AS ct ON r.contact_id = ct.contact_id');
     }
 
+    /**
+     * This will return all the roasters in both tables.
+     *
+     * BEWARE
+     *
+     * This method does not check to see if values are unique. Thus it will return multiples
+     * based on the roaster_id AND contact_id
+     *
+     * @return array
+     */
     public function getAllRoasters() {
         return $this->_db->select('SELECT roaster_id, roaster_name FROM '.PREFIX.'roaster
                             UNION SELECT roaster_id, roaster_name FROM '.PREFIX.'roaster_archive');
+    }
+
+    /**
+     * Only returns unique roasters
+     */
+    public function getUniqueRoasters()
+    {
+        return $this->_db->select('SELECT roaster_id, roaster_name FROM '.PREFIX.'roaster');
     }
 
     public function getPendingRoasterCount($roasterId) {
@@ -111,6 +129,12 @@ class Registration extends \core\model {
 
     public function getArchiveCoffee(){
         return $this->_db->select('select count(coffee_name) AS "total_count" from '.PREFIX.'coffee_archive');
+    }
+
+    public function clearPending()
+    {
+        $this->_db->deleteTable(PREFIX.'coffee_pending');
+        $this->_db->deleteTable(PREFIX.'grower_pending');
     }
 
 }

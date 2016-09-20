@@ -88,8 +88,6 @@ Router::any('admin', '\controllers\admin\admin@index');
 Router::any('admin/login', '\controllers\admin\auth@login');
 Router::any('logout', '\controllers\admin\auth@logout');
 Router::any('admin/pending', '\controllers\admin\admin@pending');
-Router::any('admin/csv', '\controllers\admin\admin@csv');
-Router::any('excel', '\controllers\admin\admin@csvWriter');
 Router::any('pendingAjax', '\controllers\admin\admin@pendingAjax');
 Router::any('rejectAjax', '\controllers\admin\admin@rejectAjax');
 Router::any('archiveAjax', '\controllers\admin\admin@archiveAjax');
@@ -108,6 +106,8 @@ Router::any('admin/users', '\controllers\admin\users@index');
 Router::any('admin/users/add', '\controllers\admin\users@add');
 Router::any('admin/users/edit/(:num)', '\controllers\admin\users@edit');
 
+Router::any('admin/csv', '\controllers\admin\csv@index');
+
 Router::any('admin/scrpi', '\controllers\admin\scrpi@index');
 Router::any('admin/scrpi/add', '\controllers\admin\scrpi@add');
 Router::any('admin/scrpi/edit/(:num)', '\controllers\admin\scrpi@edit');
@@ -123,6 +123,9 @@ Router::any('admin/cats/add', '\controllers\admin\cats@add');
 Router::any('admin/cats/edit/(:num)', '\controllers\admin\cats@edit');
 Router::any('admin/cats/delete/(:num)', '\controllers\admin\cats@delete');
 
+
+// utilities
+Router::any('admin/coffee/clear', '\controllers\admin\registration@clearPending');
 
 Router::any('insights', '\controllers\blog@index');
 Router::any('category/(:any)', '\controllers\blog@cat');

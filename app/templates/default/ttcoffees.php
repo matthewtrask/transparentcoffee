@@ -30,12 +30,12 @@
 <div class="row">
   <div class="small-12 medium-12 large-12 column">
     <p style="margin-top: 20px;" class="light-font-smaller">TTC registered roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
-        We encourage you to consider the green prices paid to growers <b>(GPP*)</b>, and/or the effective grower share <b>(EGS*)</b> when making your coffee purchase decisions.
+        We encourage you to consider the green prices paid to growers <b>(GPP*)</b>, and/or the effective return to origin <b>(RTO*)</b> when making your coffee purchase decisions.
         When you are satisfied with the economic treatment of the coffee grower, click on the listing to go directly to the roaster's on-line store to learn more and to make your coffee purchase.
         <b>If you don’t see any coffees from your favorite roasters, please encourage them to <a class="hyperlink" href="registrationinfo">register today.</b></a></p>
       <br><p class="light-font-smaller">
           <i>* GPP = Green Price Per Pound</i>  <small><a href="#" data-reveal-id="gpp-view">Learn More</a></small><br>
-          <i>* EGS = Effective Grower Share</i>  <small><a href="#" data-reveal-id="egs-view">Learn More</a></small
+          <i>* RTO = Return To Origin</i>  <small><a href="#" data-reveal-id="egs-view">Learn More</a></small
       </p>
   </div>
 </div>
@@ -55,12 +55,12 @@
 <div id="egs-view" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <div class="row">
         <div class="small-10 small-offset-1 columns">
-            <h2 id="modalTitle">Effective Grower Share</h2>
-            <p class="lead">Effective grower share (EGS) is the percentage of the retail price paid by a
+            <h2 id="modalTitle">Return To Origin</h2>
+            <p class="lead">Return To Origin (RTO) is the percentage of the retail price paid by a
 
                 consumer for a 12-ounce bag of coffee that is returned to the coffee grower.
 
-                EGS is calculated by dividing the green price paid to the grower (GPP) by the
+                RTO is calculated by dividing the green price paid to the grower (GPP) by the
 
                 green-pound equivalent price charged for each bag of roasted coffee. Green-
 
@@ -110,7 +110,7 @@
                 </div>
             </dd>
             <dd class="accordion-navigation">
-                <a class="text-center panel-header" href="#panel3"><b>Effective Grower Share</b> <i class="fa fa-plus-circle"></i></a>
+                <a class="text-center panel-header" href="#panel3"><b>Return To Origin</b> <i class="fa fa-plus-circle"></i></a>
                 <div id="panel3" class="content">
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
@@ -160,7 +160,7 @@
                             <input class="gppp-upper" type="hidden" name="gppp-upper">
                         </div>
                     </div>
-                    <div style="margin-bottom: 10px; margin-top: 5px;"><b>Effective Grower Share</b></div>
+                    <div style="margin-bottom: 10px; margin-top: 5px;"><b>Return To Origin</b></div>
                     <div class="row">
                         <div class="small-offset-1 small-10 columns">
                             <div class="slider-egs" class="noUiSlider" style="margin-top: 25px; margin-bottom: 20px;"></div>
@@ -180,7 +180,7 @@
 
             <ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>
                 <li class="sort-dropdown"><a>Green Price Per Pound</a></li>
-                <li class="sort-dropdown"><a>Effective Grower Share</a></li>
+                <li class="sort-dropdown"><a>Return To Origin</a></li>
             </ul>
             <a id="down" class="button tiny secondary arrow-btn"><i class="fa fa-angle-down fa-2x"></i></a>
         </div>
@@ -227,7 +227,7 @@
                             </div>
 <!--                            <div class="fill"></div>-->
                             <div class="Percent">
-                                <div class="percent-abbrev rotate">EGS</div>
+                                <div class="percent-abbrev rotate">RTO</div>
                                 <h3><?php echo number_format($ttcoffee->egs, 1)?>%</h3>
                             </div>
                         </div>
@@ -269,7 +269,7 @@
                                         </div>
                                         <div class="small-6 medium-6 columns">
                                             <div class="circle"><?php echo number_format($ttcoffee->egs, 1)?>%</div>
-                                            <div class="abbreviation" style="margin-left: 0;">EGS</div>
+                                            <div class="abbreviation" style="margin-left: 0;">RTO</div>
                                         </div>
                                     </div>
                                 </div>

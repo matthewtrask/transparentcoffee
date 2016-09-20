@@ -2,6 +2,7 @@
 namespace Models;
 
 use core\model;
+
 require $_SERVER['DOCUMENT_ROOT'] . '/app/library/TTCoffee.php';
 
 class ttc extends \core\model

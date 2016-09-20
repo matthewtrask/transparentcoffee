@@ -35,3 +35,5 @@ node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/dateformat/node
 /vendor
 
 tests/_output/*
+
+phinx.yml

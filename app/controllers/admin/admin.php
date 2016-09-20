@@ -6,7 +6,7 @@ use \helpers\form;
 use	\helpers\url;
 use \core\model;
 use	\core\view;
-use mnshankar\CSV\CSV;
+
 //require $_SERVER['DOCUMENT_ROOT'] . '/app/core/config.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
 
@@ -38,33 +38,14 @@ class Admin extends \core\controller
 		$pendingCoffee = $this->_adminModel->getPendingCoffee();
 		$archivedCoffee = $this->_adminModel->getArchiveCoffee();
 
-		$notes = $this->_ttcModel->getNotes();
-
 		$data['allCoffee'] = $allCoffee;
 		$data['approvedCoffee'] = $approvedCoffee;
 		$data['pendingCoffee'] = $pendingCoffee;
 		$data['archivedCoffee'] = $archivedCoffee;
-		$data['notes'] = $notes;
 
 		View::renderadmintemplate('header', $data);
 		View::render('admin/admin', $data);
 		View::renderadmintemplate('footer', $data);
-
-	}
-
-	public function csv()
-	{
-		$data['title'] = 'Excel Generation';
-
-		View::renderadmintemplate('header', $data);
-		View::render('admin/csv', $data);
-		View::renderadmintemplate('footer');
-	}
-
-	public function csvWriter()
-	{
-
-
 
 	}
 
@@ -78,11 +59,11 @@ class Admin extends \core\controller
 		$data['ttcPending'] = $ttcPending;
 		$data['ttcActive'] = $ttcActive;
 		$data['ttcArchive'] = $ttcArchive;
-		
+
 		View::renderadmintemplate('header', $data);
 		View::render('admin/pending', $data);
 		View::renderadmintemplate('footer', $data);
-	
+
 	}
 
     public function pendingAjax()
@@ -319,7 +300,7 @@ class Admin extends \core\controller
     }
 
     public function roasterAjax() {
-        $roasters = $this->_adminModel->getAllRoasters();
+        $roasters = $this->_adminModel->getUniqueRoasters();
         ?>
         <div class="row">
             <div class="small-3 medium-3 large-3 columns">
@@ -432,7 +413,7 @@ class Admin extends \core\controller
 
 	}
 
-	
+
 
     public function gppProof()
     {

@@ -67,7 +67,7 @@
 
             other green prices (i.e., f.o.b. price per green pound paid to the grower). We
 
-            then calculate the effective share of price that goes to the grower. Before your
+            then calculate the return to origin percentage that goes to the grower. Before your
 
             registered coffee(s) go live on the website, you receive an email asking you to
 

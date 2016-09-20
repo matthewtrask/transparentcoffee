@@ -102,6 +102,7 @@ class Database extends PDO{
 
 		ksort($data);
 
+
 		$fieldNames = implode(',', array_keys($data));
 		$fieldValues = ':'.implode(', :', array_keys($data));
 
@@ -202,6 +203,15 @@ class Database extends PDO{
 	 */
 	public function truncate($table){
 		return $this->exec("TRUNCATE TABLE $table");
+	}
+
+	/**
+	 * @param $table
+	 * @return int
+	 */
+	public function deleteTable($table)
+	{
+		return $this->exec("DELETE TABLE $table");
 	}
 
 }

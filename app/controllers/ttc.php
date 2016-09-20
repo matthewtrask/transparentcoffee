@@ -9,6 +9,7 @@ use helpers\phpmailer\mail;
 use core\view;
 use core\controller;
 use Core\Model;
+use Predis\Client as Predis;
 
 class ttc extends \core\controller {
     /**

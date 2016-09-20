@@ -22,7 +22,7 @@ use \helpers\phpmailer\mail;
 								<th>Currency</th>
 								<th>Bag Size(in ounces)</th>
 								<th>GPP</th>
-                                <th>EGS</th>
+                                <th>RTO</th>
 								<th>Coffee Website</th>
 								<th>Farm Name</th>
 								<th>Farm Region</th>
@@ -90,7 +90,7 @@ use \helpers\phpmailer\mail;
 						<th>Currency</th>
 						<th>Bag Size(in ounces)</th>
 						<th>GPP</th>
-						<th>EGS</th>
+						<th>RTO</th>
 						<th>Coffee Website</th>
 						<th>Farm Name</th>
 						<th>Farm Region</th>
@@ -158,7 +158,7 @@ use \helpers\phpmailer\mail;
 						<th>Currency</th>
 						<th>Bag Size(in ounces)</th>
 						<th>GPP</th>
-						<th>EGS</th>
+						<th>RTO</th>
 						<th>Coffee Website</th>
 						<th>Farm Name</th>
 						<th>Farm Region</th>
@@ -222,7 +222,7 @@ use \helpers\phpmailer\mail;
 							<p><b>Retail Currency</b>: <?php echo $ttcPending->currency?></p>
 							<p><b>Bag Size (ounces)</b>: <?php echo $ttcPending->bag_size?></p>
 							<p><b>Green Price Per Pound</b>: <?php echo $ttcPending->gppp?></p>
-							<p><b>EGS</b>: <?php echo round($ttcPending->egs, 1)?>%</p>
+							<p><b>RTO</b>: <?php echo round($ttcPending->egs, 1)?>%</p>
 							<p><b>Coffee Website</b>: <?php echo $ttcPending->url?></p>
 							<p><b>Farm Name</b>: <?php echo $ttcPending->farm_name?></p>
 							<p><b>Farm Region</b>: <?php echo $ttcPending->farm_region?></p>
@@ -254,7 +254,7 @@ use \helpers\phpmailer\mail;
 							<p><b>Retail Currency</b>: <?php echo $ttcPending->currency?></p>
 							<p><b>Bag Size (ounces)</b>: <?php echo $ttcPending->bag_size?></p>
 							<p><b>Green Price Per Pound</b>: <?php echo $ttcPending->gppp?></p>
-							<p><b>EGS</b>: <?php echo round($ttcPending->egs, 1)?>%</p>
+							<p><b>RTO</b>: <?php echo round($ttcPending->egs, 1)?>%</p>
 							<p><b>Coffee Website</b>: <?php echo $ttcPending->url?></p>
 							<p><b>Farm Name</b>: <?php echo $ttcPending->farm_name?></p>
 							<p><b>Farm Region</b>: <?php echo $ttcPending->farm_region?></p>
@@ -400,7 +400,7 @@ use \helpers\phpmailer\mail;
 							</div>
 							<div class="row">
 								<div class="small-3 medium-3 large-3 columns">
-									<label for="coffeeEGS" class="inline">Effective Grower Share (0-100, without % sign)</label>
+									<label for="coffeeEGS" class="inline">Return To Origin (0-100, without % sign)</label>
 								</div>
 								<div class="small-9 medium-9 large-9 columns">
 									<input name="coffeeEGS" class="regInput" type="text" value="<?php echo $ttcPending->egs?>%" for="coffeeEGS" id="coffeeEGS">
@@ -622,7 +622,7 @@ use \helpers\phpmailer\mail;
 								</div>
 								<div class="row">
 									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeEGS" class="inline">Effective Grower Share (0-100)</label>
+										<label for="coffeeEGS" class="inline">Return To Origin (0-100)</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
 										<input name="coffeeEGS" class="regInput" type="text" value="<?php echo $ttcArchive->egs?>%" for="coffeeEGS" id="coffeeEGS">
@@ -842,7 +842,7 @@ use \helpers\phpmailer\mail;
 								</div>
 								<div class="row">
 									<div class="small-3 medium-3 large-3 columns">
-										<label for="coffeeEGS" class="inline">Effective Grower Share (0-100, without % sign)</label>
+										<label for="coffeeEGS" class="inline">Return To Origin (0-100, without % sign)</label>
 									</div>
 									<div class="small-9 medium-9 large-9 columns">
 										<input name="coffeeEGS" class="regInput" type="text" value="<?php echo $ttcActive->egs?>%" for="coffeeEGS" id="coffeeEGS">

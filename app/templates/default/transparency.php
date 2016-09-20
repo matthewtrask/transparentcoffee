@@ -38,7 +38,7 @@
                     much of their coffee dollars are going back to growers.</li>
             </ul>
         </p>
-        <p style="font-family: RalewayRegular;"><b>Clearly, there is more to specialty coffee purchases and communications than the green prices that are paid to growers. We are keenly interested in the many nuances of coffee quality, and are concerned about the various social and environmental contributions of coffee growers. However, an effective launching point into all of these conversations is a clear articulation of the effective share of retail prices that is going to growers.</b></p>
+        <p style="font-family: RalewayRegular;"><b>Clearly, there is more to specialty coffee purchases and communications than the green prices that are paid to growers. We are keenly interested in the many nuances of coffee quality, and are concerned about the various social and environmental contributions of coffee growers. However, an effective launching point into all of these conversations is a clear articulation of the return to origin percentages that is going to growers.</b></p>
     </div>
 </div>
 <div style="height: 50px">

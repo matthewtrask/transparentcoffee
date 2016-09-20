@@ -8,16 +8,16 @@ environments:
     production:
         adapter: mysql
         host: localhost
-        name: production_db
-        user: root
-        pass: ''
+        name: ttc
+        user: ttcoffees
+        pass: 5/x4jC265[tuV5b
         port: 3306
         charset: utf8
 
     development:
         adapter: mysql
-        host: localhost
-        name: development_db
+        host: 192.168.99.100
+        name: ttc
         user: root
         pass: 'root'
         port: 3306

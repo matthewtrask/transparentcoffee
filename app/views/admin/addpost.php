@@ -3,6 +3,8 @@ use helpers\url;
 use helpers\assets;
 ?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link href="//cdn.quilljs.com/1.0.3/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.0.3/quill.bubble.css" rel="stylesheet">
 <div class="row posts">
 	<div class="small-12 medium-12 large-12 columns">
 		<ul class="breadcrumbs">
@@ -19,7 +21,7 @@ use helpers\assets;
 		<p>Title<br><input type='text' name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'></p>
 		<p>Description<br><textarea class="edit" name='postDesc' rows='2' class='medium-12'><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea></p>
 		<p>Content<br><textarea class="edit" name='postCont' rows='10' class='col-md-12'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
-<!---->
+<!--
 <!--		<p>Category<br>-->
 <!--			<select name='catID'>-->
 <!--				<option>Select</option>-->
@@ -39,53 +41,49 @@ use helpers\assets;
 <!---->
 <!--		<p><input class="button" type='submit' name='submit' value='Submit'></p>-->
 
-		<iframe id="form_target" name="form_target" style="display:none"></iframe>
-		<form id="my_form" action="" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden">
-			<textarea id="my_editor"></textarea>
-			<input id="image" name="image" type="file" onchange="$('#my_form').submit();this.value='';">
-		</form>
-		<p><input id="submit" class="button" type='submit' name='submit' value='Submit'></p>
+<!--		<iframe id="form_target" name="form_target" style="display:none"></iframe>-->
+<!--		<form id="my_form" action="" target="form_target" method="post" enctype="multipart/form-data" style="width:0px;height:0;overflow:hidden">-->
+<!--			<textarea id="my_editor"></textarea>-->
+<!--			<input id="image" name="image" type="file" onchange="$('#my_form').submit();this.value='';">-->
+<!--		</form>-->
+<!--		<p><input id="submit" class="button" type='submit' name='submit' value='Submit'></p>-->
+
+		<div id="toolbar">
+			<!-- Add font size dropdown -->
+			<select class="ql-size">
+				<option value="small"></option>
+				<!-- Note a missing, thus falsy value, is used to reset to default -->
+				<option selected></option>
+				<option value="large"></option>
+				<option value="huge"></option>
+			</select>
+			<!-- Add a bold button -->
+			<button class="ql-bold"></button>
+			<!-- Add subscript and superscript buttons -->
+			<button class="ql-script" value="sub"></button>
+			<button class="ql-script" value="super"></button>
+			<button class="ql-link" value="super"></button>
+			<button class="ql-image" value="super"></button>
+			<button class="ql-video" value="super"></button>
+			<button class="ql-formula" value="super"></button>
+		</div>
+		<div id="editor"></div>
 
 
-		<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-<!--		<script>-->
-<!--			tinymce.init({-->
-<!--				selector: '#my_editor',-->
-<!--				plugins: [-->
-<!--					"advlist autolink lists link image charmap print preview anchor",-->
-<!--					"searchreplace visualblocks code fullscreen",-->
-<!--					"insertdatetime media table contextmenu paste imagetools"-->
-<!--				],-->
-<!--				toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image imageupload",-->
-<!--				content_css: [-->
-<!--					'//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',-->
-<!--					'//www.tinymce.com/css/codepen.min.css'-->
-<!--				],-->
-<!--				file_browser_callback: function(field_name, url, type, win) {-->
-<!--					if(type=='image') $('#edit input').click();-->
-<!--				},-->
-<!--				relative_urls: false-->
-<!--			});-->
-<!--		</script>-->
-<!--		<script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>-->
-		<script>
-			tinymce.init({
-				selector: '.edit',
-				plugins: ["image"],
-				file_browser_callback: function(field_name, url, type, win) {
-					if(type=='image') $('#my_form input#image').click();
-				},
-				relative_urls: false,
-				images_upload_url: 'postAcceptor.php'
-
+		<script src="//cdn.quilljs.com/1.0.3/quill.js" type="text/javascript"></script>
+		<script src="//cdn.quilljs.com/1.0.3/quill.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var quill = new Quill('#editor', {
+				theme: 'snow',
+				toolbar: '#toolbar'
 			});
 
-			$('input#submit').on('click', function(){
-				console.log('hello');
+			var customButton = document.querySelector('#custom-button');
+			customButton.addEventListener('click', function() {
+				console.log('Clicked!');
 			});
 		</script>
-
-<!--		<script src="https://cdn.jsdelivr.net/g/nicedit@0.9r24(nicEdit.js+nicEdit.plugins.js)"></script>-->
+			<!--		<script src="https://cdn.jsdelivr.net/g/nicedit@0.9r24(nicEdit.js+nicEdit.plugins.js)"></script>-->
 <!--		<script type="text/javascript">bkLib.onDomLoaded( function() {-->
 <!--				nicEditors.allTextAreas({-->
 <!--				uploadURI : "/app/controllers/nicUpload.php";-->
