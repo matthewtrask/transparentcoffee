@@ -29,8 +29,8 @@
 
 <div class="row">
   <div class="small-12 medium-12 large-12 column">
-    <p style="margin-top: 20px;" class="light-font-smaller">TTC registered roasters have provided the information that allows consumers to know exactly how much the grower was paid for his/her green coffee.
-        We encourage you to consider the green prices paid to growers <b>(GPP*)</b>, and/or the effective return to origin <b>(RTO*)</b> when making your coffee purchase decisions.
+    <p style="margin-top: 20px;" class="light-font-smaller">TTC registered roasters have provided the information that allows consumers to know how much the grower was paid for his/her green coffee.
+        We encourage you to consider the green prices <b>(GPP*)</b>, and/or the effective return to origin <b>(RTO*)</b> when making your coffee purchase decisions.
         When you are satisfied with the economic treatment of the coffee grower, click on the listing to go directly to the roaster's on-line store to learn more and to make your coffee purchase.
         <b>If you don’t see any coffees from your favorite roasters, please encourage them to <a class="hyperlink" href="registrationinfo">register today.</b></a></p>
       <br><p class="light-font-smaller">
@@ -56,9 +56,7 @@
     <div class="row">
         <div class="small-10 small-offset-1 columns">
             <h2 id="modalTitle">Return To Origin</h2>
-            <p class="lead">Return To Origin (RTO) is the percentage of the retail price paid by a
-
-                consumer for a 12-ounce bag of coffee that is returned to the coffee grower.
+            <p class="lead">Return to Origin, or RTO, represents the percentage of a coffee’s retail sale that goes back to the coffee supply chain at its origin.
 
                 RTO is calculated by dividing the green price paid to the grower (GPP) by the
 
