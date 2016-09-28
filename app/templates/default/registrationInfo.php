@@ -5,6 +5,7 @@
  * Date: 7/24/15
  * Time: 9:31 AM
  */
+use Predis\Client as Predis;
 ?>
 <div class="img-overlay-2">
     <img data-interchange="[<?php echo helpers\url::template_path() . 'img/red-beans-cropped-quarter.jpg'?>, (small)],

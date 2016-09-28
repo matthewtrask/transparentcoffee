@@ -9,7 +9,6 @@ use helpers\phpmailer\mail;
 use core\view;
 use core\controller;
 use Core\Model;
-use Predis\Client as Predis;
 
 class ttc extends \core\controller {
     /**
@@ -42,20 +41,61 @@ class ttc extends \core\controller {
         $coffee = [
             [
                 'roaster_url' => 'http://www.coffeehunterproject.com',
-                'roaster_logo' => '/app/templates/default/img/cafe-kreyol.png',
+                'roaster_logo' => '/app/templates/default/img/coffees/cafe-kreyol.png',
             ],
             [
                 'roaster_url' => 'http://counterculturecoffee.com',
-                'roaster_logo' => '/app/templates/default/img/CounterCultureLogo.jpg',
+                'roaster_logo' => '/app/templates/default/img/coffees/CounterCultureLogo.jpg',
             ],
             [
                 'roaster_url' => 'http://birdrockcoffee.com',
-                'roaster_logo' => '/app/templates/default/img/birdrock.png',
+                'roaster_logo' => '/app/templates/default/img/coffees/birdrock.png',
             ],
             [
                 'roaster_url' => 'http://highergroundscofee.com',
-                'roaster_logo' => '/app/templates/default/img/Higher-Grounds-Logo.jpg',
-            ]
+                'roaster_logo' => '/app/templates/default/img/coffees/Higher-Grounds-Logo.jpg',
+            ],
+            [
+                'roaster_url' => 'https://www.timwendelboe.no',
+                'roaster_logo' => '/app/templates/default/img/coffees/wendleboe.jpg',
+            ],
+            [
+                'roaster_url' => 'http://coffeecollective.dk',
+                'roaster_logo' => '/app/templates/default/img/coffees/coffeecollectivelogo.jpg',
+            ],
+            [
+                'roaster_url' => 'http://www.barismo.com',
+                'roaster_logo' => '/app/templates/default/img/coffees/barismo.png',
+            ],
+            [
+                'roaster_url' => 'http://www.cafecampesino.com',
+                'roaster_logo' => '/app/templates/default/img/coffees/cafecampesino.jpg',
+            ],
+            [
+                'roaster_url' => 'http://www.consciouscoffees.com',
+                'roaster_logo' => '/app/templates/default/img/coffees/conscious.jpg',
+            ],
+            [
+                'roaster_url' => 'http://www.elephantbeans.de/index.php?option=com_jshopping&controller=product&task=view&category_id=22&product_id=215&Itemid=76',
+                'roaster_logo' => '/app/templates/default/img/coffees/elephant.png',
+            ],
+            [
+                'roaster_url' => 'http://esperanzacafe.com/index.php',
+                'roaster_logo' => '/app/templates/default/img/coffees/esperanza.jpg',
+            ],
+            [
+                'roaster_url' => 'http://www.oldsoulco.com',
+                'roaster_logo' => '/app/templates/default/img/coffees/oldsoul.jpg',
+            ],
+            [
+                'roaster_url' => 'http://www.quijote-kaffee.de',
+                'roaster_logo' => '/app/templates/default/img/coffees/quijote.png',
+            ],
+            [
+                'roaster_url' => 'http://www.transcendcoffee.ca',
+                'roaster_logo' => '/app/templates/default/img/coffees/transcend.jpg',
+            ],
+
         ];
 
         $coffees = [];
@@ -192,14 +232,14 @@ class ttc extends \core\controller {
                      data-options='is_hover:true'>" . $_POST['sort'] . "</a>";
             echo '<ul id="hover1" class="f-dropdown dropdown-ul" data-dropdown-content>';
                 if ($_POST['sort'] == 'GPP') {
-                    echo '<li class="sort-dropdown"><a>Effective Grower Share</a></li>';
+                    echo '<li class="sort-dropdown"><a>Return To Origin</a></li>';
                 }
                 else if ($_POST['sort'] == 'EGS') {
                     echo '<li class="sort-dropdown"><a>Green Price Per Pound</a></li>';
                 }
                 else if ($_POST['sort'] == 'Order By') {
                     echo '<li class="sort-dropdown"><a>Green Price Per Pound</a></li>';
-                    echo '<li class="sort-dropdown"><a>Effective Grower Share</a></li>';
+                    echo '<li class="sort-dropdown"><a>Return To Origin</a></li>';
                 }
             echo '</ul>';
             echo "<a id=" . $_POST['arrow'] . " class='button tiny secondary arrow-btn'><i class='fa fa-angle-" . $_POST['arrow'] . " fa-2x'></i></a>";
@@ -219,10 +259,10 @@ class ttc extends \core\controller {
                 break;
             case 'EGS':
                 if ($_POST['arrow'] == 'down') {
-                    $ttcoffees = $this->quicksort($ttcoffees, 'egs', 'down');
+                    $ttcoffees = $this->quicksort($ttcoffees, 'rto', 'down');
                 }
                 else {
-                    $ttcoffees = $this->quicksort($ttcoffees, 'egs', 'up');
+                    $ttcoffees = $this->quicksort($ttcoffees, 'rto', 'up');
                 }
                 break;
         }
@@ -269,7 +309,7 @@ class ttc extends \core\controller {
                                     echo "<h3>$" . number_format($ttcoffee->gppp, 2) . "</h3>";
                                 echo '</div>';
                                 echo '<div class="Percent">';
-                                    echo '<div class="percent-abbrev rotate">EGS</div>';
+                                    echo '<div class="percent-abbrev rotate">RTO</div>';
                                     echo "<h3>" . number_format($ttcoffee->egs, 1) . "%</h3>";
                                 echo '</div>';
                             echo '</div>';
@@ -315,7 +355,7 @@ class ttc extends \core\controller {
                                             echo '</div>';
                                             echo '<div class="small-6 medium-6 columns">';
                                                 echo "<div class='circle'>" . number_format($ttcoffee->egs, 1) . "%</div>";
-                                                echo "<div class='abbreviation'>EGS</div>";
+                                                echo "<div class='abbreviation'>RTO</div>";
                                             echo '</div>';
                                         echo '</div>';
                                     echo '</div>';
@@ -370,7 +410,6 @@ class ttc extends \core\controller {
 
     public function registrationInfo() {
         $data['title'] = 'Registration Info';
-
         View::rendertemplate('header', $data);
         View::rendertemplate('registrationInfo');
         View::rendertemplate('footer');
@@ -630,7 +669,7 @@ class ttc extends \core\controller {
                 else {
                     $extraCoffees[$i]['coffeeWebsite'] = NULL;
                 }
-                $extraCoffees[$i]['bagSize']           = filter_var($_POST["coffeeBagSize-$i"], FILTER_SANITIZE_NUMBER_INT);
+                $extraCoffees[$i]['bagSize']           = filter_var($_POST["coffeeBagSize-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $extraCoffees[$i]['coffeeGPPP']        = filter_var($_POST["coffeeGPPP-$i"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 $extraCoffees[$i]['farmName']          = filter_var($_POST["farmName-$i"], FILTER_SANITIZE_STRING);
                 $extraCoffees[$i]['farmLocation']      = filter_var($_POST["farmLocation-$i"], FILTER_SANITIZE_STRING);
@@ -670,7 +709,7 @@ class ttc extends \core\controller {
         }
         $cleanCoffeePrice = filter_var($coffeePrice, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $cleanCoffeeCurrency = filter_var($coffeeCurrency, FILTER_SANITIZE_STRING);
-        $cleanBagSize = filter_var($bagSize, FILTER_SANITIZE_NUMBER_INT);
+        $cleanBagSize = filter_var($bagSize, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $cleanCoffeeGPPP = filter_var($coffeeGPPP, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION );
         if (isset($coffeeWebsite)) {
             $cleanCoffeeWebsite = filter_var($coffeeWebsite, FILTER_SANITIZE_STRING);
