@@ -35,7 +35,7 @@ class scrpi extends controller
     public function index()
     {
         $data['title'] = 'Scrpi Posts';
-        $data['posts'] = $this->_model->getPosts();
+        //$data['posts'] = $this->_model->getPosts();
 
         $data['js'] = "
 		<script language='Javascript' type='text/javascript'>
@@ -58,6 +58,12 @@ class scrpi extends controller
         $data['title'] = 'Add Scrpi Post';
 
         if(isset($_POST['submit'])){
+
+            var_dump($_POST);
+            die;
+
+
+
             $postTitle = $_POST['postTitle'];
             $postDesc = $_POST['postDesc'];
             $postCont = $_POST['postCont'];
@@ -98,7 +104,7 @@ class scrpi extends controller
         }
 
         View::renderadmintemplate('header',$data);
-        View::render('admin/addpost',$data,$error);
+        View::render('admin/addscrpi',$data,$error);
         View::renderadmintemplate('footer',$data);
     }
 
@@ -162,7 +168,7 @@ class scrpi extends controller
         }
 
         View::renderadmintemplate('header',$data);
-        View::render('admin/editpost',$data,$error);
+        View::render('admin/editscrpi',$data,$error);
         View::renderadmintemplate('footer',$data);
     }
 

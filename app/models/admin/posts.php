@@ -2,7 +2,7 @@
 
 class Posts extends \core\model {
 
-	public function getposts(){
+	public function getPosts(){
 		return $this->_db->select("
 			SELECT 
 				".PREFIX."posts.postID, 

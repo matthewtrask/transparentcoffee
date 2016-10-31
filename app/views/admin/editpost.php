@@ -37,12 +37,10 @@
 		<p><input type='submit' name='submit' value='Submit' class="button"></p>
 		</form>
 
-		<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-		<script type="text/javascript">bkLib.onDomLoaded( function() {
-				nicEditors.allTextAreas({
-					uploadURI : "/app/controllers/nicUpload.php"
-				});
-			});
+		<script>
+		$(document).ready(function() {
+			$('textarea').summernote();
+		});
 		</script>
 	</div>
 </div>

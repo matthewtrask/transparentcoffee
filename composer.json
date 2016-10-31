@@ -24,8 +24,8 @@
         "guzzlehttp/guzzle": "*",
         "robmorgan/phinx": "0.5.3",
         "predis/predis": "1.1.1",
-        "ntentan/logger": "*",
-        "keboola/csv": "^1.1"
+        "cron/cron": "*",
+        "league/booboo": "*"
     },
     "require-dev": {
         "codeception/codeception": "*",

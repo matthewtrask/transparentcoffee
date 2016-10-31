@@ -12,7 +12,7 @@ if(isset($_FILES['image'])){
     //Get image info, reuiqred to biuld the JSON object
     $data = getimagesize($path);
     //The direct link to the uploaded image, this might varyu depending on your script location
-    $link = "http://$_SERVER[HTTP_HOST]"."/app/uploads/blog/".$fileName;
+    $link = "http://$_SERVER[HTTP_HOST]/app/uploads/blog/".$fileName;
     //Here we are constructing the JSON Object
     $res = array("upload" => array(
     "links" => array("original" => $link),

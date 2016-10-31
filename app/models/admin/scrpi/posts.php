@@ -10,17 +10,15 @@ class Posts extends model
     {
         return $this->_db->select("
 			SELECT 
-				".PREFIX."scrpi_posts.postID, 
-				".PREFIX."scrpi_posts.postTitle, 
-				".PREFIX."scrpi_posts.postDate, 
-				".PREFIX."scrpi_post_cats.catTitle 
+				".PREFIX."scrpi_posts.id, 
+				".PREFIX."scrpi_posts.title,
+				".PREFIX."scrpi_posts.desc, 
+				".PREFIX."scrpi_posts.post, 
+				".PREFIX."scrpi_posts.image 
 			FROM 
 				".PREFIX."scrpi_posts, 
-				".PREFIX."scrpi_post_cats 
 			WHERE
-				".PREFIX."scrpi_posts.catID = ".PREFIX."scrpi_post_cats.catID
-			ORDER BY 
-				postID DESC ");
+				".PREFIX."scrpi_posts.active = 1");
     }
 
     public function getPostCount()

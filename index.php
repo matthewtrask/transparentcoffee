@@ -44,10 +44,12 @@ if (defined('ENVIRONMENT')){
 	switch (ENVIRONMENT){
 		case 'development':
 			error_reporting(E_ALL);
+            $path = '/var/www/public/';
 		break;
 
 		case 'production':
 			error_reporting(0);
+            $path = '/var/www/html/';
 		break;
 
 		default:
@@ -107,6 +109,7 @@ Router::any('admin/users/add', '\controllers\admin\users@add');
 Router::any('admin/users/edit/(:num)', '\controllers\admin\users@edit');
 
 Router::any('admin/csv', '\controllers\admin\csv@index');
+Router::any('admin/csv/coffees', '\controllers\admin\csv@getCoffees');
 
 Router::any('admin/scrpi', '\controllers\admin\scrpi@index');
 Router::any('admin/scrpi/add', '\controllers\admin\scrpi@add');

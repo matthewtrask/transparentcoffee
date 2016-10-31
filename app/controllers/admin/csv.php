@@ -1,22 +1,21 @@
 <?php
 namespace controllers\admin;
 
+use controllers\admin\csv\CoffeeCsv;
 use core\Controller;
-use \helpers\session;
-use \helpers\form;
-use	\helpers\url;
-use \core\model;
-use	\core\view;
-use Keboola\Csv\CsvFile;
+use core\View;
 
-class Csv extends Controller
+class csv extends Controller
 {
-    private $model;
+    /**
+     * @var CoffeeCsv
+     */
+    private $coffeeCsv;
 
-    public function __construct()
+    public function __construct(CoffeeCsv $coffeeCsv)
     {
         parent::__construct();
-        $this->model = new \models\admin\Csv();
+        $this->coffeeCsv = new CoffeeCsv();
     }
 
     public function index()
@@ -28,30 +27,9 @@ class Csv extends Controller
         View::renderadmintemplate('footer', $data);
     }
 
-    public function completeCoffeeCsv()
+    public function getCoffees()
     {
-        $coffees = (array) $this->model->getAllCoffees();
-
-        $rows = array(
-            array(
-                'Roaster Name',
-                'Coffee Name',
-                'Retail Price',
-                'Currency',
-                'Bag Size',
-                'GPPP',
-                'RTO',
-                'Farm Name',
-                'Farm Region',
-                'First Name',
-                'Last Name',
-                'Email'
-            ),
-            array(
-                'line without enclosure', 'second column',
-            ),
-        );
-
-        $csv = new Csv(__DIR__ . '/csv/coffees.csv');
+        return $this->coffeeCsv->getCoffees();
     }
+
 }

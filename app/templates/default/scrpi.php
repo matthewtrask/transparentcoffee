@@ -16,13 +16,13 @@
 </div>
 <div class="row">
     <div class="small-offset-1 small-10 large-12 large-offset-0 columns text-center">
-        <h1 class="page-header">Specialty Coffee Retail Price Index – 2016, Q2</h1>
-        <p>July 05, 2016</p>
+        <h1 class="page-header">Specialty Coffee Retail Price Index – 2016, Q3</h1>
+        <p>October 05, 2016</p>
     </div>
 </div>
 <div class="row">
     <div class="small-12 columns text-center">
-        <img src="<?php echo helpers\url::template_path() . 'img/SCRPI_Q2_2016.jpg'?>">
+        <img src="<?php echo helpers\url::template_path() . 'img/SCRPI_Q3_2016.jpg'?>">
     </div>
 </div><br />
 <div class="row">
@@ -33,11 +33,25 @@
 
 <div class="row">
     <div class="small-offset-1 small-10 large-12 large-offset-0 columns text-left">
-        <p class="light-font-smaller">In the second quarter of 2016, the SCRPI rose by 8.1%. The average price for roasted specialty coffee at the end of June 2016 was $24.00 per pound.** This breaks down into an average of $16.40 per pound for the lowest-priced coffees (+1.2%), and $31.61 for the highest-priced coffees (+12.2%) sold on the websites of the SCRPI roasters.</p>
-        <p class="light-font-smaller">The year-over-year increase in specialty coffee prices – from the second quarter of 2015 to the second quarter of 2016 – was 9.1%. This breaks down into a 1.7% increase for the lowest-priced coffees, and a 13.4% increase for the highest-priced coffees.</p>
-        <p class="light-font-smaller">The corresponding ICO Composite Price for green coffee rose to $1.30 per pound in June 2016. Thus, as retail prices for specialty coffees rose by 8.1%, commodity prices rose by 8.3% during the second quarter of 2016. Year over year, as average retail prices for specialty coffees rose by 9.1%, the ICO Composite Price increased by 4.4%.</p>
-        <p class="light-font-smaller"><span id="star">*</span> In the third quarter of 2014, the number of SCRPI roasters fell from 60 to 59, as Green Mountain Coffee was acquired by Keurig. In the first quarter of 2015, the number fell to 58 because the Supreme Bean website went inactive. In the last quarter of 2015, Stone Cup Roasting was not selling roasted coffee on-line, reducing the number of active SCRPI roasters to 57.</p>
-        <p class="light-font-smaller"><span id="star">**</span>The June 2016 SCRPI was influenced by the introduction of a unique high-end coffee by Blue Bottle (Yemen Hayma Hussein al-Haba), which was priced at $173.33 per roasted pound. If we replace this coffee with the second highest-priced Blue Bottle coffee, the June 2016 SCRPI sits at $22.72; $29.05 at the high end of the market and $16.40 at the low end.</p>
+        <p class="light-font-smaller">In the third quarter of 2016, the SCRPI fell by 6.3%.
+            The average price for roasted specialty coffee at the end of September 2016 was $22.46 per pound.
+            This breaks down into an average of $16.30 per pound for the lowest-priced coffees (-0.6%),
+            and $28.62 for the highest-priced coffees (-9.2%) sold on the websites of the SCRPI roasters.**</p>
+        <p class="light-font-smaller">The year-over-year increase in specialty coffee prices – from the third quarter of
+            2015 to the third quarter of 2016 – was 3.4%. This breaks down into a 1.4% increase for the lowest-priced
+            coffees, and a 4.6% increase for the highest-priced coffees.</p>
+        <p class="light-font-smaller">The corresponding ICO Composite Price for green coffee rose to $1.39 per pound in
+            September 2016. Thus, as retail prices for specialty coffees fell by 6.3%, commodity prices rose by 5.0%
+            during the third quarter of 2016. Year over year, as average retail prices for specialty coffees rose by 3.4%,
+            the ICO Composite Price increased by 20.0%.</p>
+        <p class="light-font-smaller"><span id="star">*</span><em>In the third quarter of 2014, the number of SCRPI roasters
+            fell from 60 to 59, as Green Mountain Coffee was acquired by Keurig. In the first quarter of 2015,
+            the number fell to 58 because the Supreme Bean website went inactive. In the last quarter of 2015, Stone Cup
+            Roasting was not selling roasted coffee on-line, reducing the number of active SCRPI
+            roasters to 57.</em></p>
+        <p class="light-font-smaller"><span id="star">**</span><em>The June 2016 SCRPI was influenced by the introduction
+            of a unique high-end coffee by Blue Bottle (Yemen Hayma Hussein al-Haba), which was priced at $173.33
+            per roasted pound.</em></p>
     </div>
 </div>
 
@@ -46,7 +60,7 @@
         <p class="light-font-smaller">Please visit the <a href="insights">Insights Page</a> for the full insights from our team.</p>
         <div class="row">
             <div class="small-2">
-                <form method="post" action="SCRPIJune_2016_Q2_Spanish.pdf">
+                <form method="post" action="SCRPIOctober_2016_Q3_Spanish.pdf">
                     <button class='button expand flat-white-btn'>Spanish PDF</button>
                 </form>
             </div>

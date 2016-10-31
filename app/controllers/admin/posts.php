@@ -1,12 +1,12 @@
 <?php namespace controllers\admin;
 
 use helpers\Paginator;
-use \helpers\url,
-	\helpers\session,
-	\core\view;
+use \helpers\Url;
+use	\helpers\Session;
+use	\core\View;
 
-class Posts extends \core\controller {
-
+class Posts extends \core\Controller
+{
 	private $_model;
 	private $_catsmodel;
 
@@ -16,8 +16,8 @@ class Posts extends \core\controller {
 			Url::redirect('admin/login');
 		}
 		
-		$this->_model = new \models\admin\posts();
-		$this->_catsmodel = new \models\admin\cats();
+		$this->_model = new \models\admin\Posts();
+		$this->_catsmodel = new \models\admin\Cats();
 	}
 
 	public function index(){
@@ -25,7 +25,7 @@ class Posts extends \core\controller {
 
 
 		$data['title'] = 'Posts';
-		$data['posts'] = $this->_model->getposts();
+		$data['posts'] = $this->_model->getPosts();
 		$data['js'] = "
 		<script language='Javascript' type='text/javascript'>
 		function delpost(id,title){
@@ -46,13 +46,12 @@ class Posts extends \core\controller {
 		$data['cats'] = $this->_catsmodel->getcats();
 
 		if(isset($_POST['submit'])){
-
-			var_dump($_POST);
-
 			$postTitle = $_POST['postTitle'];
 			$postDesc = $_POST['postDesc'];
 			$postCont = $_POST['postCont'];
 			$catID = $_POST['catID'];
+
+            $error = [];
 
 			if($postTitle == ''){
 				$error[] = 'Title is required';
@@ -82,9 +81,16 @@ class Posts extends \core\controller {
 					'catID'    => $catID
 				);
 
-				$data['postImg'] = $_SESSION['image_name'];
+                if ($_FILES['image']['size'] > 0) {
+                    $file = 'images/' . $_FILES['image']['name'];
+                    move_uploaded_file($_FILES['image']['tmp_name'], DIR . '/app/templates/default/img/' . $file);
+                    $data['postImg'] = $file;
+                }
 
-				$this->_model->insert_post($data);
+
+                $data['postImg'] = $_SESSION['image_name'];
+
+				$this->_model->insertPost($data);
 				unset($_SESSION['image_name']);
 				Session::set('message','Post added');
 				Url::redirect('admin/posts');
@@ -100,7 +106,7 @@ class Posts extends \core\controller {
 
 	public function edit($id){
 		$data['title'] = 'Edit Post';
-		$data['row'] = $this->_model->getpost($id);
+		$data['row'] = $this->_model->getPost($id);
 		$data['cats'] = $this->_catsmodel->getcats();
 
 		if(isset($_POST['submit'])){
@@ -147,7 +153,7 @@ class Posts extends \core\controller {
 
 				$where = array('postID' => $id);
 
-				$this->_model->update_post($data,$where);
+				$this->_model->updatePost($data,$where);
 				unset($_SESSION['image_name']);
 
 				Session::set('message','Post Updated');
@@ -162,7 +168,7 @@ class Posts extends \core\controller {
 	}
 
 	public function delete($id){
-		$this->_model->delete_post(array('postID' => $id));
+		$this->_model->deletePost(array('postID' => $id));
 		Session::set('message','Post Deleted');
 		Url::redirect('admin/posts');
 	}

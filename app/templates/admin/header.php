@@ -31,12 +31,15 @@
   <meta name="theme-color" content="#ffffff">
 
 <!--  <link rel="stylesheet" type="text/css" href="/bower_components/foundation/css/foundation.css">-->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+
 
   <!-- CSS -->
-  <link href="../../../bower_components/froala-editor/css/froala_editor.min.css" rel="stylesheet">
   <?php
   helpers\assets::css(array(
+      '//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css',
       '//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css',
       '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
       helpers\url::admin_template_path() . 'css/style.css',

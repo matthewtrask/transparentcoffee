@@ -32,10 +32,17 @@ class Csv extends \core\model
 
     public function getRoaster($roaster)
     {
+        $stmt = $this->_db->select('SELECT r.roaster_name,
+                                    ct.first_name, 
+                                    ct.last_name, 
+                                    ct.email 
+                                    FROM '.PREFIX.'roaster
+                                    INNER JOIN '.PREFIX.'contact as ct ON r.contact_id = ct.contact_id');
 
+        return $stmt;
     }
 
-    public function getRegions($region)
+    public function getGrowers($region)
     {
 
     }
