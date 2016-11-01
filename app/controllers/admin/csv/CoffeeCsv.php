@@ -1,38 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: trask
- * Date: 10/30/16
- * Time: 10:55 AM
- */
 
 namespace controllers\admin\csv;
 
-use Models\admin\Csv;
+use \models\admin\Csv;
 
-class CoffeeCsv extends AbstractWriter
+class CoffeeCsv extends AbstractWriter implements CsvInterface
 {
     const FILENAME = 'Coffees';
-    /**
-     * @var csv
-     */
-    private $coffees;
 
     private $filename = CoffeeCsv::FILENAME;
+
+    private $coffees;
 
     public function __construct()
     {
         $this->coffees = new Csv();
     }
 
-    public function hello()
+    public function getData()
     {
-        return 'hello';
-    }
-
-    public function getCoffees()
-    {
-        $coffees = (array) $this->coffees->getAllCoffees();
+        $coffees = json_decode(json_encode($this->coffees->getAllCoffees()), true);
 
         $headers = [
             'Roaster Name',
@@ -41,7 +28,7 @@ class CoffeeCsv extends AbstractWriter
             'Currency',
             'Bag Size',
             'GPPP',
-            'EGS',
+            'RTO',
             'Farm Name',
             'Region',
             'First Name',
@@ -49,6 +36,8 @@ class CoffeeCsv extends AbstractWriter
             'Email'
         ];
 
-        return $this->write($this->filename, $headers, $coffees);
+        $file = $this->write($this->filename, $headers, $coffees);
+
+        $this->downloader($file);
     }
 }

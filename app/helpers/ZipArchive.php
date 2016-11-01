@@ -1,6 +1,6 @@
 <?php
 
-namespace core\helpers;
+namespace helpers;
 
 class ZipArchive extends \ZipArchive
 {

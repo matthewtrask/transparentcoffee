@@ -27,10 +27,10 @@ class Csv extends \core\model
                                         INNER JOIN '.PREFIX.'grower  AS g  ON c.grower_id  = g.grower_id
                                         INNER JOIN '.PREFIX.'contact AS ct ON r.contact_id = ct.contact_id');
 
-        return $stmt;
+        return (array) $stmt;
     }
 
-    public function getRoaster($roaster)
+    public function getRoasters()
     {
         $stmt = $this->_db->select('SELECT r.roaster_name,
                                     ct.first_name, 
@@ -42,7 +42,7 @@ class Csv extends \core\model
         return $stmt;
     }
 
-    public function getGrowers($region)
+    public function getGrowers()
     {
 
     }

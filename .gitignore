@@ -37,3 +37,5 @@ node_modules/gulp-minify-css/node_modules/gulp-util/node_modules/dateformat/node
 tests/_output/*
 
 phinx.yml
+
+.DS_Store

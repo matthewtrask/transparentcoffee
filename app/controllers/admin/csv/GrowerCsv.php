@@ -8,10 +8,22 @@
 
 namespace controllers\admin\csv;
 
-use Models\ttc;
+use \models\admin\Csv;
 
-
-class GrowerCsv extends AbstractWriter
+class GrowerCsv extends AbstractWriter implements CsvInterface
 {
+    /**
+     * @var Csv
+     */
+    private $growers;
 
+    public function __construct()
+    {
+        $this->growers = new Csv();
+    }
+
+    public function getData()
+    {
+
+    }
 }

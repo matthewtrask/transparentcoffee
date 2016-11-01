@@ -8,10 +8,19 @@
 
 namespace controllers\admin\csv;
 
-use Models\ttc;
+use \models\admin\Csv;
 
-class RoasterCsv extends AbstractWriter
+class RoasterCsv extends AbstractWriter implements CsvInterface
 {
+    private $growers;
 
+    public function __construct()
+    {
+        $this->growers = new Csv();
+    }
 
+    public function getData()
+    {
+        $roaster = json_decode(json_encode($this->growers->getGrowers(), true));
+    }
 }
