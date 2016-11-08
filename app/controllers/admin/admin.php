@@ -444,6 +444,18 @@ class Admin extends \core\controller
         }
     }
 
+	public function data()
+	{
+		$roasters = $this->_adminModel->getAllRoasters();
 
+		$coffees = $this->_adminModel->getActiveTTCoffees();
+
+		$data = [
+			'roasters' => $roasters,
+			'coffees' => $coffees
+		];
+
+		return $data;
+	}
 
 }

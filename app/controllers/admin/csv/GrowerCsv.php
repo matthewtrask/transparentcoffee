@@ -12,6 +12,9 @@ use \models\admin\Csv;
 
 class GrowerCsv extends AbstractWriter implements CsvInterface
 {
+    const FILENAME = 'Growers';
+
+    private $filename = GrowerCsv::FILENAME;
     /**
      * @var Csv
      */
@@ -24,6 +27,17 @@ class GrowerCsv extends AbstractWriter implements CsvInterface
 
     public function getData()
     {
+        $growers = $this->growers->getGrowers();
 
+        $headers = [
+            'Farm Name',
+            'Country',
+            'Region',
+            'Roaster'
+        ];
+
+        $file = $this->write($this->filename, $headers, $growers);
+
+        $this->downloader($file);
     }
 }

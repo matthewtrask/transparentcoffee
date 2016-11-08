@@ -10,16 +10,16 @@
 <div class="row panel">
     <p>* These reports will return <em>all</em> of the respective coffees, roasters, or growers.</p>
     <div class="small-4 medium-4 large-4 columns">
-        <p class="panel">All Coffees  <button id="coffees" onClick="coffeeClick()">Coffees</button></p>
+       <p class="panel">All Coffees   <a href="/admin/csv/coffees" target="_blank"><button id="coffees" onClick="coffeeClick()">Coffees</button></a></p>
 <!--        <p>Downloads: <span id="coffeeDownloads">0</span></p>-->
     </div>
     <div class="small-4 medium-4 large-4 columns">
-        <p class="panel">All Roaster  <button id="roasters" onClick="roasterClick()">Roasters</button></p>
+        <p class="panel">All Roaster  <a href="/admin/csv/roasters" target="_blank"><button id="roasters" onClick="roasterClick()">Roasters</button></a></p>
 <!--        <p>Downloads: <span id="roasterDownloads">0</span></p>-->
 
     </div>
     <div class="small-4 medium-4 large-4 columns">
-        <p class="panel">All Growers  <button id="growers" onClick="growerClick()">Growers</button></p>
+        <p class="panel">All Growers  <a href="/admin/csv/growers" target="_blank"><button id="growers" onClick="growerClick()">Growers</button></a></p>
 <!--        <p>Downloads: <span id="growerDownloads">0</span></p>-->
 
     </div>

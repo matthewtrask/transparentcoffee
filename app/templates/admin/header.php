@@ -62,6 +62,7 @@
         <li><a href="/home">Site</a></li>
         <li><a href="/admin">Home</a></li>
         <li><a href="/admin/posts">Insights</a></li>
+        <li><a href="/admin/csv">CSV</a></li>
         <li><a href="/admin/scrpi">SCRPI</a></li>
         <li><a href="/admin/cats">Categories</a></li>
         <li><a href="/admin/users">Users</a></li>

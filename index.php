@@ -126,6 +126,8 @@ Router::any('admin/cats/add', '\controllers\admin\cats@add');
 Router::any('admin/cats/edit/(:num)', '\controllers\admin\cats@edit');
 Router::any('admin/cats/delete/(:num)', '\controllers\admin\cats@delete');
 
+Router::get('admin/report-data', '\controllers\admin\admin@data');
+
 
 // utilities
 Router::any('admin/coffee/clear', '\controllers\admin\registration@clearPending');

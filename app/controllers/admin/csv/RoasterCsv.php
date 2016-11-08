@@ -12,15 +12,31 @@ use \models\admin\Csv;
 
 class RoasterCsv extends AbstractWriter implements CsvInterface
 {
-    private $growers;
+    const FILENAME = 'Roasters';
+
+    private $filename = RoasterCsv::FILENAME;
+
+    private $roaster;
 
     public function __construct()
     {
-        $this->growers = new Csv();
+        $this->roaster = new Csv();
     }
 
     public function getData()
     {
-        $roaster = json_decode(json_encode($this->growers->getGrowers(), true));
+        $roaster = json_decode(json_encode($this->roaster->getAllRoasters(), true));
+
+        $header = [
+            'Roaster',
+            'Website',
+            'First Name',
+            'Last Name',
+            'Email'
+        ];
+
+        $file = $this->write($this->filename, $header, $roaster);
+
+        $this->downloader($file);
     }
 }

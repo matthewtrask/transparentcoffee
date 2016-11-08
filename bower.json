@@ -1,6 +1,7 @@
 {
-    "name": "Transparent Trade Coffee",
-    "dependencies": {
-       "foundation": "~5.4.7"
-    }
-} 
+  "name": "Transparent Trade Coffee",
+  "dependencies": {
+    "foundation": "~5.4.7",
+    "chart.js": "~2.3.0"
+  }
+}
